@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1432862B3257F884377D2A3 /* HelloWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432DF3D8E34B8657A67575 /* HelloWorld.m */; };
 		B143293FDBB4B78C3308910F /* VelocidiSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */; };
+		B1432E25175EE1765B6D7321 /* HelloWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327FD23C2DD5E83D9192C /* HelloWorld.h */; };
 		B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14322053369E2F8B07BD704 /* VelocidiSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +29,9 @@
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B143269D9047D62CF45FC4FA /* VelocidiSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VelocidiSDK.h; sourceTree = "<group>"; };
+		B14327FD23C2DD5E83D9192C /* HelloWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorld.h; sourceTree = "<group>"; };
 		B1432DC5BB2B2B22F95EF53B /* VelocidiSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelocidiSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1432DF3D8E34B8657A67575 /* HelloWorld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorld.m; sourceTree = "<group>"; };
 		B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VelocidiSDKTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +86,8 @@
 			children = (
 				B14323D6AF36722BBA0B00FE /* Info.plist */,
 				B143269D9047D62CF45FC4FA /* VelocidiSDK.h */,
+				B1432DF3D8E34B8657A67575 /* HelloWorld.m */,
+				B14327FD23C2DD5E83D9192C /* HelloWorld.h */,
 			);
 			path = VelocidiSDK;
 			sourceTree = "<group>";
@@ -94,6 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */,
+				B1432E25175EE1765B6D7321 /* HelloWorld.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1432862B3257F884377D2A3 /* HelloWorld.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
