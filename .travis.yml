@@ -1,10 +1,10 @@
 language: objective-c
 os: osx
-xcode_project: VelocidiSDK/VelocidiSDK.xcodeproj # path to your xcodeproj folder
+xcode_project: VelocidiSDK.xcodeproj # path to your xcodeproj folder
 xcode_scheme: VelocidiSDKTests
 xcode_destination: platform=iOS Simulator,OS=11.4,name=iPhone X
 
 script: 
-  - xcodebuild -project VelocidiSDK/VelocidiSDK.xcodeproj/ -scheme VelocidiSDKTests clean build test -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=11.4,name=iPhone X'  GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+  - xcodebuild -project VelocidiSDK.xcodeproj/ -scheme VelocidiSDKTests clean build test -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=11.4,name=iPhone X'  GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 after_success:
   - bash <(curl -s https://codecov.io/bash)
