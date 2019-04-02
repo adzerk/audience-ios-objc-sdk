@@ -13,8 +13,9 @@ jobs:
   include:
     - env: 
         - TEST_SDK=iphonesimulator11.4 TEST_DESTINATION='platform=iOS Simulator,OS=11.4,name=iPhone X'
-    # - env: 
-        # - TEST_SDK=iphonesimulator12.0 TEST_DESTINATION='platform=iOS Simulator,OS=12.0,name=iPhone X'
+    - env: 
+        - TEST_SDK=iphonesimulator12.2 TEST_DESTINATION='platform=iOS Simulator,OS=12.2,name=iPhone X'
+      osx_image: xcode10.2
     - name: Cocoapods Lint
       script: 
         - pod lib lint --verbose VelocidiSDK.podspec
