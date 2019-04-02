@@ -8,4 +8,4 @@
 
 Velocidi's Objective-C SDK to integrate with iOS apps.
 
-_This is still a very rough draft of the SDK not to ready to be used_
+_SDK development in the early stages. Not ready for production. Use it at your own risk._
