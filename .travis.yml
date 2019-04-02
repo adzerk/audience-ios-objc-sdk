@@ -2,10 +2,20 @@ language: objective-c
 os: osx
 xcode_workspace: VelocidiSDK.xcworkspace # path to your xcodeproj folder
 xcode_scheme: VelocidiSDKTests
-xcode_destination: platform=iOS Simulator,OS=11.4,name=iPhone X
 
-script: 
-  - xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDKTests clean build test -sdk iphonesimulator -destination 'platform=iOS Simulator,OS=11.4,name=iPhone X'  GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
-  - pod lib lint --verbose VelocidiSDK.podspec
+script:
+  - xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDKTests clean build test -sdk "$TEST_SDK" -destination "$TEST_DESTINATION" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+ - bash <(curl -s https://codecov.io/bash)
+
+jobs:
+  include:
+    - env: 
+        - TEST_SDK=iphonesimulator11.4 TEST_DESTINATION='platform=iOS Simulator,OS=11.4,name=iPhone X'
+    # - env: 
+        # - TEST_SDK=iphonesimulator12.0 TEST_DESTINATION='platform=iOS Simulator,OS=12.0,name=iPhone X'
+    - name: Cocoapods Lint
+      script: 
+        - pod lib lint --verbose VelocidiSDK.podspec
+      after_success: null
