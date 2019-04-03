@@ -39,3 +39,8 @@ jobs:
       script: 
         - pod lib lint --verbose VelocidiSDK.podspec
       after_success: null
+notifications:
+  email:
+    recipients:
+      - engineering@velocidi.com
+    on_success: never
