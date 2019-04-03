@@ -54,9 +54,9 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = "Velocidi"
-  # Or just: spec.author    = "Duarte Pinto"
-  # spec.authors            = { "Duarte Pinto" => "duarte.pinto@velocidi.com" }
+  spec.author             = { "Velocidi" => "engineering@velocidi.com" }
+  # Or just: spec.author    = "John Doe"
+  # spec.authors            = { "Jon Doe" => "john.doe@velocidi.com" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
