@@ -4,7 +4,10 @@ xcode_workspace: VelocidiSDK.xcworkspace # path to your xcodeproj folder
 xcode_scheme: VelocidiSDKTests
 
 script:
-  - xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDKTests clean build test -sdk "$TEST_SDK" -destination "$TEST_DESTINATION" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+  - xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDKTests clean build test -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+
+before_install:
+  - xcrun instruments -w "iPhone X (${TEST_SDK})" || sleep 15
 
 after_success:
  - bash <(curl -s https://codecov.io/bash)
@@ -12,33 +15,34 @@ after_success:
 jobs:
   include:
     - env: 
-        - TEST_SDK=iphonesimulator11.0 TEST_DESTINATION='platform=iOS Simulator,OS=11.0,name=iPhone X'
+        - TEST_SDK=11.0
       osx_image: xcode9
     - env: 
-        - TEST_SDK=iphonesimulator11.1 TEST_DESTINATION='platform=iOS Simulator,OS=11.1,name=iPhone X'
+        - TEST_SDK=11.1
       osx_image: xcode9.1
     - env: 
-        - TEST_SDK=iphonesimulator11.2 TEST_DESTINATION='platform=iOS Simulator,OS=11.2,name=iPhone X'
+        - TEST_SDK=11.2
       osx_image: xcode9.2
     - env: 
-        - TEST_SDK=iphonesimulator11.3 TEST_DESTINATION='platform=iOS Simulator,OS=11.3,name=iPhone X'
+        - TEST_SDK=11.3
       osx_image: xcode9.3
     - env: 
-        - TEST_SDK=iphonesimulator11.4 TEST_DESTINATION='platform=iOS Simulator,OS=11.4,name=iPhone X'
+        - TEST_SDK=11.4
       osx_image: xcode9.4.1
     - env: 
-        - TEST_SDK=iphonesimulator12.0 TEST_DESTINATION='platform=iOS Simulator,OS=12.0,name=iPhone X'
+        - TEST_SDK=12.0
       osx_image: xcode10
     - env: 
-        - TEST_SDK=iphonesimulator12.1 TEST_DESTINATION='platform=iOS Simulator,OS=12.1,name=iPhone X'
+        - TEST_SDK=12.1
       osx_image: xcode10.1
     - env: 
-        - TEST_SDK=iphonesimulator12.2 TEST_DESTINATION='platform=iOS Simulator,OS=12.2,name=iPhone X'
+        - TEST_SDK=12.2
       osx_image: xcode10.2
     - name: Cocoapods Lint
       script: 
         - pod lib lint --verbose VelocidiSDK.podspec
       after_success: null
+      before_install: null
 notifications:
   email:
     recipients:
