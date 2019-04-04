@@ -42,6 +42,7 @@
 		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B143293FDBB4B78C3308910F /* VelocidiSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */; };
 		B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14322053369E2F8B07BD704 /* VelocidiSDK.framework */; };
+		F29C1077FFD684764D3C1209 /* libPods-VelocidiSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C4B67FEF9F78D62791BC68 /* libPods-VelocidiSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		232C95E61F803ECB073433ED /* Pods-VelocidiSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.release.xcconfig"; sourceTree = "<group>"; };
 		304FEFA02254B8AB00ECF86E /* VSDKInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKInstance.h; sourceTree = "<group>"; };
 		304FEFA12254B8AB00ECF86E /* VSDKInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKInstance.m; sourceTree = "<group>"; };
 		305D1A9C225643AE0016EF25 /* VSDKPurchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPurchase.h; sourceTree = "<group>"; };
@@ -87,12 +89,14 @@
 		305D1AD1225659A00016EF25 /* VSDKTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTransaction.m; sourceTree = "<group>"; };
 		305D1AD422565ACD0016EF25 /* VSDKRefund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKRefund.h; sourceTree = "<group>"; };
 		305D1AD522565ACD0016EF25 /* VSDKRefund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKRefund.m; sourceTree = "<group>"; };
+		37C4B67FEF9F78D62791BC68 /* libPods-VelocidiSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VelocidiSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1432006E874289B32AE9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B143269D9047D62CF45FC4FA /* VelocidiSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VelocidiSDK.h; sourceTree = "<group>"; };
 		B1432DC5BB2B2B22F95EF53B /* VelocidiSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelocidiSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VelocidiSDKTests.m; sourceTree = "<group>"; };
+		B745A135178408575C4F96EE /* Pods-VelocidiSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F29C1077FFD684764D3C1209 /* libPods-VelocidiSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +119,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16DCADF0E779AAEF99A3A903 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B745A135178408575C4F96EE /* Pods-VelocidiSDK.debug.xcconfig */,
+				232C95E61F803ECB073433ED /* Pods-VelocidiSDK.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		305D1A9A225643460016EF25 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +180,8 @@
 				B143262865E4C53E8903062A /* Products */,
 				B1432EFA4D837E1588E42E90 /* VelocidiSDK */,
 				B14327EEFA390985A151E2FC /* VelocidiSDKTests */,
+				16DCADF0E779AAEF99A3A903 /* Pods */,
+				DE4214C4052230CAC368C858 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +213,14 @@
 				304FEFA12254B8AB00ECF86E /* VSDKInstance.m */,
 			);
 			path = VelocidiSDK;
+			sourceTree = "<group>";
+		};
+		DE4214C4052230CAC368C858 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37C4B67FEF9F78D62791BC68 /* libPods-VelocidiSDK.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +257,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B14321AEACC8498634595391 /* Build configuration list for PBXNativeTarget "VelocidiSDK" */;
 			buildPhases = (
+				3779C32FCC8BA56B943D7BEB /* [CP] Check Pods Manifest.lock */,
 				B1432F50E35303003C1B47F3 /* Headers */,
 				B1432B1E465F64F759A7EEA9 /* Sources */,
 				B143262E1BA5BB8F611C5D21 /* Frameworks */,
@@ -306,6 +332,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3779C32FCC8BA56B943D7BEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VelocidiSDK-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B1432B1E465F64F759A7EEA9 /* Sources */ = {
@@ -414,6 +465,7 @@
 		};
 		B14329E9384201E0F2634BE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 232C95E61F803ECB073433ED /* Pods-VelocidiSDK.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -500,6 +552,7 @@
 		};
 		B1432F11A4A499475853C5E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B745A135178408575C4F96EE /* Pods-VelocidiSDK.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
