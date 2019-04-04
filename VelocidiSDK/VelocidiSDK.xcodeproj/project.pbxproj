@@ -9,36 +9,36 @@
 /* Begin PBXBuildFile section */
 		304FEFA22254B8AB00ECF86E /* VSDKInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 304FEFA02254B8AB00ECF86E /* VSDKInstance.h */; };
 		304FEFA32254B8AB00ECF86E /* VSDKInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FEFA12254B8AB00ECF86E /* VSDKInstance.m */; };
-		305D1A9E225643AE0016EF25 /* Purchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1A9C225643AE0016EF25 /* Purchase.h */; };
-		305D1A9F225643AE0016EF25 /* Purchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A9D225643AE0016EF25 /* Purchase.m */; };
-		305D1AA2225643F70016EF25 /* TrackingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA0225643F70016EF25 /* TrackingEvent.h */; };
-		305D1AA3225643F70016EF25 /* TrackingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA1225643F70016EF25 /* TrackingEvent.m */; };
-		305D1AA62256452C0016EF25 /* PageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA42256452C0016EF25 /* PageView.h */; };
-		305D1AA72256452C0016EF25 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA52256452C0016EF25 /* PageView.m */; };
-		305D1AAA225645C70016EF25 /* Search.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA8225645C70016EF25 /* Search.h */; };
-		305D1AAB225645C70016EF25 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA9225645C70016EF25 /* Search.m */; };
-		305D1AAE225646600016EF25 /* ProductImpression.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AAC225646600016EF25 /* ProductImpression.h */; };
-		305D1AAF225646600016EF25 /* ProductImpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AAD225646600016EF25 /* ProductImpression.m */; };
-		305D1AB2225646F30016EF25 /* Product.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB0225646F30016EF25 /* Product.h */; };
-		305D1AB3225646F30016EF25 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB1225646F30016EF25 /* Product.m */; };
-		305D1AB622564AE20016EF25 /* ProductClick.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB422564AE20016EF25 /* ProductClick.h */; };
-		305D1AB722564AE20016EF25 /* ProductClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB522564AE20016EF25 /* ProductClick.m */; };
-		305D1ABA22564C950016EF25 /* ProductView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB822564C950016EF25 /* ProductView.h */; };
-		305D1ABB22564C950016EF25 /* ProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB922564C950016EF25 /* ProductView.m */; };
-		305D1ABE22564DB10016EF25 /* ProductViewDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1ABC22564DB10016EF25 /* ProductViewDetails.h */; };
-		305D1ABF22564DB10016EF25 /* ProductViewDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1ABD22564DB10016EF25 /* ProductViewDetails.m */; };
-		305D1AC22256548F0016EF25 /* ProductCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC02256548F0016EF25 /* ProductCustomization.h */; };
-		305D1AC32256548F0016EF25 /* ProductCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC12256548F0016EF25 /* ProductCustomization.m */; };
-		305D1AC6225656110016EF25 /* AddToCart.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC4225656110016EF25 /* AddToCart.h */; };
-		305D1AC7225656110016EF25 /* AddToCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC5225656110016EF25 /* AddToCart.m */; };
-		305D1ACA225657A70016EF25 /* RemoveFromCart.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC8225657A70016EF25 /* RemoveFromCart.h */; };
-		305D1ACB225657A70016EF25 /* RemoveFromCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC9225657A70016EF25 /* RemoveFromCart.m */; };
-		305D1ACE225658930016EF25 /* Subscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1ACC225658930016EF25 /* Subscription.h */; };
-		305D1ACF225658930016EF25 /* Subscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1ACD225658930016EF25 /* Subscription.m */; };
-		305D1AD2225659A00016EF25 /* Transaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD0225659A00016EF25 /* Transaction.h */; };
-		305D1AD3225659A00016EF25 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD1225659A00016EF25 /* Transaction.m */; };
-		305D1AD622565ACD0016EF25 /* Refund.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD422565ACD0016EF25 /* Refund.h */; };
-		305D1AD722565ACD0016EF25 /* Refund.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD522565ACD0016EF25 /* Refund.m */; };
+		305D1A9E225643AE0016EF25 /* VSDKPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1A9C225643AE0016EF25 /* VSDKPurchase.h */; };
+		305D1A9F225643AE0016EF25 /* VSDKPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A9D225643AE0016EF25 /* VSDKPurchase.m */; };
+		305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */; };
+		305D1AA3225643F70016EF25 /* VSDKTrackingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA1225643F70016EF25 /* VSDKTrackingEvent.m */; };
+		305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA42256452C0016EF25 /* VSDKPageView.h */; };
+		305D1AA72256452C0016EF25 /* VSDKPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA52256452C0016EF25 /* VSDKPageView.m */; };
+		305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA8225645C70016EF25 /* VSDKSearch.h */; };
+		305D1AAB225645C70016EF25 /* VSDKSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA9225645C70016EF25 /* VSDKSearch.m */; };
+		305D1AAE225646600016EF25 /* VSDKProductImpression.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AAC225646600016EF25 /* VSDKProductImpression.h */; };
+		305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AAD225646600016EF25 /* VSDKProductImpression.m */; };
+		305D1AB2225646F30016EF25 /* VSDKProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB0225646F30016EF25 /* VSDKProduct.h */; };
+		305D1AB3225646F30016EF25 /* VSDKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB1225646F30016EF25 /* VSDKProduct.m */; };
+		305D1AB622564AE20016EF25 /* VSDKProductClick.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB422564AE20016EF25 /* VSDKProductClick.h */; };
+		305D1AB722564AE20016EF25 /* VSDKProductClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB522564AE20016EF25 /* VSDKProductClick.m */; };
+		305D1ABA22564C950016EF25 /* VSDKProductView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB822564C950016EF25 /* VSDKProductView.h */; };
+		305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB922564C950016EF25 /* VSDKProductView.m */; };
+		305D1ABE22564DB10016EF25 /* VSDKProductViewDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1ABC22564DB10016EF25 /* VSDKProductViewDetails.h */; };
+		305D1ABF22564DB10016EF25 /* VSDKProductViewDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1ABD22564DB10016EF25 /* VSDKProductViewDetails.m */; };
+		305D1AC22256548F0016EF25 /* VSDKProductCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC02256548F0016EF25 /* VSDKProductCustomization.h */; };
+		305D1AC32256548F0016EF25 /* VSDKProductCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC12256548F0016EF25 /* VSDKProductCustomization.m */; };
+		305D1AC6225656110016EF25 /* VSDKAddToCart.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC4225656110016EF25 /* VSDKAddToCart.h */; };
+		305D1AC7225656110016EF25 /* VSDKAddToCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC5225656110016EF25 /* VSDKAddToCart.m */; };
+		305D1ACA225657A70016EF25 /* VSDKRemoveFromCart.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC8225657A70016EF25 /* VSDKRemoveFromCart.h */; };
+		305D1ACB225657A70016EF25 /* VSDKRemoveFromCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC9225657A70016EF25 /* VSDKRemoveFromCart.m */; };
+		305D1ACE225658930016EF25 /* VSDKSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1ACC225658930016EF25 /* VSDKSubscription.h */; };
+		305D1ACF225658930016EF25 /* VSDKSubscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1ACD225658930016EF25 /* VSDKSubscription.m */; };
+		305D1AD2225659A00016EF25 /* VSDKTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD0225659A00016EF25 /* VSDKTransaction.h */; };
+		305D1AD3225659A00016EF25 /* VSDKTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD1225659A00016EF25 /* VSDKTransaction.m */; };
+		305D1AD622565ACD0016EF25 /* VSDKRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD422565ACD0016EF25 /* VSDKRefund.h */; };
+		305D1AD722565ACD0016EF25 /* VSDKRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD522565ACD0016EF25 /* VSDKRefund.m */; };
 		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B143293FDBB4B78C3308910F /* VelocidiSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */; };
 		B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14322053369E2F8B07BD704 /* VelocidiSDK.framework */; };
@@ -57,36 +57,36 @@
 /* Begin PBXFileReference section */
 		304FEFA02254B8AB00ECF86E /* VSDKInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKInstance.h; sourceTree = "<group>"; };
 		304FEFA12254B8AB00ECF86E /* VSDKInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKInstance.m; sourceTree = "<group>"; };
-		305D1A9C225643AE0016EF25 /* Purchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Purchase.h; sourceTree = "<group>"; };
-		305D1A9D225643AE0016EF25 /* Purchase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Purchase.m; sourceTree = "<group>"; };
-		305D1AA0225643F70016EF25 /* TrackingEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackingEvent.h; sourceTree = "<group>"; };
-		305D1AA1225643F70016EF25 /* TrackingEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackingEvent.m; sourceTree = "<group>"; };
-		305D1AA42256452C0016EF25 /* PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
-		305D1AA52256452C0016EF25 /* PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageView.m; sourceTree = "<group>"; };
-		305D1AA8225645C70016EF25 /* Search.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
-		305D1AA9225645C70016EF25 /* Search.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
-		305D1AAC225646600016EF25 /* ProductImpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductImpression.h; sourceTree = "<group>"; };
-		305D1AAD225646600016EF25 /* ProductImpression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductImpression.m; sourceTree = "<group>"; };
-		305D1AB0225646F30016EF25 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
-		305D1AB1225646F30016EF25 /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
-		305D1AB422564AE20016EF25 /* ProductClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductClick.h; sourceTree = "<group>"; };
-		305D1AB522564AE20016EF25 /* ProductClick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductClick.m; sourceTree = "<group>"; };
-		305D1AB822564C950016EF25 /* ProductView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductView.h; sourceTree = "<group>"; };
-		305D1AB922564C950016EF25 /* ProductView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductView.m; sourceTree = "<group>"; };
-		305D1ABC22564DB10016EF25 /* ProductViewDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductViewDetails.h; sourceTree = "<group>"; };
-		305D1ABD22564DB10016EF25 /* ProductViewDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductViewDetails.m; sourceTree = "<group>"; };
-		305D1AC02256548F0016EF25 /* ProductCustomization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductCustomization.h; sourceTree = "<group>"; };
-		305D1AC12256548F0016EF25 /* ProductCustomization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductCustomization.m; sourceTree = "<group>"; };
-		305D1AC4225656110016EF25 /* AddToCart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddToCart.h; sourceTree = "<group>"; };
-		305D1AC5225656110016EF25 /* AddToCart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddToCart.m; sourceTree = "<group>"; };
-		305D1AC8225657A70016EF25 /* RemoveFromCart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoveFromCart.h; sourceTree = "<group>"; };
-		305D1AC9225657A70016EF25 /* RemoveFromCart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoveFromCart.m; sourceTree = "<group>"; };
-		305D1ACC225658930016EF25 /* Subscription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Subscription.h; sourceTree = "<group>"; };
-		305D1ACD225658930016EF25 /* Subscription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Subscription.m; sourceTree = "<group>"; };
-		305D1AD0225659A00016EF25 /* Transaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
-		305D1AD1225659A00016EF25 /* Transaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
-		305D1AD422565ACD0016EF25 /* Refund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Refund.h; sourceTree = "<group>"; };
-		305D1AD522565ACD0016EF25 /* Refund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Refund.m; sourceTree = "<group>"; };
+		305D1A9C225643AE0016EF25 /* VSDKPurchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPurchase.h; sourceTree = "<group>"; };
+		305D1A9D225643AE0016EF25 /* VSDKPurchase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPurchase.m; sourceTree = "<group>"; };
+		305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTrackingEvent.h; sourceTree = "<group>"; };
+		305D1AA1225643F70016EF25 /* VSDKTrackingEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTrackingEvent.m; sourceTree = "<group>"; };
+		305D1AA42256452C0016EF25 /* VSDKPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPageView.h; sourceTree = "<group>"; };
+		305D1AA52256452C0016EF25 /* VSDKPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPageView.m; sourceTree = "<group>"; };
+		305D1AA8225645C70016EF25 /* VSDKSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKSearch.h; sourceTree = "<group>"; };
+		305D1AA9225645C70016EF25 /* VSDKSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKSearch.m; sourceTree = "<group>"; };
+		305D1AAC225646600016EF25 /* VSDKProductImpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductImpression.h; sourceTree = "<group>"; };
+		305D1AAD225646600016EF25 /* VSDKProductImpression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductImpression.m; sourceTree = "<group>"; };
+		305D1AB0225646F30016EF25 /* VSDKProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProduct.h; sourceTree = "<group>"; };
+		305D1AB1225646F30016EF25 /* VSDKProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProduct.m; sourceTree = "<group>"; };
+		305D1AB422564AE20016EF25 /* VSDKProductClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductClick.h; sourceTree = "<group>"; };
+		305D1AB522564AE20016EF25 /* VSDKProductClick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductClick.m; sourceTree = "<group>"; };
+		305D1AB822564C950016EF25 /* VSDKProductView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductView.h; sourceTree = "<group>"; };
+		305D1AB922564C950016EF25 /* VSDKProductView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductView.m; sourceTree = "<group>"; };
+		305D1ABC22564DB10016EF25 /* VSDKProductViewDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductViewDetails.h; sourceTree = "<group>"; };
+		305D1ABD22564DB10016EF25 /* VSDKProductViewDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductViewDetails.m; sourceTree = "<group>"; };
+		305D1AC02256548F0016EF25 /* VSDKProductCustomization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductCustomization.h; sourceTree = "<group>"; };
+		305D1AC12256548F0016EF25 /* VSDKProductCustomization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductCustomization.m; sourceTree = "<group>"; };
+		305D1AC4225656110016EF25 /* VSDKAddToCart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKAddToCart.h; sourceTree = "<group>"; };
+		305D1AC5225656110016EF25 /* VSDKAddToCart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKAddToCart.m; sourceTree = "<group>"; };
+		305D1AC8225657A70016EF25 /* VSDKRemoveFromCart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKRemoveFromCart.h; sourceTree = "<group>"; };
+		305D1AC9225657A70016EF25 /* VSDKRemoveFromCart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKRemoveFromCart.m; sourceTree = "<group>"; };
+		305D1ACC225658930016EF25 /* VSDKSubscription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKSubscription.h; sourceTree = "<group>"; };
+		305D1ACD225658930016EF25 /* VSDKSubscription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKSubscription.m; sourceTree = "<group>"; };
+		305D1AD0225659A00016EF25 /* VSDKTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTransaction.h; sourceTree = "<group>"; };
+		305D1AD1225659A00016EF25 /* VSDKTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTransaction.m; sourceTree = "<group>"; };
+		305D1AD422565ACD0016EF25 /* VSDKRefund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKRefund.h; sourceTree = "<group>"; };
+		305D1AD522565ACD0016EF25 /* VSDKRefund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKRefund.m; sourceTree = "<group>"; };
 		B1432006E874289B32AE9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -125,36 +125,36 @@
 		305D1A9B225643870016EF25 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				305D1A9C225643AE0016EF25 /* Purchase.h */,
-				305D1A9D225643AE0016EF25 /* Purchase.m */,
-				305D1AA0225643F70016EF25 /* TrackingEvent.h */,
-				305D1AA1225643F70016EF25 /* TrackingEvent.m */,
-				305D1AA42256452C0016EF25 /* PageView.h */,
-				305D1AA52256452C0016EF25 /* PageView.m */,
-				305D1AA8225645C70016EF25 /* Search.h */,
-				305D1AAC225646600016EF25 /* ProductImpression.h */,
-				305D1AAD225646600016EF25 /* ProductImpression.m */,
-				305D1AA9225645C70016EF25 /* Search.m */,
-				305D1AB0225646F30016EF25 /* Product.h */,
-				305D1AB1225646F30016EF25 /* Product.m */,
-				305D1AB422564AE20016EF25 /* ProductClick.h */,
-				305D1AB822564C950016EF25 /* ProductView.h */,
-				305D1AC02256548F0016EF25 /* ProductCustomization.h */,
-				305D1AC4225656110016EF25 /* AddToCart.h */,
-				305D1AC8225657A70016EF25 /* RemoveFromCart.h */,
-				305D1AC9225657A70016EF25 /* RemoveFromCart.m */,
-				305D1AC5225656110016EF25 /* AddToCart.m */,
-				305D1AC12256548F0016EF25 /* ProductCustomization.m */,
-				305D1ABC22564DB10016EF25 /* ProductViewDetails.h */,
-				305D1ABD22564DB10016EF25 /* ProductViewDetails.m */,
-				305D1AD422565ACD0016EF25 /* Refund.h */,
-				305D1AD522565ACD0016EF25 /* Refund.m */,
-				305D1AB922564C950016EF25 /* ProductView.m */,
-				305D1AB522564AE20016EF25 /* ProductClick.m */,
-				305D1ACC225658930016EF25 /* Subscription.h */,
-				305D1AD0225659A00016EF25 /* Transaction.h */,
-				305D1AD1225659A00016EF25 /* Transaction.m */,
-				305D1ACD225658930016EF25 /* Subscription.m */,
+				305D1A9C225643AE0016EF25 /* VSDKPurchase.h */,
+				305D1A9D225643AE0016EF25 /* VSDKPurchase.m */,
+				305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */,
+				305D1AA1225643F70016EF25 /* VSDKTrackingEvent.m */,
+				305D1AA42256452C0016EF25 /* VSDKPageView.h */,
+				305D1AA52256452C0016EF25 /* VSDKPageView.m */,
+				305D1AA8225645C70016EF25 /* VSDKSearch.h */,
+				305D1AAC225646600016EF25 /* VSDKProductImpression.h */,
+				305D1AAD225646600016EF25 /* VSDKProductImpression.m */,
+				305D1AA9225645C70016EF25 /* VSDKSearch.m */,
+				305D1AB0225646F30016EF25 /* VSDKProduct.h */,
+				305D1AB1225646F30016EF25 /* VSDKProduct.m */,
+				305D1AB422564AE20016EF25 /* VSDKProductClick.h */,
+				305D1AB822564C950016EF25 /* VSDKProductView.h */,
+				305D1AC02256548F0016EF25 /* VSDKProductCustomization.h */,
+				305D1AC4225656110016EF25 /* VSDKAddToCart.h */,
+				305D1AC8225657A70016EF25 /* VSDKRemoveFromCart.h */,
+				305D1AC9225657A70016EF25 /* VSDKRemoveFromCart.m */,
+				305D1AC5225656110016EF25 /* VSDKAddToCart.m */,
+				305D1AC12256548F0016EF25 /* VSDKProductCustomization.m */,
+				305D1ABC22564DB10016EF25 /* VSDKProductViewDetails.h */,
+				305D1ABD22564DB10016EF25 /* VSDKProductViewDetails.m */,
+				305D1AD422565ACD0016EF25 /* VSDKRefund.h */,
+				305D1AD522565ACD0016EF25 /* VSDKRefund.m */,
+				305D1AB922564C950016EF25 /* VSDKProductView.m */,
+				305D1AB522564AE20016EF25 /* VSDKProductClick.m */,
+				305D1ACC225658930016EF25 /* VSDKSubscription.h */,
+				305D1AD0225659A00016EF25 /* VSDKTransaction.h */,
+				305D1AD1225659A00016EF25 /* VSDKTransaction.m */,
+				305D1ACD225658930016EF25 /* VSDKSubscription.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,23 +205,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				305D1AB2225646F30016EF25 /* Product.h in Headers */,
-				305D1ABA22564C950016EF25 /* ProductView.h in Headers */,
-				305D1AC22256548F0016EF25 /* ProductCustomization.h in Headers */,
-				305D1AC6225656110016EF25 /* AddToCart.h in Headers */,
-				305D1AAE225646600016EF25 /* ProductImpression.h in Headers */,
-				305D1A9E225643AE0016EF25 /* Purchase.h in Headers */,
+				305D1AB2225646F30016EF25 /* VSDKProduct.h in Headers */,
+				305D1ABA22564C950016EF25 /* VSDKProductView.h in Headers */,
+				305D1AC22256548F0016EF25 /* VSDKProductCustomization.h in Headers */,
+				305D1AC6225656110016EF25 /* VSDKAddToCart.h in Headers */,
+				305D1AAE225646600016EF25 /* VSDKProductImpression.h in Headers */,
+				305D1A9E225643AE0016EF25 /* VSDKPurchase.h in Headers */,
 				B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */,
-				305D1AD622565ACD0016EF25 /* Refund.h in Headers */,
-				305D1AAA225645C70016EF25 /* Search.h in Headers */,
-				305D1AA2225643F70016EF25 /* TrackingEvent.h in Headers */,
-				305D1AD2225659A00016EF25 /* Transaction.h in Headers */,
+				305D1AD622565ACD0016EF25 /* VSDKRefund.h in Headers */,
+				305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */,
+				305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */,
+				305D1AD2225659A00016EF25 /* VSDKTransaction.h in Headers */,
 				304FEFA22254B8AB00ECF86E /* VSDKInstance.h in Headers */,
-				305D1ACA225657A70016EF25 /* RemoveFromCart.h in Headers */,
-				305D1ABE22564DB10016EF25 /* ProductViewDetails.h in Headers */,
-				305D1ACE225658930016EF25 /* Subscription.h in Headers */,
-				305D1AA62256452C0016EF25 /* PageView.h in Headers */,
-				305D1AB622564AE20016EF25 /* ProductClick.h in Headers */,
+				305D1ACA225657A70016EF25 /* VSDKRemoveFromCart.h in Headers */,
+				305D1ABE22564DB10016EF25 /* VSDKProductViewDetails.h in Headers */,
+				305D1ACE225658930016EF25 /* VSDKSubscription.h in Headers */,
+				305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */,
+				305D1AB622564AE20016EF25 /* VSDKProductClick.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,22 +312,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				305D1AB3225646F30016EF25 /* Product.m in Sources */,
-				305D1A9F225643AE0016EF25 /* Purchase.m in Sources */,
-				305D1ACF225658930016EF25 /* Subscription.m in Sources */,
-				305D1AD3225659A00016EF25 /* Transaction.m in Sources */,
-				305D1AC32256548F0016EF25 /* ProductCustomization.m in Sources */,
-				305D1ACB225657A70016EF25 /* RemoveFromCart.m in Sources */,
-				305D1AA72256452C0016EF25 /* PageView.m in Sources */,
-				305D1AD722565ACD0016EF25 /* Refund.m in Sources */,
-				305D1AC7225656110016EF25 /* AddToCart.m in Sources */,
-				305D1AAB225645C70016EF25 /* Search.m in Sources */,
-				305D1AB722564AE20016EF25 /* ProductClick.m in Sources */,
-				305D1ABF22564DB10016EF25 /* ProductViewDetails.m in Sources */,
+				305D1AB3225646F30016EF25 /* VSDKProduct.m in Sources */,
+				305D1A9F225643AE0016EF25 /* VSDKPurchase.m in Sources */,
+				305D1ACF225658930016EF25 /* VSDKSubscription.m in Sources */,
+				305D1AD3225659A00016EF25 /* VSDKTransaction.m in Sources */,
+				305D1AC32256548F0016EF25 /* VSDKProductCustomization.m in Sources */,
+				305D1ACB225657A70016EF25 /* VSDKRemoveFromCart.m in Sources */,
+				305D1AA72256452C0016EF25 /* VSDKPageView.m in Sources */,
+				305D1AD722565ACD0016EF25 /* VSDKRefund.m in Sources */,
+				305D1AC7225656110016EF25 /* VSDKAddToCart.m in Sources */,
+				305D1AAB225645C70016EF25 /* VSDKSearch.m in Sources */,
+				305D1AB722564AE20016EF25 /* VSDKProductClick.m in Sources */,
+				305D1ABF22564DB10016EF25 /* VSDKProductViewDetails.m in Sources */,
 				304FEFA32254B8AB00ECF86E /* VSDKInstance.m in Sources */,
-				305D1AAF225646600016EF25 /* ProductImpression.m in Sources */,
-				305D1AA3225643F70016EF25 /* TrackingEvent.m in Sources */,
-				305D1ABB22564C950016EF25 /* ProductView.m in Sources */,
+				305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */,
+				305D1AA3225643F70016EF25 /* VSDKTrackingEvent.m in Sources */,
+				305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

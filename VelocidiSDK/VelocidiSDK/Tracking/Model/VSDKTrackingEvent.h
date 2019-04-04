@@ -1,5 +1,5 @@
 //
-//  TrackingEvent.h
+//  VSDKTrackingEvent.h
 //  VelocidiSDK
 //
 //  Created by Duarte Pinto on 04/04/2019.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TrackingEvent : NSObject
+@interface VSDKTrackingEvent : NSObject
 
 @property NSString *clientId;
 @property NSString *siteId;

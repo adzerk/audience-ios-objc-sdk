@@ -1,5 +1,5 @@
 //
-//  Transaction.h
+//  VSDKTransaction.h
 //  VelocidiSDK
 //
 //  Created by Duarte Pinto on 04/04/2019.
@@ -16,7 +16,7 @@ typedef struct {
     float value;
 } Voucher;
 
-@interface Transaction : NSObject
+@interface VSDKTransaction : NSObject
 
 @property NSString *transactionId;
 @property float price;

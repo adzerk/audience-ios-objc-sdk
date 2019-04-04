@@ -1,19 +1,19 @@
 //
-//  ProductImpression.h
+//  VSDKProductView.h
 //  VelocidiSDK
 //
 //  Created by Duarte Pinto on 04/04/2019.
 //  Copyright © 2019 Velocidi. All rights reserved.
 //
 
-#import "TrackingEvent.h"
-#import "Product.h"
+#import "VSDKTrackingEvent.h"
+#import "VSDKProduct.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ProductImpression : TrackingEvent
+@interface VSDKProductView : VSDKTrackingEvent
 
-@property NSMutableArray *products;
+@property VSDKProduct *product;
 
 @end
 

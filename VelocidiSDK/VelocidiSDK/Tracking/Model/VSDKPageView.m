@@ -1,13 +1,13 @@
 //
-//  ProductCustomization.m
+//  VSDKPageView.m
 //  VelocidiSDK
 //
 //  Created by Duarte Pinto on 04/04/2019.
 //  Copyright © 2019 Velocidi. All rights reserved.
 //
 
-#import "ProductCustomization.h"
+#import "VSDKPageView.h"
 
-@implementation ProductCustomization
+@implementation VSDKPageView
 
 @end

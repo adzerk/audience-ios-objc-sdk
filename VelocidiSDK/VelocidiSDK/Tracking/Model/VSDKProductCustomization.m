@@ -1,13 +1,13 @@
 //
-//  ProductImpression.m
+//  VSDKProductCustomization.m
 //  VelocidiSDK
 //
 //  Created by Duarte Pinto on 04/04/2019.
 //  Copyright © 2019 Velocidi. All rights reserved.
 //
 
-#import "ProductImpression.h"
+#import "VSDKProductCustomization.h"
 
-@implementation ProductImpression
+@implementation VSDKProductCustomization
 
 @end

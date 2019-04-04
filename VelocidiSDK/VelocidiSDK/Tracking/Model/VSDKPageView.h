@@ -1,16 +1,16 @@
 //
-//  PageView.h
+//  VSDKPageView.h
 //  VelocidiSDK
 //
 //  Created by Duarte Pinto on 04/04/2019.
 //  Copyright © 2019 Velocidi. All rights reserved.
 //
 
-#import "TrackingEvent.h"
+#import "VSDKTrackingEvent.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PageView : TrackingEvent
+@interface VSDKPageView : VSDKTrackingEvent
 
 @property NSString *location;
 @property NSString *title;

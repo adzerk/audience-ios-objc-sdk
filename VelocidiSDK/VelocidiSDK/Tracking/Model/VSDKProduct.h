@@ -1,5 +1,5 @@
 //
-//  Product.h
+//  VSDKProduct.h
 //  VelocidiSDK
 //
 //  Created by Duarte Pinto on 04/04/2019.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Product : NSObject
+@interface VSDKProduct : NSObject
 
 @property NSString *productId; //Required
 @property NSString *name;

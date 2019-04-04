@@ -6,8 +6,8 @@
 //  Copyright © 2019 Velocidi. All rights reserved.
 //
 
-#import "Purchase.h"
+#import "VSDKPurchase.h"
 
-@implementation Purchase
+@implementation VSDKPurchase
 
 @end
