@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *refundType;
 @property NSMutableArray *products;
-@property VSDKTransaction *refundType;
+@property VSDKTransaction *transaction;
 
 @end
 

@@ -39,8 +39,14 @@
 		305D1AD3225659A00016EF25 /* VSDKTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD1225659A00016EF25 /* VSDKTransaction.m */; };
 		305D1AD622565ACD0016EF25 /* VSDKRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD422565ACD0016EF25 /* VSDKRefund.h */; };
 		305D1AD722565ACD0016EF25 /* VSDKRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD522565ACD0016EF25 /* VSDKRefund.m */; };
+		B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = B143296E8758378F3EFC5119 /* VSDKVoucher.m */; };
 		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327F8581E7874D34E17F5 /* VSDKConfig.h */; };
+		B1432933F9A4DC1731F53178 /* VSDKVoucher.h in Headers */ = {isa = PBXBuildFile; fileRef = B143285B3ECF40673F465F6C /* VSDKVoucher.h */; };
 		B143293FDBB4B78C3308910F /* VelocidiSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */; };
+		B1432AE2322D92448290169D /* VSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */; };
+		B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = B14328D0589594344160CA2B /* VSDKCustomization.h */; };
+		B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */; };
 		B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14322053369E2F8B07BD704 /* VelocidiSDK.framework */; };
 		F29C1077FFD684764D3C1209 /* libPods-VelocidiSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37C4B67FEF9F78D62791BC68 /* libPods-VelocidiSDK.a */; };
 /* End PBXBuildFile section */
@@ -93,7 +99,13 @@
 		B1432006E874289B32AE9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKCustomization.m; sourceTree = "<group>"; };
 		B143269D9047D62CF45FC4FA /* VelocidiSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VelocidiSDK.h; sourceTree = "<group>"; };
+		B14327F8581E7874D34E17F5 /* VSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKConfig.h; sourceTree = "<group>"; };
+		B143285B3ECF40673F465F6C /* VSDKVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKVoucher.h; sourceTree = "<group>"; };
+		B14328D0589594344160CA2B /* VSDKCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKCustomization.h; sourceTree = "<group>"; };
+		B143296E8758378F3EFC5119 /* VSDKVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKVoucher.m; sourceTree = "<group>"; };
+		B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKConfig.m; sourceTree = "<group>"; };
 		B1432DC5BB2B2B22F95EF53B /* VelocidiSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelocidiSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VelocidiSDKTests.m; sourceTree = "<group>"; };
 		B745A135178408575C4F96EE /* Pods-VelocidiSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +182,10 @@
 				305D1AD0225659A00016EF25 /* VSDKTransaction.h */,
 				305D1AD1225659A00016EF25 /* VSDKTransaction.m */,
 				305D1ACD225658930016EF25 /* VSDKSubscription.m */,
+				B143296E8758378F3EFC5119 /* VSDKVoucher.m */,
+				B143285B3ECF40673F465F6C /* VSDKVoucher.h */,
+				B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */,
+				B14328D0589594344160CA2B /* VSDKCustomization.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +227,8 @@
 				B143269D9047D62CF45FC4FA /* VelocidiSDK.h */,
 				304FEFA02254B8AB00ECF86E /* VSDKInstance.h */,
 				304FEFA12254B8AB00ECF86E /* VSDKInstance.m */,
+				B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */,
+				B14327F8581E7874D34E17F5 /* VSDKConfig.h */,
 			);
 			path = VelocidiSDK;
 			sourceTree = "<group>";
@@ -247,6 +265,9 @@
 				305D1ACE225658930016EF25 /* VSDKSubscription.h in Headers */,
 				305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */,
 				305D1AB622564AE20016EF25 /* VSDKProductClick.h in Headers */,
+				B1432933F9A4DC1731F53178 /* VSDKVoucher.h in Headers */,
+				B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */,
+				B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +400,9 @@
 				305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */,
 				305D1AA3225643F70016EF25 /* VSDKTrackingEvent.m in Sources */,
 				305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */,
+				B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */,
+				B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */,
+				B1432AE2322D92448290169D /* VSDKConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

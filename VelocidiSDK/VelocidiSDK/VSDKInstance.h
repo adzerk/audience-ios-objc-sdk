@@ -7,21 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VSDKConfig.h";
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef struct Config{
-    NSString *trackingHost;
-    NSString *matchHost;
-} CDPConfig ;
 
 @interface VSDKInstance : NSObject
 
-@property this instance;
-@property config;
+@property VSDKInstance *instance;
+@property VSDKConfig *config;
 
--
-- (VSDKInstance) getInstance;
+//- (void)getInstance;
 
 @end
 

@@ -7,14 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VSDKVoucher.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef struct {
-    NSString *voucherId;
-    float percentage;
-    float value;
-} Voucher;
 
 @interface VSDKTransaction : NSObject
 
@@ -24,7 +20,7 @@ typedef struct {
 @property NSString *currency;
 @property float tax;
 @property float shipping;
-@property Voucher voucher;
+@property VSDKVoucher *voucher;
 @property NSString *paymentMethod;
 @property NSString *paymentDetails;
 

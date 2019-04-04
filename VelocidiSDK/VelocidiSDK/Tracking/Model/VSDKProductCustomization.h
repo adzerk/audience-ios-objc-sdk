@@ -8,20 +8,14 @@
 
 #import "VSDKTrackingEvent.h"
 #import "VSDKProduct.h"
+#import "VSDKCustomization.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
-typedef struct {
-    NSString *name;
-    NSString *value;
-    float price;
-    NSString *currency;
-} Customization;
 
 @interface VSDKProductCustomization : VSDKTrackingEvent
 
 @property VSDKProduct *product;
-@property Customization productCustomization;
+@property VSDKCustomization *productCustomization;
 
 @end
 
