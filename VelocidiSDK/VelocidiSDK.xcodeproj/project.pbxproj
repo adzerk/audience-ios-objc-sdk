@@ -7,10 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		304FEFA22254B8AB00ECF86E /* VSDKInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 304FEFA02254B8AB00ECF86E /* VSDKInstance.h */; };
+		304FEFA32254B8AB00ECF86E /* VSDKInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FEFA12254B8AB00ECF86E /* VSDKInstance.m */; };
+		305D1A9E225643AE0016EF25 /* Purchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1A9C225643AE0016EF25 /* Purchase.h */; };
+		305D1A9F225643AE0016EF25 /* Purchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A9D225643AE0016EF25 /* Purchase.m */; };
+		305D1AA2225643F70016EF25 /* TrackingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA0225643F70016EF25 /* TrackingEvent.h */; };
+		305D1AA3225643F70016EF25 /* TrackingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA1225643F70016EF25 /* TrackingEvent.m */; };
+		305D1AA62256452C0016EF25 /* PageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA42256452C0016EF25 /* PageView.h */; };
+		305D1AA72256452C0016EF25 /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA52256452C0016EF25 /* PageView.m */; };
+		305D1AAA225645C70016EF25 /* Search.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA8225645C70016EF25 /* Search.h */; };
+		305D1AAB225645C70016EF25 /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA9225645C70016EF25 /* Search.m */; };
+		305D1AAE225646600016EF25 /* ProductImpression.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AAC225646600016EF25 /* ProductImpression.h */; };
+		305D1AAF225646600016EF25 /* ProductImpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AAD225646600016EF25 /* ProductImpression.m */; };
+		305D1AB2225646F30016EF25 /* Product.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB0225646F30016EF25 /* Product.h */; };
+		305D1AB3225646F30016EF25 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB1225646F30016EF25 /* Product.m */; };
+		305D1AB622564AE20016EF25 /* ProductClick.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB422564AE20016EF25 /* ProductClick.h */; };
+		305D1AB722564AE20016EF25 /* ProductClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB522564AE20016EF25 /* ProductClick.m */; };
+		305D1ABA22564C950016EF25 /* ProductView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB822564C950016EF25 /* ProductView.h */; };
+		305D1ABB22564C950016EF25 /* ProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB922564C950016EF25 /* ProductView.m */; };
+		305D1ABE22564DB10016EF25 /* ProductViewDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1ABC22564DB10016EF25 /* ProductViewDetails.h */; };
+		305D1ABF22564DB10016EF25 /* ProductViewDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1ABD22564DB10016EF25 /* ProductViewDetails.m */; };
+		305D1AC22256548F0016EF25 /* ProductCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC02256548F0016EF25 /* ProductCustomization.h */; };
+		305D1AC32256548F0016EF25 /* ProductCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC12256548F0016EF25 /* ProductCustomization.m */; };
+		305D1AC6225656110016EF25 /* AddToCart.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC4225656110016EF25 /* AddToCart.h */; };
+		305D1AC7225656110016EF25 /* AddToCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC5225656110016EF25 /* AddToCart.m */; };
+		305D1ACA225657A70016EF25 /* RemoveFromCart.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC8225657A70016EF25 /* RemoveFromCart.h */; };
+		305D1ACB225657A70016EF25 /* RemoveFromCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC9225657A70016EF25 /* RemoveFromCart.m */; };
+		305D1ACE225658930016EF25 /* Subscription.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1ACC225658930016EF25 /* Subscription.h */; };
+		305D1ACF225658930016EF25 /* Subscription.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1ACD225658930016EF25 /* Subscription.m */; };
+		305D1AD2225659A00016EF25 /* Transaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD0225659A00016EF25 /* Transaction.h */; };
+		305D1AD3225659A00016EF25 /* Transaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD1225659A00016EF25 /* Transaction.m */; };
+		305D1AD622565ACD0016EF25 /* Refund.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD422565ACD0016EF25 /* Refund.h */; };
+		305D1AD722565ACD0016EF25 /* Refund.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD522565ACD0016EF25 /* Refund.m */; };
 		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1432862B3257F884377D2A3 /* HelloWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432DF3D8E34B8657A67575 /* HelloWorld.m */; };
 		B143293FDBB4B78C3308910F /* VelocidiSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */; };
-		B1432E25175EE1765B6D7321 /* HelloWorld.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327FD23C2DD5E83D9192C /* HelloWorld.h */; };
 		B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14322053369E2F8B07BD704 /* VelocidiSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +55,43 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		304FEFA02254B8AB00ECF86E /* VSDKInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKInstance.h; sourceTree = "<group>"; };
+		304FEFA12254B8AB00ECF86E /* VSDKInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKInstance.m; sourceTree = "<group>"; };
+		305D1A9C225643AE0016EF25 /* Purchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Purchase.h; sourceTree = "<group>"; };
+		305D1A9D225643AE0016EF25 /* Purchase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Purchase.m; sourceTree = "<group>"; };
+		305D1AA0225643F70016EF25 /* TrackingEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrackingEvent.h; sourceTree = "<group>"; };
+		305D1AA1225643F70016EF25 /* TrackingEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrackingEvent.m; sourceTree = "<group>"; };
+		305D1AA42256452C0016EF25 /* PageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageView.h; sourceTree = "<group>"; };
+		305D1AA52256452C0016EF25 /* PageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PageView.m; sourceTree = "<group>"; };
+		305D1AA8225645C70016EF25 /* Search.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		305D1AA9225645C70016EF25 /* Search.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
+		305D1AAC225646600016EF25 /* ProductImpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductImpression.h; sourceTree = "<group>"; };
+		305D1AAD225646600016EF25 /* ProductImpression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductImpression.m; sourceTree = "<group>"; };
+		305D1AB0225646F30016EF25 /* Product.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		305D1AB1225646F30016EF25 /* Product.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		305D1AB422564AE20016EF25 /* ProductClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductClick.h; sourceTree = "<group>"; };
+		305D1AB522564AE20016EF25 /* ProductClick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductClick.m; sourceTree = "<group>"; };
+		305D1AB822564C950016EF25 /* ProductView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductView.h; sourceTree = "<group>"; };
+		305D1AB922564C950016EF25 /* ProductView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductView.m; sourceTree = "<group>"; };
+		305D1ABC22564DB10016EF25 /* ProductViewDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductViewDetails.h; sourceTree = "<group>"; };
+		305D1ABD22564DB10016EF25 /* ProductViewDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductViewDetails.m; sourceTree = "<group>"; };
+		305D1AC02256548F0016EF25 /* ProductCustomization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductCustomization.h; sourceTree = "<group>"; };
+		305D1AC12256548F0016EF25 /* ProductCustomization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductCustomization.m; sourceTree = "<group>"; };
+		305D1AC4225656110016EF25 /* AddToCart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddToCart.h; sourceTree = "<group>"; };
+		305D1AC5225656110016EF25 /* AddToCart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddToCart.m; sourceTree = "<group>"; };
+		305D1AC8225657A70016EF25 /* RemoveFromCart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoveFromCart.h; sourceTree = "<group>"; };
+		305D1AC9225657A70016EF25 /* RemoveFromCart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoveFromCart.m; sourceTree = "<group>"; };
+		305D1ACC225658930016EF25 /* Subscription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Subscription.h; sourceTree = "<group>"; };
+		305D1ACD225658930016EF25 /* Subscription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Subscription.m; sourceTree = "<group>"; };
+		305D1AD0225659A00016EF25 /* Transaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Transaction.h; sourceTree = "<group>"; };
+		305D1AD1225659A00016EF25 /* Transaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Transaction.m; sourceTree = "<group>"; };
+		305D1AD422565ACD0016EF25 /* Refund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Refund.h; sourceTree = "<group>"; };
+		305D1AD522565ACD0016EF25 /* Refund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Refund.m; sourceTree = "<group>"; };
 		B1432006E874289B32AE9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B143269D9047D62CF45FC4FA /* VelocidiSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VelocidiSDK.h; sourceTree = "<group>"; };
-		B14327FD23C2DD5E83D9192C /* HelloWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorld.h; sourceTree = "<group>"; };
 		B1432DC5BB2B2B22F95EF53B /* VelocidiSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelocidiSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1432DF3D8E34B8657A67575 /* HelloWorld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelloWorld.m; sourceTree = "<group>"; };
 		B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VelocidiSDKTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +114,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		305D1A9A225643460016EF25 /* Tracking */ = {
+			isa = PBXGroup;
+			children = (
+				305D1A9B225643870016EF25 /* Model */,
+			);
+			path = Tracking;
+			sourceTree = "<group>";
+		};
+		305D1A9B225643870016EF25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				305D1A9C225643AE0016EF25 /* Purchase.h */,
+				305D1A9D225643AE0016EF25 /* Purchase.m */,
+				305D1AA0225643F70016EF25 /* TrackingEvent.h */,
+				305D1AA1225643F70016EF25 /* TrackingEvent.m */,
+				305D1AA42256452C0016EF25 /* PageView.h */,
+				305D1AA52256452C0016EF25 /* PageView.m */,
+				305D1AA8225645C70016EF25 /* Search.h */,
+				305D1AAC225646600016EF25 /* ProductImpression.h */,
+				305D1AAD225646600016EF25 /* ProductImpression.m */,
+				305D1AA9225645C70016EF25 /* Search.m */,
+				305D1AB0225646F30016EF25 /* Product.h */,
+				305D1AB1225646F30016EF25 /* Product.m */,
+				305D1AB422564AE20016EF25 /* ProductClick.h */,
+				305D1AB822564C950016EF25 /* ProductView.h */,
+				305D1AC02256548F0016EF25 /* ProductCustomization.h */,
+				305D1AC4225656110016EF25 /* AddToCart.h */,
+				305D1AC8225657A70016EF25 /* RemoveFromCart.h */,
+				305D1AC9225657A70016EF25 /* RemoveFromCart.m */,
+				305D1AC5225656110016EF25 /* AddToCart.m */,
+				305D1AC12256548F0016EF25 /* ProductCustomization.m */,
+				305D1ABC22564DB10016EF25 /* ProductViewDetails.h */,
+				305D1ABD22564DB10016EF25 /* ProductViewDetails.m */,
+				305D1AD422565ACD0016EF25 /* Refund.h */,
+				305D1AD522565ACD0016EF25 /* Refund.m */,
+				305D1AB922564C950016EF25 /* ProductView.m */,
+				305D1AB522564AE20016EF25 /* ProductClick.m */,
+				305D1ACC225658930016EF25 /* Subscription.h */,
+				305D1AD0225659A00016EF25 /* Transaction.h */,
+				305D1AD1225659A00016EF25 /* Transaction.m */,
+				305D1ACD225658930016EF25 /* Subscription.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B14320EE26FDC1F9439181D9 = {
 			isa = PBXGroup;
 			children = (
@@ -84,10 +189,11 @@
 		B1432EFA4D837E1588E42E90 /* VelocidiSDK */ = {
 			isa = PBXGroup;
 			children = (
+				305D1A9A225643460016EF25 /* Tracking */,
 				B14323D6AF36722BBA0B00FE /* Info.plist */,
 				B143269D9047D62CF45FC4FA /* VelocidiSDK.h */,
-				B1432DF3D8E34B8657A67575 /* HelloWorld.m */,
-				B14327FD23C2DD5E83D9192C /* HelloWorld.h */,
+				304FEFA02254B8AB00ECF86E /* VSDKInstance.h */,
+				304FEFA12254B8AB00ECF86E /* VSDKInstance.m */,
 			);
 			path = VelocidiSDK;
 			sourceTree = "<group>";
@@ -99,8 +205,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305D1AB2225646F30016EF25 /* Product.h in Headers */,
+				305D1ABA22564C950016EF25 /* ProductView.h in Headers */,
+				305D1AC22256548F0016EF25 /* ProductCustomization.h in Headers */,
+				305D1AC6225656110016EF25 /* AddToCart.h in Headers */,
+				305D1AAE225646600016EF25 /* ProductImpression.h in Headers */,
+				305D1A9E225643AE0016EF25 /* Purchase.h in Headers */,
 				B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */,
-				B1432E25175EE1765B6D7321 /* HelloWorld.h in Headers */,
+				305D1AD622565ACD0016EF25 /* Refund.h in Headers */,
+				305D1AAA225645C70016EF25 /* Search.h in Headers */,
+				305D1AA2225643F70016EF25 /* TrackingEvent.h in Headers */,
+				305D1AD2225659A00016EF25 /* Transaction.h in Headers */,
+				304FEFA22254B8AB00ECF86E /* VSDKInstance.h in Headers */,
+				305D1ACA225657A70016EF25 /* RemoveFromCart.h in Headers */,
+				305D1ABE22564DB10016EF25 /* ProductViewDetails.h in Headers */,
+				305D1ACE225658930016EF25 /* Subscription.h in Headers */,
+				305D1AA62256452C0016EF25 /* PageView.h in Headers */,
+				305D1AB622564AE20016EF25 /* ProductClick.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +312,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1432862B3257F884377D2A3 /* HelloWorld.m in Sources */,
+				305D1AB3225646F30016EF25 /* Product.m in Sources */,
+				305D1A9F225643AE0016EF25 /* Purchase.m in Sources */,
+				305D1ACF225658930016EF25 /* Subscription.m in Sources */,
+				305D1AD3225659A00016EF25 /* Transaction.m in Sources */,
+				305D1AC32256548F0016EF25 /* ProductCustomization.m in Sources */,
+				305D1ACB225657A70016EF25 /* RemoveFromCart.m in Sources */,
+				305D1AA72256452C0016EF25 /* PageView.m in Sources */,
+				305D1AD722565ACD0016EF25 /* Refund.m in Sources */,
+				305D1AC7225656110016EF25 /* AddToCart.m in Sources */,
+				305D1AAB225645C70016EF25 /* Search.m in Sources */,
+				305D1AB722564AE20016EF25 /* ProductClick.m in Sources */,
+				305D1ABF22564DB10016EF25 /* ProductViewDetails.m in Sources */,
+				304FEFA32254B8AB00ECF86E /* VSDKInstance.m in Sources */,
+				305D1AAF225646600016EF25 /* ProductImpression.m in Sources */,
+				305D1AA3225643F70016EF25 /* TrackingEvent.m in Sources */,
+				305D1ABB22564C950016EF25 /* ProductView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
