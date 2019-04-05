@@ -1,4 +1,51 @@
 language: objective-c
-xcode_project: VelocidiSDK.xcodeproj # path to your xcodeproj folder
+os: osx
+xcode_workspace: VelocidiSDK.xcworkspace # path to your xcodeproj folder
 xcode_scheme: VelocidiSDKTests
-xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
+
+script:
+  - xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDKTests clean build test -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+
+before_install:
+  - xcrun instruments -w "iPhone X (${TEST_SDK})" || sleep 15
+
+after_success:
+ - bash <(curl -s https://codecov.io/bash)
+
+jobs:
+  include:
+    - env: 
+        - TEST_SDK=11.0
+      osx_image: xcode9
+    - env: 
+        - TEST_SDK=11.1
+      osx_image: xcode9.1
+    - env: 
+        - TEST_SDK=11.2
+      osx_image: xcode9.2
+    - env: 
+        - TEST_SDK=11.3
+      osx_image: xcode9.3
+    - env: 
+        - TEST_SDK=11.4
+      osx_image: xcode9.4.1
+    - env: 
+        - TEST_SDK=12.0
+      osx_image: xcode10
+    - env: 
+        - TEST_SDK=12.1
+      osx_image: xcode10.1
+    - env: 
+        - TEST_SDK=12.2
+      osx_image: xcode10.2
+    - name: Cocoapods Lint
+      script: 
+        - pod lib lint --verbose VelocidiSDK.podspec
+      after_success: null
+      before_install: null
+notifications:
+  email:
+    recipients:
+      - baco@velocidi.com
+    on_success: never
+    on_failure: change
