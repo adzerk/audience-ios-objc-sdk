@@ -7,17 +7,17 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Client identifier (REQUIRED)
  */
-@property NSString *clientId;
+@property (nonnull) NSString *clientId;
 
 /**
   Client's site identifier (REQUIRED)
  */
-@property NSString *siteId;
+@property (nonnull) NSString *siteId;
 
 /**
   Event type (REQUIRED)
  */
-@property NSString *type;
+@property (class, nonnull, readonly) NSString *type;
 
 @end
 

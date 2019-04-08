@@ -2,4 +2,6 @@
 
 @implementation VSDKRefund
 
+static NSString * _type = @"refund";
+
 @end

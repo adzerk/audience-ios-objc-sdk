@@ -2,4 +2,6 @@
 
 @implementation VSDKProductImpression
 
+static NSString * _type = @"productImpression";
+
 @end

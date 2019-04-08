@@ -2,4 +2,6 @@
 
 @implementation VSDKPageView
 
+static NSString * _type = @"pageView";
+
 @end
