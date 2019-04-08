@@ -12,7 +12,6 @@
 		305D1A9E225643AE0016EF25 /* VSDKPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1A9C225643AE0016EF25 /* VSDKPurchase.h */; };
 		305D1A9F225643AE0016EF25 /* VSDKPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A9D225643AE0016EF25 /* VSDKPurchase.m */; };
 		305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */; };
-		305D1AA3225643F70016EF25 /* VSDKTrackingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA1225643F70016EF25 /* VSDKTrackingEvent.m */; };
 		305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA42256452C0016EF25 /* VSDKPageView.h */; };
 		305D1AA72256452C0016EF25 /* VSDKPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA52256452C0016EF25 /* VSDKPageView.m */; };
 		305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA8225645C70016EF25 /* VSDKSearch.h */; };
@@ -68,7 +67,6 @@
 		305D1A9C225643AE0016EF25 /* VSDKPurchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPurchase.h; sourceTree = "<group>"; };
 		305D1A9D225643AE0016EF25 /* VSDKPurchase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPurchase.m; sourceTree = "<group>"; };
 		305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTrackingEvent.h; sourceTree = "<group>"; };
-		305D1AA1225643F70016EF25 /* VSDKTrackingEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTrackingEvent.m; sourceTree = "<group>"; };
 		305D1AA42256452C0016EF25 /* VSDKPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPageView.h; sourceTree = "<group>"; };
 		305D1AA52256452C0016EF25 /* VSDKPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPageView.m; sourceTree = "<group>"; };
 		305D1AA8225645C70016EF25 /* VSDKSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKSearch.h; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 				305D1A9C225643AE0016EF25 /* VSDKPurchase.h */,
 				305D1A9D225643AE0016EF25 /* VSDKPurchase.m */,
 				305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */,
-				305D1AA1225643F70016EF25 /* VSDKTrackingEvent.m */,
 				305D1AA42256452C0016EF25 /* VSDKPageView.h */,
 				305D1AA52256452C0016EF25 /* VSDKPageView.m */,
 				305D1AA8225645C70016EF25 /* VSDKSearch.h */,
@@ -398,7 +395,6 @@
 				305D1ABF22564DB10016EF25 /* VSDKProductViewDetails.m in Sources */,
 				304FEFA32254B8AB00ECF86E /* VSDKInstance.m in Sources */,
 				305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */,
-				305D1AA3225643F70016EF25 /* VSDKTrackingEvent.m in Sources */,
 				305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */,
 				B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */,
 				B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */,
