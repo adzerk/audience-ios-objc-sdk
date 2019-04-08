@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "VSDKPageView.h"
 
 @interface VelocidiSDKTests : XCTestCase
 
@@ -31,7 +32,7 @@
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
-//        NSLog(@"%@", [[ alloc] init].hello);
+        NSLog(@"%@", [[VSDKPageView alloc] init].type);
     }];
 }
 

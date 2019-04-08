@@ -1,4 +1,5 @@
-#import "VSDKTransaction.h"
+#import "VSDKVoucher.h"
 
 @implementation VSDKVoucher
+
 @end
