@@ -7,8 +7,8 @@
 //
 
 #import "VSDKTrackingEvent.h"
-#import "VSDKProduct.h"
-#import "VSDKCustomization.h"
+@class VSDKProduct;
+@class VSDKCustomization;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VSDKVoucher.h"
+@class VSDKVoucher;
 
 
 NS_ASSUME_NONNULL_BEGIN

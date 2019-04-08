@@ -7,7 +7,7 @@
 //
 
 #import "VSDKTrackingEvent.h"
-#import "VSDKProduct.h"
+@class VSDKProduct;
 
 NS_ASSUME_NONNULL_BEGIN
 

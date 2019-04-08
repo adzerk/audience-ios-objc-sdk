@@ -7,7 +7,7 @@
 //
 
 #import "VSDKTrackingEvent.h"
-#import "VSDKTransaction.h"
+@class VSDKTransaction;
 
 NS_ASSUME_NONNULL_BEGIN
 
