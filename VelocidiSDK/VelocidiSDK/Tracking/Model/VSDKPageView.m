@@ -2,6 +2,6 @@
 
 @implementation VSDKPageView
 
-static NSString * _type = @"pageView";
++ (NSString *) type{ return @"pageView"; }
 
 @end

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Event type (REQUIRED)
  */
-@property (nonnull, readonly) NSString *type;
+@property (class, nonnull, readonly) NSString *type;
 
 @end
 

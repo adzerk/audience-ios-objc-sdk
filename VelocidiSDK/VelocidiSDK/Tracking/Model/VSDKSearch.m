@@ -2,6 +2,6 @@
 
 @implementation VSDKSearch
 
-static NSString * _type = @"search";
++ (NSString *) type { return @"search"; }
 
 @end

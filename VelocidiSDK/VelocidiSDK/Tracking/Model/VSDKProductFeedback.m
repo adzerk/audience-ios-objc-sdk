@@ -2,6 +2,6 @@
 
 @implementation VSDKProductFeedback
 
-static NSString * _type = @"productFeedback";
++ (NSString *) type { return @"productFeedback"; }
 
 @end

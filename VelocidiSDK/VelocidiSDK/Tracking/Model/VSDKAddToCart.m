@@ -2,6 +2,6 @@
 
 @implementation VSDKAddToCart
 
-static NSString * _type = @"addToCart";
++ (NSString *) type { return @"addToCart"; }
 
 @end

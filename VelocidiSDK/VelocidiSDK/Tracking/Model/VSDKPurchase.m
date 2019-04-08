@@ -2,6 +2,6 @@
 
 @implementation VSDKPurchase
 
-static NSString * _type = @"purchase";
++ (NSString *) type { return @"purchase";}
 
 @end

@@ -1,0 +1,6 @@
+framework module VelocidiSDK {
+    umbrella header "VelocidiSDK.h"
+    
+    export *
+    module * { export * }
+}

@@ -2,6 +2,6 @@
 
 @implementation VSDKProductImpression
 
-static NSString * _type = @"productImpression";
++ (NSString *) type { return @"productImpression"; }
 
 @end

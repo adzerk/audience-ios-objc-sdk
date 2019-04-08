@@ -2,6 +2,6 @@
 
 @implementation VSDKProductClick
 
-static NSString * _type = @"productClick";
++ (NSString *) type { return @"productClick"; }
 
 @end

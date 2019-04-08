@@ -2,6 +2,6 @@
 
 @implementation VSDKProductCustomization
 
-static NSString * _type = @"productCustomization";
++ (NSString *) type { return @"productCustomization"; }
 
 @end

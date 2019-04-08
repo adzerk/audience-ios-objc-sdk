@@ -38,6 +38,7 @@
 		305D1AD3225659A00016EF25 /* VSDKTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD1225659A00016EF25 /* VSDKTransaction.m */; };
 		305D1AD622565ACD0016EF25 /* VSDKRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD422565ACD0016EF25 /* VSDKRefund.h */; };
 		305D1AD722565ACD0016EF25 /* VSDKRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD522565ACD0016EF25 /* VSDKRefund.m */; };
+		307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */; };
 		30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C566DF225B9465006CE923 /* VSDKProductFeedback.h */; };
 		30C566E2225B9465006CE923 /* VSDKProductFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C566E0225B9465006CE923 /* VSDKProductFeedback.m */; };
 		B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = B143296E8758378F3EFC5119 /* VSDKVoucher.m */; };
@@ -95,6 +96,8 @@
 		305D1AD1225659A00016EF25 /* VSDKTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTransaction.m; sourceTree = "<group>"; };
 		305D1AD422565ACD0016EF25 /* VSDKRefund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKRefund.h; sourceTree = "<group>"; };
 		305D1AD522565ACD0016EF25 /* VSDKRefund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKRefund.m; sourceTree = "<group>"; };
+		307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTrackingEvent.m; sourceTree = "<group>"; };
+		307325D2225BB525005CEB7D /* VelocidiSDK.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = VelocidiSDK.modulemap; sourceTree = "<group>"; };
 		30C566DF225B9465006CE923 /* VSDKProductFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductFeedback.h; sourceTree = "<group>"; };
 		30C566E0225B9465006CE923 /* VSDKProductFeedback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductFeedback.m; sourceTree = "<group>"; };
 		37C4B67FEF9F78D62791BC68 /* libPods-VelocidiSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VelocidiSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +160,7 @@
 				305D1A9C225643AE0016EF25 /* VSDKPurchase.h */,
 				305D1A9D225643AE0016EF25 /* VSDKPurchase.m */,
 				305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */,
+				307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */,
 				305D1AA42256452C0016EF25 /* VSDKPageView.h */,
 				305D1AA52256452C0016EF25 /* VSDKPageView.m */,
 				305D1AA8225645C70016EF25 /* VSDKSearch.h */,
@@ -227,6 +231,7 @@
 			children = (
 				305D1A9A225643460016EF25 /* Tracking */,
 				B14323D6AF36722BBA0B00FE /* Info.plist */,
+				307325D2225BB525005CEB7D /* VelocidiSDK.modulemap */,
 				B143269D9047D62CF45FC4FA /* VelocidiSDK.h */,
 				304FEFA02254B8AB00ECF86E /* VSDKInstance.h */,
 				304FEFA12254B8AB00ECF86E /* VSDKInstance.m */,
@@ -403,6 +408,7 @@
 				304FEFA32254B8AB00ECF86E /* VSDKInstance.m in Sources */,
 				30C566E2225B9465006CE923 /* VSDKProductFeedback.m in Sources */,
 				305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */,
+				307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */,
 				305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */,
 				B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */,
 				B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */,

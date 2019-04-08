@@ -2,6 +2,6 @@
 
 @implementation VSDKSubscription
 
-static NSString * _type = @"subscription";
++ (NSString *) type { return @"subscription"; }
 
 @end

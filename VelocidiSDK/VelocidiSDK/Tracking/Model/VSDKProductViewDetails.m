@@ -2,6 +2,6 @@
 
 @implementation VSDKProductViewDetails
 
-static NSString * _type = @"productViewDetails";
++ (NSString *) type { return @"productViewDetails"; }
 
 @end
