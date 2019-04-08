@@ -7,10 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-@import VelocidiSDK
-//#import <VelocidiSDK/VelodiciSDK.h>
-//#import "VSDKPageView.h"
-//#import "VSDKSearch.h"
+@import VelocidiSDK;
 
 @interface VelocidiSDKTests : XCTestCase
 
