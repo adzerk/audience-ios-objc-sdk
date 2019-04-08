@@ -5,6 +5,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VSDKProductImpression : VSDKTrackingEvent
 
+/**
+  List of products associated with this Product Impression
+ */
 @property NSMutableArray *products;
 
 @end

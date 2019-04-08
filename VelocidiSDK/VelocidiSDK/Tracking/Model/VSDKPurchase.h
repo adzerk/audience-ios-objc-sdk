@@ -5,6 +5,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VSDKPurchase : VSDKTrackingEvent
 
+/**
+  Product purchased
+ */
 @property VSDKProduct *product;
 
 @end

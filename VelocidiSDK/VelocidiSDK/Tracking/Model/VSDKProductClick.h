@@ -5,6 +5,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VSDKProductClick : VSDKTrackingEvent
 
+/**
+  Product associated with this product click
+ */
 @property VSDKProduct *product;
 
 @end
