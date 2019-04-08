@@ -2,7 +2,6 @@
 
 @implementation VSDKProduct
 
-
-
+int _quantity = 1;
 
 @end

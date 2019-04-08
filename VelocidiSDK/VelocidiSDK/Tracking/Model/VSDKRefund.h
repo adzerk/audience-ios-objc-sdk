@@ -1,5 +1,6 @@
 #import "VSDKTrackingEvent.h"
 @class VSDKTransaction;
+@class VSDKProduct;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   If it is a `partial` refund, the list of products to be refunded must be specified
  */
-@property NSMutableArray *products;
+@property NSMutableArray<VSDKProduct *> *products;
 
 /**
   Transaction associated with this refund

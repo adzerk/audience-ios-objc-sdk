@@ -1,5 +1,6 @@
 #import "VSDKTrackingEvent.h"
 @class VSDKTransaction;
+@class VSDKProduct;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -8,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Products associated with to the Subscription
  */
-@property NSMutableArray *products;
+@property NSMutableArray<VSDKProduct *> *products;
 
 /**
   Transaction associated with to the Subscription

@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Product added to the cart
  */
-@property VSDKProduct *product;
+@property NSMutableArray<VSDKProduct *> *product;
 
 @end
 

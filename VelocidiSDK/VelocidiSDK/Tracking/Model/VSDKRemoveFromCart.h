@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Product removed form the cart
  */
-@property VSDKProduct *product;
+@property NSMutableArray<VSDKProduct *> *product;
 
 @end
 

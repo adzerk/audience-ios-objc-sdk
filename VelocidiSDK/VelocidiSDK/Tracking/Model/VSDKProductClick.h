@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Product associated with this product click
  */
-@property VSDKProduct *product;
+@property NSMutableArray<VSDKProduct *> *product;
 
 @end
 

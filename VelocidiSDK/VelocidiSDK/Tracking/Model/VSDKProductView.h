@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Product associated with this product view
  */
-@property VSDKProduct *product;
+@property NSMutableArray<VSDKProduct *> *products;
 
 @end
 

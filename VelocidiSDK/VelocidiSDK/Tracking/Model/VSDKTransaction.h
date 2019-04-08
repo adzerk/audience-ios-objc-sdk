@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
   Transactiuon identifier (REQUIRED)
- */ @property NSString *transactionId;
+ */ @property (nonnull) NSString *transactionId;
 
 /**
   Transaction total price (after taxes and shipping)

@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Product associated with this product customization
  */
-@property VSDKProduct *product;
+@property NSMutableArray<VSDKProduct *> *product;
 
 /**
   Customization associated with this product customization

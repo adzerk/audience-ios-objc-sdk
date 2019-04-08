@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Product identifier (REQUIRED)
  */
-@property NSString *productId;
+@property (nonnull) NSString *productId;
 
 /**
   Product name
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
   Product parts or subproduct, when the product is an aggregation.
   Should contain instances of VSDKProduct.
  */
-@property NSMutableArray *parts;
+@property NSMutableArray<VSDKProduct *> *parts;
 
 /**
   Product price
@@ -51,9 +51,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *location;
 
 /**
-  Product position in the location (relevante when shown in a list)
+  Product position in the location (relevant when shown in a list)
  */
 @property NSString *position;
+
+/**
+  Quantity of the product (REQUIRED)
+  Default is 1
+ */
+@property int quantity;
 
 /**
   Whether or not the product was suggested by a recommendation.
