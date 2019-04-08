@@ -1,13 +1,5 @@
-//
-//  VSDKInstance.h
-//  VelocidiSDK
-//
-//  Created by Duarte Pinto on 03/04/2019.
-//  Copyright © 2019 Velocidi. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-#import "VSDKConfig.h";
+@class VSDKConfig;
 
 NS_ASSUME_NONNULL_BEGIN
 
