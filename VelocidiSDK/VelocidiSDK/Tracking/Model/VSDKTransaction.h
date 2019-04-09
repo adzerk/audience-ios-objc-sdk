@@ -1,10 +1,9 @@
-#import <Foundation/Foundation.h>
+@import JSONModel;
 @class VSDKVoucher;
-
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKTransaction : NSObject
+@interface VSDKTransaction : JSONModel
 
 /**
   Transactiuon identifier (REQUIRED)

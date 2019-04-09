@@ -1,8 +1,8 @@
-#import <Foundation/Foundation.h>
+@import JSONModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKVoucher : NSObject
+@interface VSDKVoucher : JSONModel
 
 /**
   Identifier of the VOUCHER used

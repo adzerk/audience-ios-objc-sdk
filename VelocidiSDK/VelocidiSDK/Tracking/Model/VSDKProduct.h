@@ -1,8 +1,8 @@
-#import <Foundation/Foundation.h>
+@import JSONModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKProduct : NSObject
+@interface VSDKProduct : JSONModel
 
 /**
   Product identifier (REQUIRED)

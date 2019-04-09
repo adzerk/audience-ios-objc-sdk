@@ -1,9 +1,8 @@
-#import <Foundation/Foundation.h>
-
+@import JSONModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKCustomization : NSObject
+@interface VSDKCustomization : JSONModel
 
 /**
   Product customization name
