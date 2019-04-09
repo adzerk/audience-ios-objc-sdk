@@ -1,7 +1,7 @@
-#import "VSDKVelocidiManager.h"
+#import "VSDKVelocidi.h"
 #import "VSDKConfig.h"
 
-@implementation VSDKVelocidiManager
+@implementation VSDKVelocidi
 
 static VSDKConfig *_config = nil;
 
@@ -13,23 +13,23 @@ static VSDKConfig *_config = nil;
     return _config;
 }
 
-+ (id)sharedManager {
-    static VSDKVelocidiManager *sharedVelocidiManager = nil;
++ (id)start:(VSDKConfig *)config {
+    self.config = config;
+
+    return [self sharedInstance];
+}
+
++ (id)sharedInstance {
+    static VSDKVelocidi *sharedVelocidiManager = nil;
     static dispatch_once_t onceToken;
 
-    NSCAssert(VSDKVelocidiManager.config != nil, @"VelocidiManager not initialized before. Make sure to call `.start` first.");
+    NSCAssert(VSDKVelocidi.config != nil, @"VelocidiManager not initialized before. Make sure to call `.start` first.");
 
     dispatch_once(&onceToken, ^{
         sharedVelocidiManager = [[self alloc] init];
     });
     
     return sharedVelocidiManager;
-}
-
-+ (id)start:(VSDKConfig *)config {
-    self.config = config;
-
-    return [self sharedManager];
 }
 
 - (id) init{

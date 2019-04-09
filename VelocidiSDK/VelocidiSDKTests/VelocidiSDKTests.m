@@ -27,8 +27,8 @@
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     VSDKConfig * config = [[VSDKConfig alloc] init];
-    [VSDKVelocidiManager start:config];
-    VSDKVelocidiManager * manager = VSDKVelocidiManager.sharedManager;
+    [VSDKVelocidi start:config];
+    VSDKVelocidi * manager = VSDKVelocidi.sharedInstance;
 
     NSLog(@"Success %i", (int) &manager);
 }

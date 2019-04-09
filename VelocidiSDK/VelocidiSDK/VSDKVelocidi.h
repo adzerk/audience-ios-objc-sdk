@@ -4,12 +4,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface VSDKVelocidiManager : NSObject
+@interface VSDKVelocidi: NSObject
 
-@property VSDKVelocidiManager *instance;
 @property (class, nonatomic) VSDKConfig *config;
 
-+ (id) sharedManager;
++ (id)sharedInstance;
 
 + (id) start: (VSDKConfig *)config;
 @end
