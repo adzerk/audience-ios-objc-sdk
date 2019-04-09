@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		304FEFA22254B8AB00ECF86E /* VSDKInstance.h in Headers */ = {isa = PBXBuildFile; fileRef = 304FEFA02254B8AB00ECF86E /* VSDKInstance.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		304FEFA32254B8AB00ECF86E /* VSDKInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FEFA12254B8AB00ECF86E /* VSDKInstance.m */; };
+		304FEFA22254B8AB00ECF86E /* VSDKVelocidiManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 304FEFA02254B8AB00ECF86E /* VSDKVelocidiManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		304FEFA32254B8AB00ECF86E /* VSDKVelodiciManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FEFA12254B8AB00ECF86E /* VSDKVelodiciManager.m */; };
 		305D1A9E225643AE0016EF25 /* VSDKPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1A9C225643AE0016EF25 /* VSDKPurchase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305D1A9F225643AE0016EF25 /* VSDKPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1A9D225643AE0016EF25 /* VSDKPurchase.m */; };
 		305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -65,8 +65,8 @@
 
 /* Begin PBXFileReference section */
 		232C95E61F803ECB073433ED /* Pods-VelocidiSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.release.xcconfig"; sourceTree = "<group>"; };
-		304FEFA02254B8AB00ECF86E /* VSDKInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKInstance.h; sourceTree = "<group>"; };
-		304FEFA12254B8AB00ECF86E /* VSDKInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKInstance.m; sourceTree = "<group>"; };
+		304FEFA02254B8AB00ECF86E /* VSDKVelocidiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKVelocidiManager.h; sourceTree = "<group>"; };
+		304FEFA12254B8AB00ECF86E /* VSDKVelodiciManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKVelodiciManager.m; sourceTree = "<group>"; };
 		305D1A9C225643AE0016EF25 /* VSDKPurchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPurchase.h; sourceTree = "<group>"; };
 		305D1A9D225643AE0016EF25 /* VSDKPurchase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPurchase.m; sourceTree = "<group>"; };
 		305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTrackingEvent.h; sourceTree = "<group>"; };
@@ -233,8 +233,8 @@
 				B14323D6AF36722BBA0B00FE /* Info.plist */,
 				307325D2225BB525005CEB7D /* VelocidiSDK.modulemap */,
 				B143269D9047D62CF45FC4FA /* VelocidiSDK.h */,
-				304FEFA02254B8AB00ECF86E /* VSDKInstance.h */,
-				304FEFA12254B8AB00ECF86E /* VSDKInstance.m */,
+				304FEFA02254B8AB00ECF86E /* VSDKVelocidiManager.h */,
+				304FEFA12254B8AB00ECF86E /* VSDKVelodiciManager.m */,
 				B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */,
 				B14327F8581E7874D34E17F5 /* VSDKConfig.h */,
 			);
@@ -268,7 +268,7 @@
 				305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */,
 				305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */,
 				305D1AD2225659A00016EF25 /* VSDKTransaction.h in Headers */,
-				304FEFA22254B8AB00ECF86E /* VSDKInstance.h in Headers */,
+				304FEFA22254B8AB00ECF86E /* VSDKVelocidiManager.h in Headers */,
 				305D1ACA225657A70016EF25 /* VSDKRemoveFromCart.h in Headers */,
 				305D1ABE22564DB10016EF25 /* VSDKProductViewDetails.h in Headers */,
 				305D1ACE225658930016EF25 /* VSDKSubscription.h in Headers */,
@@ -405,7 +405,7 @@
 				305D1AAB225645C70016EF25 /* VSDKSearch.m in Sources */,
 				305D1AB722564AE20016EF25 /* VSDKProductClick.m in Sources */,
 				305D1ABF22564DB10016EF25 /* VSDKProductViewDetails.m in Sources */,
-				304FEFA32254B8AB00ECF86E /* VSDKInstance.m in Sources */,
+				304FEFA32254B8AB00ECF86E /* VSDKVelodiciManager.m in Sources */,
 				30C566E2225B9465006CE923 /* VSDKProductFeedback.m in Sources */,
 				305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */,
 				307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */,

@@ -23,3 +23,5 @@ FOUNDATION_EXPORT const unsigned char VelocidiSDKVersionString[];
 #import "VSDKAddToCart.h"
 #import "VSDKProductViewDetails.h"
 #import "VSDKTransaction.h"
+#import "VSDKVelocidiManager.h"
+#import "VSDKConfig.h"

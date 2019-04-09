@@ -26,7 +26,11 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    NSLog(@"This is the event type: %@", VSDKPageView.type);
+    VSDKConfig * config = [[VSDKConfig alloc] init];
+    [VSDKVelocidiManager start:config];
+    VSDKVelocidiManager * manager = VSDKVelocidiManager.sharedManager;
+
+    NSLog(@"Success %i", (int) &manager);
 }
 
 - (void)testPerformanceExample {

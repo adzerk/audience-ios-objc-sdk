@@ -2,6 +2,11 @@
 
 @implementation VSDKProduct
 
-int _quantity = 1;
+- (instancetype)init {
+    if ( self = [super init] ) {
+        self.quantity = 1;
+    }
+    return self;
+}
 
 @end
