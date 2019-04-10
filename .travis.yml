@@ -40,6 +40,7 @@ jobs:
       osx_image: xcode10.2
     - name: Cocoapods Lint
       script: 
+        - pod install
         - pod lib lint --verbose VelocidiSDK.podspec
       after_success: null
       before_install: null
