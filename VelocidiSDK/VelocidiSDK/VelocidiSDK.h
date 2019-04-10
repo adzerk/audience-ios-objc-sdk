@@ -25,3 +25,4 @@ FOUNDATION_EXPORT const unsigned char VelocidiSDKVersionString[];
 #import "VSDKTransaction.h"
 #import "VSDKVelocidi.h"
 #import "VSDKConfig.h"
+#import "VSDKRequest.h"

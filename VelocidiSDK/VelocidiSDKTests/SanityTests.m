@@ -15,20 +15,18 @@
 }
 
 - (void)testVelocidiInstanceFail {
-    @try {
-        VSDKVelocidi.sharedInstance;
-        XCTAssert(false);
-    }
-    @catch(NSException *e) {
-        XCTAssert(true);
-    }
+    XCTAssertThrowsSpecificNamed(
+                                 VSDKVelocidi.sharedInstance,
+                                 NSException,
+                                 NSInternalInconsistencyException
+                                 );
 
 }
 
 - (void)testVelocidiInstanceSuccess {
     VSDKConfig * config = [[VSDKConfig alloc] init];
     [VSDKVelocidi start:config];
-    VSDKVelocidi.sharedInstance;
+    XCTAssert(VSDKVelocidi.sharedInstance);
 }
 
 @end
