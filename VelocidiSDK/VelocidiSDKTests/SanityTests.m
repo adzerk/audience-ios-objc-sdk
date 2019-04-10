@@ -13,4 +13,22 @@
     trackingEvent.siteId = @"1";
     XCTAssert([@"{\"siteId\":\"1\",\"clientId\":\"0\",\"type\":\"pageView\"}" isEqualToString:[trackingEvent toJSONString]]);
 }
+
+- (void)testVelocidiInstanceFail {
+    @try {
+        VSDKVelocidi.sharedInstance;
+        XCTAssert(false);
+    }
+    @catch(NSException *e) {
+        XCTAssert(true);
+    }
+
+}
+
+- (void)testVelocidiInstanceSuccess {
+    VSDKConfig * config = [[VSDKConfig alloc] init];
+    [VSDKVelocidi start:config];
+    VSDKVelocidi.sharedInstance;
+}
+
 @end

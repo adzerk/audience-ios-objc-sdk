@@ -23,7 +23,13 @@ static VSDKConfig *_config = nil;
     static VSDKVelocidi *sharedVelocidiManager = nil;
     static dispatch_once_t onceToken;
 
-    NSCAssert(VSDKVelocidi.config != nil, @"VelocidiManager not initialized before. Make sure to call `.start` first.");
+    if(VSDKVelocidi.config == nil) {
+        NSException *e = [NSException
+            exceptionWithName:NSInternalInconsistencyException
+            reason: @"VelocidiManager not initialized before. Make sure to call `.start` first."
+            userInfo:nil];
+        @throw e;
+    }
 
     dispatch_once(&onceToken, ^{
         sharedVelocidiManager = [[self alloc] init];
