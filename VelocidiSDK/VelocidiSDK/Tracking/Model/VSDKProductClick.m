@@ -2,6 +2,11 @@
 
 @implementation VSDKProductClick
 
-+ (NSString *) type { return @"productClick"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"productClick";
+    }
+    return self;
+}
 
 @end

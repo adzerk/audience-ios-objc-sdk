@@ -2,6 +2,11 @@
 
 @implementation VSDKProductCustomization
 
-+ (NSString *) type { return @"productCustomization"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"productCustomization";
+    }
+    return self;
+}
 
 @end

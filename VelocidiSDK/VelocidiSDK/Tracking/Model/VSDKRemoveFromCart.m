@@ -2,6 +2,11 @@
 
 @implementation VSDKRemoveFromCart
 
-+ (NSString *) type { return @"removeFromCart"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"removeFromCart";
+    }
+    return self;
+}
 
 @end

@@ -2,6 +2,11 @@
 
 @implementation VSDKSearch
 
-+ (NSString *) type { return @"search"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"search";
+    }
+    return self;
+}
 
 @end

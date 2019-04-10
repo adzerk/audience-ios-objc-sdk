@@ -2,6 +2,11 @@
 
 @implementation VSDKProductFeedback
 
-+ (NSString *) type { return @"productFeedback"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"productFeedback";
+    }
+    return self;
+}
 
 @end

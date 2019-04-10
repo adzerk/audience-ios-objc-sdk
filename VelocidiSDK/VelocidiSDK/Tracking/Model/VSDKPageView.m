@@ -2,6 +2,11 @@
 
 @implementation VSDKPageView
 
-+ (NSString *) type{ return @"pageView"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"pageView";
+    }
+    return self;
+}
 
 @end

@@ -39,6 +39,7 @@
 		305D1AD622565ACD0016EF25 /* VSDKRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AD422565ACD0016EF25 /* VSDKRefund.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305D1AD722565ACD0016EF25 /* VSDKRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AD522565ACD0016EF25 /* VSDKRefund.m */; };
 		307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */; };
+		30B6418A225DE8EB00B585BD /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432E3FBF4251CDE2BA3587 /* SanityTests.m */; };
 		30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C566DF225B9465006CE923 /* VSDKProductFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30C566E2225B9465006CE923 /* VSDKProductFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C566E0225B9465006CE923 /* VSDKProductFeedback.m */; };
 		52C6BE1A9535D1F01B275462 /* Pods_VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB87604F7D5577B88791DDF /* Pods_VelocidiSDK.framework */; };
@@ -47,7 +48,6 @@
 		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327F8581E7874D34E17F5 /* VSDKConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432933F9A4DC1731F53178 /* VSDKVoucher.h in Headers */ = {isa = PBXBuildFile; fileRef = B143285B3ECF40673F465F6C /* VSDKVoucher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B143293FDBB4B78C3308910F /* VelocidiSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */; };
 		B1432AE2322D92448290169D /* VSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */; };
 		B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = B14328D0589594344160CA2B /* VSDKCustomization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */; };
@@ -100,6 +100,7 @@
 		305D1AD522565ACD0016EF25 /* VSDKRefund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKRefund.m; sourceTree = "<group>"; };
 		307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTrackingEvent.m; sourceTree = "<group>"; };
 		307325D2225BB525005CEB7D /* VelocidiSDK.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = VelocidiSDK.modulemap; sourceTree = "<group>"; };
+		30B6418B225DEC8A00B585BD /* JSONModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JSONModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C566DF225B9465006CE923 /* VSDKProductFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductFeedback.h; sourceTree = "<group>"; };
 		30C566E0225B9465006CE923 /* VSDKProductFeedback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductFeedback.m; sourceTree = "<group>"; };
 		30FC624C225D160E004F3A61 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +121,7 @@
 		B143296E8758378F3EFC5119 /* VSDKVoucher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKVoucher.m; sourceTree = "<group>"; };
 		B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKConfig.m; sourceTree = "<group>"; };
 		B1432DC5BB2B2B22F95EF53B /* VelocidiSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelocidiSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VelocidiSDKTests.m; sourceTree = "<group>"; };
+		B1432E3FBF4251CDE2BA3587 /* SanityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityTests.m; sourceTree = "<group>"; };
 		B3FBBF2233ABBFA19D16D38F /* Pods_VelocidiSDK_VelocidiSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK_VelocidiSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B745A135178408575C4F96EE /* Pods-VelocidiSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.debug.xcconfig"; sourceTree = "<group>"; };
 		B7EF7117ACF5941B474CF0CD /* Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				B1432006E874289B32AE9435 /* Info.plist */,
-				B1432F62AF931E5AE1FFE21E /* VelocidiSDKTests.m */,
+				B1432E3FBF4251CDE2BA3587 /* SanityTests.m */,
 			);
 			path = VelocidiSDKTests;
 			sourceTree = "<group>";
@@ -263,6 +264,7 @@
 		DE4214C4052230CAC368C858 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				30B6418B225DEC8A00B585BD /* JSONModel.framework */,
 				30FC624C225D160E004F3A61 /* libAFNetworking.a */,
 				30FC624E225D160E004F3A61 /* libJSONModel.a */,
 				23DD0AF91FEAB64CE0474B20 /* Pods_VelocidiSDKTests.framework */,
@@ -492,7 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B143293FDBB4B78C3308910F /* VelocidiSDKTests.m in Sources */,
+				30B6418A225DE8EB00B585BD /* SanityTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,6 +2,11 @@
 
 @implementation VSDKSubscription
 
-+ (NSString *) type { return @"subscription"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"subscription";
+    }
+    return self;
+}
 
 @end

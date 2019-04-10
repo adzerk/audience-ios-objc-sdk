@@ -2,6 +2,11 @@
 
 @implementation VSDKProductViewDetails
 
-+ (NSString *) type { return @"productViewDetails"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"productViewDetails";
+    }
+    return self;
+}
 
 @end

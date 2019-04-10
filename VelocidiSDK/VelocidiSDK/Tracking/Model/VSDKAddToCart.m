@@ -2,6 +2,11 @@
 
 @implementation VSDKAddToCart
 
-+ (NSString *) type { return @"addToCart"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"addToCart";
+    }
+    return self;
+}
 
 @end

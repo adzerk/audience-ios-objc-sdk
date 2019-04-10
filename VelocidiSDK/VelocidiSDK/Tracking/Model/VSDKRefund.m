@@ -2,6 +2,11 @@
 
 @implementation VSDKRefund
 
-+ (NSString *) type { return @"refund"; }
+- (id)init {
+    if(self = [super init]){
+        self.type = @"refund";
+    }
+    return self;
+}
 
 @end

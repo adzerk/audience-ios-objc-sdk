@@ -2,6 +2,11 @@
 
 @implementation VSDKPurchase
 
-+ (NSString *) type { return @"purchase";}
+- (id)init {
+    if(self = [super init]){
+        self.type = @"purchase";
+    }
+    return self;
+}
 
 @end
