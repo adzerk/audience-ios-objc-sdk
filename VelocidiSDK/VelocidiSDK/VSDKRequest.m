@@ -1,6 +1,5 @@
 @import Foundation;
 #import "VSDKRequest.h"
-#import <AFNetworking/AFHTTPSessionManager.h>
 
 @implementation VSDKRequest
 
@@ -16,12 +15,26 @@
                                       [d systemVersion]];
 }
 
-- (void)performRequest {
-    AFHTTPSessionManager *manager   = [AFHTTPSessionManager manager];
+- (id)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
 
+    NSParameterAssert(manager != nil);
+    if (self = [super init]) {
+        _manager = manager;
+    }
+    return self;
+}
+
+- (id)init {
+    if (self = [super init]) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return self;
+}
+
+- (void)performRequest {
 
     NSURLRequest * request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:self.url.absoluteString parameters:self.data.toDictionary error:nil];
-    NSURLSessionDataTask *dataTask = [manager
+    NSURLSessionDataTask *dataTask = [self.manager
             dataTaskWithRequest:request
             uploadProgress:nil
             downloadProgress:nil
