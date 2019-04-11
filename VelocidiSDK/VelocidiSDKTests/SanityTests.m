@@ -29,4 +29,8 @@
     XCTAssert(VSDKVelocidi.sharedInstance);
 }
 
+- (void)testUserAgentStr {
+    NSLog(@"%@",VSDKRequest.versionedUserAgent);
+}
+
 @end

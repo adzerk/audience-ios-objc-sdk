@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B1432BAE883DE1D8BCCEA582"
+               BuildableName = "VelocidiSDKTests.xctest"
+               BlueprintName = "VelocidiSDKTests"
+               ReferencedContainer = "container:VelocidiSDK.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B14321618C6AE2EE2009AD6D"
+            BuildableName = "VelocidiSDK.framework"
+            BlueprintName = "VelocidiSDK"
+            ReferencedContainer = "container:VelocidiSDK.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
