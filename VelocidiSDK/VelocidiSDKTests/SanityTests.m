@@ -11,7 +11,9 @@
     VSDKTrackingEvent * trackingEvent = [[VSDKPageView alloc] init];
     trackingEvent.clientId = @"0";
     trackingEvent.siteId = @"1";
-    XCTAssert([@"{\"siteId\":\"1\",\"clientId\":\"0\",\"type\":\"pageView\"}" isEqualToString:[trackingEvent toJSONString]]);
+    XCTAssert([@"{\"siteId\":\"1\",\"clientId\":\"0\",\"type\":\"pageView\"}"
+            isEqualToString:[trackingEvent toJSONString]]
+            );
 }
 
 - (void)testVelocidiInstanceFail {
@@ -30,7 +32,15 @@
 }
 
 - (void)testUserAgentStr {
-    NSLog(@"%@",VSDKRequest.versionedUserAgent);
+    UIDevice *d = [UIDevice currentDevice];
+    bool result = [VSDKRequest.versionedUserAgent
+            isEqualToString:[NSString
+                    stringWithFormat:@"(null)/(null) VelocidiSDK/%f (%@/%@; %@)",
+                    VelocidiSDKVersionNumber,
+                    [d systemName],
+                    [d systemVersion],
+                    [d model]]];
+    XCTAssert(result);
 }
 
 @end
