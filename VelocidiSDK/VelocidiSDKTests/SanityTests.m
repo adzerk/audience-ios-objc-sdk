@@ -42,7 +42,7 @@
                                      [d systemVersion]
             ]
     ];
-    XCTAssert(result);
+    XCTAssert(result, @"%@", VSDKRequest.versionedUserAgent);
 }
 
 @end
