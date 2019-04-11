@@ -35,11 +35,13 @@
     UIDevice *d = [UIDevice currentDevice];
     bool result = [VSDKRequest.versionedUserAgent
             isEqualToString:[NSString
-                    stringWithFormat:@"(null)/(null) VelocidiSDK/%f (%@/%@; %@)",
-                    VelocidiSDKVersionNumber,
-                    [d systemName],
-                    [d systemVersion],
-                    [d model]]];
+                    stringWithFormat:@"(null)/(null) VelocidiSDK/%@ (%@; %@/%@)",
+                                     @(VelocidiSDKVersionNumber),
+                                     [d model],
+                                     [d systemName],
+                                     [d systemVersion]
+            ]
+    ];
     XCTAssert(result);
 }
 

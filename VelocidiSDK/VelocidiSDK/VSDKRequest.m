@@ -15,14 +15,14 @@
 
 + (NSString *)versionedUserAgent {
     UIDevice *d = [UIDevice currentDevice];
-    return [NSString stringWithFormat:@"%@/%@ %@/%f (%@/%@; %@)",
+    return [NSString stringWithFormat:@"%@/%@ %@/%@ (%@; %@/%@)",
                                       [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"],
                                       [[NSBundle mainBundle] infoDictionary][@"CFBundleVersion"],
                                       @"VelocidiSDK",
-                                      VelocidiSDKVersionNumber,
+                                      @(VelocidiSDKVersionNumber),
+                                      [d model],
                                       [d systemName],
-                                      [d systemVersion],
-                                      [d model]];
+                                      [d systemVersion]];
 }
 
 - (void)performRequest {
