@@ -135,6 +135,7 @@ Pod::Spec.new do |spec|
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   spec.dependency "JSONModel", "~> 1.8"
+  spec.dependency "AFNetworking", "~> 3.2.1"
   # spec.dependency "JSONKit", "~> 1.4"
 
 end
