@@ -2,9 +2,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKRequest<T> : NSObject
+@interface VSDKRequest<__covariant T:JSONModel *> : NSObject
 
-@property NSURL * url;
+@property NSURL *url;
 @property T data;
 
 + (NSString *) versionedUserAgent;

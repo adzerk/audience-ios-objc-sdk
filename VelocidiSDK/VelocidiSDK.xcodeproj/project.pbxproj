@@ -41,9 +41,6 @@
 		307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */; };
 		308A7369225E297D00E1ADA8 /* VSDKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 308A7367225E297D00E1ADA8 /* VSDKRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		308A736A225E297D00E1ADA8 /* VSDKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 308A7368225E297D00E1ADA8 /* VSDKRequest.m */; };
-		308A7371225E328A00E1ADA8 /* VSDKTrackRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 308A736F225E328A00E1ADA8 /* VSDKTrackRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		308A7372225E328A00E1ADA8 /* VSDKTrackRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 308A7370225E328A00E1ADA8 /* VSDKTrackRequest.m */; };
-		308A7373225E3DB500E1ADA8 /* VSDKTrackRequest.h in Sources */ = {isa = PBXBuildFile; fileRef = 308A736F225E328A00E1ADA8 /* VSDKTrackRequest.h */; };
 		30B6418A225DE8EB00B585BD /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432E3FBF4251CDE2BA3587 /* SanityTests.m */; };
 		30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C566DF225B9465006CE923 /* VSDKProductFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30C566E2225B9465006CE923 /* VSDKProductFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C566E0225B9465006CE923 /* VSDKProductFeedback.m */; };
@@ -107,8 +104,6 @@
 		307325D2225BB525005CEB7D /* VelocidiSDK.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = VelocidiSDK.modulemap; sourceTree = "<group>"; };
 		308A7367225E297D00E1ADA8 /* VSDKRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKRequest.h; sourceTree = "<group>"; };
 		308A7368225E297D00E1ADA8 /* VSDKRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKRequest.m; sourceTree = "<group>"; };
-		308A736F225E328A00E1ADA8 /* VSDKTrackRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTrackRequest.h; sourceTree = "<group>"; };
-		308A7370225E328A00E1ADA8 /* VSDKTrackRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTrackRequest.m; sourceTree = "<group>"; };
 		30B6418B225DEC8A00B585BD /* JSONModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JSONModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30C566DF225B9465006CE923 /* VSDKProductFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductFeedback.h; sourceTree = "<group>"; };
 		30C566E0225B9465006CE923 /* VSDKProductFeedback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductFeedback.m; sourceTree = "<group>"; };
@@ -178,8 +173,6 @@
 		305D1A9A225643460016EF25 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				308A736F225E328A00E1ADA8 /* VSDKTrackRequest.h */,
-				308A7370225E328A00E1ADA8 /* VSDKTrackRequest.m */,
 				305D1A9B225643870016EF25 /* Model */,
 			);
 			path = Tracking;
@@ -316,7 +309,6 @@
 				B1432933F9A4DC1731F53178 /* VSDKVoucher.h in Headers */,
 				B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */,
 				308A7369225E297D00E1ADA8 /* VSDKRequest.h in Headers */,
-				308A7371225E328A00E1ADA8 /* VSDKTrackRequest.h in Headers */,
 				B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,9 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				308A7373225E3DB500E1ADA8 /* VSDKTrackRequest.h in Sources */,
 				305D1AB3225646F30016EF25 /* VSDKProduct.m in Sources */,
-				308A7372225E328A00E1ADA8 /* VSDKTrackRequest.m in Sources */,
 				305D1A9F225643AE0016EF25 /* VSDKPurchase.m in Sources */,
 				305D1ACF225658930016EF25 /* VSDKSubscription.m in Sources */,
 				305D1AD3225659A00016EF25 /* VSDKTransaction.m in Sources */,

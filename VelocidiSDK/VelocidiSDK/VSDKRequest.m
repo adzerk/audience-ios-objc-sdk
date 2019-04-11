@@ -1,17 +1,8 @@
 @import Foundation;
 #import "VSDKRequest.h"
-#import <sys/utsname.h> // import it in your header or implementation file.
-#import <UIKit/UIKit.h> // import it in your header or implementation file.
+#import <AFNetworking/AFHTTPSessionManager.h>
 
 @implementation VSDKRequest
-
-+ (NSString *) deviceName{
-    struct utsname systemInfo;
-    uname(&systemInfo);
-
-    return [NSString stringWithCString:systemInfo.machine
-                              encoding:NSUTF8StringEncoding];
-}
 
 + (NSString *)versionedUserAgent {
     UIDevice *d = [UIDevice currentDevice];
@@ -26,8 +17,23 @@
 }
 
 - (void)performRequest {
-    [self doesNotRecognizeSelector:_cmd];
-    return;
+    AFHTTPSessionManager *manager   = [AFHTTPSessionManager manager];
+
+
+    NSURLRequest * request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:self.url.absoluteString parameters:self.data.toDictionary error:nil];
+    NSURLSessionDataTask *dataTask = [manager
+            dataTaskWithRequest:request
+            uploadProgress:nil
+            downloadProgress:nil
+            completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+                if (error) {
+                    NSLog(@"Error: %@", error);
+                } else {
+                    NSLog(@"%@ %@", response, responseObject);
+                }
+            }];
+    [dataTask resume];
+
 }
 
 @end
