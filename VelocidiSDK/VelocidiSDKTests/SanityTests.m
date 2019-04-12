@@ -41,8 +41,8 @@
                                 [d systemVersion],
                                 [[UIScreen mainScreen] scale]
                                 ];
-    bool result = [VSDKRequest.versionedUserAgent isEqualToString:expectedResult];
-    XCTAssert(result, @"%@ != %@", expectedResult, VSDKRequest.versionedUserAgent);
+    bool result = [VSDKUtil.getVersionedUserAgent isEqualToString:expectedResult];
+    XCTAssert(result, @"%@ != %@", expectedResult, VSDKUtil.getVersionedUserAgent);
 }
 
 - (void)testTrackingRequest {

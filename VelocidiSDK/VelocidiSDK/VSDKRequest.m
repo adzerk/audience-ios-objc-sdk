@@ -1,49 +1,8 @@
 @import Foundation;
 #import "VSDKRequest.h"
+#import "VSDKUtil.h"
 
 @implementation VSDKRequest
-
-+ (NSString *)versionedUserAgent {
-     NSString *userAgent = nil;
-#if TARGET_OS_IOS
-    // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
-    userAgent = [NSString stringWithFormat:@"%@/%@ %@/%@ (%@; iOS %@; Scale/%0.2f)",
-            [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleIdentifierKey],
-            [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey],
-            @"VelocidiSDK",
-            @(VelocidiSDKVersionNumber),
-            [[UIDevice currentDevice] model],
-            [[UIDevice currentDevice] systemVersion],
-            [[UIScreen mainScreen] scale]];
-#elif TARGET_OS_WATCH
-    // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
-    userAgent = [NSString stringWithFormat:@"%@/%@ %@/%@ (%@; watchOS %@; Scale/%0.2f)",
-            [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleIdentifierKey],
-            [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey],
-            @"VelocidiSDK",
-            @(VelocidiSDKVersionNumber),
-            [[WKInterfaceDevice currentDevice] model],
-            [[WKInterfaceDevice currentDevice] systemVersion],
-            [[WKInterfaceDevice currentDevice] screenScale]];
-#elif defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
-    userAgent = [NSString stringWithFormat:@"%@/%@ %@/%@ (Mac OS X %@)",
-            [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleIdentifierKey],
-            [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey],
-            @"VelocidiSDK",
-            @(VelocidiSDKVersionNumber),
-            [[NSProcessInfo processInfo] operatingSystemVersionString]];
-#endif
-    if (userAgent) {
-        if (![userAgent canBeConvertedToEncoding:NSASCIIStringEncoding]) {
-            NSMutableString *mutableUserAgent = [userAgent mutableCopy];
-            if (CFStringTransform((__bridge CFMutableStringRef)(mutableUserAgent), NULL, (__bridge CFStringRef)@"Any-Latin; Latin-ASCII; [:^ASCII:] Remove", false)) {
-                userAgent = mutableUserAgent;
-            }
-        }
-    }
-    return userAgent;
-
-}
 
 - (id)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
 
@@ -62,9 +21,19 @@
 }
 
 - (void)performRequest {
+    NSString * advertisingIdentifier = VSDKUtil.getAdvertisingIdentifier;
+    
+    if (!advertisingIdentifier) { // If advertisinIdentifier is 0, the user does not want to be tracked
+        return;
+    }
+    NSString * urlParameters = [self buildURLParameters:advertisingIdentifier];
+    NSString * url = [NSString stringWithFormat:@"%@%@", self.url.absoluteString, urlParameters];
 
-    NSMutableURLRequest * request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:self.url.absoluteString parameters:self.data.toDictionary error:nil];
-    [request setValue:VSDKRequest.versionedUserAgent forHTTPHeaderField:@"User-Agent"];
+    NSMutableURLRequest * request = [[AFJSONRequestSerializer serializer]
+            requestWithMethod:@"POST"
+            URLString:url
+                   parameters:self.data.toDictionary error:nil];
+    [request setValue:VSDKUtil.getVersionedUserAgent forHTTPHeaderField:@"User-Agent"];
     NSURLSessionDataTask *dataTask = [self.manager
             dataTaskWithRequest:request
             uploadProgress:nil
@@ -77,6 +46,11 @@
                 }
             }];
     [dataTask resume];
+}
+
+- (NSString *)buildURLParameters:(NSString *) advertisingId {
+    return [NSString stringWithFormat:@"?id_idfa=%@&cookies=false",
+            [advertisingId stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
 }
 
 @end
