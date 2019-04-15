@@ -27,9 +27,8 @@
 }
 
 - (void)testVelocidiInstanceSuccess {
-    VSDKConfig * config = [[VSDKConfig alloc] init];
-    config.trackingHost = @"https://tr.testdomain.com:8080";
-    config.matchHost = @"https://match.testdomain.com:8080";
+    VSDKConfig * config = [[VSDKConfig alloc]
+            initWithHosts:@"https://tr.testdomain.com:8080":@"https://match.testdomain.com:8080"];
     [VSDKVelocidi start:config];
     XCTAssert(VSDKVelocidi.sharedInstance);
 }
@@ -53,9 +52,7 @@
     trackingEvent.clientId = @"0";
     trackingEvent.siteId = @"1";
 
-    VSDKConfig * config = [[VSDKConfig alloc] init];
-    config.trackingHost = @"https://localhost:8080";
-    config.matchHost = @"https://localhost:8080";
+    VSDKConfig * config = [[VSDKConfig alloc] initWithHosts:@"https://localhost:8080":@"https://localhost:8080"];
     [VSDKVelocidi start:config];
 
     VSDKRequest * request = [[VSDKRequest alloc] init];

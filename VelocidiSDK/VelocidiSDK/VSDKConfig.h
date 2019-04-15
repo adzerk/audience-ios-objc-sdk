@@ -6,4 +6,6 @@
 @property NSString *trackingHost;
 @property NSString *matchHost;
 
+- (id)initWithHosts: (NSString *)trackingHost :(NSString *)matchHost;
+
 @end
