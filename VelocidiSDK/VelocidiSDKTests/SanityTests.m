@@ -55,12 +55,7 @@
     VSDKConfig * config = [[VSDKConfig alloc] initWithHosts:@"https://localhost:8080":@"https://localhost:8080"];
     [VSDKVelocidi start:config];
 
-    VSDKRequest * request = [[VSDKRequest alloc] init];
-
-    request.data = trackingEvent;
-    request.url = [NSURL URLWithString:@"http://localhost:8080"];
-
-    [request performRequest];
+//    [[VSDKVelocidi sharedInstance] track:trackingEvent];
 
     [NSThread sleepForTimeInterval:5.0f];
 }

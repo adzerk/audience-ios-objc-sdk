@@ -10,13 +10,13 @@ static VSDKConfig *_config = nil;
     return _config;
 }
 
-+ (id)start:(VSDKConfig *)config {
++ (instancetype)start:(VSDKConfig *)config {
     _config = config;
 
     return [self sharedInstance];
 }
 
-+ (id)sharedInstance {
++ (instancetype)sharedInstance {
     static VSDKVelocidi *sharedVelocidiManager = nil;
     static dispatch_once_t onceToken;
 

@@ -4,7 +4,7 @@
 
 @implementation VSDKRequest
 
-- (id)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
+- (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
 
     NSParameterAssert(manager != nil);
     if (self = [super init]) {
@@ -13,7 +13,7 @@
     return self;
 }
 
-- (id)init {
+- (instancetype)init {
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
     }

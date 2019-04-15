@@ -11,9 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (class, readonly, nonatomic) VSDKConfig *config;
 @property (readonly, nonatomic) AFHTTPSessionManager *sessionManager;
 
-+ (id)sharedInstance;
++ (instancetype)sharedInstance;
 
-+ (id) start: (VSDKConfig *)config;
++ (instancetype) start: (VSDKConfig *)config;
 
 - (void)track: (VSDKTrackingEvent *) trackingEvent;
 @end

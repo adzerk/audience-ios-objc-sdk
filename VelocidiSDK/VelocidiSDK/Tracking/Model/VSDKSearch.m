@@ -2,7 +2,7 @@
 
 @implementation VSDKSearch
 
-- (id)init {
+- (instancetype)init {
     if(self = [super init]){
         self.type = @"search";
     }
