@@ -46,9 +46,11 @@
     
 }
 
-+ (NSString *)getAdvertisingIdentifier {
++ (NSUUID *)getAdvertisingIdentifier {
     NSUUID *adId = [[ASIdentifierManager sharedManager] advertisingIdentifier];
-    return [adId UUIDString];
+    if ([[adId UUIDString] isEqualToString:@"00000000-0000-0000-0000-000000000000"])
+        return nil;
+    return adId;
 }
 
 @end

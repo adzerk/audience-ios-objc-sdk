@@ -21,12 +21,12 @@
 }
 
 - (void)performRequest {
-    NSString * advertisingIdentifier = VSDKUtil.getAdvertisingIdentifier;
+    NSUUID * advertisingIdentifier = VSDKUtil.getAdvertisingIdentifier;
     
-    if (!advertisingIdentifier) { // If advertisinIdentifier is 0, the user does not want to be tracked
+    if (!advertisingIdentifier) { // If advertisinIdentifier is nil, the user does not want to be tracked
         return;
     }
-    NSString * urlParameters = [self buildURLParameters:advertisingIdentifier];
+    NSString * urlParameters = [self buildURLParameters:[advertisingIdentifier UUIDString]];
     NSString * url = [NSString stringWithFormat:@"%@%@", self.url.absoluteString, urlParameters];
 
     NSMutableURLRequest * request = [[AFJSONRequestSerializer serializer]

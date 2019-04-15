@@ -6,7 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface VSDKUtil : NSObject
 
 + (NSString *)getVersionedUserAgent;
-+ (NSString *)getAdvertisingIdentifier;
++ (NSUUID *)getAdvertisingIdentifier;
     
 @end
 
