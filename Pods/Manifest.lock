@@ -15,20 +15,28 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - JSONModel (1.8.0)
+  - Nimble (8.0.1)
+  - Quick (2.0.0)
 
 DEPENDENCIES:
-  - AFNetworking (~> 3.0)
-  - JSONModel
+  - AFNetworking (~> 3.2.1)
+  - JSONModel (~> 1.8)
+  - Nimble (~> 8.0.1)
+  - Quick (~> 2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - JSONModel
+    - Nimble
+    - Quick
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
+  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
 
-PODFILE CHECKSUM: 86e85e2a8a8b8568b3ac4150b562eda60d09bca0
+PODFILE CHECKSUM: f19f565fcf5ba790496626f6ec71881384d06e8a
 
 COCOAPODS: 1.6.1
