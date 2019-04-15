@@ -16,6 +16,6 @@ target "VelocidiSDKTests" do
 
   pod 'Quick', '~> 2.0'
   pod 'Nimble', '~> 8.0.1'
-  # pod 'Mockingjay'
+  pod 'Mockingjay'
 end
 
