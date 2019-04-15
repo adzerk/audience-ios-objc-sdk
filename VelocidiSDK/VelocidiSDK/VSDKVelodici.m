@@ -1,20 +1,17 @@
 #import "VSDKVelocidi.h"
 #import "VSDKConfig.h"
+#import "VSDKRequest.h"
 
 @implementation VSDKVelocidi
 
 static VSDKConfig *_config = nil;
-
-+ (void)setConfig:(VSDKConfig *)config {
-    _config = config;
-}
 
 + (VSDKConfig *) config{
     return _config;
 }
 
 + (id)start:(VSDKConfig *)config {
-    self.config = config;
+    _config = config;
 
     return [self sharedInstance];
 }
@@ -39,8 +36,19 @@ static VSDKConfig *_config = nil;
 }
 
 - (id) init{
-    self = [super init];
+    if(self = [super init]) {
+        _sessionManager = [AFHTTPSessionManager manager];
+    }
     return self;
+}
+
+- (void)track:(VSDKTrackingEvent *)trackingEvent {
+    VSDKRequest * request = [[VSDKRequest alloc] initWithHTTPSessionManager:self.sessionManager];
+
+    request.data = trackingEvent;
+    request.url = [NSURL URLWithString:VSDKVelocidi.config.trackingHost];
+
+    [request performRequest];
 }
 
 @end
