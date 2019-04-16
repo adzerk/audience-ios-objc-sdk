@@ -6,6 +6,6 @@
 @property NSString *trackingHost;
 @property NSString *matchHost;
 
-- (instancetype)initWithHosts: (NSString *)trackingHost :(NSString *)matchHost;
+- (instancetype)initWithHosts: (NSString *)trackingHost :(NSString *)matchHostURLString;
 
 @end

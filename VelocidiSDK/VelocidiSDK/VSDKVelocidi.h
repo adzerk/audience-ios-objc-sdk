@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype) start: (VSDKConfig *)config;
 
 - (void)track: (VSDKTrackingEvent *) trackingEvent;
+- (void)track: (VSDKTrackingEvent *) trackingEvent
+        onSuccess:(void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+        onFailure:(void (^)(NSError * error)) onErrorBlock;
 @end
 
 NS_ASSUME_NONNULL_END

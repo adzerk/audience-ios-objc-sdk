@@ -28,7 +28,7 @@
 
 - (void)testVelocidiInstanceSuccess {
     VSDKConfig * config = [[VSDKConfig alloc]
-            initWithHosts:@"https://tr.testdomain.com:8080":@"https://match.testdomain.com:8080"];
+                           initWithHosts:@"https://tr.testdomain.com:8080":@"https://match.testdomain.com:8080"];
     [VSDKVelocidi start:config];
     XCTAssert(VSDKVelocidi.sharedInstance);
 }

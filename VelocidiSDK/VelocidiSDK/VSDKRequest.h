@@ -10,7 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property T data;
 
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager;
-- (void) performRequest;
+- (void) performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+        :(void (^)(NSError *error))onErrorBlock ;
 - (NSString *)buildURLParameters:(NSString *) advertisingId;
 
 @end

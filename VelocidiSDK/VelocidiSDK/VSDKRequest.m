@@ -1,6 +1,5 @@
 @import Foundation;
 #import "VSDKRequest.h"
-#import "VSDKUtil.h"
 
 @implementation VSDKRequest
 
@@ -9,18 +8,27 @@
     NSParameterAssert(manager != nil);
     if (self = [super init]) {
         _manager = manager;
+        [self setAcceptAllRequests];
     }
     return self;
+}
+
+- (void) setAcceptAllRequests {
+    self.manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    self.manager.responseSerializer.acceptableContentTypes = nil;
 }
 
 - (instancetype)init {
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
+
+        [self setAcceptAllRequests];
     }
     return self;
 }
 
-- (void)performRequest {
+- (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+        :(void (^)(NSError *error))onErrorBlock {
     NSUUID * advertisingIdentifier = VSDKUtil.getAdvertisingIdentifier;
     
     if (!advertisingIdentifier) { // If advertisinIdentifier is nil, the user does not want to be tracked
@@ -40,9 +48,9 @@
             downloadProgress:nil
             completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
                 if (error) {
-                    NSLog(@"Error: %@", error);
+                    onErrorBlock(error);
                 } else {
-                    NSLog(@"%@ %@", response, responseObject);
+                    onSuccessBlock(response, responseObject);
                 }
             }];
     [dataTask resume];
