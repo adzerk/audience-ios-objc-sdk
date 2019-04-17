@@ -1,5 +1,7 @@
 @import Foundation;
 #import "VSDKRequest.h"
+#import "VSDKUtil.h"
+
 @implementation VSDKRequest
 
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
@@ -15,6 +17,7 @@
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
         _util = [[VSDKUtil alloc] init] ;
+        [VSDKUtil setAcceptAllRequests:_manager];
     }
     return self;
 }

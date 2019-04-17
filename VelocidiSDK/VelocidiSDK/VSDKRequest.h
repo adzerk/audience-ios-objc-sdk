@@ -1,7 +1,7 @@
 #import <VelocidiSDK/VelocidiSDK.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
 
-@protocol VSDKUtilProto;
+@class VSDKUtil;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
-@property (readonly, nonatomic) id <VSDKUtilProto> util;
+@property (nonatomic) VSDKUtil *util;
 @property T data;
 
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager;

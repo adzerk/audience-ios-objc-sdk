@@ -1,6 +1,5 @@
 #import "VSDKUtil.h"
 #import <AdSupport/ASIdentifierManager.h>
-#import <AFNetworking/AFHTTPSessionManager.h>
 
 @implementation VSDKUtil
 
@@ -55,5 +54,10 @@
         return false;
     }
     return true;
+}
+
++ (void) setAcceptAllRequests: (AFHTTPSessionManager *)sessionManager {
+    sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    sessionManager.responseSerializer.acceptableContentTypes = nil;
 }
 @end
