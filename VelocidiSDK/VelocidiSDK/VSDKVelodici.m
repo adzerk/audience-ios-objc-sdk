@@ -38,8 +38,14 @@ static VSDKConfig *_config = nil;
 - (id) init{
     if(self = [super init]) {
         _sessionManager = [AFHTTPSessionManager manager];
+        [self setAcceptAllRequests];
     }
     return self;
+}
+
+- (void) setAcceptAllRequests {
+    self.sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    self.sessionManager.responseSerializer.acceptableContentTypes = nil;
 }
 
 - (void)track:(VSDKTrackingEvent *)trackingEvent {

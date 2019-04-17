@@ -4,7 +4,7 @@
 
 @implementation VSDKUtil
 
-+ (NSString *)getVersionedUserAgent {
+- (NSString *)getVersionedUserAgent {
     NSString *userAgent = nil;
 #if TARGET_OS_IOS
     // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
@@ -46,14 +46,14 @@
     
 }
 
-// FIXME - Instead of verifying here, only fetch the id and have the entity that called this function verify if it's equal to 0's.
-// This is because the advertisingIdentifier can be nil if the device just booted, which requires the app to try sending the request later.
-// See https://developer.apple.com/documentation/adsupport/asidentifiermanager/1614151-advertisingidentifier
-+ (NSUUID *)getAdvertisingIdentifier {
-    NSUUID *adId = [[ASIdentifierManager sharedManager] advertisingIdentifier];
-    if ([[adId UUIDString] isEqualToString:@"00000000-0000-0000-0000-000000000000"])
-        return nil;
-    return adId;
+- (NSUUID *)getAdvertisingIdentifier {
+    return [[ASIdentifierManager sharedManager] advertisingIdentifier];
 }
 
+- (bool)isTrackAllowed:(NSUUID *)advertisingIdentifier {
+    if ([[advertisingIdentifier UUIDString] isEqualToString:@"00000000-0000-0000-0000-000000000000"]){
+        return false;
+    }
+    return true;
+}
 @end

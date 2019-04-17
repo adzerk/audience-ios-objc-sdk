@@ -9,7 +9,7 @@ class UtilTests: QuickSpec {
         super.spec()
         describe("VSDKUtil") {
             it("should generate a valid User-Agent containing information about VelocidiSDK") {
-                let userAgent = VSDKUtil.getVersionedUserAgent()
+                let userAgent = VSDKUtil().getVersionedUserAgent()
                 let range = NSRange(location: 0, length: userAgent.utf16.count)
                 let regexStr = String(format:".*/.* VelocidiSDK\\/%0.0f \\(%@; %@ %@; Scale\\/%0.2f\\)",
                     VelocidiSDKVersionNumber,

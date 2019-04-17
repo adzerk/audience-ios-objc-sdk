@@ -3,11 +3,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKUtil : NSObject
+@protocol VSDKUtilProto <NSObject>
 
-+ (NSString *)getVersionedUserAgent;
-+ (NSUUID *)getAdvertisingIdentifier;
-    
+- (NSString *)getVersionedUserAgent;
+- (NSUUID *)getAdvertisingIdentifier;
+- (bool) isTrackAllowed: (NSUUID *) advertisingIdentifier;
+
+@end
+
+@interface VSDKUtil : NSObject <VSDKUtilProto>
+
 @end
 
 NS_ASSUME_NONNULL_END
