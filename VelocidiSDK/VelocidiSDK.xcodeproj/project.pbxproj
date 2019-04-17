@@ -45,8 +45,9 @@
 		30B68A082260D40800226C76 /* VSDKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B68A062260D40800226C76 /* VSDKUtil.m */; };
 		30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C566DF225B9465006CE923 /* VSDKProductFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30C566E2225B9465006CE923 /* VSDKProductFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C566E0225B9465006CE923 /* VSDKProductFeedback.m */; };
-		30F3A0072264DE7000D9380B /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A0062264DE7000D9380B /* NetworkTests.swift */; };
+		30F3A0072264DE7000D9380B /* RequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A0062264DE7000D9380B /* RequestTests.swift */; };
 		30F3A00C2264E13300D9380B /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A00B2264E13300D9380B /* SanityTests.m */; };
+		30FA30702267341A00BF442A /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA306F2267341A00BF442A /* UtilTests.swift */; };
 		6F52EA1843A4888FE024A0C8 /* Pods_VelocidiSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6FE91D424CF33DB084D3F92 /* Pods_VelocidiSDKTests.framework */; };
 		8C903D276BC26F866C2DC2F4 /* Pods_VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D25C82A2FFA5C2F03C6176 /* Pods_VelocidiSDK.framework */; };
 		B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = B143296E8758378F3EFC5119 /* VSDKVoucher.m */; };
@@ -133,9 +134,10 @@
 		30B68A062260D40800226C76 /* VSDKUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKUtil.m; sourceTree = "<group>"; };
 		30C566DF225B9465006CE923 /* VSDKProductFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductFeedback.h; sourceTree = "<group>"; };
 		30C566E0225B9465006CE923 /* VSDKProductFeedback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductFeedback.m; sourceTree = "<group>"; };
-		30F3A0062264DE7000D9380B /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		30F3A0062264DE7000D9380B /* RequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTests.swift; sourceTree = "<group>"; };
 		30F3A00A2264E13300D9380B /* VelocidiSDKTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VelocidiSDKTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		30F3A00B2264E13300D9380B /* SanityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityTests.m; sourceTree = "<group>"; };
+		30FA306F2267341A00BF442A /* UtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTests.swift; sourceTree = "<group>"; };
 		30FC624C225D160E004F3A61 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FC624E225D160E004F3A61 /* libJSONModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJSONModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		635117020B86122C202A8591 /* Pods-VelocidiSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDKTests/Pods-VelocidiSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -264,8 +266,9 @@
 			children = (
 				30F3A00B2264E13300D9380B /* SanityTests.m */,
 				B1432006E874289B32AE9435 /* Info.plist */,
-				30F3A0062264DE7000D9380B /* NetworkTests.swift */,
+				30F3A0062264DE7000D9380B /* RequestTests.swift */,
 				30F3A00A2264E13300D9380B /* VelocidiSDKTests-Bridging-Header.h */,
+				30FA306F2267341A00BF442A /* UtilTests.swift */,
 			);
 			path = VelocidiSDKTests;
 			sourceTree = "<group>";
@@ -540,7 +543,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30F3A0072264DE7000D9380B /* NetworkTests.swift in Sources */,
+				30F3A0072264DE7000D9380B /* RequestTests.swift in Sources */,
+				30FA30702267341A00BF442A /* UtilTests.swift in Sources */,
 				30F3A00C2264E13300D9380B /* SanityTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

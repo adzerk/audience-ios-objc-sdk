@@ -33,31 +33,4 @@
     XCTAssert(VSDKVelocidi.sharedInstance);
 }
 
-- (void)testUserAgentStr {
-    UIDevice *d = [UIDevice currentDevice];
-    NSString *expectedResult = [NSString
-                                stringWithFormat:@"(null)/(null) VelocidiSDK/%@ (%@; %@ %@; Scale/%0.2f)",
-                                @(VelocidiSDKVersionNumber),
-                                [d model],
-                                [d systemName],
-                                [d systemVersion],
-                                [[UIScreen mainScreen] scale]
-                                ];
-    bool result = [VSDKUtil.getVersionedUserAgent isEqualToString:expectedResult];
-    XCTAssert(result, @"%@ != %@", expectedResult, VSDKUtil.getVersionedUserAgent);
-}
-
-- (void)testTrackingRequest {
-    VSDKTrackingEvent * trackingEvent = [[VSDKPageView alloc] init];
-    trackingEvent.clientId = @"0";
-    trackingEvent.siteId = @"1";
-
-    VSDKConfig * config = [[VSDKConfig alloc] initWithHosts:@"https://localhost:8080":@"https://localhost:8080"];
-    [VSDKVelocidi start:config];
-
-//    [[VSDKVelocidi sharedInstance] track:trackingEvent];
-
-    [NSThread sleepForTimeInterval:5.0f];
-}
-
 @end
