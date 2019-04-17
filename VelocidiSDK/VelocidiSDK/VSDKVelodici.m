@@ -49,14 +49,14 @@ static VSDKConfig *_config = nil;
 
 - (void)track:(VSDKTrackingEvent *)trackingEvent
     onSuccess:(void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-    onFailure:(void (^)(NSError *error))onErrorBlock {
+    onFailure:(void (^)(NSError *error))onFailureBlock {
 
     VSDKRequest * request = [[VSDKRequest alloc] initWithHTTPSessionManager:self.sessionManager];
 
     request.data = trackingEvent;
     request.url = [NSURL URLWithString:VSDKVelocidi.config.trackingHost];
 
-    [request performRequest:onSuccessBlock :onErrorBlock];
+    [request performRequest:onSuccessBlock :onFailureBlock];
 }
 
 
