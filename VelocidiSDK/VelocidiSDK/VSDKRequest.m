@@ -17,7 +17,7 @@
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
         _util = [[VSDKUtil alloc] init] ;
-        [VSDKUtil setAcceptAllRequests:_manager];
+        [VSDKUtil setAcceptAllResponses:_manager];
     }
     return self;
 }

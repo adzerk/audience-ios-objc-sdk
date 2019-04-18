@@ -38,7 +38,7 @@ static VSDKConfig *_config = nil;
 - (id) init{
     if(self = [super init]) {
         _sessionManager = [AFHTTPSessionManager manager];
-        [VSDKUtil setAcceptAllRequests:_sessionManager];
+        [VSDKUtil setAcceptAllResponses:_sessionManager];
     }
     return self;
 }

@@ -56,7 +56,7 @@
     return true;
 }
 
-+ (void) setAcceptAllRequests: (AFHTTPSessionManager *)sessionManager {
++ (void) setAcceptAllResponses: (AFHTTPSessionManager *)sessionManager {
     sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     sessionManager.responseSerializer.acceptableContentTypes = nil;
 }

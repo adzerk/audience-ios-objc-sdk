@@ -8,7 +8,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface VSDKVelocidi: NSObject
 
+/**
+  Configuration of the SDK
+ */
 @property (class, readonly, nonatomic) VSDKConfig *config;
+
+/**
+  Manages all HTTP requests made by the SDK
+ */
 @property (readonly, nonatomic) AFHTTPSessionManager *sessionManager;
 
 /**
