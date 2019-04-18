@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_VelocidiSDKTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_VelocidiSDKTestsVersionString[];
+FOUNDATION_EXPORT double Pods_VelocidiSDK_VelocidiSDKTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_VelocidiSDK_VelocidiSDKTestsVersionString[];
 
