@@ -85,7 +85,6 @@
 				AA5B434BA61EEFAD3DA2911C /* Pods-Examples.debug.xcconfig */,
 				D144900818DC96FDDB0476ED /* Pods-Examples.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
