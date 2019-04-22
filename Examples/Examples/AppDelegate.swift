@@ -1,4 +1,5 @@
 import UIKit
+import VelocidiSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,6 +9,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        let config = VSDKConfig(hosts: "http://localhost:8080", "http://localhost:8080")!
+        VSDKVelocidi.start(config)
         return true
     }
 

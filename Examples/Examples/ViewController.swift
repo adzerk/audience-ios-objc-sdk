@@ -6,9 +6,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
-        let config = VSDKConfig(hosts: "http://localhost:8080", "http://localhost:8080")!
-        VSDKVelocidi.start(config)
     }
 
     //MARK: Actions
