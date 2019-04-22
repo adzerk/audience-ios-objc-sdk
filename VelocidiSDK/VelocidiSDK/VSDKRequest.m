@@ -23,7 +23,7 @@
 }
 
 - (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-        :(void (^)(NSError *error))onErrorBlock {
+        :(void (^)(NSError *error))onFailureBlock {
     NSUUID * advertisingIdentifier = [self.util getAdvertisingIdentifier];
 
     if (![self.util isTrackAllowed:advertisingIdentifier]) {
@@ -44,7 +44,7 @@
             downloadProgress:nil
             completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
                 if (error) {
-                    onErrorBlock(error);
+                    onFailureBlock(error);
                 } else {
                     onSuccessBlock(response, responseObject);
                 }
@@ -52,9 +52,9 @@
     [dataTask resume];
 }
 
-- (NSString *)buildURLParameters:(NSString *) advertisingId {
+- (NSString *)buildURLParameters:(NSString *) advertisingIdentifier {
     return [NSString stringWithFormat:@"?id_idfa=%@&cookies=false",
-            [advertisingId stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
+            [advertisingIdentifier stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
 }
 
 @end
