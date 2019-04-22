@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '11.0'
+workspace '../VelocidiSDK.xcworkspace'
+
+use_frameworks!
+
+target "Examples" do
+  project 'Examples.xcodeproj'
+
+  pod 'VelocidiSDK', :path => '../'
+end
