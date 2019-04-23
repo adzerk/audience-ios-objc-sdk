@@ -3,10 +3,13 @@ import VelocidiSDK
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var mainLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    var trackingNumber = 0
 
     //MARK: Actions
     @IBAction func TrackingEvent(_ sender: UIButton) {
@@ -14,10 +17,13 @@ class ViewController: UIViewController {
         trackingEvent.siteId = "0"
         trackingEvent.clientId = "0"
         
+        trackingNumber += 1
+        let currentTrNumber = trackingNumber
+        
         VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
-            print("Success")
+            self.mainLabel.text = "Tracking request #\(currentTrNumber) successful!!!"
         }, onFailure:{(error: Error) in
-            print("Error \(error.localizedDescription)")
+            self.mainLabel.text = "Error with tracking request #\(currentTrNumber).\n Error: \(error.localizedDescription)"
         })
     }
 }
