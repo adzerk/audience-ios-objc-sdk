@@ -758,7 +758,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0E2C4799C0C925EDCE50E8A1 /* Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig */;
 			buildSettings = {
-				"ADDITIONAL_SDKS[arch=*]" = i;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = VelocidiSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
