@@ -23,7 +23,6 @@
     "VelocidiSDK/VelocidiSDK/**/*.{h,m}"
   ],
   "exclude_files": "Classes/Exclude",
-  "frameworks": "XCTest",
   "dependencies": {
     "JSONModel": [
       "~> 1.8"
