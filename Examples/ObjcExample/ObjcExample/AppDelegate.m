@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+@import VelocidiSDK;
 
 @interface AppDelegate ()
 
@@ -9,6 +10,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    VSDKConfig * config = [[VSDKConfig alloc] initWithHosts:@"http://localhost:8080": @"http://localhost:8080"];
+    [VSDKVelocidi start: config];
     return YES;
 }
 
