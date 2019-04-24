@@ -23,9 +23,9 @@ static int trackingNumber = 0;
     trackingNumber++;
     
     [VSDKVelocidi.sharedInstance track: trackingEvent onSuccess: ^(NSURLResponse * response, id responseObject){
-        self.mainLabel.text = [NSString stringWithFormat: @"Success! Sent tracking event #%i", trackingNumber];
+        self.mainLabel.text = [NSString stringWithFormat: @"Tracking request #%i successful!!!", trackingNumber];
     } onFailure: ^(NSError * error){
-        self.mainLabel.text = [NSString stringWithFormat: @"Failure!\n Error #%@", [error description]];
+        self.mainLabel.text = [NSString stringWithFormat: @"Error with tracking request #%i.\n Error: %@", trackingNumber, [error localizedDescription]];
     }];
 }
 @end

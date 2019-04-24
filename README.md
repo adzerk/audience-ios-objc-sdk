@@ -51,6 +51,8 @@ Initialize the VelocidiSDK with the necessary `trackingHost` and the `matchHost`
 
 __Swift__
 ```swift
+import VelocidiSDK
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -60,10 +62,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let config = VSDKConfig(hosts: "http://tr.yourdomain.com", "http://match.yourdomain.com")!
+        let config = VSDKConfig(hosts: "https://tr.yourdomain.com", "https://match.yourdomain.com")!
         VSDKVelocidi.start(config)
         return true
     }
+```
+
+__Objective-C__
+```objc
+@import VelocidiSDK;
+
+@interface AppDelegate ()
+
+@end
+
+@implementation AppDelegate
+
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    
+    VSDKConfig * config = [[VSDKConfig alloc] initWithHosts:@"https://tr.yourdomain.com": @"https://match.yourdomain.com"];
+    [VSDKVelocidi start: config];
+    return YES;
+}
 ```
 
 ### Send a track event
@@ -72,6 +94,10 @@ In order to sent a tracking event, create an instance of TrackingEvent. Then, ca
 
 __Swift__
 ```swift
+import VelocidiSDK
+
+...
+
 let trackingEvent = VSDKPageView()
 trackingEvent.siteId = "RandomSiteId"
 trackingEvent.clientId = "RandomClientId"
@@ -79,16 +105,38 @@ trackingEvent.clientId = "RandomClientId"
 VSDKVelocidi.sharedInstance().track(trackingEvent)
 ```
 
+__Objective-C__
+```objc
+@import VelocidiSDK;
+
+...
+
+VSDKTrackingEvent * trackingEvent =  [[VSDKPageView alloc] init];
+trackingEvent.clientId = @"RandomSiteId";
+trackingEvent.siteId = @"RandomClientId";
+
+[VSDKVelocidi.sharedInstance track: trackingEvent] 
+```
+
+
 You can also pass callback blocks that will that will be called when the request is successful or if if fails.
 
 __Swift__
 ```swift
-
 VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
   print("Success! Response: \(response)")
 }, onFailure:{(error: Error) in
   print("Failed! Error: \(error.localizedDescription)")
 })
+```
+
+__Objective-C__
+```objc
+[VSDKVelocidi.sharedInstance track: trackingEvent onSuccess: ^(NSURLResponse * response, id responseObject){
+    NSLog(@"Success! Response: %@", trackingNumber);
+} onFailure: ^(NSError * error){
+    NSLog(@"Failed! Error: %@", [error localizedDescription]);
+}];
 ```
 
 #### Available tracking events model classes
@@ -107,7 +155,7 @@ VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLRes
 * VSDKSubscription
 
 <!-- #### Create your custom tracking event -->
-<!-- If you none of the available tracking events matches your needs you can also extend `TrackingEvent` and create your own.  -->
+<!-- If none of the available tracking events matches your needs you can also extend `TrackingEvent` and create your own.  -->
 
 <!-- _Beware! Custom tracking events are not interpreted by our services and bring limitied functionality other than logging and basic statistics._ -->
 
