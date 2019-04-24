@@ -4,8 +4,8 @@ workspace '../VelocidiSDK.xcworkspace'
 
 use_frameworks!
 
-target "Examples" do
-  project 'Examples.xcodeproj'
+target "SwiftExample" do
+  project 'SwiftExample/SwiftExample.xcodeproj'
 
   pod 'VelocidiSDK', :path => '../'
 end
