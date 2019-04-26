@@ -20,8 +20,8 @@
             );
 }
 
-// FIXME This test has an 'A' in the beginning because xcode runs the tests in alphabetical order
-- (void)AtestVelocidiInstanceFail {
+// FIXME This test has an 'A' after 'test' because xcode runs the tests in alphabetical order
+- (void)testAVelocidiInstanceFail {
     XCTAssertThrowsSpecificNamed(
                                  VSDKVelocidi.sharedInstance,
                                  NSException,
