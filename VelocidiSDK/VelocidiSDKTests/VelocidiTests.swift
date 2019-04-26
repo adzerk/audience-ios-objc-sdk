@@ -31,9 +31,9 @@ class NetworkTests: QuickSpec {
     override func spec() {
         super.spec()
         describe("VelocidiSDK") {
+            let trackURL = "http://tr.testdomain.com"
+            let matchURL = "http://match.testdomain.com"
             context("test track request"){
-                let trackURL = "http://tr.testdomain.com"
-                let matchURL = "http://match.testdomain.com"
 
                 func  responseBuilder(url: String, expectedData: Data) -> (URLRequest) -> (Response) {
                     return { (request: URLRequest) in
@@ -51,8 +51,8 @@ class NetworkTests: QuickSpec {
                         return .failure(NSError(domain: trackURL, code: 400))
                     }
                 }
-
-                it("should make track successful requests") {
+    
+                it("should make successful track requests") {
                     let trackingEvent = VSDKPageView()
                     trackingEvent.siteId = "0"
                     trackingEvent.clientId = "0"
@@ -76,8 +76,65 @@ class NetworkTests: QuickSpec {
                     expect(success).toEventuallyNot(beNil(), timeout: 4)
                     expect(success).toEventuallyNot(beFalse())
                 }
+            }
 
+            context("test match requests"){
+                func  responseBuilder(url: String, expectedParams: Dictionary<String, String>) -> (URLRequest) -> (Response) {
+                    return { (request: URLRequest) in
+                        let requestUrl = request.url!.absoluteString
+                        var hasAllParams = true
+                        expectedParams.forEach { (key, value) in
+                            if(!requestUrl.contains("\(key)=\(value)")){
+                                hasAllParams = false
+                            }
+                        }
 
+                        if(requestUrl.starts(with: url)
+                            && request.allHTTPHeaderFields?["User-Agent"] != nil
+                            && hasAllParams
+                            ){
+                            let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
+                            return .success(response, .noContent)
+                        }
+                        return .failure(NSError(domain: trackURL, code: 400))
+                    }
+                }
+
+                it("should make successful match requests"){
+                    let userId1 = VSDKUserId()
+                    userId1.type = "foo"
+                    userId1.userId = "bar"
+                    
+                    let userId2 = VSDKUserId()
+                    userId2.type = "x"
+                    userId2.userId = "y"
+                    
+                    let arrUserIds = NSMutableArray(array: [userId1,userId2])
+                    
+                    var expectedParams = Dictionary<String, String>()
+                    for case let userId as VSDKUserId in arrUserIds {
+                        expectedParams["id_\(userId.type)"] = userId.userId
+                    }
+
+                    self.stub({(request: URLRequest) in
+                        return request.url!.absoluteString.starts(with: matchURL)
+                    }, responseBuilder(url:matchURL, expectedParams: expectedParams))
+                    
+                    var success: Bool? = nil
+                    
+                    let config = VSDKConfig(hosts:trackURL, matchURL)
+                    VSDKVelocidi.start(config!)
+                    
+                    VSDKVelocidi.sharedInstance().match("baz", userIds: arrUserIds, onSuccess:{ (response: URLResponse, responseObject: Any) in
+                        success = true
+                    }, onFailure:{(error: Error) in
+                        NSLog("Error \(error.localizedDescription)")
+                        success = false
+                    })
+                    
+                    expect(success).toEventuallyNot(beNil(), timeout: 4)
+                    expect(success).toEventuallyNot(beFalse())
+                }
             }
         }
     }
