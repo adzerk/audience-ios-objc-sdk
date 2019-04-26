@@ -1,6 +1,8 @@
 #import "VSDKVelocidi.h"
 #import "VSDKConfig.h"
 #import "VSDKRequest.h"
+#import "VSDKTrackingRequest.h"
+#import "VSDKUtil.h"
 
 @implementation VSDKVelocidi
 
@@ -43,15 +45,15 @@ static VSDKConfig *_config = nil;
     return self;
 }
 
-- (void)track:(VSDKTrackingEvent *)trackingEvent {
-    [self track:trackingEvent onSuccess:(void (^)(NSURLResponse *, id)) ^{} onFailure:(void (^)(NSError * error)) ^{}];
+- (void)track: (VSDKTrackingEvent *)trackingEvent {
+    [self track:trackingEvent onSuccess: (void (^)(NSURLResponse *, id)) ^{} onFailure: (void (^)(NSError * error)) ^{}];
 }
 
-- (void)track:(VSDKTrackingEvent *)trackingEvent
-    onSuccess:(void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-    onFailure:(void (^)(NSError *error))onFailureBlock {
+- (void)track: (VSDKTrackingEvent *)trackingEvent
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError *error))onFailureBlock {
 
-    VSDKRequest * request = [[VSDKRequest alloc] initWithHTTPSessionManager:self.sessionManager];
+    VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
 
     request.data = trackingEvent;
     request.url = VSDKVelocidi.config.trackingHost;
@@ -59,5 +61,18 @@ static VSDKConfig *_config = nil;
     [request performRequest:onSuccessBlock :onFailureBlock];
 }
 
+- (void)match: (NSString *) providerId
+      userIds: (NSMutableArray<VSDKUserId *> *) userIds {
+    [self match: providerId
+        userIds: userIds
+      onSuccess: (void (^)(NSURLResponse *, id)) ^{}
+      onFailure: (void (^)(NSError * error)) ^{} ];
+}
 
+- (void)match: (NSString *) providerId
+      userIds: (NSMutableArray<VSDKUserId *> *) userIds
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError * error)) onFailureBlock {
+    
+}
 @end

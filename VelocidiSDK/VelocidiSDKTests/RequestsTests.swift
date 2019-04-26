@@ -27,7 +27,7 @@ class RequestsTests: QuickSpec {
         describe("VSDKRequests") {
             it("should not make a track requests if tracking is not allowed") {
                 
-                class MockRequest: VSDKRequest<JSONModel>{
+                class MockRequest: VSDKTrackingRequest{
                     override var identifierManager: ASIdentifierManager { return MockASIdentifierManager() }
                 }
 
@@ -42,7 +42,7 @@ class RequestsTests: QuickSpec {
                     return request.url!.absoluteString.starts(with: url)
                 }, failure(NSError(domain: url, code: 403)))
 
-                let request = MockRequest()
+                let request = MockTrackingRequest()
                 request.url = URL(string: url)!
                 request.data = trackingEvent
 
@@ -62,7 +62,7 @@ class RequestsTests: QuickSpec {
             
             it("should use the provided User-Agent") {
                
-                class MockRequest: VSDKRequest<JSONModel>{
+                class MockRequest: VSDKTrackingRequest{
                     override var util: VSDKUtil { return MockUtil() }
                 }
                 

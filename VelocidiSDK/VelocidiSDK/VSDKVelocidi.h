@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 @class VSDKConfig;
 @class VSDKTrackingEvent;
+@class VSDKUserId;
 @class AFHTTPSessionManager;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -46,8 +47,28 @@ NS_ASSUME_NONNULL_BEGIN
   @param onFailureBlock Block to be called if the request is unsuccessful
  */
 - (void)track: (VSDKTrackingEvent *)trackingEvent
-        onSuccess:(void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-        onFailure:(void (^)(NSError * error))onFailureBlock;
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError * error))onFailureBlock;
+
+/**
+  Match Apple's advertisingIdentifier with the list of provided user ids
+  @param providerId Id of the match provider
+  @param userIds List of user ids to be linked along with Advertising Id
+  @param onSuccessBlock Block to be called if the request is successful
+  @param onFailureBlock Block to be called if the request is unsuccessful
+ */
+- (void)match: (NSString *) providerId
+      userIds: (NSMutableArray<VSDKUserId *> *)userIds
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError * error))onFailureBlock;
+
+/**
+  Match Apple's advertisingIdentifier with the list of provided user ids
+  @param providerId Id of the match provider
+  @param userIds List of user ids to be linked along with Advertising Id
+ */
+- (void)match: (NSString *)providerId
+      userIds: (NSMutableArray<VSDKUserId *> *) userIds;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,5 +1,5 @@
-#import <VelocidiSDK/VelocidiSDK.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
+#import <JSONModel/JSONModel.h>
 
 @class ASIdentifierManager;
 @class VSDKUtil;
@@ -39,6 +39,10 @@ NS_ASSUME_NONNULL_BEGIN
   @returns URL parameters string
  */
 - (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier;
+
+- (NSURLComponents *) buildURL:(NSString *) advertisingIdentifier;
+
+- (NSDictionary *)getData;
 
 @end
 
