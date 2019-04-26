@@ -41,12 +41,7 @@ static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError"
 
     NSUUID * advertisingIdentifier = [self.identifierManager advertisingIdentifier];
 
-    NSURLComponents * url = [self buildURL: [advertisingIdentifier UUIDString]];
-
-    NSMutableURLRequest * request = [[AFJSONRequestSerializer serializer]
-                                     requestWithMethod: @"POST"
-                                     URLString: url.string
-                                     parameters: [self getData] error:nil];
+    NSMutableURLRequest * request = [self buildRequest:[advertisingIdentifier UUIDString]];
     [request setValue:[self.util getVersionedUserAgent] forHTTPHeaderField:@"User-Agent"];
     NSURLSessionDataTask *dataTask = [self.manager
             dataTaskWithRequest:request
@@ -73,14 +68,7 @@ static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError"
     return urlComponents;
 }
 
-
-- (NSString *)buildURL:(NSString *) advertisingIdentifier{
-    @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
-                                 userInfo:nil];
-}
-
-- (NSDictionary *)getData{
+- (NSMutableURLRequest *)buildRequest:(NSString *) advertisingIdentifier{
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];

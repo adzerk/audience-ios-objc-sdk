@@ -6,7 +6,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKRequest<__covariant T:JSONModel *> : NSObject
+@interface VSDKRequest : NSObject
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
@@ -40,9 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier;
 
-- (NSURLComponents *) buildURL:(NSString *) advertisingIdentifier;
-
-- (NSDictionary *)getData;
+- (NSMutableURLRequest *)buildRequest:(NSString *) advertisingIdentifier;
 
 @end
 

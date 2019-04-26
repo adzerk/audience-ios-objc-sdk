@@ -3,11 +3,12 @@
 
 @implementation VSDKTrackingRequest
 
-- (NSString *) getURLParameters:(NSString *) advertisingIdentifier {
-    return [self buildURLParameters:advertisingIdentifier];
-}
+- (NSMutableURLRequest *) buildRequest: (NSString*) advertisingIdentifier {
+    NSURLComponents * url = [self buildURLWithQueryParameters: advertisingIdentifier];
 
-- (NSDictionary *)getData{
-    return self.data.toDictionary;
+    return [[AFJSONRequestSerializer serializer] requestWithMethod: @"POST"
+                                                         URLString: url.string
+                                                        parameters: self.data.toDictionary
+                                                             error: nil];
 }
 @end

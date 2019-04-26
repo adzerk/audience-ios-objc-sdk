@@ -2,6 +2,7 @@
 #import "VSDKConfig.h"
 #import "VSDKRequest.h"
 #import "VSDKTrackingRequest.h"
+#import "VSDKMatchRequest.h"
 #import "VSDKUtil.h"
 
 @implementation VSDKVelocidi
@@ -74,5 +75,12 @@ static VSDKConfig *_config = nil;
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError * error)) onFailureBlock {
     
+    VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
+    
+    request.userIds = userIds;
+    request.providerId = providerId;
+    request.url = VSDKVelocidi.config.matchHost;
+    
+    [request performRequest:onSuccessBlock :onFailureBlock];
 }
 @end

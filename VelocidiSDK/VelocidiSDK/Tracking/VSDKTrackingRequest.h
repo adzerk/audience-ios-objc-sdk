@@ -4,7 +4,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKTrackingRequest : VSDKRequest<VSDKTrackingEvent *>
+@interface VSDKTrackingRequest : VSDKRequest
 
 @property VSDKTrackingEvent * data;
 
