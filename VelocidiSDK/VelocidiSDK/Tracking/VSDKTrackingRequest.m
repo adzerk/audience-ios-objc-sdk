@@ -1,3 +1,5 @@
+#import <AFNetworking/AFNetworking.h>
+#import "VSDKTRackingEvent.h"
 #import "VSDKTrackingRequest.h"
 #import "VSDKRequest.h"
 

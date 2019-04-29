@@ -1,4 +1,6 @@
-#import <VelocidiSDK/VelocidiSDK.h>
+#import "VSDKRequest.h"
+
+@class VSDKUserId;
 
 NS_ASSUME_NONNULL_BEGIN
 

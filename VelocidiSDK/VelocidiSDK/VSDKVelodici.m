@@ -1,6 +1,6 @@
+#import <AFNetworking/AFNetworking.h>
 #import "VSDKVelocidi.h"
 #import "VSDKConfig.h"
-#import "VSDKRequest.h"
 #import "VSDKTrackingRequest.h"
 #import "VSDKMatchRequest.h"
 #import "VSDKUtil.h"

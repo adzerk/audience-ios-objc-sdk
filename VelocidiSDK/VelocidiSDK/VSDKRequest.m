@@ -1,4 +1,4 @@
-@import Foundation;
+#import <AFNetworking/AFNetworking.h>
 #import "VSDKRequest.h"
 #import "VSDKUtil.h"
 #import <AdSupport/ASIdentifierManager.h>
@@ -34,7 +34,7 @@ static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError"
 }
 
 - (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-        :(void (^)(NSError *error))onFailureBlock {
+                      : (void (^)(NSError *error))onFailureBlock {
     if (![self.identifierManager isAdvertisingTrackingEnabled]) {
         return onFailureBlock(VSDKRequest.trackingNotAllowedError);
     }

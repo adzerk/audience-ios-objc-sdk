@@ -1,15 +1,9 @@
 #import <UIKit/UIKit.h>
 
-//! Project version number for VelocidiSDK.
-FOUNDATION_EXPORT double VelocidiSDKVersionNumber;
-
-//! Project version string for VelocidiSDK.
-FOUNDATION_EXPORT const unsigned char VelocidiSDKVersionString[];
-
-
 #import "VSDKAddToCart.h"
 #import "VSDKConfig.h"
 #import "VSDKCustomization.h"
+#import "VSDKGlobalVariables.h"
 #import "VSDKMatchRequest.h"
 #import "VSDKPageView.h"
 #import "VSDKProduct.h"

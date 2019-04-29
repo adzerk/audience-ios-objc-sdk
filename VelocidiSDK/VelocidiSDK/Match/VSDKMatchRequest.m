@@ -1,3 +1,4 @@
+#import <AFNetworking/AFNetworking.h>
 #import "VSDKMatchRequest.h"
 #import "VSDKUserId.h"
 
@@ -20,7 +21,7 @@
 
 - (NSMutableURLRequest *) buildRequest: (NSString *) advertisingIdentifier{
     NSURLComponents * url = [self buildMatchURLParameters: advertisingIdentifier];
-    
+
     return [[AFHTTPRequestSerializer serializer] requestWithMethod: @"GET"
                                                          URLString: url.string
                                                         parameters: nil

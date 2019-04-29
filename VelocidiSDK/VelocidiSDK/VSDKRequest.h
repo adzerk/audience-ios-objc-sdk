@@ -1,6 +1,6 @@
-#import <AFNetworking/AFHTTPSessionManager.h>
-#import <JSONModel/JSONModel.h>
+#import <Foundation/Foundation.h>
 
+@class AFHTTPSessionManager;
 @class ASIdentifierManager;
 @class VSDKUtil;
 

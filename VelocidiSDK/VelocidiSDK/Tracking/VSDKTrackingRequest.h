@@ -1,6 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "VSDKRequest.h"
-#import "VSDKTrackingEvent.h"
+
+@class VSDKTrackingEvent;
 
 NS_ASSUME_NONNULL_BEGIN
 
