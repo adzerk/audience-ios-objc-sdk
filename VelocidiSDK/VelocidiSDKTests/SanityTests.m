@@ -21,13 +21,15 @@
 }
 
 // FIXME This test has an 'A' after 'test' because xcode runs the tests in alphabetical order
-- (void)testAVelocidiInstanceFail {
-    XCTAssertThrowsSpecificNamed(
-                                 VSDKVelocidi.sharedInstance,
-                                 NSException,
-                                 NSInternalInconsistencyException
-                                 );
-}
+// Disabled until it is not depending on test order
+//- (void)testAVelocidiInstanceFail {
+//    XCTAssertThrowsSpecificNamed(
+//                                 VSDKVelocidi.sharedInstance,
+//                                 NSException,
+//                                 NSInternalInconsistencyException
+//                                 );
+//
+//}
 
 - (void)testVelocidiInstanceSuccess {
     VSDKConfig * config = [[VSDKConfig alloc]
