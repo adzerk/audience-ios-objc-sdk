@@ -40,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier;
 
-- (NSMutableURLRequest *)buildRequest:(NSString *) advertisingIdentifier;
+- (NSMutableURLRequest *)buildRequest: (NSString *)advertisingIdentifier;
 
 @end
 

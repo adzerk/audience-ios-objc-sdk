@@ -45,7 +45,7 @@
 		309FA3E322730BAC00709155 /* VSDKUserId.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FA3E122730BAC00709155 /* VSDKUserId.m */; };
 		309FA3E6227319E500709155 /* VSDKTrackingRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 309FA3E4227319E500709155 /* VSDKTrackingRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		309FA3E7227319E500709155 /* VSDKTrackingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FA3E5227319E500709155 /* VSDKTrackingRequest.m */; };
-		309FA3EB2273248E00709155 /* VSDKMatchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 309FA3E92273248E00709155 /* VSDKMatchRequest.h */; };
+		309FA3EB2273248E00709155 /* VSDKMatchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 309FA3E92273248E00709155 /* VSDKMatchRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		309FA3EC2273248E00709155 /* VSDKMatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FA3EA2273248E00709155 /* VSDKMatchRequest.m */; };
 		30B6142D2260D64E007774B4 /* VSDKUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 30B6142C2260D64E007774B4 /* VSDKUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30B68A082260D40800226C76 /* VSDKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B68A062260D40800226C76 /* VSDKUtil.m */; };
@@ -352,7 +352,6 @@
 				305D1AD2225659A00016EF25 /* VSDKTransaction.h in Headers */,
 				304FEFA22254B8AB00ECF86E /* VSDKVelocidi.h in Headers */,
 				305D1ACA225657A70016EF25 /* VSDKRemoveFromCart.h in Headers */,
-				309FA3EB2273248E00709155 /* VSDKMatchRequest.h in Headers */,
 				305D1ABE22564DB10016EF25 /* VSDKProductViewDetails.h in Headers */,
 				305D1ACE225658930016EF25 /* VSDKSubscription.h in Headers */,
 				305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */,
@@ -363,6 +362,7 @@
 				308A7369225E297D00E1ADA8 /* VSDKRequest.h in Headers */,
 				309FA3E6227319E500709155 /* VSDKTrackingRequest.h in Headers */,
 				309FA3E222730BAC00709155 /* VSDKUserId.h in Headers */,
+				309FA3EB2273248E00709155 /* VSDKMatchRequest.h in Headers */,
 				B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,7 +31,7 @@
 
 - (void)testVelocidiInstanceSuccess {
     VSDKConfig * config = [[VSDKConfig alloc]
-                           initWithHosts:@"https://tr.testdomain.com:8080":@"https://match.testdomain.com:8080"];
+                           initWithTrackingHost:@"https://tr.testdomain.com:8080":@"https://match.testdomain.com:8080"];
     [VSDKVelocidi start:config];
     XCTAssert(VSDKVelocidi.sharedInstance);
 }
@@ -67,7 +67,7 @@
     [uidArray addObject:userId1];
     [uidArray addObject:userId2];
 
-    VSDKConfig * config = [[VSDKConfig alloc] initWithHosts:@"http://localhost:8080":@"http://localhost:8080"];
+    VSDKConfig * config = [[VSDKConfig alloc] initWithTrackingHost:@"http://localhost:8080":@"http://localhost:8080"];
     [[VSDKVelocidi start:config] match:@"baz"
                                userIds:uidArray
                              onSuccess:^(NSURLResponse * response, id responseObject) {

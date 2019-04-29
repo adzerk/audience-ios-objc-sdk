@@ -68,7 +68,7 @@ static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError"
     return urlComponents;
 }
 
-- (NSMutableURLRequest *)buildRequest:(NSString *) advertisingIdentifier{
+- (NSMutableURLRequest *)buildRequest: (NSString *)advertisingIdentifier{
     @throw [NSException exceptionWithName:NSInternalInconsistencyException
                                    reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
                                  userInfo:nil];

@@ -18,7 +18,8 @@
   @param matchHost URL used to make match requests
   @returns VSDKConfig instance
  */
-- (instancetype)initWithHosts: (NSString *)trackingHost :(NSString *)matchHost;
+- (instancetype)initWithTrackingHost: (NSString *)trackingHost
+                                    : (NSString *)matchHost;
 
 /**
   Initialize an instance of VSDKConfig.

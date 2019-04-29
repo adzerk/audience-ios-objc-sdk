@@ -13,7 +13,7 @@ static VSDKConfig *_config = nil;
     return _config;
 }
 
-+ (instancetype)start:(VSDKConfig *)config {
++ (instancetype)start: (VSDKConfig *)config {
     _config = config;
 
     return [self sharedInstance];
@@ -62,18 +62,18 @@ static VSDKConfig *_config = nil;
     [request performRequest:onSuccessBlock :onFailureBlock];
 }
 
-- (void)match: (NSString *) providerId
-      userIds: (NSMutableArray<VSDKUserId *> *) userIds {
+- (void)match: (NSString *)providerId
+      userIds: (NSMutableArray<VSDKUserId *> *)userIds {
     [self match: providerId
         userIds: userIds
       onSuccess: (void (^)(NSURLResponse *, id)) ^{}
       onFailure: (void (^)(NSError * error)) ^{} ];
 }
 
-- (void)match: (NSString *) providerId
-      userIds: (NSMutableArray<VSDKUserId *> *) userIds
+- (void)match: (NSString *)providerId
+      userIds: (NSMutableArray<VSDKUserId *> *)userIds
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-    onFailure: (void (^)(NSError * error)) onFailureBlock {
+    onFailure: (void (^)(NSError * error))onFailureBlock {
     
     VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
     

@@ -63,7 +63,7 @@ class NetworkTests: QuickSpec {
 
                     var success: Bool? = nil
 
-                    let config = VSDKConfig(hosts:trackURL, matchURL)
+                    let config = VSDKConfig(trackingHost: trackURL, matchURL)
                     VSDKVelocidi.start(config!)
 
                     VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
@@ -101,14 +101,9 @@ class NetworkTests: QuickSpec {
                 }
 
                 it("should make successful match requests"){
-                    let userId1 = VSDKUserId()
-                    userId1.type = "foo"
-                    userId1.userId = "bar"
-                    
-                    let userId2 = VSDKUserId()
-                    userId2.type = "x"
-                    userId2.userId = "y"
-                    
+                    let userId1 = VSDKUserId(userId: "bar", "foo")
+                    let userId2 = VSDKUserId(userId: "y", "x")
+
                     let arrUserIds = NSMutableArray(array: [userId1,userId2])
                     
                     var expectedParams = Dictionary<String, String>()
@@ -122,7 +117,7 @@ class NetworkTests: QuickSpec {
                     
                     var success: Bool? = nil
                     
-                    let config = VSDKConfig(hosts:trackURL, matchURL)
+                    let config = VSDKConfig(trackingHost: trackURL, matchURL)
                     VSDKVelocidi.start(config!)
                     
                     VSDKVelocidi.sharedInstance().match("baz", userIds: arrUserIds, onSuccess:{ (response: URLResponse, responseObject: Any) in

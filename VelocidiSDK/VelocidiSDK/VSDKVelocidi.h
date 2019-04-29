@@ -57,7 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
   @param onSuccessBlock Block to be called if the request is successful
   @param onFailureBlock Block to be called if the request is unsuccessful
  */
-- (void)match: (NSString *) providerId
+- (void)match: (NSString *)providerId
       userIds: (NSMutableArray<VSDKUserId *> *)userIds
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError * error))onFailureBlock;
@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
   @param userIds List of user ids to be linked along with Advertising Id
  */
 - (void)match: (NSString *)providerId
-      userIds: (NSMutableArray<VSDKUserId *> *) userIds;
+      userIds: (NSMutableArray<VSDKUserId *> *)userIds;
 @end
 
 NS_ASSUME_NONNULL_END
