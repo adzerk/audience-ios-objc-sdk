@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property NSString *feedback;
 
+/**
+  List of products associated with this product feedback
+ */
+@property NSMutableArray<VSDKProduct *> *products;
+
 @end
 
 NS_ASSUME_NONNULL_END
