@@ -6,7 +6,6 @@
 
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
 
-    NSParameterAssert(manager != nil);
     if (self = [self init]) {
         _manager = manager;
     }
