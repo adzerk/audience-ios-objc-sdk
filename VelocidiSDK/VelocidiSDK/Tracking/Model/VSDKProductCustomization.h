@@ -7,7 +7,7 @@
 /**
   Product associated with this product customization
  */
-@property NSMutableArray<VSDKProduct *> *product;
+@property NSMutableArray<VSDKProduct *> *products;
 
 /**
   Customization associated with this product customization
