@@ -5,7 +5,7 @@
 @interface VSDKAddToCart : VSDKTrackingEvent
 
 /**
-  Product added to the cart
+  Products added to the cart
  */
 @property NSMutableArray<VSDKProduct *> *product;
 
