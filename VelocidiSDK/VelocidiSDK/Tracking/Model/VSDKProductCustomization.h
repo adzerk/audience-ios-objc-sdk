@@ -5,7 +5,7 @@
 @interface VSDKProductCustomization : VSDKTrackingEvent
 
 /**
-  Product associated with this product customization
+  Products being customized
  */
 @property NSMutableArray<VSDKProduct *> *products;
 
