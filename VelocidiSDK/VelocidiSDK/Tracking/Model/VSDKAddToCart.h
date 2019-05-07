@@ -7,6 +7,6 @@
 /**
   Products added to the cart
  */
-@property NSMutableArray<VSDKProduct *> *product;
+@property NSMutableArray<VSDKProduct *> *products;
 
 @end
