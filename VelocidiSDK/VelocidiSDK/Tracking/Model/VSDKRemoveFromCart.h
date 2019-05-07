@@ -4,7 +4,7 @@
 @interface VSDKRemoveFromCart : VSDKTrackingEvent
 
 /**
-  Product removed form the cart
+  Products removed from the cart
  */
 @property NSMutableArray<VSDKProduct *> *product;
 
