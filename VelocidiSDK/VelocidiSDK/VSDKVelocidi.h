@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
   @param config necessary configuration to properly start the VSDKVelocidi
   @returns shared single instance of the class VSDKVelocidi
  */
-+ (instancetype) start: (VSDKConfig *)config;
++ (instancetype)start: (VSDKConfig *)config;
 
 /**
   Send a request to Velocidi's CDP with a tracking event 
