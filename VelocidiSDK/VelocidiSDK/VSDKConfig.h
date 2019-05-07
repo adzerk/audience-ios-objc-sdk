@@ -6,12 +6,12 @@
 /**
   URL endpoint to make track requests
  */
-@property NSString *trackingHost;
+@property NSURL *trackingHost;
 
 /**
   URL endpoint to make match requests
  */
-@property NSString *matchHost;
+@property NSURL *matchHost;
 
 /**
   Initialize an instance of VSDKConfig.

@@ -6,8 +6,8 @@
 
 - (instancetype)initWithHosts: (NSString *)trackingHost :(NSString *)matchHost {
     if(self = [super init]) {
-        self.trackingHost = trackingHost;
-        self.matchHost = matchHost;
+        self.trackingHost = [[NSURL alloc] initWithString:trackingHost];
+        self.matchHost = [[NSURL alloc] initWithString:matchHost];
     }
     return self;
 }
