@@ -8,6 +8,9 @@ class MockUtil: VSDKUtil {
     override func getAdvertisingIdentifier() -> UUID {
         return UUID(uuidString: "00000000-0000-0000-0000-000000000000")!
     }
+    override func isAdvertisingTrackingEnabled() -> Bool {
+        return false
+    }
 }
 
 class MockRequest: VSDKRequest<JSONModel> {
@@ -22,7 +25,7 @@ class RequestsTests: QuickSpec {
     override func spec() {
         super.spec()
         describe("VSDKRequests") {
-            it("should not make a track requests if the advertisingIdentifier is all 0s") {
+            it("should not make a track requests if tracking is not allowed") {
                 let url = "http://testdomain.com"
                 let trackingEvent = VSDKPageView()
                 trackingEvent.siteId = "0"

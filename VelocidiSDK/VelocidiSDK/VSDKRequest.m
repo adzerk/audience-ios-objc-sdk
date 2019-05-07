@@ -24,11 +24,11 @@
 
 - (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
         :(void (^)(NSError *error))onFailureBlock {
-    NSUUID * advertisingIdentifier = [self.util getAdvertisingIdentifier];
-
-    if (![self.util isTrackAllowed:advertisingIdentifier]) {
+    if (![self.util isAdvertisingTrackingEnabled]) {
         return;
     }
+    
+    NSUUID * advertisingIdentifier = [self.util getAdvertisingIdentifier];
 
     NSString * urlParameters = [self buildURLParameters:[advertisingIdentifier UUIDString]];
     NSString * url = [NSString stringWithFormat:@"%@%@", self.url.absoluteString, urlParameters];

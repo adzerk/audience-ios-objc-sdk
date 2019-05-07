@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
   Tracking is not allowed if the adversitingIdentifier is composed of only 0's.
   @returns True if tracking is allowed, false if otherwise.
  */
-- (bool) isTrackAllowed: (NSUUID *) advertisingIdentifier;
+- (bool) isAdvertisingTrackingEnabled;
 
 /**
   Modify an AFHTTPSessionManager to accept all types of responses.

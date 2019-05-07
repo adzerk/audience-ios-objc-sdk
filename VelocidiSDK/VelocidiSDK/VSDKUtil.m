@@ -49,11 +49,8 @@
     return [[ASIdentifierManager sharedManager] advertisingIdentifier];
 }
 
-- (bool)isTrackAllowed:(NSUUID *)advertisingIdentifier {
-    if ([[advertisingIdentifier UUIDString] isEqualToString:@"00000000-0000-0000-0000-000000000000"]){
-        return false;
-    }
-    return true;
+- (bool)isAdvertisingTrackingEnabled {
+    return [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
 }
 
 + (void) setAcceptAllResponses: (AFHTTPSessionManager *)sessionManager {
