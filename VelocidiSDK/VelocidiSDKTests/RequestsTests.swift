@@ -35,7 +35,7 @@ class RequestsTests: QuickSpec {
 
                 self.stub({(request: URLRequest) in
                     return request.url!.absoluteString.starts(with: url)
-                }, failure(NSError(domain: url, code: 451)))
+                }, failure(NSError(domain: url, code: 403)))
 
                 let request = MockRequest()
                 request.url = URL(string: url)!

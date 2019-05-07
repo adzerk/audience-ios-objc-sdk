@@ -14,11 +14,6 @@
 @property float price;
 
 /**
-  Transaction frequency using cron format (https://crontab.guru/)
- */
-@property NSString *recurrence;
-
-/**
   Transaction currency
  */
 @property NSString *currency;
