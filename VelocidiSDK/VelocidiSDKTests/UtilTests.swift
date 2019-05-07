@@ -16,7 +16,6 @@ class UtilTests: QuickSpec {
                     UIDevice.current.systemName,
                     UIDevice.current.systemVersion,
                     UIScreen.main.scale)
-                     )
 
                 expect(userAgent).to(match(regexStr))
             }
