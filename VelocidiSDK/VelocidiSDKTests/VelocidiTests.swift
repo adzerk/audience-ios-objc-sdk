@@ -41,7 +41,6 @@ class NetworkTests: QuickSpec {
                             && request.allHTTPHeaderFields?["Content-Type"] == "application/json"
                             && request.allHTTPHeaderFields?["User-Agent"] != nil
                             && request.httpBodyStream != nil
-                            ){
                             
                             let receivedData = Data(reading: request.httpBodyStream!)
                             if(receivedData == expectedData){
