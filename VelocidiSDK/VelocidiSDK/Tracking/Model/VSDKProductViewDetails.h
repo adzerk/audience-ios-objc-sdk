@@ -4,7 +4,7 @@
 @interface VSDKProductViewDetails : VSDKTrackingEvent
 
 /**
-  List of products associated with this product view details
+  List of products whose details have been viewed
  */
 @property NSMutableArray<VSDKProduct *> *products;
 

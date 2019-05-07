@@ -5,7 +5,8 @@
 
 /**
   Transaction identifier (REQUIRED)
- */ @property (nonnull) NSString *transactionId;
+ */
+@property (nonnull) NSString *transactionId;
 
 /**
   Transaction total price (after taxes and shipping)

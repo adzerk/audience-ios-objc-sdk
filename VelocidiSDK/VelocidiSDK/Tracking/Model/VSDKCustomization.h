@@ -8,7 +8,7 @@
 @property NSString *name;
 
 /**
-  Product customization
+  Custom property to add extra information about the customization
  */
 @property NSString *value;
 

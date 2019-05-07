@@ -10,7 +10,7 @@
 @property NSMutableArray<VSDKProduct *> *products;
 
 /**
-  Customization associated with this product customization
+  Customization being applied to the products
  */
 @property VSDKCustomization *productCustomization;
 

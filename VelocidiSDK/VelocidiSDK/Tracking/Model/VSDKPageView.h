@@ -3,7 +3,7 @@
 @interface VSDKPageView : VSDKTrackingEvent
 
 /**
-  Page being viewed 
+  Address of the page being viewed
  */
 @property NSString *location;
 
