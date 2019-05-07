@@ -5,7 +5,7 @@
 @interface VSDKSubscription : VSDKTrackingEvent
 
 /**
-  Products associated with to the Subscription
+  Products associated with the Subscription
  */
 @property NSMutableArray<VSDKProduct *> *products;
 
