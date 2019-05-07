@@ -10,7 +10,7 @@
 @property NSMutableArray<VSDKProduct *> *products;
 
 /**
-  Transaction associated with to the Subscription
+  Transaction associated with the Subscription
  */
 @property VSDKTransaction *transaction;
 
