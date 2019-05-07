@@ -4,7 +4,7 @@
 @interface VSDKPurchase : VSDKTrackingEvent
 
 /**
-  Product purchased
+  Products purchased
  */
 @property NSMutableArray<VSDKProduct *> *product;
 
