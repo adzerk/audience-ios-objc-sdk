@@ -23,7 +23,6 @@
                                  NSException,
                                  NSInternalInconsistencyException
                                  );
-
 }
 
 - (void)testVelocidiInstanceSuccess {
