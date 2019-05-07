@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
-@property (readonly, nonatomic) VSDKUtil *util;
+@property (nonatomic) VSDKUtil *util;
 @property T data;
 
 /**
@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
   @param advertisingIdentifier advertisingIdentifier of the user
   @returns URL parameters string
  */
-- (NSString *)buildURLParameters:(NSString *) advertisingIdentifier;
+- (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier;
 
 @end
 

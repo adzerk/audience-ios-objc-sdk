@@ -28,13 +28,12 @@
     
     NSUUID * advertisingIdentifier = [self.util getAdvertisingIdentifier];
 
-    NSString * urlParameters = [self buildURLParameters:[advertisingIdentifier UUIDString]];
-    NSString * url = [NSString stringWithFormat:@"%@%@", self.url.absoluteString, urlParameters];
+    NSURLComponents * url = [self buildURLWithQueryParameters: [advertisingIdentifier UUIDString]];
 
     NSMutableURLRequest * request = [[AFJSONRequestSerializer serializer]
-            requestWithMethod:@"POST"
-            URLString:url
-                   parameters:self.data.toDictionary error:nil];
+                                     requestWithMethod: @"POST"
+                                     URLString: [url string]
+                                     parameters: self.data.toDictionary error:nil];
     [request setValue:[self.util getVersionedUserAgent] forHTTPHeaderField:@"User-Agent"];
     NSURLSessionDataTask *dataTask = [self.manager
             dataTaskWithRequest:request
@@ -50,9 +49,15 @@
     [dataTask resume];
 }
 
-- (NSString *)buildURLParameters:(NSString *) advertisingIdentifier {
-    return [NSString stringWithFormat:@"?id_idfa=%@&cookies=false",
-            [advertisingIdentifier stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]];
+- (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier {
+    NSURLComponents * urlComponents = [[NSURLComponents alloc] initWithURL: self.url resolvingAgainstBaseURL: true];
+    NSMutableArray<NSURLQueryItem *> * queryParams = [[NSMutableArray alloc] init];
+    
+    [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"id_idfa" value:advertisingIdentifier]];
+    [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"cookies" value:false]];
+    
+    urlComponents.queryItems = queryParams;
+    return urlComponents;
 }
 
 @end
