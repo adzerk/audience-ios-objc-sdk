@@ -4,7 +4,7 @@
 @interface VSDKProductClick : VSDKTrackingEvent
 
 /**
-  Product associated with this product click
+  The clicked products
  */
 @property NSMutableArray<VSDKProduct *> *product;
 
