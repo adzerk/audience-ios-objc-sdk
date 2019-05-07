@@ -6,7 +6,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface VSDKTransaction : JSONModel
 
 /**
-  Transactiuon identifier (REQUIRED)
+  Transaction identifier (REQUIRED)
  */ @property (nonnull) NSString *transactionId;
 
 /**
