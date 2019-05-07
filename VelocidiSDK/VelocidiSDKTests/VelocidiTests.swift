@@ -36,7 +36,7 @@ class NetworkTests: QuickSpec {
                 let matchURL = "http://match.testdomain.com"
 
                 func  responseBuilder(url: String, expectedData: Data) -> (URLRequest) -> (Response) {
-                    return { (request: URLRequest)   in
+                    return { (request: URLRequest) in
                         if(request.url!.absoluteString.starts(with: url)
                             && request.allHTTPHeaderFields?["Content-Type"] == "application/json"
                             && request.allHTTPHeaderFields?["User-Agent"] != nil
