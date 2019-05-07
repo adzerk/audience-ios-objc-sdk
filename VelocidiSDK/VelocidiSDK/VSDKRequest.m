@@ -5,7 +5,6 @@
 @implementation VSDKRequest
 
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
-
     if (self = [self init]) {
         _manager = manager;
     }
