@@ -6,6 +6,6 @@
 /**
   Products purchased
  */
-@property NSMutableArray<VSDKProduct *> *product;
+@property NSMutableArray<VSDKProduct *> *products;
 
 @end
