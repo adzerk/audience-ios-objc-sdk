@@ -4,7 +4,7 @@
 @interface VSDKConfig : NSObject
 
 /**
-  URL used to make track requests
+  URL endpoint to make track requests
  */
 @property NSString *trackingHost;
 
