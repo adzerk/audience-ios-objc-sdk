@@ -6,6 +6,6 @@
 /**
   The clicked products
  */
-@property NSMutableArray<VSDKProduct *> *product;
+@property NSMutableArray<VSDKProduct *> *products;
 
 @end
