@@ -9,7 +9,7 @@
 @property NSString *trackingHost;
 
 /**
-  URL used to make match requests
+  URL endpoint to make match requests
  */
 @property NSString *matchHost;
 
