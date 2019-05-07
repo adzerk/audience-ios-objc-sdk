@@ -9,7 +9,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
-@property (nonatomic) VSDKUtil *util;
+@property (readonly, nonatomic) VSDKUtil *util;
 @property T data;
 
 /**
