@@ -1,7 +1,5 @@
 @import JSONModel;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKTrackingEvent : JSONModel
 
 /**
@@ -20,5 +18,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonnull) NSString *type;
 
 @end
-
-NS_ASSUME_NONNULL_END

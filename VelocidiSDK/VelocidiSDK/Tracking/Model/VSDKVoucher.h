@@ -1,7 +1,5 @@
 @import JSONModel;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKVoucher : JSONModel
 
 /**
@@ -20,5 +18,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property float value;
 
 @end
-
-NS_ASSUME_NONNULL_END

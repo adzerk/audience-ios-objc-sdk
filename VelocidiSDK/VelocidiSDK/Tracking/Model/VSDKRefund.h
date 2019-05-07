@@ -2,8 +2,6 @@
 @class VSDKTransaction;
 @class VSDKProduct;
 
-NS_ASSUME_NONNULL_BEGIN
-
 //TODO Split this into VSDKPartialRefund and VSDKTotalRefund
 @interface VSDKRefund : VSDKTrackingEvent
 
@@ -24,5 +22,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property VSDKTransaction *transaction;
 
 @end
-
-NS_ASSUME_NONNULL_END

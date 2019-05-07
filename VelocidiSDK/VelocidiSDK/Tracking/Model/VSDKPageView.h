@@ -1,7 +1,5 @@
 #import "VSDKTrackingEvent.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKPageView : VSDKTrackingEvent
 
 /**
@@ -25,5 +23,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *category;
 
 @end
-
-NS_ASSUME_NONNULL_END

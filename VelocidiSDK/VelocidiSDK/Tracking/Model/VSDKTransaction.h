@@ -1,8 +1,6 @@
 @import JSONModel;
 @class VSDKVoucher;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKTransaction : JSONModel
 
 /**
@@ -50,5 +48,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *paymentDetails;
 
 @end
-
-NS_ASSUME_NONNULL_END

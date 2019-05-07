@@ -2,8 +2,6 @@
 
 @class VSDKProduct;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKAddToCart : VSDKTrackingEvent
 
 /**
@@ -12,5 +10,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSMutableArray<VSDKProduct *> *product;
 
 @end
-
-NS_ASSUME_NONNULL_END

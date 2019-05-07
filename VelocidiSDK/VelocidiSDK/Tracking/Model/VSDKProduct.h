@@ -1,7 +1,5 @@
 @import JSONModel;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKProduct : JSONModel
 
 /**
@@ -72,5 +70,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *unsafe;
 
 @end
-
-NS_ASSUME_NONNULL_END

@@ -2,8 +2,6 @@
 @class VSDKTransaction;
 @class VSDKProduct;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKSubscription : VSDKTrackingEvent
 
 /**
@@ -17,5 +15,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property VSDKTransaction *transaction;
 
 @end
-
-NS_ASSUME_NONNULL_END

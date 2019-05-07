@@ -1,6 +1,6 @@
 #import "VSDKTrackingEvent.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@class VSDKProduct;
 
 @interface VSDKProductFeedback : VSDKTrackingEvent
 
@@ -20,5 +20,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSMutableArray<VSDKProduct *> *products;
 
 @end
-
-NS_ASSUME_NONNULL_END

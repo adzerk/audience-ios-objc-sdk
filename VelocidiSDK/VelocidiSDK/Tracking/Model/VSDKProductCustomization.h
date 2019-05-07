@@ -2,8 +2,6 @@
 @class VSDKProduct;
 @class VSDKCustomization;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKProductCustomization : VSDKTrackingEvent
 
 /**
@@ -17,5 +15,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property VSDKCustomization *productCustomization;
 
 @end
-
-NS_ASSUME_NONNULL_END

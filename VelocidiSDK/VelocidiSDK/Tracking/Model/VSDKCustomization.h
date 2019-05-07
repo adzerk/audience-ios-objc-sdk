@@ -1,7 +1,5 @@
 @import JSONModel;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface VSDKCustomization : JSONModel
 
 /**
@@ -25,5 +23,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *currency;
 
 @end
-
-NS_ASSUME_NONNULL_END
