@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
   Verify if tracking is allowed or if the user has opted-out of being tracked in this application.
-  Tracking is not allowed if the adversitingIdentifier is composed of only 0's.
   @returns True if tracking is allowed, false if otherwise.
  */
 - (bool) isAdvertisingTrackingEnabled;
