@@ -134,7 +134,6 @@
 		30C566DF225B9465006CE923 /* VSDKProductFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductFeedback.h; sourceTree = "<group>"; };
 		30C566E0225B9465006CE923 /* VSDKProductFeedback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductFeedback.m; sourceTree = "<group>"; };
 		30F3A0062264DE7000D9380B /* VelocidiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocidiTests.swift; sourceTree = "<group>"; };
-		30F3A00A2264E13300D9380B /* VelocidiSDKTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VelocidiSDKTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		30F3A00B2264E13300D9380B /* SanityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityTests.m; sourceTree = "<group>"; };
 		30FA306F2267341A00BF442A /* UtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilTests.swift; sourceTree = "<group>"; };
 		30FA30712267731800BF442A /* RequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTests.swift; sourceTree = "<group>"; };
@@ -270,7 +269,6 @@
 				B1432006E874289B32AE9435 /* Info.plist */,
 				30F3A0062264DE7000D9380B /* VelocidiTests.swift */,
 				30FA30712267731800BF442A /* RequestsTests.swift */,
-				30F3A00A2264E13300D9380B /* VelocidiSDKTests-Bridging-Header.h */,
 				30FA306F2267341A00BF442A /* UtilTests.swift */,
 			);
 			path = VelocidiSDKTests;
@@ -722,7 +720,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.velocidi.VelocidiSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VelocidiSDKTests/VelocidiSDKTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/../Pods\"/**";
@@ -767,7 +765,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.velocidi.VelocidiSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "VelocidiSDKTests/VelocidiSDKTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
