@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-@import VelocidiSDK;
+#import <VelocidiSDK/VelocidiSDK.h>
 
 @interface SanityTests : XCTestCase
 @end
@@ -30,6 +30,16 @@
                            initWithHosts:@"https://tr.testdomain.com:8080":@"https://match.testdomain.com:8080"];
     [VSDKVelocidi start:config];
     XCTAssert(VSDKVelocidi.sharedInstance);
+}
+
+- (void)testTrackingEventDefaultIds {
+    [VSDKTrackingEvent setDefaultIds:@"foo" :@"bar"];
+    VSDKPageView * pageView = [[VSDKPageView alloc] initWithDefaultIds];
+    pageView.title = @"fooPage";
+    pageView.pageType = @"homepage";
+    XCTAssert([@"{\"siteId\":\"bar\",\"pageType\":\"homepage\",\"title\":\"fooPage\",\"clientId\":\"foo\",\"type\":\"pageView\"}"
+               isEqualToString:[pageView toJSONString]]
+              );
 }
 
 @end

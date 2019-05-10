@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
   Send a request to Velocidi's CDP with a tracking event 
   @param trackingEvent tracking event to be sent.
  */
-- (void)track: (VSDKTrackingEvent *) trackingEvent;
+- (void)track: (VSDKTrackingEvent *)trackingEvent;
 
 /**
   Send a request to Velocidi's CDP with a tracking event 
@@ -45,9 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
   @param onSuccessBlock Block to be called if the request is successful
   @param onFailureBlock Block to be called if the request is unsuccessful
  */
-- (void)track: (VSDKTrackingEvent *) trackingEvent
+- (void)track: (VSDKTrackingEvent *)trackingEvent
         onSuccess:(void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-        onFailure:(void (^)(NSError * error)) onFailureBlock;
+        onFailure:(void (^)(NSError * error))onFailureBlock;
 @end
 
 NS_ASSUME_NONNULL_END

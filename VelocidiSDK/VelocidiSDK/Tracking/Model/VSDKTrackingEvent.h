@@ -17,4 +17,18 @@
  */
 @property (nonnull) NSString *type;
 
+/**
+  Set default values for `clientId` and `siteId`.
+  The values will be applied to any VSDKTrackingEvent initialized with the `initWithDefaultIds`
+  @param clientId Client identifier
+  @param siteId Client's site identifier
+ */
++ (void) setDefaultIds: (NSString *)clientId : (NSString *)siteId;
+
+/**
+  Initialize an instance of VSDKTrackingEvent with the default values for `siteId` and `clientId`.
+  The default values are set using the method `setDefaultIds`
+  @returns instance of VSDKTrackingEvent
+ */
+- (instancetype) initWithDefaultIds;
 @end
