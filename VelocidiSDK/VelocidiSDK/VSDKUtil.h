@@ -21,7 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSUUID *)getAdvertisingIdentifier;
 
 /**
-  Verify if tracking is allowed or if the user has opted-out of being tracked in this application.
+  Verify if tracking is allowed.
+  Tracking is not allowed if user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device).
   @returns True if tracking is allowed, false if otherwise.
  */
 - (bool) isAdvertisingTrackingEnabled;
