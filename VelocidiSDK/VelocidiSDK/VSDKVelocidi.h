@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstance;
 
 /**
-  Method that takes the provided configuration and properly initializes the Velocidi SDK according 
+  Method that takes the provided configuration and properly initializes the Velocidi SDK according
   to the settings of said configuration.
   @param config necessary configuration to properly start the VSDKVelocidi
   @returns shared single instance of the class VSDKVelocidi
@@ -34,13 +34,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)start: (VSDKConfig *)config;
 
 /**
-  Send a request to Velocidi's CDP with a tracking event 
+  Send a request to Velocidi's CDP with a tracking event
   @param trackingEvent tracking event to be sent.
  */
 - (void)track: (VSDKTrackingEvent *)trackingEvent;
 
 /**
-  Send a request to Velocidi's CDP with a tracking event 
+  Send a request to Velocidi's CDP with a tracking event
   @param trackingEvent tracking event to be sent.
   @param onSuccessBlock Block to be called if the request is successful
   @param onFailureBlock Block to be called if the request is unsuccessful

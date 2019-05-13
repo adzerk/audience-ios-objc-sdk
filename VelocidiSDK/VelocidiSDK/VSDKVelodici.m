@@ -31,7 +31,7 @@ static VSDKConfig *_config = nil;
     dispatch_once(&onceToken, ^{
         sharedVelocidiManager = [[self alloc] init];
     });
-    
+
     return sharedVelocidiManager;
 }
 

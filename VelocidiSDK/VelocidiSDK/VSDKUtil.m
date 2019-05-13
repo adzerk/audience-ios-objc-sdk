@@ -42,7 +42,7 @@
         }
     }
     return userAgent;
-    
+
 }
 
 - (NSUUID *)getAdvertisingIdentifier {

@@ -25,7 +25,7 @@
     if (![self.util isAdvertisingTrackingEnabled]) {
         return;
     }
-    
+
     NSUUID * advertisingIdentifier = [self.util getAdvertisingIdentifier];
 
     NSURLComponents * url = [self buildURLWithQueryParameters: [advertisingIdentifier UUIDString]];
@@ -52,10 +52,10 @@
 - (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier {
     NSURLComponents * urlComponents = [[NSURLComponents alloc] initWithURL: self.url resolvingAgainstBaseURL: true];
     NSMutableArray<NSURLQueryItem *> * queryParams = [[NSMutableArray alloc] init];
-    
+
     [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"id_idfa" value:advertisingIdentifier]];
     [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"cookies" value:false]];
-    
+
     urlComponents.queryItems = queryParams;
     return urlComponents;
 }
