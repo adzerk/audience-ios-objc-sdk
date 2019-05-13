@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
   Verify if tracking is allowed.
-  Tracking is not allowed if user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device).
+  Tracking is not allowed if the user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device).
   @returns True if tracking is allowed, false if otherwise.
  */
 - (bool) isAdvertisingTrackingEnabled;
