@@ -11,7 +11,7 @@ target "VelocidiSDK" do
 
   target "VelocidiSDKTests" do
     # inherit! :search_paths # Can't figure out how to use this setting, enabled in settings in other examples
-    # target "VelocidiSDKTests" 
+    # target "VelocidiSDKTests"
 
     pod 'Quick', '~> 2.0'
     pod 'Nimble', '~> 8.0.1'

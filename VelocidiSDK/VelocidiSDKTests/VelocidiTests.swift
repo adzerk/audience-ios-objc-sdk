@@ -14,7 +14,7 @@ extension Data {
     init(reading input: InputStream) {
         self.init()
         input.open()
-        
+
         let bufferSize = 1024
         let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: bufferSize)
         while input.hasBytesAvailable {
@@ -22,7 +22,7 @@ extension Data {
             self.append(buffer, count: read)
         }
         buffer.deallocate(capacity: bufferSize)
-        
+
         input.close()
     }
 }
@@ -41,7 +41,7 @@ class NetworkTests: QuickSpec {
                             && request.allHTTPHeaderFields?["Content-Type"] == "application/json"
                             && request.allHTTPHeaderFields?["User-Agent"] != nil
                             && request.httpBodyStream != nil) {
-                            
+
                             let receivedData = Data(reading: request.httpBodyStream!)
                             if(receivedData == expectedData){
                                 let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
@@ -51,7 +51,7 @@ class NetworkTests: QuickSpec {
                         return .failure(NSError(domain: trackURL, code: 400))
                     }
                 }
-    
+
                 it("should make track successful requests") {
                     let trackingEvent = VSDKPageView()
                     trackingEvent.siteId = "0"
@@ -65,19 +65,19 @@ class NetworkTests: QuickSpec {
 
                     let config = VSDKConfig(hosts:trackURL, matchURL)
                     VSDKVelocidi.start(config!)
-                    
+
                     VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
                         success = true
                     }, onFailure:{(error: Error) in
                         NSLog("Error \(error.localizedDescription)")
                         success = false
                     })
-    
+
                     expect(success).toEventuallyNot(beNil(), timeout: 4)
                     expect(success).toEventuallyNot(beFalse())
                 }
-                
-                
+
+
             }
         }
     }

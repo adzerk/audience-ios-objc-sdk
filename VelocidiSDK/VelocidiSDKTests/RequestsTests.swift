@@ -18,7 +18,7 @@ class MockRequest: VSDKRequest<JSONModel> {
         super.init()
         self.util = MockUtil()
     }
-    
+
 }
 
 class RequestsTests: QuickSpec {
@@ -30,7 +30,7 @@ class RequestsTests: QuickSpec {
                 let trackingEvent = VSDKPageView()
                 trackingEvent.siteId = "0"
                 trackingEvent.clientId = "0"
-                
+
                 var requestExecuted: Bool = false
 
                 self.stub({(request: URLRequest) in
@@ -46,7 +46,7 @@ class RequestsTests: QuickSpec {
                 }, {(error: Error) in
                     requestExecuted = true
                 })
-                
+
                 Thread.sleep(forTimeInterval: 5.0)
 
                 expect(requestExecuted).toNot(beTrue())
