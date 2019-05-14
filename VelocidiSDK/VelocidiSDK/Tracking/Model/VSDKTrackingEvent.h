@@ -23,12 +23,12 @@
   @param clientId Client identifier
   @param siteId Client's site identifier
  */
-+ (void) setDefaultIds: (NSString *)clientId : (NSString *)siteId;
++ (void) setDefaultIds: (NSString * __nonnull)clientId : (NSString * __nonnull)siteId;
 
 /**
   Initialize an instance of VSDKTrackingEvent with the default values for `siteId` and `clientId`.
   The default values are set using the method `setDefaultIds`
   @returns instance of VSDKTrackingEvent
  */
-- (instancetype) initWithDefaultIds;
+- (nonnull instancetype) initWithDefaultIds;
 @end

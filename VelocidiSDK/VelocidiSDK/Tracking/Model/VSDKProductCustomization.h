@@ -7,11 +7,11 @@
 /**
   Products being customized
  */
-@property NSMutableArray<VSDKProduct *> *products;
+@property (nullable) NSMutableArray<VSDKProduct *> *products;
 
 /**
   Customization being applied to the products
  */
-@property VSDKCustomization *productCustomization;
+@property (nullable) VSDKCustomization *productCustomization;
 
 @end

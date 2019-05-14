@@ -6,12 +6,12 @@ static NSString * _defaultClientId;
 static NSString * _defaultSiteId;
 
 
-+ (void) setDefaultIds:(NSString *)clientId :(NSString *)siteId {
++ (void) setDefaultIds:(NSString * __nonnull)clientId :(NSString * __nonnull)siteId {
     _defaultClientId = clientId;
     _defaultSiteId = siteId;
 }
 
-- (instancetype) initWithDefaultIds{
+- (nonnull instancetype) initWithDefaultIds{
     if(self = [self init]){
         self.clientId = _defaultClientId;
         self.siteId = _defaultSiteId;

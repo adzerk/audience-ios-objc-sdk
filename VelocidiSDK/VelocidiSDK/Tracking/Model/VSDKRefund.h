@@ -9,16 +9,16 @@
   Type of refund 
   A refund can be either `partial` or `total`
  */
-@property NSString *refundType;
+@property (nullable) NSString *refundType;
 
 /**
   If it is a `partial` refund, the list of products to be refunded must be specified
  */
-@property NSMutableArray<VSDKProduct *> *products;
+@property (nullable) NSMutableArray<VSDKProduct *> *products;
 
 /**
   Transaction associated with this refund
  */
-@property VSDKTransaction *transaction;
+@property (nullable) VSDKTransaction *transaction;
 
 @end

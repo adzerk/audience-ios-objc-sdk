@@ -16,7 +16,7 @@
 /**
   Transaction currency
  */
-@property NSString *currency;
+@property (nullable) NSString *currency;
 
 /**
   Transaction tax
@@ -31,16 +31,16 @@
 /**
   Voucher used in this transaction 
  */
-@property VSDKVoucher *voucher;
+@property (nullable) VSDKVoucher *voucher;
 
 /**
   Payment type (e.g. credit card, debit card, Paypal)
  */
-@property NSString *paymentMethod;
+@property (nullable) NSString *paymentMethod;
 
 /**
   Additional information about the payment
  */
-@property NSString *paymentDetails;
+@property (nullable) NSString *paymentDetails;
 
 @end

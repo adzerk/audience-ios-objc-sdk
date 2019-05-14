@@ -5,12 +5,12 @@
 /**
   Product customization name
  */
-@property NSString *name;
+@property (nullable) NSString *name;
 
 /**
   Custom property to add extra information about the customization
  */
-@property NSString *value;
+@property (nullable) NSString *value;
 
 /**
   Customization price
@@ -20,6 +20,6 @@
 /**
   Customization currency
  */
-@property NSString *currency;
+@property (nullable) NSString *currency;
 
 @end

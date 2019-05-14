@@ -12,11 +12,11 @@
 /**
   Text feedback given by the user to the product.
  */
-@property NSString *feedback;
+@property (nullable) NSString *feedback;
 
 /**
   List of products associated with this product feedback
  */
-@property NSMutableArray<VSDKProduct *> *products;
+@property (nullable) NSMutableArray<VSDKProduct *> *products;
 
 @end

@@ -5,6 +5,6 @@
 /**
   Query searched by the user
  */
-@property NSString *query;
+@property (nullable) NSString *query;
 
 @end

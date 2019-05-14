@@ -6,6 +6,6 @@
 /**
   List of products associated with this Product Impression
  */
-@property NSMutableArray<VSDKProduct *> *products;
+@property (nullable) NSMutableArray<VSDKProduct *> *products;
 
 @end

@@ -10,28 +10,28 @@
 /**
   Product name
  */
-@property NSString *name;
+@property (nullable) NSString *name;
 
 /**
   Product brand
  */
-@property NSString *brand;
+@property (nullable) NSString *brand;
 
 /**
   Product category
  */
-@property NSString *category;
+@property (nullable) NSString *category;
 
 /**
   Product variant (e.g. color, size)
  */
-@property NSString *variant;
+@property (nullable) NSString *variant;
 
 /**
   Product parts or subproduct, when the product is an aggregation.
   Should contain instances of VSDKProduct.
  */
-@property NSMutableArray<VSDKProduct *> *parts;
+@property (nullable) NSMutableArray<VSDKProduct *> *parts;
 
 /**
   Product price
@@ -41,17 +41,17 @@
 /**
   Product currency
  */
-@property NSString *currency;
+@property (nullable) NSString *currency;
 
 /**
   Location in the app where the product was seen (e.g. search results, favorites, related products)
  */
-@property NSString *location;
+@property (nullable) NSString *location;
 
 /**
   Product position in the location (relevant when shown in a list)
  */
-@property NSString *position;
+@property (nullable) NSString *position;
 
 /**
   Quantity of the product 
@@ -62,11 +62,11 @@
 /**
   Whether or not the product was suggested by a recommendation.
  */
-@property bool *recomendation;
+@property bool recomendation;
 
 /**
   Whether or not the product is unsafe (e.g. adult content)
  */
-@property bool *unsafe;
+@property bool unsafe;
 
 @end

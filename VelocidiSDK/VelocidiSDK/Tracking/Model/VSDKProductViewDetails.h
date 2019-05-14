@@ -6,6 +6,6 @@
 /**
   List of products whose details have been viewed
  */
-@property NSMutableArray<VSDKProduct *> *products;
+@property (nullable) NSMutableArray<VSDKProduct *> *products;
 
 @end

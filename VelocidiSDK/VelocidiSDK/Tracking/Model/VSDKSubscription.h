@@ -7,11 +7,11 @@
 /**
   Products associated with the Subscription
  */
-@property NSMutableArray<VSDKProduct *> *products;
+@property (nullable) NSMutableArray<VSDKProduct *> *products;
 
 /**
   Transaction associated with the Subscription
  */
-@property VSDKTransaction *transaction;
+@property (nullable) VSDKTransaction *transaction;
 
 @end
