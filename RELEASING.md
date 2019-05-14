@@ -15,7 +15,7 @@ _This is still a draft of the process, it needs verification and a test run in a
 
     1. __Build number__:
     
-        `$ agvtool new-version -all`
+        `$ agvtool next-version -all`
 
 1. Go back to the project's root folder.
 
