@@ -23,7 +23,7 @@
 @property NSString *category;
 
 /**
-  Product variante (e.g. color, size)
+  Product variant (e.g. color, size)
  */
 @property NSString *variant;
 
