@@ -4,7 +4,7 @@
 @interface VSDKTransaction : JSONModel
 
 /**
-  Transaction identifier (REQUIRED)
+  Transaction identifier 
  */
 @property (nonnull) NSString *transactionId;
 

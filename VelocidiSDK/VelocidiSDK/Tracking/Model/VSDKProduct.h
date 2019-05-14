@@ -3,7 +3,7 @@
 @interface VSDKProduct : JSONModel
 
 /**
-  Product identifier (REQUIRED)
+  Product identifier 
  */
 @property (nonnull) NSString *productId;
 
@@ -54,7 +54,7 @@
 @property NSString *position;
 
 /**
-  Quantity of the product (REQUIRED)
+  Quantity of the product 
   Default is 1
  */
 @property int quantity;
@@ -62,11 +62,11 @@
 /**
   Whether or not the product was suggested by a recommendation.
  */
-@property NSString *recomendation;
+@property bool *recomendation;
 
 /**
   Whether or not the product is unsafe (e.g. adult content)
  */
-@property NSString *unsafe;
+@property bool *unsafe;
 
 @end

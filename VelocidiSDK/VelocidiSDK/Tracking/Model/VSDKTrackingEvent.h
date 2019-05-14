@@ -3,17 +3,17 @@
 @interface VSDKTrackingEvent : JSONModel
 
 /**
-  Client identifier (REQUIRED)
+  Client identifier 
  */
 @property (nonnull) NSString *clientId;
 
 /**
-  Client's site identifier (REQUIRED)
+  Client's site identifier 
  */
 @property (nonnull) NSString *siteId;
 
 /**
-  Event type (REQUIRED)
+  Event type 
  */
 @property (nonnull) NSString *type;
 
