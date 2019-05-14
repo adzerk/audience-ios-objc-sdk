@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSURL *url;
 @property (readonly, getter=getUtil, nonatomic) VSDKUtil *util;
 @property (readonly, getter=getIdentifierManager) ASIdentifierManager *identifierManager;
-@property T data;
 @property (class, readonly, getter=getTrackingNotAllowedErrorDomain) NSString *trackingNotAllowedErrorDomain;
 @property (class, readonly, getter=getTrackingNotAllowedError) NSError *trackingNotAllowedError;
 

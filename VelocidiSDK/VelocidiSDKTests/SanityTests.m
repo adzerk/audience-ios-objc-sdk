@@ -1,9 +1,5 @@
 #import <XCTest/XCTest.h>
-<<<<<<< HEAD
 #import <VelocidiSDK/VelocidiSDK.h>
-=======
-#import "VelocidiSDK.h"
->>>>>>> Make track requests
 
 @interface SanityTests : XCTestCase
 @end
@@ -38,7 +34,6 @@
     XCTAssert(VSDKVelocidi.sharedInstance);
 }
 
-<<<<<<< HEAD
 - (void)testTrackingEventDefaultIds {
     [VSDKTrackingEvent setDefaultIds:@"foo" :@"bar"];
     VSDKPageView * pageView = [[VSDKPageView alloc] initWithDefaultIds];

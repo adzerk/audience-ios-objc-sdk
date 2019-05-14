@@ -42,7 +42,7 @@ class RequestsTests: QuickSpec {
                     return request.url!.absoluteString.starts(with: url)
                 }, failure(NSError(domain: url, code: 403)))
 
-                let request = MockTrackingRequest()
+                let request = MockRequest()
                 request.url = URL(string: url)!
                 request.data = trackingEvent
 

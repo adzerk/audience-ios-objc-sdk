@@ -15,7 +15,7 @@
 }
 
 - (instancetype)initWithDomain: (NSString *)domain{
-    if(self = [self initWithHosts:domain:domain]) {
+    if(self = [self initWithTrackingHost:domain:domain]) {
         NSURLComponents * mutableTrackingHost = [[NSURLComponents alloc] initWithURL:self.trackingHost resolvingAgainstBaseURL:false] ;
         NSURLComponents * mutableMatchHost = [[NSURLComponents alloc] initWithURL:self.matchHost resolvingAgainstBaseURL:false] ;
         
