@@ -20,4 +20,11 @@
  */
 - (instancetype)initWithHosts: (NSString *)trackingHost :(NSString *)matchHost;
 
+/**
+  Initialize an instance of VSDKConfig.
+  @param domain domain where to send tracking and match requests.
+  @returns VSDKConfig instance
+ */
+- (instancetype)initWithDomain: (NSString *)domain;
+
 @end
