@@ -4,6 +4,8 @@
 
 @implementation VSDKRequest
 
++ (NSString *) getTrackingNotAllowed{ return @"VSDKTrackingNotAllowedError"; }
+
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
     if (self = [self init]) {
         _manager = manager;
@@ -23,7 +25,11 @@
 - (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
         :(void (^)(NSError *error))onFailureBlock {
     if (![self.util isAdvertisingTrackingEnabled]) {
-        return;
+        NSDictionary *userInfo = @{
+                                   NSLocalizedDescriptionKey: NSLocalizedString(@"Operation cannot be completed. Tracking is not allowed", nil),
+                                   NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"The user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device)", nil)};
+        NSError * trackingNotAllowedError = [NSError errorWithDomain: VSDKRequest.trackingNotAllowedError code: 1 userInfo: userInfo];
+        return onFailureBlock(trackingNotAllowedError);
     }
 
     NSUUID * advertisingIdentifier = [self.util getAdvertisingIdentifier];

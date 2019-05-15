@@ -31,7 +31,7 @@ class RequestsTests: QuickSpec {
                 trackingEvent.siteId = "0"
                 trackingEvent.clientId = "0"
 
-                var requestExecuted: Bool = false
+                var requestExecuted: Bool? = nil
 
                 self.stub({(request: URLRequest) in
                     return request.url!.absoluteString.starts(with: url)
@@ -44,11 +44,14 @@ class RequestsTests: QuickSpec {
                 request.perform({_,_ in
                     requestExecuted = true
                 }, {(error: Error) in
-                    requestExecuted = true
+                    if ((error as NSError).domain == VSDKRequest.trackingNotAllowedError) {
+                        requestExecuted = false
+                    } else {
+                        requestExecuted = true
+                    }
                 })
 
-                Thread.sleep(forTimeInterval: 5.0)
-
+                expect(requestExecuted).toEventuallyNot(beNil())
                 expect(requestExecuted).toNot(beTrue())
             }
         }
