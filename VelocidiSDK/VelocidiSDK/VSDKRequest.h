@@ -1,6 +1,7 @@
 #import <VelocidiSDK/VelocidiSDK.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
 
+@class ASIdentifierManager;
 @class VSDKUtil;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -9,7 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
-@property (nonatomic) VSDKUtil *util;
+@property (readonly, getter=getUtil, nonatomic) VSDKUtil *util;
+@property (readonly, getter=getIdentifierManager) ASIdentifierManager *identifierManager;
 @property T data;
 @property (class, readonly, getter=getTrackingNotAllowed) NSString *trackingNotAllowedError;
 

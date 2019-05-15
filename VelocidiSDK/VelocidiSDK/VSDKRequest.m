@@ -1,10 +1,13 @@
 @import Foundation;
 #import "VSDKRequest.h"
 #import "VSDKUtil.h"
+#import <AdSupport/ASIdentifierManager.h>
 
 @implementation VSDKRequest
 
 + (NSString *) getTrackingNotAllowed{ return @"VSDKTrackingNotAllowedError"; }
+- (VSDKUtil *) getUtil{ return [[VSDKUtil alloc] init]; }
+- (ASIdentifierManager *) getIdentifierManager{ return [ASIdentifierManager sharedManager]; }
 
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
     if (self = [self init]) {
@@ -16,7 +19,6 @@
 - (instancetype)init {
     if (self = [super init]) {
         _manager = [AFHTTPSessionManager manager];
-        _util = [[VSDKUtil alloc] init] ;
         [VSDKUtil setAcceptAllResponses:_manager];
     }
     return self;
@@ -24,7 +26,7 @@
 
 - (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
         :(void (^)(NSError *error))onFailureBlock {
-    if (![self.util isAdvertisingTrackingEnabled]) {
+    if (![self.identifierManager isAdvertisingTrackingEnabled]) {
         NSDictionary *userInfo = @{
                                    NSLocalizedDescriptionKey: NSLocalizedString(@"Operation cannot be completed. Tracking is not allowed", nil),
                                    NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"The user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device)", nil)};
@@ -32,7 +34,7 @@
         return onFailureBlock(trackingNotAllowedError);
     }
 
-    NSUUID * advertisingIdentifier = [self.util getAdvertisingIdentifier];
+    NSUUID * advertisingIdentifier = [self.identifierManager advertisingIdentifier];
 
     NSURLComponents * url = [self buildURLWithQueryParameters: [advertisingIdentifier UUIDString]];
 

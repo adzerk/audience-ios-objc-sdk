@@ -1,5 +1,4 @@
 #import "VSDKUtil.h"
-#import <AdSupport/ASIdentifierManager.h>
 
 @implementation VSDKUtil
 
@@ -34,14 +33,6 @@
     }
     return userAgent;
 
-}
-
-- (NSUUID *)getAdvertisingIdentifier {
-    return [[ASIdentifierManager sharedManager] advertisingIdentifier];
-}
-
-- (bool)isAdvertisingTrackingEnabled {
-    return [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
 }
 
 + (void) setAcceptAllResponses: (AFHTTPSessionManager *)sessionManager {

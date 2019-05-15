@@ -15,19 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)getVersionedUserAgent;
 
 /**
-  Retrieve the advertisingIdentifier UUID.
-  @returns advertisingIdentifier UUID.
- */
-- (NSUUID *)getAdvertisingIdentifier;
-
-/**
-  Verify if tracking is allowed.
-  Tracking is not allowed if the user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device).
-  @returns True if tracking is allowed, false if otherwise.
- */
-- (bool) isAdvertisingTrackingEnabled;
-
-/**
   Modify an AFHTTPSessionManager to accept all types of responses.
  */
 + (void) setAcceptAllResponses: (AFHTTPSessionManager *) sessionManager;

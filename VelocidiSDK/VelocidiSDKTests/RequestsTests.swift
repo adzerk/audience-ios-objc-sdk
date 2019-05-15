@@ -3,6 +3,23 @@ import Quick
 import Nimble
 import Mockingjay
 import VelocidiSDK
+import AdSupport
+
+class MockASIdentifierManager: ASIdentifierManager {
+    override var advertisingIdentifier: UUID {
+        return UUID(uuidString: "00000000-0000-0000-0000-000000000000")!
+    }
+    override var isAdvertisingTrackingEnabled: Bool {
+        print("Is mocking")
+        return false
+    }
+}
+
+class MockUtil: VSDKUtil {
+    override func getVersionedUserAgent() -> String {
+        return "fooUserAgent"
+    }
+}
 
 class RequestsTests: QuickSpec {
     override func spec() {
@@ -10,13 +27,8 @@ class RequestsTests: QuickSpec {
         describe("VSDKRequests") {
             it("should not make a track requests if tracking is not allowed") {
                 
-                class MockUtil: VSDKUtil {
-                    override func getAdvertisingIdentifier() -> UUID {
-                        return UUID(uuidString: "00000000-0000-0000-0000-000000000000")!
-                    }
-                    override func isAdvertisingTrackingEnabled() -> Bool {
-                        return false
-                    }
+                class MockRequest: VSDKRequest<JSONModel>{
+                    override var identifierManager: ASIdentifierManager { return MockASIdentifierManager() }
                 }
 
                 let url = "http://testdomain.com"
@@ -30,8 +42,7 @@ class RequestsTests: QuickSpec {
                     return request.url!.absoluteString.starts(with: url)
                 }, failure(NSError(domain: url, code: 403)))
 
-                let request = VSDKRequest()
-                request.util = MockUtil()
+                let request = MockRequest()
                 request.url = URL(string: url)!
                 request.data = trackingEvent
 
@@ -50,11 +61,9 @@ class RequestsTests: QuickSpec {
             }
             
             it("should use the provided User-Agent") {
-                
-                class MockUtil: VSDKUtil {
-                    override func getVersionedUserAgent() -> String {
-                        return "fooUserAgent"
-                    }
+               
+                class MockRequest: VSDKRequest<JSONModel>{
+                    override var util: VSDKUtil { return MockUtil() }
                 }
                 
                 let url = "http://testdomain.com"
@@ -76,8 +85,7 @@ class RequestsTests: QuickSpec {
                     return .failure(NSError(domain: url, code: 400))
                 })
                 
-                let request = VSDKRequest()
-                request.util = MockUtil()
+                let request = MockRequest()
                 request.url = URL(string: url)!
                 request.data = trackingEvent
                 
