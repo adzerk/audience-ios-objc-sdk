@@ -5,7 +5,16 @@
 
 @implementation VSDKRequest
 
-+ (NSString *) getTrackingNotAllowed{ return @"VSDKTrackingNotAllowedError"; }
+static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError";
+
++ (NSString *) getTrackingNotAllowedErrorDomain{ return _trackingNotAllowedErrorDomain; }
++ (NSError *) getTrackingNotAllowedError {
+  return [NSError errorWithDomain: self.getTrackingNotAllowedErrorDomain
+                             code: 1 
+                         userInfo: @{
+                                     NSLocalizedDescriptionKey: NSLocalizedString(@"Operation cannot be completed. Tracking is not allowed", nil),
+                                     NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"The user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device)", nil)}];
+}
 - (VSDKUtil *) getUtil{ return [[VSDKUtil alloc] init]; }
 - (ASIdentifierManager *) getIdentifierManager{ return [ASIdentifierManager sharedManager]; }
 
@@ -27,11 +36,7 @@
 - (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
         :(void (^)(NSError *error))onFailureBlock {
     if (![self.identifierManager isAdvertisingTrackingEnabled]) {
-        NSDictionary *userInfo = @{
-                                   NSLocalizedDescriptionKey: NSLocalizedString(@"Operation cannot be completed. Tracking is not allowed", nil),
-                                   NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"The user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device)", nil)};
-        NSError * trackingNotAllowedError = [NSError errorWithDomain: VSDKRequest.trackingNotAllowedError code: 1 userInfo: userInfo];
-        return onFailureBlock(trackingNotAllowedError);
+        return onFailureBlock(VSDKRequest.trackingNotAllowedError);
     }
 
     NSUUID * advertisingIdentifier = [self.identifierManager advertisingIdentifier];

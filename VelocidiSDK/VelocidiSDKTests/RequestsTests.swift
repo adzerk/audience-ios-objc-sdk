@@ -49,7 +49,7 @@ class RequestsTests: QuickSpec {
                 request.perform({_,_ in
                     requestExecuted = true
                 }, {(error: Error) in
-                    if ((error as NSError).domain == VSDKRequest.trackingNotAllowedError) {
+                    if ((error as NSError).domain == VSDKRequest.trackingNotAllowedErrorDomain) {
                         requestExecuted = false
                     } else {
                         requestExecuted = true

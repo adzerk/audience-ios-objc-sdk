@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, getter=getUtil, nonatomic) VSDKUtil *util;
 @property (readonly, getter=getIdentifierManager) ASIdentifierManager *identifierManager;
 @property T data;
-@property (class, readonly, getter=getTrackingNotAllowed) NSString *trackingNotAllowedError;
+@property (class, readonly, getter=getTrackingNotAllowedErrorDomain) NSString *trackingNotAllowedErrorDomain;
+@property (class, readonly, getter=getTrackingNotAllowedError) NSError *trackingNotAllowedError;
 
 /**
   Initialize an instance of VSDKRequest with a custom AFHTTPSessionManager.
