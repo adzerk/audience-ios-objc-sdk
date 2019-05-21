@@ -14,21 +14,21 @@ after_success:
 
 jobs:
   include:
-    - env: 
-        - TEST_SDK=11.0
-      osx_image: xcode9
-    - env: 
-        - TEST_SDK=11.1
-      osx_image: xcode9.1
-    - env: 
-        - TEST_SDK=11.2
-      osx_image: xcode9.2
-    - env: 
-        - TEST_SDK=11.3
-      osx_image: xcode9.3
-    - env: 
-        - TEST_SDK=11.4
-      osx_image: xcode9.4.1
+    # - env: 
+        # - TEST_SDK=11.0
+      # osx_image: xcode9
+    # - env: 
+        # - TEST_SDK=11.1
+      # osx_image: xcode9.1
+    # - env: 
+        # - TEST_SDK=11.2
+      # osx_image: xcode9.2
+    # - env: 
+        # - TEST_SDK=11.3
+      # osx_image: xcode9.3
+    # - env: 
+        # - TEST_SDK=11.4
+      # osx_image: xcode9.4.1
     - env: 
         - TEST_SDK=12.0
       osx_image: xcode10
@@ -40,6 +40,8 @@ jobs:
       osx_image: xcode10.2
     - name: Cocoapods Lint
       script: 
+        - pod repo update
+        - pod install
         - pod lib lint --verbose VelocidiSDK.podspec
       after_success: null
       before_install: null
