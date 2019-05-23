@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBAction func TrackingEvent(_ sender: UIButton) {
         let trackingEvent = VSDKPageView()
         trackingEvent.siteId = "foo"
-        trackingEvent.clientId = "0"
+        trackingEvent.clientId = "bar"
         
         trackingNumber += 1
         let currentTrNumber = trackingNumber
