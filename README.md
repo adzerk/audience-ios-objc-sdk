@@ -157,7 +157,7 @@ __Objective-C__
 <!-- #### Create your custom tracking event -->
 <!-- If none of the available tracking events matches your needs you can also extend `TrackingEvent` and create your own.  -->
 
-<!-- _Beware! Custom tracking events are not interpreted by our services and bring limitied functionality other than logging and basic statistics._ -->
+<!-- _Beware! Custom tracking events are not interpreted by our services and bring limited functionality other than logging and basic statistics._ -->
 
 <!-- _TODO_ -->
 
