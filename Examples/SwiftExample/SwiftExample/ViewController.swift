@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         let currentTrNumber = trackingNumber
         
         VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
-            self.mainLabel.text = "Tracking request #\(currentTrNumber) successful!!!"
+            self.mainLabel.text = "Tracking request #\(currentTrNumber) successful!"
         }, onFailure:{(error: Error) in
             self.mainLabel.text = "Error with tracking request #\(currentTrNumber).\n Error: \(error.localizedDescription)"
         })
