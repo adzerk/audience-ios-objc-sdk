@@ -4,7 +4,7 @@ These two examples projects illustrate how VelocidiSDK can be used in a project.
 
 ## Instructions
 
-Setup should be really simple, all that is needed is to open the project with Xcode. After that, run `pod install` and it should be ready to go.
+Setup should be really simple, all that is needed is to open the workspace (located at the project's root) with Xcode. After that, in the project's root, run `pod install --project-directory=Examples/` and it should be ready to go.
 
 ### Capture HTTP events
 
