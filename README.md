@@ -90,7 +90,7 @@ __Objective-C__
 
 ### Send a track event
 
-In order to sent a tracking event, create an instance of TrackingEvent. Then, call the singleton instance of `VSDKVelocidi` and use the method `track`
+In order to send a tracking event, create an instance of `VSDKTrackingEvent`. Then, call the singleton instance of `VSDKVelocidi` and use the `track` method.
 
 __Swift__
 ```swift
