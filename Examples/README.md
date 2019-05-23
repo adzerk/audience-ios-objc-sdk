@@ -10,7 +10,7 @@ Setup should be really simple, all that is needed is to open the workspace (loca
 
 To see the HTTP events sent by the SDK, have the configuration url's point to `http://localhost:8080` and then run a netcat instance that replies to all request with a `200 OK` response code.
 
-```
+```bash
 $ while true; do echo -e 'HTTP/1.1 200 OK\r\n\r\n' | nc -i 1 -l 8080; done
 ```
 
