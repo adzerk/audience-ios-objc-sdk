@@ -119,7 +119,7 @@ trackingEvent.siteId = @"RandomClientId";
 ```
 
 
-You can also pass callback blocks that will that will be called when the request is successful or if if fails.
+You can also pass callback blocks that will be called when the request either succeeds or fails.
 
 __Swift__
 ```swift
