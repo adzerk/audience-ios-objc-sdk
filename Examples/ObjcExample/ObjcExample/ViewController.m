@@ -20,7 +20,7 @@ static int trackingNumber = 0;
     trackingEvent.clientId = @"foo";
     trackingEvent.siteId = @"bar";
     
-    int currentTrNumber = trackingNumber++;
+    int currentTrNumber = ++trackingNumber;
     
     [VSDKVelocidi.sharedInstance track: trackingEvent onSuccess: ^(NSURLResponse * response, id responseObject){
         self.mainLabel.text = [NSString stringWithFormat: @"Tracking request #%i successful!", currentTrNumber];
