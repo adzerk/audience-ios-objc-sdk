@@ -154,11 +154,60 @@ __Objective-C__
 * VSDKSearch
 * VSDKSubscription
 
-<!-- #### Create your custom tracking event -->
-<!-- If none of the available tracking events matches your needs you can also extend `TrackingEvent` and create your own.  -->
+#### Create your custom tracking event
+If none of the available tracking events matches your needs you can also extend `TrackingEvent` and create your own. 
 
-<!-- _Beware! Custom tracking events are not interpreted by our services and bring limited functionality other than logging and basic statistics._ -->
+__Beware!__ _Custom tracking events are not interpreted by our services and bring limited functionality other than logging and basic statistics._
 
-<!-- _TODO_ -->
+_TODO_
 
-<!-- __Objective-C__  -->
+##### Objective-C
+
+Create a new CocoaTouch class that inherits from `VSDKTrackingEvent` (or any of the other tracking event model classes)
+
+Example:
+
+__CustomEvent.h__
+```objc
+#import <VelocidiSDK/VelocidiSDK.h>
+
+@interface CustomEvent : VSDKTrackingEvent
+
+// Place bellow the desired fields you want to add to the tracking event
+@property (nullable) NSString *customField;
+
+@end
+```
+
+__CustomEvent.h__
+```objc
+#import "CustomEvent.h"
+
+@implementation CustomEvent
+
+- (instancetype) init {
+    if(self = [super init]){
+        self.type = @"customEvent"; // Only necessary when inheriting directly from VSDKTrackingEvent
+    }
+    return self;
+}
+
+@end
+```
+
+This new class can then be imported and used like any other tracking event
+
+```objc
+#import "CustomEvent.h";
+
+...
+
+CustomEvent * trackingEvent =  [[CustomEvent alloc] init];
+trackingEvent.clientId = @"RandomSiteId";
+trackingEvent.siteId = @"RandomClientId";
+trackingEvent.customField = @"RandomCustomField";
+
+[VSDKVelocidi.sharedInstance track: trackingEvent] 
+```
+
+
