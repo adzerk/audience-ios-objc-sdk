@@ -161,7 +161,7 @@ __Beware!__ _Custom tracking events are not interpreted by our services and brin
 
 ##### Objective-C
 
-Create a new Cocoa Touch class that inherits from `VSDKTrackingEvent` (or any of the other tracking event model classes)
+Create a new Cocoa Touch class that inherits from `VSDKTrackingEvent` (or any of the other tracking event model classes).
 
 Example:
 
@@ -171,13 +171,13 @@ __CustomEvent.h__
 
 @interface CustomEvent : VSDKTrackingEvent
 
-// Place bellow the desired fields you want to add to the tracking event
+// Place below the desired fields you want to add to the tracking event
 @property (nullable) NSString *customField;
 
 @end
 ```
 
-__CustomEvent.h__
+__CustomEvent.m__
 ```objc
 #import "CustomEvent.h"
 
@@ -193,7 +193,7 @@ __CustomEvent.h__
 @end
 ```
 
-This new class can then be imported and used like any other tracking event
+This new class can then be imported and used like any other tracking event:
 
 ```objc
 #import "CustomEvent.h";
@@ -238,9 +238,9 @@ Due to limitations of the framework we use to serialize classes to JSON ([JSONMo
 1. Use the newly created class as any other tracking event model class:
 ```swift
 let trackingEvent = CustomEvent()
-trackingEvent.siteId = "foo"
-trackingEvent.clientId = "bar"
-trackingEvent.customField = "baz"
+trackingEvent.siteId = "RandomSiteId"
+trackingEvent.clientId = "RandomClientId"
+trackingEvent.customField = "RandomCustomField"
 ```
 
-If you had any problem with importing the Objective-C class into Swift, please take a look at Apple's guide on [Importing Objective-C into Swift](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift)
+If you had any problem with importing the Objective-C class into Swift, please take a look at Apple's guide on [Importing Objective-C into Swift](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift).
