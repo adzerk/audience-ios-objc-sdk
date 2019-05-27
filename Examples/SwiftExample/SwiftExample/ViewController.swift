@@ -26,5 +26,23 @@ class ViewController: UIViewController {
             self.mainLabel.text = "Error with tracking request #\(currentTrNumber).\n Error: \(error.localizedDescription)"
         })
     }
+    
+    var customTrackingNumber = 0
+    
+    @IBAction func sendCustomTrackingEvent(_ sender: Any) {
+        let trackingEvent = CustomEvent()
+        trackingEvent.siteId = "foo"
+        trackingEvent.clientId = "bar"
+        trackingEvent.customField = "baz"
+        
+        customTrackingNumber += 1
+        let currentCustomTrNumber = customTrackingNumber
+        
+        VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
+            self.mainLabel.text = "Custom Tracking request #\(currentCustomTrNumber) successful!"
+        }, onFailure:{(error: Error) in
+            self.mainLabel.text = "Error with custom tracking request #\(currentCustomTrNumber).\n Error: \(error.localizedDescription)"
+        })
+    }
 }
 
