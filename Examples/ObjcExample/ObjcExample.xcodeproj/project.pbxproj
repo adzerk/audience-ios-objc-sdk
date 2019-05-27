@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		088A3CD51A469748F5D4852A /* Pods_ObjcExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD0CBA401709172FEAAF7A2 /* Pods_ObjcExample.framework */; };
+		30AE20EF229C0A2B006F0CD5 /* CustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AE20EE229C0A2B006F0CD5 /* CustomEvent.m */; };
 		30BCF73E22709C1E00E462A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BCF73D22709C1E00E462A8 /* AppDelegate.m */; };
 		30BCF74122709C1E00E462A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BCF74022709C1E00E462A8 /* ViewController.m */; };
 		30BCF74422709C1E00E462A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BCF74222709C1E00E462A8 /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 /* Begin PBXFileReference section */
 		0CD0CBA401709172FEAAF7A2 /* Pods_ObjcExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ObjcExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F87EB2C21813E485189E019 /* Pods-ObjcExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcExample.release.xcconfig"; path = "Target Support Files/Pods-ObjcExample/Pods-ObjcExample.release.xcconfig"; sourceTree = "<group>"; };
+		30AE20ED229C0A2B006F0CD5 /* CustomEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomEvent.h; sourceTree = "<group>"; };
+		30AE20EE229C0A2B006F0CD5 /* CustomEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomEvent.m; sourceTree = "<group>"; };
 		30BCF73922709C1E00E462A8 /* ObjcExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BCF73C22709C1E00E462A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		30BCF73D22709C1E00E462A8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 				30BCF74722709C1F00E462A8 /* LaunchScreen.storyboard */,
 				30BCF74A22709C1F00E462A8 /* Info.plist */,
 				30BCF74B22709C1F00E462A8 /* main.m */,
+				30AE20ED229C0A2B006F0CD5 /* CustomEvent.h */,
+				30AE20EE229C0A2B006F0CD5 /* CustomEvent.m */,
 			);
 			path = ObjcExample;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30BCF74122709C1E00E462A8 /* ViewController.m in Sources */,
+				30AE20EF229C0A2B006F0CD5 /* CustomEvent.m in Sources */,
 				30BCF74C22709C1F00E462A8 /* main.m in Sources */,
 				30BCF73E22709C1E00E462A8 /* AppDelegate.m in Sources */,
 			);
