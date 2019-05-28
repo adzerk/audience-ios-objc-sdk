@@ -4,13 +4,13 @@ xcode_workspace: VelocidiSDK.xcworkspace # path to your xcodeproj folder
 xcode_scheme: VelocidiSDKTests
 
 script:
-  - xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDKTests clean build test -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+  - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDK -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO clean build test | xcpretty --color 
 
 before_install:
   - xcrun instruments -w "iPhone X (${TEST_SDK})" || sleep 15
 
 after_success:
- - bash <(curl -s https://codecov.io/bash)
+ - bash <(curl -s https://codecov.io/bash) -J 'VelocidiSDK'
 
 jobs:
   include:
