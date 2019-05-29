@@ -157,7 +157,7 @@ __Objective-C__
 #### Create your custom tracking event
 If none of the available tracking events matches your needs you can also extend `TrackingEvent` and create your own. 
 
-__Beware!__ _Custom tracking events are not interpreted by our services and bring limited functionality other than logging and basic statistics._
+__Beware!__ _Custom tracking events might not be interpreted by our services and will have limited functionality (logging and basic statistics). Please try to use one of the existing tracking events model classes or at least inherit from one of those classes when creating a custom event to ensure you make the most out of Velocidi's CDP._
 
 ##### Objective-C
 
