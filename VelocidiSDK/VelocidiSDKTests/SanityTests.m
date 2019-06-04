@@ -47,8 +47,8 @@
 - (void)testCreateConfigFromDomain {
     VSDKConfig * config = [[VSDKConfig alloc] initWithDomain:@"https://domain.com"];
     
-    XCTAssert([@"https://tr.domain.com" isEqualToString:[[config trackingHost] absoluteString]]);
-    XCTAssert([@"https://match.domain.com" isEqualToString:[[config matchHost] absoluteString]]);
+    XCTAssert([@"https://tr.domain.com" isEqualToString:[[config trackingUrl] absoluteString]]);
+    XCTAssert([@"https://match.domain.com" isEqualToString:[[config matchUrl] absoluteString]]);
 }
 
 - (void)testMatchRequest {
