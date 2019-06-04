@@ -47,8 +47,10 @@
 - (void)testCreateConfigFromDomain {
     VSDKConfig * config = [[VSDKConfig alloc] initWithDomain:@"https://domain.com"];
     
-    XCTAssert([@"https://tr.domain.com" isEqualToString:[[config trackingUrl] absoluteString]]);
-    XCTAssert([@"https://match.domain.com" isEqualToString:[[config matchUrl] absoluteString]]);
+    NSLog(@"%@", config.trackingUrl.string);
+    
+    XCTAssert([@"https://tr.domain.com/events" isEqualToString: config.trackingUrl.string]);
+    XCTAssert([@"https://match.domain.com/match" isEqualToString: config.matchUrl.string]);
 }
 
 - (void)testMatchRequest {

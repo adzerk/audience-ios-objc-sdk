@@ -57,7 +57,7 @@ static VSDKConfig *_config = nil;
     VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
 
     request.data = trackingEvent;
-    request.url = VSDKVelocidi.config.trackingUrl;
+    request.url = VSDKVelocidi.config.trackingUrl.URL;
 
     [request performRequest:onSuccessBlock :onFailureBlock];
 }
@@ -79,7 +79,7 @@ static VSDKConfig *_config = nil;
     
     request.userIds = userIds;
     request.providerId = providerId;
-    request.url = VSDKVelocidi.config.matchUrl;
+    request.url = VSDKVelocidi.config.matchUrl.URL;
     
     [request performRequest:onSuccessBlock :onFailureBlock];
 }
