@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         let currentMatchNumber = matchNumber
         
         VSDKVelocidi.sharedInstance().match("1234-providerId-56789", userIds: idsArray, onSuccess:{ (response: URLResponse, responseObject: Any) in
-            self.mainLabel.text = "Match request #\(currentMatchNumber) successful!!!"
+            self.mainLabel.text = "Match request #\(currentMatchNumber) successful!"
         }, onFailure:{(error: Error) in
             self.mainLabel.text = "Error with match request #\(currentMatchNumber).\n Error: \(error.localizedDescription)"
         })

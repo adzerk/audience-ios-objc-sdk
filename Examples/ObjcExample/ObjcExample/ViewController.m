@@ -57,10 +57,10 @@ static int customTrackingNumber = 0;
     [VSDKVelocidi.sharedInstance match: @"1234-providerId-56789"
                                userIds: idsArray
                              onSuccess: ^(NSURLResponse * response, id responseObject){
-        self.mainLabel.text = [NSString stringWithFormat: @"Tracking request #%i successful!!!",
+        self.mainLabel.text = [NSString stringWithFormat: @"Match request #%i successful!",
                                matchNumber];
     } onFailure: ^(NSError * error){
-        self.mainLabel.text = [NSString stringWithFormat: @"Error with tracking request #%i.\n Error: %@", matchNumber, [error localizedDescription]];
+        self.mainLabel.text = [NSString stringWithFormat: @"Error with match request #%i.\n Error: %@", matchNumber, [error localizedDescription]];
     }];
 }
 @end

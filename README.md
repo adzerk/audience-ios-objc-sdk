@@ -268,7 +268,7 @@ __Objective-C__
 ```objc
 - (IBAction)sendMatch:(id)sender {
     VSDKUserId * userId1 =  [[VSDKUserId alloc] initUserId:@"bar":@"foo"];
-    VSDKUserId * userId2 =  [[VSDKUserId alloc] initUserId:@"baz":@"foo"];
+    VSDKUserId * userId2 =  [[VSDKUserId alloc] initUserId:@"baz":@"fooType"];
     NSMutableArray * idsArray = [[NSMutableArray alloc] initWithObjects: userId1, userId2, nil];
     
     [VSDKVelocidi.sharedInstance match: @"1234-providerId-56789"
