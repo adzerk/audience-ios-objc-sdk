@@ -267,7 +267,7 @@ __Swift__
 __Objective-C__
 ```objc
 - (IBAction)sendMatch:(id)sender {
-    VSDKUserId * userId1 =  [[VSDKUserId alloc] initUserId:@"bar":@"foo"];
+    VSDKUserId * userId1 =  [[VSDKUserId alloc] initUserId:@"bar":@"fooType"];
     VSDKUserId * userId2 =  [[VSDKUserId alloc] initUserId:@"baz":@"fooType"];
     NSMutableArray * idsArray = [[NSMutableArray alloc] initWithObjects: userId1, userId2, nil];
     
