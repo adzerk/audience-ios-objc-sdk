@@ -62,7 +62,7 @@ static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError"
     NSMutableArray<NSURLQueryItem *> * queryParams = [[NSMutableArray alloc] init];
 
     [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"id_idfa" value:advertisingIdentifier]];
-    [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"cookies" value:false]];
+    [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"cookies" value:@"false"]];
 
     urlComponents.queryItems = queryParams;
     return urlComponents;

@@ -107,6 +107,7 @@ class NetworkTests: QuickSpec {
                     let arrUserIds = NSMutableArray(array: [userId1,userId2])
                     
                     var expectedParams = Dictionary<String, String>()
+                    expectedParams["cookies"] = "false"
                     for case let userId as VSDKUserId in arrUserIds {
                         expectedParams["id_\(userId.type)"] = userId.userId
                     }
