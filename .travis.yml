@@ -45,6 +45,15 @@ jobs:
         - pod lib lint --verbose VelocidiSDK.podspec
       after_success: null
       before_install: null
+    - name: README.md check
+      script: 
+        - cat docs/HEADER.md docs/BODY.md | diff README.md -
+      after_failure:
+        - echo "To update update the README.md file at the root of the repository \
+        you should update the files HEADER.md BODY.md in the docs folder and then \
+        join them (e.g., `cat docs/HEADER.md docs/BODY.md > README.md`)."
+      after_success: null
+      before_install: null
 notifications:
   email:
     recipients:
