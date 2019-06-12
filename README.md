@@ -5,6 +5,8 @@
 [![codecov](https://codecov.io/gh/velocidi/velocidi-ios-objc-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/velocidi/velocidi-ios-objc-sdk)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+This sentence should not appear and should fail README.md check in Travis.
+
 Velocidi's Objective-C SDK to integrate with iOS apps.
 
 _SDK development in the early stages. Not ready for production. Use it at your own risk._
