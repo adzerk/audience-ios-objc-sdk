@@ -49,9 +49,9 @@ jobs:
       script: 
         - cat docs/HEADER.md docs/BODY.md | diff README.md -
       after_failure:
-        - echo "To update update the README.md file at the root of the repository \
-        you should update the files HEADER.md BODY.md in the docs folder and then \
-        join them (e.g., `cat docs/HEADER.md docs/BODY.md > README.md`)."
+        - echo "To update the README.md file at the root of the repository you\
+         should update the files HEADER.md BODY.md in the docs folder and then\
+         join them (e.g., `cat docs/HEADER.md docs/BODY.md > README.md`)."
       after_success: null
       before_install: null
 notifications:
