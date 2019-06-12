@@ -83,6 +83,8 @@ __Objective-C__
 
 ### Send a track event
 
+A tracking event will log an user action in Velocidi's CDP.
+
 In order to send a tracking event, create an instance of `VSDKTrackingEvent`. Then, call the singleton instance of `VSDKVelocidi` and use the `track` method.
 
 __Swift__
@@ -240,7 +242,9 @@ If you had any problem with importing the Objective-C class into Swift, please t
 
 ### Make a match
 
-You can match the user's Advertising Identifier with other known identifiers (like an internal ID) so that any event made by the user in the application can be traced back to a known user in the system.
+Match requests are used to link multiple identifiers in Velocidi's CDP. This way, any action made with any of the identifiers, across multiple channels (Browser, Mobile App, etc..), can be associated to the same user.
+
+In VelocidiSDK, a match request will link the user's Advertising Identifier with other provided identifiers (like an internal ID). A typical use case for this is, for instance, during the login action, to associate the user's ID with Apple's Advertising Identifier (identifier used in all the tracking event requests).
 
 __Swift__
 ```swift
