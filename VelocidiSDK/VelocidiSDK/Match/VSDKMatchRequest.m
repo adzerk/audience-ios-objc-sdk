@@ -11,7 +11,7 @@
     
     for(VSDKUserId* userId in self.userIds) {
         [queryItems addObject: [[NSURLQueryItem alloc] initWithName: [[NSString alloc] initWithFormat:@"id_%@", userId.type]
-                                                             value: userId.userId]];
+                                                              value: userId.userId]];
     }
     [queryItems addObject: [[NSURLQueryItem alloc] initWithName: @"providerId" value: self.providerId]];
     
