@@ -39,6 +39,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier;
 
+/**
+  Build a NSMutableURLRequest that can be executed.
+  Has to be implemented by classes inheriting this class.
+  @param advertisingIdentifier advertisingIdentifier of the user
+  @returns request to be executed
+ */
 - (NSMutableURLRequest *)buildRequest: (NSString *)advertisingIdentifier;
 
 @end
