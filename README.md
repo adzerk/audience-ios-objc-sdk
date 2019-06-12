@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ```
 
 __Objective-C__
-```objc
+```objectivec
 @import VelocidiSDK;
 
 @interface AppDelegate ()
@@ -106,7 +106,7 @@ VSDKVelocidi.sharedInstance().track(trackingEvent)
 ```
 
 __Objective-C__
-```objc
+```objectivec
 @import VelocidiSDK;
 
 ...
@@ -131,7 +131,7 @@ VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLRes
 ```
 
 __Objective-C__
-```objc
+```objectivec
 [VSDKVelocidi.sharedInstance track: trackingEvent onSuccess: ^(NSURLResponse * response, id responseObject){
     NSLog(@"Success! Response: %@", trackingNumber);
 } onFailure: ^(NSError * error){
@@ -166,7 +166,7 @@ Create a new Cocoa Touch class that inherits from `VSDKTrackingEvent` (or any of
 Example:
 
 __CustomEvent.h__
-```objc
+```objectivec
 #import <VelocidiSDK/VelocidiSDK.h>
 
 @interface CustomEvent : VSDKTrackingEvent
@@ -178,7 +178,7 @@ __CustomEvent.h__
 ```
 
 __CustomEvent.m__
-```objc
+```objectivec
 #import "CustomEvent.h"
 
 @implementation CustomEvent
@@ -195,7 +195,7 @@ __CustomEvent.m__
 
 This new class can then be imported and used like any other tracking event:
 
-```objc
+```objectivec
 #import "CustomEvent.h";
 
 ...
@@ -226,7 +226,7 @@ Due to limitations of the framework we use to serialize classes to JSON ([JSONMo
 
 5. Import the created custom event class in the bridging header file (_AppName-Bridging-Header.h_):
 
-```objc
+```objectivec
 //
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
