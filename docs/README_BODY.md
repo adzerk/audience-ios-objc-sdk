@@ -1,4 +1,4 @@
-Velocidi's Objective-C SDK to integrate with iOS apps.
+VelocidiSDK is Velocidi's Objective-C SDK to integrate with iOS apps.
 
 _SDK development in the early stages. Not ready for production. Use it at your own risk._
 
@@ -24,7 +24,7 @@ $ pod install
 
 ### Installation with Carthage
 
-To integrate VelocidiSDK into your Xcode project using CocoaPods, specify it in your `Cartfile`:
+To integrate VelocidiSDK into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```
 github "velocidi/velocidi-ios-objc-sdk" ~> 0.0.1
@@ -40,7 +40,7 @@ VelocidiSDK should work with any version of iOS equal or bigger than 11.0.
 
 ### Setup
 
-Initialize the VelocidiSDK with the necessary `trackingHost` and the `matchHost` URLs. Without this, VelocidiSDK will not work. We suggest doing this when the application launches.
+Initialize the VelocidiSDK with the necessary `trackingBaseUrl` and the `matchBaseUrl` URLs. Without this, VelocidiSDK will not work. We suggest doing this when the application launches.
 
 __Swift__
 ```swift
@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let config = VSDKConfig(hosts: "https://tr.yourdomain.com", "https://match.yourdomain.com")!
+        let config = VSDKConfig(trackingBaseUrl: "https://tr.yourdomain.com", "https://match.yourdomain.com")!
         VSDKVelocidi.start(config)
         return true
     }
@@ -75,7 +75,7 @@ __Objective-C__
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    VSDKConfig * config = [[VSDKConfig alloc] initWithHosts:@"https://tr.yourdomain.com": @"https://match.yourdomain.com"];
+    VSDKConfig * config = [[VSDKConfig alloc] initWithTrackingBaseUrl:@"https://tr.yourdomain.com": @"https://match.yourdomain.com"];
     [VSDKVelocidi start: config];
     return YES;
 }
