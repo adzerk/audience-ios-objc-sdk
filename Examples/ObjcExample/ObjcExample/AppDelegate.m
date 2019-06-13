@@ -11,7 +11,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    VSDKConfig * config = [[VSDKConfig alloc] initWithTrackingHost:@"http://localhost:8080": @"http://localhost:8080"];
+    VSDKConfig * config = [[VSDKConfig alloc] initWithTrackingBaseUrl:@"http://localhost:8080": @"http://localhost:8080"];
     [VSDKVelocidi start: config];
     return YES;
 }
