@@ -1,3 +1,7 @@
+#import <AdSupport/ASIdentifierManager.h>
+#import <AFNetworking/AFNetworking.h>
+
+#import "VSDKGlobalVariables.h"
 #import "VSDKUtil.h"
 
 @implementation VSDKUtil

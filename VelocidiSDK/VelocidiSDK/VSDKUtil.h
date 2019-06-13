@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <VelocidiSDK/VelocidiSDK.h>
+
 @class AFHTTPSessionManager;
 
 NS_ASSUME_NONNULL_BEGIN

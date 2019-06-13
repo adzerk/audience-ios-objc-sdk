@@ -10,9 +10,10 @@ class ViewController: UIViewController {
     }
     
     var trackingNumber = 0
+    var matchNumber = 0
 
     //MARK: Actions
-    @IBAction func TrackingEvent(_ sender: UIButton) {
+    @IBAction func sendTrackingEvent(_ sender: UIButton) {
         let trackingEvent = VSDKPageView()
         trackingEvent.siteId = "foo"
         trackingEvent.clientId = "bar"
@@ -42,6 +43,21 @@ class ViewController: UIViewController {
             self.mainLabel.text = "Custom Tracking request #\(currentCustomTrNumber) successful!"
         }, onFailure:{(error: Error) in
             self.mainLabel.text = "Error with custom tracking request #\(currentCustomTrNumber).\n Error: \(error.localizedDescription)"
+        })
+    }
+
+    @IBAction func sendMatchEvent(_ sender: Any) {
+        let userId1 = VSDKUserId(userId: "bar", "fooType")
+        let userId2 = VSDKUserId(userId: "baz", "fooType")
+        let idsArray = NSMutableArray(array: [userId1, userId2])
+
+        matchNumber += 1
+        let currentMatchNumber = matchNumber
+        
+        VSDKVelocidi.sharedInstance().match("1234-providerId-56789", userIds: idsArray, onSuccess:{ (response: URLResponse, responseObject: Any) in
+            self.mainLabel.text = "Match request #\(currentMatchNumber) successful!"
+        }, onFailure:{(error: Error) in
+            self.mainLabel.text = "Error with match request #\(currentMatchNumber).\n Error: \(error.localizedDescription)"
         })
     }
 }

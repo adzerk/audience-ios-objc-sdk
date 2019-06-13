@@ -4,6 +4,7 @@ import Quick
 import Nimble
 import VelocidiSDK
 
+
 class UtilTests: QuickSpec {
     override func spec() {
         super.spec()

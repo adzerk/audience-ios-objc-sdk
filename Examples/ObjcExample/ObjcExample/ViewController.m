@@ -14,6 +14,7 @@
 }
 
 static int trackingNumber = 0;
+static int matchNumber = 0;
 
 - (IBAction)sendTrackingEvent:(id)sender {
     
@@ -44,6 +45,22 @@ static int customTrackingNumber = 0;
         self.mainLabel.text = [NSString stringWithFormat: @"Custom tracking request #%i successful!", currentCustomTrNumber];
     } onFailure: ^(NSError * error){
         self.mainLabel.text = [NSString stringWithFormat: @"Error with custom tracking request #%i.\n Error: %@", currentCustomTrNumber, [error localizedDescription]];
+    }];
+}
+- (IBAction)sendMatch:(id)sender {
+    VSDKUserId * userId1 =  [[VSDKUserId alloc] initUserId:@"bar":@"foo"];
+    VSDKUserId * userId2 =  [[VSDKUserId alloc] initUserId:@"baz":@"foo"];
+    NSMutableArray * idsArray = [[NSMutableArray alloc] initWithObjects: userId1, userId2, nil];
+
+    matchNumber++;
+    
+    [VSDKVelocidi.sharedInstance match: @"1234-providerId-56789"
+                               userIds: idsArray
+                             onSuccess: ^(NSURLResponse * response, id responseObject){
+        self.mainLabel.text = [NSString stringWithFormat: @"Match request #%i successful!",
+                               matchNumber];
+    } onFailure: ^(NSError * error){
+        self.mainLabel.text = [NSString stringWithFormat: @"Error with match request #%i.\n Error: %@", matchNumber, [error localizedDescription]];
     }];
 }
 @end

@@ -90,6 +90,8 @@ __Objective-C__
 
 ### Send a track event
 
+A tracking event will log a user action in Velocidi's CDP.
+
 In order to send a tracking event, create an instance of `VSDKTrackingEvent`. Then, call the singleton instance of `VSDKVelocidi` and use the `track` method.
 
 __Swift__
@@ -244,3 +246,40 @@ trackingEvent.customField = "RandomCustomField"
 ```
 
 If you had any problem with importing the Objective-C class into Swift, please take a look at Apple's guide on [Importing Objective-C into Swift](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift).
+
+### Make a match
+
+Match requests are used to link multiple identifiers in Velocidi's CDP. This way, any action made with any of the identifiers, across multiple channels (Browser, Mobile App, ...), can be associated to the same user.
+
+In VelocidiSDK, a match request will link the user's Advertising Identifier with other provided identifiers (like an internal ID). A typical use case for this is, for instance, during the login action, to associate the user's ID with Apple's Advertising Identifier (identifier used in all the tracking event requests).
+
+__Swift__
+```swift
+@IBAction func sendMatchEvent(_ sender: Any) {
+    let userId1 = VSDKUserId(userId: "bar", "fooType")
+    let userId2 = VSDKUserId(userId: "baz", "fooType")
+    let idsArray = NSMutableArray(array: [userId1, userId2])
+      
+    VSDKVelocidi.sharedInstance().match("1234-providerId-56789", userIds: idsArray, onSuccess:{ (response: URLResponse, responseObject: Any) in
+        print("Success! Response: \(response)")
+    }, onFailure:{(error: Error) in
+        print("Failed! Error: \(error.localizedDescription)")
+    })
+}
+```
+
+__Objective-C__
+```objectivec
+- (IBAction)sendMatch:(id)sender {
+    VSDKUserId * userId1 =  [[VSDKUserId alloc] initUserId:@"bar":@"fooType"];
+    VSDKUserId * userId2 =  [[VSDKUserId alloc] initUserId:@"baz":@"fooType"];
+    NSMutableArray * idsArray = [[NSMutableArray alloc] initWithObjects: userId1, userId2, nil];
+    
+    [VSDKVelocidi.sharedInstance match: @"1234-providerId-56789"
+                               userIds: idsArray
+                             onSuccess: ^(NSURLResponse * response, id responseObject){
+        NSLog(@"Success! Response: %@", trackingNumber);
+    } onFailure: ^(NSError * error){
+        NSLog(@"Failed! Error: %@", [error localizedDescription]);
+    }];
+```

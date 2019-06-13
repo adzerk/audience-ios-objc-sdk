@@ -1,18 +1,17 @@
-#import <VelocidiSDK/VelocidiSDK.h>
-#import <AFNetworking/AFHTTPSessionManager.h>
+#import <Foundation/Foundation.h>
 
+@class AFHTTPSessionManager;
 @class ASIdentifierManager;
 @class VSDKUtil;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface VSDKRequest<__covariant T:JSONModel *> : NSObject
+@interface VSDKRequest : NSObject
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
 @property (readonly, getter=getUtil, nonatomic) VSDKUtil *util;
 @property (readonly, getter=getIdentifierManager) ASIdentifierManager *identifierManager;
-@property T data;
 @property (class, readonly, getter=getTrackingNotAllowedErrorDomain) NSString *trackingNotAllowedErrorDomain;
 @property (class, readonly, getter=getTrackingNotAllowedError) NSError *trackingNotAllowedError;
 
@@ -39,6 +38,14 @@ NS_ASSUME_NONNULL_BEGIN
   @returns URL parameters string
  */
 - (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier;
+
+/**
+  Build a NSMutableURLRequest that can be executed.
+  Has to be implemented by classes inheriting this class.
+  @param advertisingIdentifier advertisingIdentifier of the user
+  @returns request to be executed
+ */
+- (NSMutableURLRequest *)buildRequest: (NSString *)advertisingIdentifier;
 
 @end
 

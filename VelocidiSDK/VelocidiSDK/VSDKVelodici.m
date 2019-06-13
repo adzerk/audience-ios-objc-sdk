@@ -1,6 +1,9 @@
+#import <AFNetworking/AFNetworking.h>
 #import "VSDKVelocidi.h"
 #import "VSDKConfig.h"
-#import "VSDKRequest.h"
+#import "VSDKTrackingRequest.h"
+#import "VSDKMatchRequest.h"
+#import "VSDKUtil.h"
 
 @implementation VSDKVelocidi
 
@@ -10,7 +13,7 @@ static VSDKConfig *_config = nil;
     return _config;
 }
 
-+ (instancetype)start:(VSDKConfig *)config {
++ (instancetype)start: (VSDKConfig *)config {
     _config = config;
 
     return [self sharedInstance];
@@ -43,21 +46,41 @@ static VSDKConfig *_config = nil;
     return self;
 }
 
-- (void)track:(VSDKTrackingEvent *)trackingEvent {
-    [self track:trackingEvent onSuccess:(void (^)(NSURLResponse *, id)) ^{} onFailure:(void (^)(NSError * error)) ^{}];
+- (void)track: (VSDKTrackingEvent *)trackingEvent {
+    [self track:trackingEvent onSuccess: (void (^)(NSURLResponse *, id)) ^{} onFailure: (void (^)(NSError * error)) ^{}];
 }
 
-- (void)track:(VSDKTrackingEvent *)trackingEvent
-    onSuccess:(void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-    onFailure:(void (^)(NSError *error))onFailureBlock {
+- (void)track: (VSDKTrackingEvent *)trackingEvent
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError *error))onFailureBlock {
 
-    VSDKRequest * request = [[VSDKRequest alloc] initWithHTTPSessionManager:self.sessionManager];
+    VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
 
     request.data = trackingEvent;
-    request.url = VSDKVelocidi.config.trackingHost;
+    request.url = VSDKVelocidi.config.trackingUrl.URL;
 
     [request performRequest:onSuccessBlock :onFailureBlock];
 }
 
+- (void)match: (NSString *)providerId
+      userIds: (NSMutableArray<VSDKUserId *> *)userIds {
+    [self match: providerId
+        userIds: userIds
+      onSuccess: (void (^)(NSURLResponse *, id)) ^{}
+      onFailure: (void (^)(NSError * error)) ^{} ];
+}
 
+- (void)match: (NSString *)providerId
+      userIds: (NSMutableArray<VSDKUserId *> *)userIds
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError * error))onFailureBlock {
+    
+    VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
+    
+    request.userIds = userIds;
+    request.providerId = providerId;
+    request.url = VSDKVelocidi.config.matchUrl.URL;
+    
+    [request performRequest:onSuccessBlock :onFailureBlock];
+}
 @end

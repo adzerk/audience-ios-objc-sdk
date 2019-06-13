@@ -4,25 +4,23 @@
 
 @implementation VSDKConfig
 
-- (instancetype)initWithHosts: (NSString *)trackingHost :(NSString *)matchHost {
+- (instancetype)initWithTrackingBaseUrl: (NSString *)trackingBaseUrl
+                                    : (NSString *)matchBaseUrl {
     if(self = [super init]) {
-        self.trackingHost = [[NSURL alloc] initWithString:trackingHost];
-        self.matchHost = [[NSURL alloc] initWithString:matchHost];
-        
+        self.trackingUrl = [[NSURLComponents alloc] initWithString:trackingBaseUrl];
+        self.matchUrl = [[NSURLComponents alloc] initWithString:matchBaseUrl];
+        self.trackingUrl.path = [self.trackingUrl.path stringByAppendingString: @"/events"];
+        self.matchUrl.path = [self.matchUrl.path stringByAppendingString: @"/match"];
+
     }
     return self;
 }
 
 - (instancetype)initWithDomain: (NSString *)domain{
-    if(self = [self initWithHosts:domain:domain]) {
-        NSURLComponents * mutableTrackingHost = [[NSURLComponents alloc] initWithURL:self.trackingHost resolvingAgainstBaseURL:false] ;
-        NSURLComponents * mutableMatchHost = [[NSURLComponents alloc] initWithURL:self.matchHost resolvingAgainstBaseURL:false] ;
+    if(self = [self initWithTrackingBaseUrl:domain:domain]) {
+        self.trackingUrl.host = [@"tr." stringByAppendingString:self.trackingUrl.host];
+        self.matchUrl.host = [@"match." stringByAppendingString:self.matchUrl.host];
         
-        mutableTrackingHost.host = [@"tr." stringByAppendingString:mutableTrackingHost.host];
-        mutableMatchHost.host = [@"match." stringByAppendingString:mutableMatchHost.host];
-        
-        self.trackingHost = mutableTrackingHost.URL;
-        self.matchHost = mutableMatchHost.URL;
     }
     return self;
 }

@@ -1,4 +1,4 @@
-@import Foundation;
+#import <AFNetworking/AFNetworking.h>
 #import "VSDKRequest.h"
 #import "VSDKUtil.h"
 #import <AdSupport/ASIdentifierManager.h>
@@ -34,19 +34,14 @@ static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError"
 }
 
 - (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-        :(void (^)(NSError *error))onFailureBlock {
+                      : (void (^)(NSError *error))onFailureBlock {
     if (![self.identifierManager isAdvertisingTrackingEnabled]) {
         return onFailureBlock(VSDKRequest.trackingNotAllowedError);
     }
 
     NSUUID * advertisingIdentifier = [self.identifierManager advertisingIdentifier];
 
-    NSURLComponents * url = [self buildURLWithQueryParameters: [advertisingIdentifier UUIDString]];
-
-    NSMutableURLRequest * request = [[AFJSONRequestSerializer serializer]
-                                     requestWithMethod: @"POST"
-                                     URLString: [url string]
-                                     parameters: self.data.toDictionary error:nil];
+    NSMutableURLRequest * request = [self buildRequest:[advertisingIdentifier UUIDString]];
     [request setValue:[self.util getVersionedUserAgent] forHTTPHeaderField:@"User-Agent"];
     NSURLSessionDataTask *dataTask = [self.manager
             dataTaskWithRequest:request
@@ -67,10 +62,15 @@ static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError"
     NSMutableArray<NSURLQueryItem *> * queryParams = [[NSMutableArray alloc] init];
 
     [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"id_idfa" value:advertisingIdentifier]];
-    [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"cookies" value:false]];
+    [queryParams addObject: [[NSURLQueryItem alloc] initWithName:@"cookies" value:@"false"]];
 
     urlComponents.queryItems = queryParams;
     return urlComponents;
 }
 
+- (NSMutableURLRequest *)buildRequest: (NSString *)advertisingIdentifier{
+    @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                   reason:[NSString stringWithFormat:@"You must override %@ in a subclass", NSStringFromSelector(_cmd)]
+                                 userInfo:nil];
+}
 @end
