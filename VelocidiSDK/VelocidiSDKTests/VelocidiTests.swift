@@ -63,7 +63,7 @@ class NetworkTests: QuickSpec {
 
                     var success: Bool? = nil
 
-                    let config = VSDKConfig(trackingHost: trackURL, matchURL)
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
                     VSDKVelocidi.start(config!)
 
                     VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
@@ -118,7 +118,7 @@ class NetworkTests: QuickSpec {
                     
                     var success: Bool? = nil
                     
-                    let config = VSDKConfig(trackingHost: trackURL, matchURL)
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
                     VSDKVelocidi.start(config!)
                     
                     VSDKVelocidi.sharedInstance().match("baz", userIds: arrUserIds, onSuccess:{ (response: URLResponse, responseObject: Any) in

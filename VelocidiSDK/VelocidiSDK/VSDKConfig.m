@@ -4,20 +4,20 @@
 
 @implementation VSDKConfig
 
-- (instancetype)initWithTrackingHost: (NSString *)trackingHost
-                                    : (NSString *)matchHost {
+- (instancetype)initWithTrackingBaseUrl: (NSString *)trackingBaseUrl
+                                    : (NSString *)matchBaseUrl {
     if(self = [super init]) {
-        self.trackingUrl = [[NSURLComponents alloc] initWithString:trackingHost];
-        self.matchUrl = [[NSURLComponents alloc] initWithString:matchHost];
-        self.trackingUrl.path = @"/events";
-        self.matchUrl.path = @"/match";
+        self.trackingUrl = [[NSURLComponents alloc] initWithString:trackingBaseUrl];
+        self.matchUrl = [[NSURLComponents alloc] initWithString:matchBaseUrl];
+        self.trackingUrl.path = [self.trackingUrl.path stringByAppendingString: @"/events"];
+        self.matchUrl.path = [self.matchUrl.path stringByAppendingString: @"/match"];
 
     }
     return self;
 }
 
 - (instancetype)initWithDomain: (NSString *)domain{
-    if(self = [self initWithTrackingHost:domain:domain]) {
+    if(self = [self initWithTrackingBaseUrl:domain:domain]) {
         self.trackingUrl.host = [@"tr." stringByAppendingString:self.trackingUrl.host];
         self.matchUrl.host = [@"match." stringByAppendingString:self.matchUrl.host];
         
