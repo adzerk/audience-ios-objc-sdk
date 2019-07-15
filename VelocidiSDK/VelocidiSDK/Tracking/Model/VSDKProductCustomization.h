@@ -2,6 +2,9 @@
 @class VSDKProduct;
 @class VSDKCustomization;
 
+/**
+  Tracking event model class that represents a `ProductCustomization` event
+ */
 @interface VSDKProductCustomization : VSDKTrackingEvent
 
 /**

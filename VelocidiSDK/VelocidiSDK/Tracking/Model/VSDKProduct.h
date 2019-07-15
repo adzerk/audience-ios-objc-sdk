@@ -1,5 +1,8 @@
 @import JSONModel;
 
+/**
+  Model class that represents a product
+ */
 @interface VSDKProduct : JSONModel
 
 /**

@@ -1,5 +1,8 @@
 @import JSONModel;
 
+/**
+  Model class that represents a Voucher.
+ */
 @interface VSDKVoucher : JSONModel
 
 /**

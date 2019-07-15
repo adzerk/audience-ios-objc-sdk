@@ -4,6 +4,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+  Util methods
+ */
 @interface VSDKUtil : NSObject
 
 /**

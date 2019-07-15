@@ -6,6 +6,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+  Class that wraps a NSURLMutableRequest with the necessary addons to make a request to Velocidi's infrastructure
+ */
 @interface VSDKRequest : NSObject
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;

@@ -1,6 +1,9 @@
 #import "VSDKTrackingEvent.h"
 @class VSDKProduct;
 
+/**
+  Tracking event model class that represents a `ProductImpression` event
+ */
 @interface VSDKProductImpression : VSDKTrackingEvent
 
 /**

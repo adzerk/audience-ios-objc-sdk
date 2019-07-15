@@ -2,6 +2,9 @@
 @class VSDKTransaction;
 @class VSDKProduct;
 
+/**
+  Tracking event model class that represents a `Subscription` event
+ */
 @interface VSDKSubscription : VSDKTrackingEvent
 
 /**
