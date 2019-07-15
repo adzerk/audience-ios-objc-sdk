@@ -66,3 +66,5 @@ iOSInjectionProject/
 *.idea/
 
 compile_commands.json
+
+docs/docs_page/
