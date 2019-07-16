@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "VelocidiSDK"
-  spec.version      = "0.0.1"
+  spec.version      = "0.1.0"
   spec.summary      = "Velocidi's Objective-C SDK to integrate with iOS apps"
 
   # This description is used to generate tags and improve search results.

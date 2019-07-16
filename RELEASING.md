@@ -30,7 +30,7 @@ _This is still a draft of the process, it needs verification and a test run in a
     ```
 
 1. Edit the CHANGELOG.md
-1. Commit the changes. 
+1. Commit the changes. `git commit -m "Release v0.1.0"`
 1. Tag the commit.
 
     `$ git tag 0.1.0 && git push --tags` 
