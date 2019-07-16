@@ -29,7 +29,7 @@ Pod::Spec.new do |spec|
     This is still a very rough draft of the SDK not to ready to be used
                    DESC
 
-  spec.homepage     = "https://docs.velocidi.com"
+  spec.homepage     = "https://developers.velocidi.com"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/velocidi/velocidi-ios-objc-sdk.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/velocidi/velocidi-ios-objc-sdk.git", :tag => "v#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

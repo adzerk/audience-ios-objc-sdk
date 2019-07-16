@@ -7,8 +7,6 @@
 
 VelocidiSDK is Velocidi's Objective-C SDK to integrate with iOS apps.
 
-_SDK development in the early stages. Not ready for production. Use it at your own risk._
-
 ## Installation
 ### Installation with CocoaPods
 To integrate VelocidiSDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
@@ -19,7 +17,7 @@ platform :ios, '12.1'
 project 'MyProject.xcodeproj'
 
 target "MyProject" do
-  pod 'VelocidiSDK', '~> 0.0.1'
+  pod 'VelocidiSDK', '~> 0.1.0'
 end
 ```
 
@@ -34,7 +32,7 @@ $ pod install
 To integrate VelocidiSDK into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```
-github "velocidi/velocidi-ios-objc-sdk" ~> 0.0.1
+github "velocidi/velocidi-ios-objc-sdk" ~> 0.1.0
 ```
 
 Then, run `carthage` to build the framework and drag the built VelocidiSDK.framework into your Xcode project.

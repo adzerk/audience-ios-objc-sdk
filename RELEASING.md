@@ -30,10 +30,11 @@ _This is still a draft of the process, it needs verification and a test run in a
     ```
 
 1. Edit the CHANGELOG.md
+1. Edit the install instructions in README.md so that the example version matches the new version.
 1. Commit the changes. `git commit -m "Release v0.1.0"`
 1. Tag the commit.
 
-    `$ git tag 0.1.0 && git push --tags` 
+    `$ git tag v0.1.0 && git push --tags` 
 
 1. Head over to [Github Releases](https://github.com/velocidi/velocidi-ios-objc-sdk/releases), select the pushed tag, and add the copy for the new release from the Changelog to the release body. Give it the title of `vX.Y.Z` and click "Publish Release".
 1. Deploy the library to CocoaPods. `$ pod trunk push VelocidiSDK.podspec`
