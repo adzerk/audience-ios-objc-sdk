@@ -29,7 +29,8 @@ jazzy \
   --umbrella-header VelocidiSDK/VelocidiSDK/VelocidiSDK.h \
   --framework-root VelocidiSDK/ \
   --module VelocidiSDK \
-  --output $DOCS_DIR/
+  --output $DOCS_DIR/ \
+  --theme docs/velocidi-jazzy-theme/
 
 
 # navigate into the build output directory
