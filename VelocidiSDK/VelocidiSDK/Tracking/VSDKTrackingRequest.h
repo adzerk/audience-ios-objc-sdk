@@ -6,7 +6,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
-  Class that wraps a NSURLMutableRequest with the necessary addons to make a tracking request to Velocidi's infrastructure
+  Class that wraps a NSURLMutableRequest with the necessary addons to make a tracking request to Velocidi's system
  */
 @interface VSDKTrackingRequest : VSDKRequest
 
