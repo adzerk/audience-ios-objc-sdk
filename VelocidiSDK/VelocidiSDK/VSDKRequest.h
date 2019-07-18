@@ -7,7 +7,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
-  Class that wraps a NSURLMutableRequest with the necessary addons to make a request to Velocidi's infrastructure
+  Class that wraps a NSURLMutableRequest with the necessary addons to make a request to Velocidi's system
  */
 @interface VSDKRequest : NSObject
 
