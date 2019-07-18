@@ -17,7 +17,15 @@ if [ -d "$DOCS_DIR" ]; then rm -Rf $DOCS_DIR; fi
 mkdir -p $DOCS_DIR/docs/img/
 cp docs/img/* $DOCS_DIR/docs/img/
 
-# build
+# build docs
+if ! [ -x "$(command -v jazzy)" ]; then
+  echo 'Error: jazzy is not installed. You can install it with `gem install jazzy`.' >&2
+  exit 1
+fi
+
+if ! jazzy -v | grep -q '0.10.0'; then
+  echo "\033[0;33mWarning\033[0m: Not using recommended jazzy version. Recommended jazzy version is 0.10.0."
+fi
 
 jazzy \
   --objc \
