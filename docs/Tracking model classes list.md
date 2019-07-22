@@ -1,4 +1,4 @@
-## Available tracking events model classes
+# Available tracking events model classes
 * VSDKAddToCart
 * VSDKPageView
 * VSDKProductClick

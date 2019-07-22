@@ -3,13 +3,6 @@
 # abort on errors
 set -e
 
-# fetch version
-if [ "$#" -le 0 ]; then
-    echo "Usage: $0 <version>"
-    exit 1
-fi
-
-VERSION=$1
 DOCS_DIR=docs/docs_page
 
 #clean and copy images
@@ -27,19 +20,7 @@ if ! jazzy -v | grep -q '0.10.0'; then
   echo "\033[0;33mWarning\033[0m: Not using recommended jazzy version. Recommended jazzy version is 0.10.0."
 fi
 
-jazzy \
-  --objc \
-  --author Velocidi \
-  --author_url http://velocidi.com \
-  --github_url https://github.com/velocidi/velocidi-ios-objc-sdk \
-  --github-file-prefix https://github.com/velocidi/velocidi-ios-objc-sdk/tree/$VERSION \
-  --module-version $VERSION \
-  --umbrella-header VelocidiSDK/VelocidiSDK/VelocidiSDK.h \
-  --framework-root VelocidiSDK/ \
-  --module VelocidiSDK \
-  --output $DOCS_DIR/ \
-  --theme docs/velocidi-jazzy-theme/
-
+jazzy
 
 # navigate into the build output directory
 cd $DOCS_DIR/
