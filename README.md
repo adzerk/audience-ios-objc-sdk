@@ -7,8 +7,8 @@
 
 VelocidiSDK is Velocidi's Objective-C SDK to integrate with iOS apps.
 
-## Installation
-### Installation with CocoaPods
+# Installation
+## Installation with CocoaPods
 To integrate VelocidiSDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```yaml
@@ -27,7 +27,7 @@ Then, run:
 $ pod install
 ```
 
-### Installation with Carthage
+## Installation with Carthage
 
 To integrate VelocidiSDK into your Xcode project using Carthage, specify it in your `Cartfile`:
 
@@ -41,9 +41,7 @@ Then, run `carthage` to build the framework and drag the built VelocidiSDK.frame
 
 VelocidiSDK should work with any version of iOS equal or bigger than 11.0.
 
-## Usage
-
-### Setup
+# Setup
 
 Initialize the VelocidiSDK with the necessary `trackingBaseUrl` and the `matchBaseUrl` URLs. Without this, VelocidiSDK will not work. We suggest doing this when the application launches.
 
@@ -86,7 +84,7 @@ __Objective-C__
 }
 ```
 
-### Send a track event
+# Send a track event
 
 A tracking event will log a user action in Velocidi's CDP.
 
@@ -139,9 +137,9 @@ __Objective-C__
 }];
 ```
 
-A list of the available tracking event classes can be found [here](./docs/TRACKING_MODEL_CLASSES_LIST.md). If none of them fit the desired action, you can also create your own [custom tracking event](./docs/CUSTOM_TRACKING_EVENTS.md)
+A list of the available tracking event classes can be found [here](https://ios.developers.velocidi.com/tracking-model-classes-list.html). If none of them fit the desired action, you can also create your own [custom tracking event](https://ios.developers.velocidi.com/custom-tracking-events.html)
 
-### Make a match
+# Make a match
 
 Match requests are used to link multiple identifiers in Velocidi's CDP. This way, any action made with any of the identifiers, across multiple channels (Browser, Mobile App, ...), can be associated to the same user.
 

@@ -90,21 +90,6 @@ result = "# #{options[:title]}\n\n" + result if options[:title]
 
 # -----
 
-jazzy_conf = JSON.parse IO.read '.jazzy.json'
-
-if jazzy_conf['string-replacements']
-  transforms = jazzy_conf['string-replacements']
-  transforms.each_pair do |key, value|
-    result = result.sub key, value
-  end
-end
-
-version = `cat ReSwift.podspec| grep "version " | cut -d '"' -f 2`.strip
-
-result = result.sub '{{version}}', version if version
-
-# -----
-
 if result == ''
   puts 'Not writing output as result is empty'
   exit 1
