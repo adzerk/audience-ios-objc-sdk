@@ -1,6 +1,9 @@
 #import "VSDKTrackingEvent.h"
 @class VSDKProduct;
 
+/**
+  Tracking event model class that represents a `RemoveFromCart` event
+ */
 @interface VSDKRemoveFromCart : VSDKTrackingEvent
 
 /**

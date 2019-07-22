@@ -2,6 +2,9 @@
 
 @class VSDKProduct;
 
+/**
+  Tracking event model class that represents a `ProductFeedback` event
+ */
 @interface VSDKProductFeedback : VSDKTrackingEvent
 
 /**

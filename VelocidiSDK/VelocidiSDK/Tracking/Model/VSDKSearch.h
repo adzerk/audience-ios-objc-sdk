@@ -1,5 +1,8 @@
 #import "VSDKTrackingEvent.h"
 
+/**
+  Tracking event model class that represents a `Search` event
+ */
 @interface VSDKSearch : VSDKTrackingEvent
 
 /**

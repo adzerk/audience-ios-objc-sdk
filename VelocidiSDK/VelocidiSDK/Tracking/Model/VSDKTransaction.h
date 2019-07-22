@@ -1,6 +1,9 @@
 @import JSONModel;
 @class VSDKVoucher;
 
+/**
+  Model class that represents a transaction.
+ */
 @interface VSDKTransaction : JSONModel
 
 /**

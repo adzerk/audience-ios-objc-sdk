@@ -2,6 +2,9 @@
 
 @class VSDKProduct;
 
+/**
+  Tracking event model class that represents an `AddToCart` event
+ */
 @interface VSDKAddToCart : VSDKTrackingEvent
 
 /**

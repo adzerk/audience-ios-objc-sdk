@@ -1,5 +1,8 @@
 #import <Foundation/Foundation.h>
 
+/**
+ Model class with the configurations necessary for VSDKVelocidi
+ */
 @interface VSDKConfig : NSObject
 
 /**

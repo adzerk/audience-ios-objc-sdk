@@ -1,0 +1,38 @@
+$custom_bg_color: #ffffff;
+$custom_gray_border: 1px solid #e2e2e2;
+
+body {
+  background-color: $custom_bg_color;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  background-color: #831f4d;
+
+  p {
+    color: $custom_bg_color;
+  }
+}
+
+.sidebar {
+  background-color: $custom_bg_color;
+  border: 0;
+  .nav-groups {
+    border: $custom_gray_border;
+
+    li {
+      line-height: 2.4;
+    }
+
+    .nav-group-name {
+      border-bottom: 0;
+    }
+    .nav-group-name:not(:last-child) {
+      border-bottom: $custom_gray_border;
+    }
+  } 
+}
+
+#breadcrumbs {
+  background-color: $custom_bg_color;
+}

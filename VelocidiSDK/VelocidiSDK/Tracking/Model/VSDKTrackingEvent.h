@@ -1,5 +1,9 @@
 @import JSONModel;
 
+/**
+  Class that represents a basic tracking event. Should NOT be initialized as is. 
+  Should be inherited.
+ */
 @interface VSDKTrackingEvent : JSONModel
 
 /**

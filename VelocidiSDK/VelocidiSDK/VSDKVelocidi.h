@@ -7,6 +7,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+  VelocidiSDK main class responsible for orchestrating all the logic
+ */
 @interface VSDKVelocidi: NSObject
 
 /**
