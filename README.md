@@ -175,3 +175,9 @@ __Objective-C__
         NSLog(@"Failed! Error: %@", [error localizedDescription]);
     }];
 ```
+
+# Need Help?
+
+You can find more information about Velocidi's Private CDP at https://docs.velocidi.com/ and at https://developers.velocidi.com
+
+Please report bugs or issues to https://github.com/velocidi/velocidi-ios-objc-sdk/issues or send us an email to engineering@velocidi.com.
