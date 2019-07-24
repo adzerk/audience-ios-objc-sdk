@@ -6,6 +6,8 @@ set -e
 # build docs website
 .scripts/build_docs.sh
 
+DOCS_DIR=docs/docs_page
+
 # navigate into the build output directory
 cd $DOCS_DIR/
 
