@@ -1,0 +1,24 @@
+objc: true
+author: Velocidi
+author_url: http://velocidi.com
+github_url: https://github.com/velocidi/velocidi-ios-objc-sdk
+github_file_prefix: https://github.com/velocidi/velocidi-ios-objc-sdk/tree/0.1.0
+module_version: 0.1.0 
+umbrella_header: VelocidiSDK/VelocidiSDK/VelocidiSDK.h
+framework_root: VelocidiSDK/
+module: VelocidiSDK
+output: ./docs/docs_page/
+theme: docs/velocidi-jazzy-theme/
+readme: ./docs/tmp/readme/README.md
+documentation: 
+  - ./docs/*.md 
+  - ./docs/tmp/docs/*.md 
+custom_categories: 
+  - name: Guides 
+    children: 
+      - Installation
+      - Setting up the SDK
+      - Send a track event
+      - Make a match
+      - Custom tracking events
+      - Tracking model classes list

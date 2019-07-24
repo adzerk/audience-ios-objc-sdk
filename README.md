@@ -7,8 +7,8 @@
 
 VelocidiSDK is Velocidi's Objective-C SDK to integrate with iOS apps.
 
-## Installation
-### Installation with CocoaPods
+# Installation
+## Installation with CocoaPods
 To integrate VelocidiSDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```yaml
@@ -27,7 +27,7 @@ Then, run:
 $ pod install
 ```
 
-### Installation with Carthage
+## Installation with Carthage
 
 To integrate VelocidiSDK into your Xcode project using Carthage, specify it in your `Cartfile`:
 
@@ -41,9 +41,7 @@ Then, run `carthage` to build the framework and drag the built VelocidiSDK.frame
 
 VelocidiSDK should work with any version of iOS equal or bigger than 11.0.
 
-## Usage
-
-### Setup
+# Setup
 
 Initialize the VelocidiSDK with the necessary `trackingBaseUrl` and the `matchBaseUrl` URLs. Without this, VelocidiSDK will not work. We suggest doing this when the application launches.
 
@@ -86,7 +84,7 @@ __Objective-C__
 }
 ```
 
-### Send a track event
+# Send a track event
 
 A tracking event will log a user action in Velocidi's CDP.
 
@@ -139,113 +137,9 @@ __Objective-C__
 }];
 ```
 
-#### Available tracking events model classes
-* VSDKAddToCart
-* VSDKPageView
-* VSDKProductClick
-* VSDKProductCustomization
-* VSDKProductFeedback
-* VSDKProductImpression
-* VSDKProductView
-* VSDKProductViewDetails
-* VSDKPurchase
-* VSDKRefund
-* VSDKRemoveFromCart
-* VSDKSearch
-* VSDKSubscription
+There is a big list of [tracking event classes](https://ios.developers.velocidi.com/tracking-model-classes-list.html) to choose from. If none of them fits the desired action, you can also create your own [custom tracking event](https://ios.developers.velocidi.com/custom-tracking-events.html)
 
-#### Create your custom tracking event
-If none of the available tracking events matches your needs you can also extend `TrackingEvent` and create your own. 
-
-__Beware!__ _Custom tracking events might not be interpreted by our services and will have limited functionality (logging and basic statistics). Please try to use one of the existing tracking events model classes or at least inherit from one of those classes when creating a custom event to ensure you make the most out of Velocidi's CDP._
-
-##### Objective-C
-
-Create a new Cocoa Touch class that inherits from `VSDKTrackingEvent` (or any of the other tracking event model classes).
-
-Example:
-
-__CustomEvent.h__
-```objectivec
-#import <VelocidiSDK/VelocidiSDK.h>
-
-@interface CustomEvent : VSDKTrackingEvent
-
-// Place below the desired fields you want to add to the tracking event
-@property (nullable) NSString *customField;
-
-@end
-```
-
-__CustomEvent.m__
-```objectivec
-#import "CustomEvent.h"
-
-@implementation CustomEvent
-
-- (instancetype) init {
-    if(self = [super init]){
-        self.type = @"customEvent"; // Only necessary when inheriting directly from VSDKTrackingEvent
-    }
-    return self;
-}
-
-@end
-```
-
-This new class can then be imported and used like any other tracking event:
-
-```objectivec
-#import "CustomEvent.h";
-
-...
-
-CustomEvent * trackingEvent =  [[CustomEvent alloc] init];
-trackingEvent.clientId = @"RandomSiteId";
-trackingEvent.siteId = @"RandomClientId";
-trackingEvent.customField = @"RandomCustomField";
-
-[VSDKVelocidi.sharedInstance track: trackingEvent] 
-```
-
-##### Swift
-Due to limitations of the framework we use to serialize classes to JSON ([JSONModel](https://github.com/jsonmodel/jsonmodel)), a Swift class that inherits from `VSDKTrackingEvent` or any tracking event model class won't have its properties serialized when sending the event. To have this functionality you will have to create your custom event in Objective-C and import it into Swift:
-
-1. Create a new Cocoa Touch class.
-1. When prompted with the desired language, make sure to choose Objective-C. Press _Next_.
-
-![Xcode Cocoa Touch Modal](./docs/img/xcode-cocoa-touch-modal.png)
-
-1. After creating the class you'll be asked if you want to configure an Objective-C bridging header. Press _Create Bridging Header_.
-
-![Xcode Bridging Header Modal](./docs/img/xcode-bridging-header-warning.png)
-
-4. Three new files should have been created.
-
-![New files created](./docs/img/xcode-bridging-files.png)
-
-5. Import the created custom event class in the bridging header file (_AppName-Bridging-Header.h_):
-
-```objectivec
-//
-//  Use this file to import your target's public headers that you would like to expose to Swift.
-//
-
-#import "CustomEvent.h"
-```
-6. Add the desired fields to the custom event (see Objective-C instructions for custom events)
-
-1. Use the newly created class as any other tracking event model class:
-```swift
-let trackingEvent = CustomEvent()
-trackingEvent.siteId = "RandomSiteId"
-trackingEvent.clientId = "RandomClientId"
-trackingEvent.customField = "RandomCustomField"
-```
-
-If you had any problem with importing the Objective-C class into Swift, please take a look at Apple's guide on [Importing Objective-C into Swift](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift).
-
-### Make a match
+# Make a match
 
 Match requests are used to link multiple identifiers in Velocidi's CDP. This way, any action made with any of the identifiers, across multiple channels (Browser, Mobile App, ...), can be associated to the same user.
 
@@ -281,3 +175,9 @@ __Objective-C__
         NSLog(@"Failed! Error: %@", [error localizedDescription]);
     }];
 ```
+
+# Need Help?
+
+You can find more information about Velocidi's Private CDP at https://docs.velocidi.com/ and at https://developers.velocidi.com.
+
+Please report bugs or issues to https://github.com/velocidi/velocidi-ios-objc-sdk/issues or send us an email to engineering@velocidi.com.
