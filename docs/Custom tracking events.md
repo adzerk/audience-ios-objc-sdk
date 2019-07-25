@@ -58,15 +58,15 @@ Due to limitations of the framework we use to serialize classes to JSON ([JSONMo
 1. Create a new Cocoa Touch class.
 1. When prompted with the desired language, make sure to choose Objective-C. Press _Next_.
 
-![Xcode Cocoa Touch Modal](./docs/img/xcode-cocoa-touch-modal.png)
+![Xcode Cocoa Touch Modal](https://raw.githubusercontent.com/velocidi/velocidi-ios-objc-sdk/master/docs/img/xcode-cocoa-touch-modal.png)
 
 1. After creating the class you'll be asked if you want to configure an Objective-C bridging header. Press _Create Bridging Header_.
 
-![Xcode Bridging Header Modal](./docs/img/xcode-bridging-header-warning.png)
+![Xcode Bridging Header Modal](https://raw.githubusercontent.com/velocidi/velocidi-ios-objc-sdk/master/docs/img/xcode-bridging-header-warning.png)
 
 4. Three new files should have been created.
 
-![New files created](./docs/img/xcode-bridging-files.png)
+![New files created](https://raw.githubusercontent.com/velocidi/velocidi-ios-objc-sdk/master/docs/img/xcode-bridging-files.png)
 
 5. Import the created custom event class in the bridging header file (_AppName-Bridging-Header.h_):
 
