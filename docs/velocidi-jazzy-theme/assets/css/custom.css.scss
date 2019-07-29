@@ -4,6 +4,9 @@ $custom_gray_border: 1px solid #e2e2e2;
 body {
   background-color: $custom_bg_color;
   font-family: 'Lato', sans-serif;
+  line-height: 28px;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 header {
@@ -14,24 +17,40 @@ header {
   }
 }
 
-.sidebar {
-  background-color: $custom_bg_color;
-  border: 0;
-  .nav-groups {
-    border: $custom_gray_border;
+.content-wrapper {
+  width: 1080px;
 
-    li {
-      line-height: 2.4;
-    }
+  .sidebar {
+    background-color: $custom_bg_color;
+    border: 0;
+    width: 260px;
 
-    .nav-group-name {
-      border-bottom: 0;
+    .nav-groups {
+      border: $custom_gray_border;
+  
+      li {
+        line-height: 2.4;
+      }
+  
+      .nav-group-name {
+        border-bottom: 0;
+      }
+      .nav-group-name:not(:last-child) {
+        border-bottom: $custom_gray_border;
+      }
+    } 
+  }
+  
+  .main-content {
+    width: 800px;
+    margin-left: 280px;
+
+    h2 {
+      font-size: 20px;
     }
-    .nav-group-name:not(:last-child) {
-      border-bottom: $custom_gray_border;
-    }
-  } 
+  }
 }
+
 
 #breadcrumbs {
   background-color: $custom_bg_color;
