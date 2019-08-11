@@ -38,6 +38,9 @@ jobs:
     - env: 
         - TEST_SDK=12.2
       osx_image: xcode10.2
+    - env: 
+        - TEST_SDK=12.4
+      osx_image: xcode10.3
     - name: Cocoapods Lint
       script: 
         - pod repo update
