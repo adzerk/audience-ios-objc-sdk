@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import <VelocidiSDK/VelocidiSDK.h>
+@import VelocidiSDK;
 
 @interface SanityTests : XCTestCase
 @end

@@ -1,5 +1,3 @@
-#import <UIKit/UIKit.h>
-
 #import "VSDKAddToCart.h"
 #import "VSDKConfig.h"
 #import "VSDKCustomization.h"

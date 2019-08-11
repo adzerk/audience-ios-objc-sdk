@@ -71,7 +71,7 @@
 		30FA30702267341A00BF442A /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA306F2267341A00BF442A /* UtilTests.swift */; };
 		30FA30722267731800BF442A /* RequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA30712267731800BF442A /* RequestsTests.swift */; };
 		B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = B143296E8758378F3EFC5119 /* VSDKVoucher.m */; };
-		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1432122A6977BF83A62AC30 /* VelocidiSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327F8581E7874D34E17F5 /* VSDKConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432933F9A4DC1731F53178 /* VSDKVoucher.h in Headers */ = {isa = PBXBuildFile; fileRef = B143285B3ECF40673F465F6C /* VSDKVoucher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432AE2322D92448290169D /* VSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */; };
@@ -176,7 +176,7 @@
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKCustomization.m; sourceTree = "<group>"; };
-		B143269D9047D62CF45FC4FA /* VelocidiSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VelocidiSDK.h; sourceTree = "<group>"; };
+		B143269D9047D62CF45FC4FA /* VelocidiSDK-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VelocidiSDK-umbrella.h"; sourceTree = "<group>"; };
 		B14327F8581E7874D34E17F5 /* VSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKConfig.h; sourceTree = "<group>"; };
 		B143285B3ECF40673F465F6C /* VSDKVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKVoucher.h; sourceTree = "<group>"; };
 		B14328D0589594344160CA2B /* VSDKCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKCustomization.h; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 				305D1A9A225643460016EF25 /* Tracking */,
 				B14323D6AF36722BBA0B00FE /* Info.plist */,
 				307325D2225BB525005CEB7D /* VelocidiSDK.modulemap */,
-				B143269D9047D62CF45FC4FA /* VelocidiSDK.h */,
+				B143269D9047D62CF45FC4FA /* VelocidiSDK-umbrella.h */,
 				30F0CC7E22773DBE0063BAB9 /* VSDKGlobalVariables.h */,
 				304FEFA02254B8AB00ECF86E /* VSDKVelocidi.h */,
 				304FEFA12254B8AB00ECF86E /* VSDKVelodici.m */,
@@ -361,7 +361,7 @@
 				305D1AC6225656110016EF25 /* VSDKAddToCart.h in Headers */,
 				305D1AAE225646600016EF25 /* VSDKProductImpression.h in Headers */,
 				305D1A9E225643AE0016EF25 /* VSDKPurchase.h in Headers */,
-				B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */,
+				B1432122A6977BF83A62AC30 /* VelocidiSDK-umbrella.h in Headers */,
 				305D1AD622565ACD0016EF25 /* VSDKRefund.h in Headers */,
 				30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */,
 				305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */,
@@ -453,6 +453,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = B14320EE26FDC1F9439181D9;
@@ -836,6 +837,7 @@
 				INFOPLIST_FILE = VelocidiSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=*]" = VelocidiSDK/VelocidiSDK.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.velocidi.VelocidiSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
