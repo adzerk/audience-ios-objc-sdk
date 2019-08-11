@@ -70,6 +70,10 @@
 		30F3A00C2264E13300D9380B /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A00B2264E13300D9380B /* SanityTests.m */; };
 		30FA30702267341A00BF442A /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA306F2267341A00BF442A /* UtilTests.swift */; };
 		30FA30722267731800BF442A /* RequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA30712267731800BF442A /* RequestsTests.swift */; };
+		30FECB9323007B500094D4E2 /* VSDKPartialRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FECB9123007B500094D4E2 /* VSDKPartialRefund.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30FECB9423007B500094D4E2 /* VSDKPartialRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FECB9223007B500094D4E2 /* VSDKPartialRefund.m */; };
+		30FECB9723007C200094D4E2 /* VSDKTotalRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FECB9523007C200094D4E2 /* VSDKTotalRefund.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30FECB9823007C200094D4E2 /* VSDKTotalRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FECB9623007C200094D4E2 /* VSDKTotalRefund.m */; };
 		B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = B143296E8758378F3EFC5119 /* VSDKVoucher.m */; };
 		B1432122A6977BF83A62AC30 /* VelocidiSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327F8581E7874D34E17F5 /* VSDKConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -169,6 +173,10 @@
 		30FA30712267731800BF442A /* RequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTests.swift; sourceTree = "<group>"; };
 		30FC624C225D160E004F3A61 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FC624E225D160E004F3A61 /* libJSONModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJSONModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		30FECB9123007B500094D4E2 /* VSDKPartialRefund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPartialRefund.h; sourceTree = "<group>"; };
+		30FECB9223007B500094D4E2 /* VSDKPartialRefund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPartialRefund.m; sourceTree = "<group>"; };
+		30FECB9523007C200094D4E2 /* VSDKTotalRefund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTotalRefund.h; sourceTree = "<group>"; };
+		30FECB9623007C200094D4E2 /* VSDKTotalRefund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTotalRefund.m; sourceTree = "<group>"; };
 		743E4499A5E999AC13B3E5A2 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK_VelocidiSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8760DEC6DFA8A5D3AB955203 /* Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +264,10 @@
 				B143285B3ECF40673F465F6C /* VSDKVoucher.h */,
 				B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */,
 				B14328D0589594344160CA2B /* VSDKCustomization.h */,
+				30FECB9123007B500094D4E2 /* VSDKPartialRefund.h */,
+				30FECB9523007C200094D4E2 /* VSDKTotalRefund.h */,
+				30FECB9623007C200094D4E2 /* VSDKTotalRefund.m */,
+				30FECB9223007B500094D4E2 /* VSDKPartialRefund.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -380,6 +392,8 @@
 				309FA3E6227319E500709155 /* VSDKTrackingRequest.h in Headers */,
 				309FA3E222730BAC00709155 /* VSDKUserId.h in Headers */,
 				309FA3EB2273248E00709155 /* VSDKMatchRequest.h in Headers */,
+				30FECB9723007C200094D4E2 /* VSDKTotalRefund.h in Headers */,
+				30FECB9323007B500094D4E2 /* VSDKPartialRefund.h in Headers */,
 				30F0CC7F22773DBE0063BAB9 /* VSDKGlobalVariables.h in Headers */,
 				B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */,
 			);
@@ -587,6 +601,8 @@
 				305D1ACF225658930016EF25 /* VSDKSubscription.m in Sources */,
 				305D1AD3225659A00016EF25 /* VSDKTransaction.m in Sources */,
 				309FA3E7227319E500709155 /* VSDKTrackingRequest.m in Sources */,
+				30FECB9823007C200094D4E2 /* VSDKTotalRefund.m in Sources */,
+				30FECB9423007B500094D4E2 /* VSDKPartialRefund.m in Sources */,
 				305D1AC32256548F0016EF25 /* VSDKProductCustomization.m in Sources */,
 				305D1ACB225657A70016EF25 /* VSDKRemoveFromCart.m in Sources */,
 				309FA3EC2273248E00709155 /* VSDKMatchRequest.m in Sources */,

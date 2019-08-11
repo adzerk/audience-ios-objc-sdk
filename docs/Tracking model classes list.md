@@ -9,6 +9,8 @@
 * `VSDKProductViewDetails`
 * `VSDKPurchase`
 * `VSDKRefund`
+  * `VSDKTotalRefund`
+  * `VSDKPartialRefund`
 * `VSDKRemoveFromCart`
 * `VSDKSearch`
 * `VSDKSubscription`
