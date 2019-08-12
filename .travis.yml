@@ -41,6 +41,16 @@ jobs:
     - env: 
         - TEST_SDK=12.4
       osx_image: xcode10.3
+    - name: Test Examples
+      env:
+        - TEST_SDK=12.4
+      osx_image: xcode10.3
+      script:
+        - pod repo update
+        - pod install --project-directory=Examples/
+        - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme SwiftExample -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" clean build | xcpretty --color
+        - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme ObjcExample -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" clean build | xcpretty --color
+      after_success: null
     - name: Cocoapods Lint
       script: 
         - pod repo update
