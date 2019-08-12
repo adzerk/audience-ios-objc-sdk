@@ -1,4 +1,4 @@
-#import <VelocidiSDK/VelocidiSDK.h>
+@import VelocidiSDK;
 
 @interface CustomEvent : VSDKTrackingEvent
 
