@@ -15,7 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - JSONModel (1.8.0)
-  - VelocidiSDK (0.0.1):
+  - VelocidiSDK (0.1.0):
     - AFNetworking (~> 3.2.1)
     - JSONModel (~> 1.8)
 
@@ -34,8 +34,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  VelocidiSDK: 498898c7453b867bfd6f8f288f9b603676ef08d5
+  VelocidiSDK: 41af8b37bfb27e3f052acfffe30ea77d538e1ac1
 
 PODFILE CHECKSUM: ba8278e89e7a7f65f231b280ae9ba6dfdc615d4a
 
-COCOAPODS: 1.7.0
+COCOAPODS: 1.7.5

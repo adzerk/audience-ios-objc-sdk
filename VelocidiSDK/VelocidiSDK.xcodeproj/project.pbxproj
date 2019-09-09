@@ -70,8 +70,12 @@
 		30F3A00C2264E13300D9380B /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A00B2264E13300D9380B /* SanityTests.m */; };
 		30FA30702267341A00BF442A /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA306F2267341A00BF442A /* UtilTests.swift */; };
 		30FA30722267731800BF442A /* RequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA30712267731800BF442A /* RequestsTests.swift */; };
+		30FECB9323007B500094D4E2 /* VSDKPartialRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FECB9123007B500094D4E2 /* VSDKPartialRefund.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30FECB9423007B500094D4E2 /* VSDKPartialRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FECB9223007B500094D4E2 /* VSDKPartialRefund.m */; };
+		30FECB9723007C200094D4E2 /* VSDKTotalRefund.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FECB9523007C200094D4E2 /* VSDKTotalRefund.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30FECB9823007C200094D4E2 /* VSDKTotalRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FECB9623007C200094D4E2 /* VSDKTotalRefund.m */; };
 		B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */ = {isa = PBXBuildFile; fileRef = B143296E8758378F3EFC5119 /* VSDKVoucher.m */; };
-		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1432122A6977BF83A62AC30 /* VelocidiSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327F8581E7874D34E17F5 /* VSDKConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432933F9A4DC1731F53178 /* VSDKVoucher.h in Headers */ = {isa = PBXBuildFile; fileRef = B143285B3ECF40673F465F6C /* VSDKVoucher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432AE2322D92448290169D /* VSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */; };
@@ -169,6 +173,10 @@
 		30FA30712267731800BF442A /* RequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTests.swift; sourceTree = "<group>"; };
 		30FC624C225D160E004F3A61 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FC624E225D160E004F3A61 /* libJSONModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJSONModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		30FECB9123007B500094D4E2 /* VSDKPartialRefund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPartialRefund.h; sourceTree = "<group>"; };
+		30FECB9223007B500094D4E2 /* VSDKPartialRefund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPartialRefund.m; sourceTree = "<group>"; };
+		30FECB9523007C200094D4E2 /* VSDKTotalRefund.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTotalRefund.h; sourceTree = "<group>"; };
+		30FECB9623007C200094D4E2 /* VSDKTotalRefund.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTotalRefund.m; sourceTree = "<group>"; };
 		743E4499A5E999AC13B3E5A2 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK_VelocidiSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8760DEC6DFA8A5D3AB955203 /* Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +184,7 @@
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKCustomization.m; sourceTree = "<group>"; };
-		B143269D9047D62CF45FC4FA /* VelocidiSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VelocidiSDK.h; sourceTree = "<group>"; };
+		B143269D9047D62CF45FC4FA /* VelocidiSDK-umbrella.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VelocidiSDK-umbrella.h"; sourceTree = "<group>"; };
 		B14327F8581E7874D34E17F5 /* VSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKConfig.h; sourceTree = "<group>"; };
 		B143285B3ECF40673F465F6C /* VSDKVoucher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKVoucher.h; sourceTree = "<group>"; };
 		B14328D0589594344160CA2B /* VSDKCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKCustomization.h; sourceTree = "<group>"; };
@@ -256,6 +264,10 @@
 				B143285B3ECF40673F465F6C /* VSDKVoucher.h */,
 				B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */,
 				B14328D0589594344160CA2B /* VSDKCustomization.h */,
+				30FECB9123007B500094D4E2 /* VSDKPartialRefund.h */,
+				30FECB9523007C200094D4E2 /* VSDKTotalRefund.h */,
+				30FECB9623007C200094D4E2 /* VSDKTotalRefund.m */,
+				30FECB9223007B500094D4E2 /* VSDKPartialRefund.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,7 +320,7 @@
 				305D1A9A225643460016EF25 /* Tracking */,
 				B14323D6AF36722BBA0B00FE /* Info.plist */,
 				307325D2225BB525005CEB7D /* VelocidiSDK.modulemap */,
-				B143269D9047D62CF45FC4FA /* VelocidiSDK.h */,
+				B143269D9047D62CF45FC4FA /* VelocidiSDK-umbrella.h */,
 				30F0CC7E22773DBE0063BAB9 /* VSDKGlobalVariables.h */,
 				304FEFA02254B8AB00ECF86E /* VSDKVelocidi.h */,
 				304FEFA12254B8AB00ECF86E /* VSDKVelodici.m */,
@@ -361,7 +373,7 @@
 				305D1AC6225656110016EF25 /* VSDKAddToCart.h in Headers */,
 				305D1AAE225646600016EF25 /* VSDKProductImpression.h in Headers */,
 				305D1A9E225643AE0016EF25 /* VSDKPurchase.h in Headers */,
-				B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */,
+				B1432122A6977BF83A62AC30 /* VelocidiSDK-umbrella.h in Headers */,
 				305D1AD622565ACD0016EF25 /* VSDKRefund.h in Headers */,
 				30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */,
 				305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */,
@@ -380,6 +392,8 @@
 				309FA3E6227319E500709155 /* VSDKTrackingRequest.h in Headers */,
 				309FA3E222730BAC00709155 /* VSDKUserId.h in Headers */,
 				309FA3EB2273248E00709155 /* VSDKMatchRequest.h in Headers */,
+				30FECB9723007C200094D4E2 /* VSDKTotalRefund.h in Headers */,
+				30FECB9323007B500094D4E2 /* VSDKPartialRefund.h in Headers */,
 				30F0CC7F22773DBE0063BAB9 /* VSDKGlobalVariables.h in Headers */,
 				B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */,
 			);
@@ -436,7 +450,7 @@
 			isa = PBXProject;
 			attributes = {
 				DefaultBuildSystemTypeForWorkspace = Original;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = Velocidi;
 				TargetAttributes = {
 					30F984A622771915006DF6C4 = {
@@ -450,10 +464,11 @@
 			};
 			buildConfigurationList = B1432565B49FC51CB93CE2CA /* Build configuration list for PBXProject "VelocidiSDK" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B14320EE26FDC1F9439181D9;
 			productRefGroup = B143262865E4C53E8903062A /* Products */;
@@ -507,8 +522,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
@@ -519,8 +532,6 @@
 				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
@@ -590,6 +601,8 @@
 				305D1ACF225658930016EF25 /* VSDKSubscription.m in Sources */,
 				305D1AD3225659A00016EF25 /* VSDKTransaction.m in Sources */,
 				309FA3E7227319E500709155 /* VSDKTrackingRequest.m in Sources */,
+				30FECB9823007C200094D4E2 /* VSDKTotalRefund.m in Sources */,
+				30FECB9423007B500094D4E2 /* VSDKPartialRefund.m in Sources */,
 				305D1AC32256548F0016EF25 /* VSDKProductCustomization.m in Sources */,
 				305D1ACB225657A70016EF25 /* VSDKRemoveFromCart.m in Sources */,
 				309FA3EC2273248E00709155 /* VSDKMatchRequest.m in Sources */,
@@ -656,6 +669,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -746,6 +760,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -836,6 +851,7 @@
 				INFOPLIST_FILE = VelocidiSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				"MODULEMAP_FILE[sdk=*]" = VelocidiSDK/VelocidiSDK.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.velocidi.VelocidiSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

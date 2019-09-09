@@ -2,7 +2,6 @@
 @class VSDKTransaction;
 @class VSDKProduct;
 
-//TODO Split this into VSDKPartialRefund and VSDKTotalRefund
 /**
   Tracking event model class that represents a `Refund` event
  */
