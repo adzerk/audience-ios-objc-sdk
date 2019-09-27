@@ -8,7 +8,7 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 ## [Unreleased]
 
 ### Added
-- Specific classes for Partial and Total refunds ([#21](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/21))
+- Specific classes for Partial and Total refunds ([#21](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/21)).
 
 ### Changed
 
