@@ -4,10 +4,10 @@ xcode_workspace: VelocidiSDK.xcworkspace # path to your xcodeproj folder
 xcode_scheme: VelocidiSDKTests
 
 script:
-  - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDK -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO clean build test | xcpretty --color 
+  - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme VelocidiSDK -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=${TEST_DEVICE}" GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO clean build test | xcpretty --color 
 
 before_install:
-  - xcrun instruments -w "iPhone X (${TEST_SDK})" || sleep 15
+  - xcrun instruments -w "${TEST_DEVICE} (${TEST_SDK})" || sleep 15
 
 after_success:
  - bash <(curl -s https://codecov.io/bash) -J 'VelocidiSDK'
@@ -31,25 +31,34 @@ jobs:
       # osx_image: xcode9.4.1
     - env: 
         - TEST_SDK=12.0
+        - TEST_DEVICE='iPhone X'
       osx_image: xcode10
     - env: 
         - TEST_SDK=12.1
+        - TEST_DEVICE='iPhone X'
       osx_image: xcode10.1
     - env: 
         - TEST_SDK=12.2
+        - TEST_DEVICE='iPhone X'
       osx_image: xcode10.2
     - env: 
         - TEST_SDK=12.4
+        - TEST_DEVICE='iPhone X'
       osx_image: xcode10.3
+    - env:
+        - TEST_SDK=13.0
+        - TEST_DEVICE='iPhone 11'
+      osx_image: xcode11
     - name: Test Examples
       env:
-        - TEST_SDK=12.4
-      osx_image: xcode10.3
+        - TEST_SDK=13.0
+        - TEST_DEVICE='iPhone 11'
+      osx_image: xcode11
       script:
         - pod repo update
         - pod install --project-directory=Examples/
-        - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme SwiftExample -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" clean build | xcpretty --color
-        - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme ObjcExample -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=iPhone X" clean build | xcpretty --color
+        - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme SwiftExample -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=${TEST_DEVICE}" clean build | xcpretty --color
+        - set -o pipefail && xcodebuild -workspace VelocidiSDK.xcworkspace -scheme ObjcExample -sdk "iphonesimulator$TEST_SDK" -destination "platform=iOS Simulator,OS=${TEST_SDK},name=${TEST_DEVICE}" clean build | xcpretty --color
       after_success: null
     - name: Cocoapods Lint
       script: 
