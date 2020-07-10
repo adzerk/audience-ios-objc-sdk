@@ -15,6 +15,8 @@ __CustomEvent.h__
 
 @interface CustomEvent : VSDKTrackingEvent
 
+@property (nonnull) NSString *customType;
+
 // Place below the desired fields you want to add to the tracking event
 @property (nullable) NSString *customField;
 
@@ -29,7 +31,11 @@ __CustomEvent.m__
 
 - (instancetype) init {
     if(self = [super init]){
-        self.type = @"customEvent"; // Only necessary when inheriting directly from VSDKTrackingEvent
+        // Only necessary when inheriting directly from VSDKTrackingEvent
+        self.type = @"custom";  //Don't change
+
+        // Only necessary when inheriting directly from VSDKTrackingEvent
+        self.customType = @"customEvent"; // Change to match the desired name of the custom event
     }
     return self;
 }
