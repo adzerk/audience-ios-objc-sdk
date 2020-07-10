@@ -35,7 +35,7 @@ __CustomEvent.m__
         self.type = @"custom";  //Don't change
 
         // Only necessary when inheriting directly from VSDKTrackingEvent
-        self.customType = @"customEvent"; // Change to match the desired name of the custom event
+        self.customType = @"customEvent"; // Change to match the desired type of the custom event
     }
     return self;
 }
@@ -94,5 +94,4 @@ trackingEvent.customField = "RandomCustomField"
 ```
 
 If you had any problem with importing the Objective-C class into Swift, please take a look at Apple's guide on [Importing Objective-C into Swift](https://developer.apple.com/documentation/swift/imported_c_and_objective-c_apis/importing_objective-c_into_swift).
-
 
