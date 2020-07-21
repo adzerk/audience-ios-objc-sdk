@@ -8,6 +8,11 @@
 @interface VSDKSubscription : VSDKTrackingEvent
 
 /**
+  The duration, in days, of the subscription.
+ */
+@property int duration;
+
+/**
   Products associated with the Subscription
  */
 @property (nullable) NSMutableArray<VSDKProduct *> *products;

@@ -1,5 +1,6 @@
 # Available tracking events model classes
 * `VSDKAddToCart`
+* `VSDKAppView`
 * `VSDKPageView`
 * `VSDKProductClick`
 * `VSDKProductCustomization`

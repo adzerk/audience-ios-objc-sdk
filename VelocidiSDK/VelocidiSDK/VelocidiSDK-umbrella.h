@@ -1,4 +1,5 @@
 #import "VSDKAddToCart.h"
+#import "VSDKAppView.h"
 #import "VSDKConfig.h"
 #import "VSDKCustomization.h"
 #import "VSDKGlobalVariables.h"
