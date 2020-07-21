@@ -9,8 +9,10 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 
 ### Added
 - Specific classes for Partial and Total refunds ([#21](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/21)).
+- New AppView tracking event type ([#25](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/25)).
 
 ### Changed
+- Add `duration` field to Subscription event([#25](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/25)).
 
 ### Deprecated
 
