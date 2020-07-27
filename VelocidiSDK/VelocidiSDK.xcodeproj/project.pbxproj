@@ -23,6 +23,12 @@
 /* Begin PBXBuildFile section */
 		1243B65F24C72E70007298CF /* VSDKAppView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1243B65D24C72E6F007298CF /* VSDKAppView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1243B66024C72E70007298CF /* VSDKAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1243B65E24C72E6F007298CF /* VSDKAppView.m */; };
+		303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D524CB588100280AC2 /* VSDKOrderPlace.h */; };
+		303572D824CB588100280AC2 /* VSDKOrderPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572D624CB588100280AC2 /* VSDKOrderPlace.m */; };
+		303572DB24CB5B2900280AC2 /* VSDKLineItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D924CB5B2900280AC2 /* VSDKLineItem.h */; };
+		303572DC24CB5B2900280AC2 /* VSDKLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572DA24CB5B2900280AC2 /* VSDKLineItem.m */; };
+		303572DF24CB5B7E00280AC2 /* VSDKOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572DD24CB5B7E00280AC2 /* VSDKOrder.h */; };
+		303572E024CB5B7E00280AC2 /* VSDKOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572DE24CB5B7E00280AC2 /* VSDKOrder.m */; };
 		304FEFA22254B8AB00ECF86E /* VSDKVelocidi.h in Headers */ = {isa = PBXBuildFile; fileRef = 304FEFA02254B8AB00ECF86E /* VSDKVelocidi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		304FEFA32254B8AB00ECF86E /* VSDKVelodici.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FEFA12254B8AB00ECF86E /* VSDKVelodici.m */; };
 		305D1A9E225643AE0016EF25 /* VSDKPurchase.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1A9C225643AE0016EF25 /* VSDKPurchase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -127,6 +133,12 @@
 		0E2C4799C0C925EDCE50E8A1 /* Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1243B65D24C72E6F007298CF /* VSDKAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKAppView.h; sourceTree = "<group>"; };
 		1243B65E24C72E6F007298CF /* VSDKAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKAppView.m; sourceTree = "<group>"; };
+		303572D524CB588100280AC2 /* VSDKOrderPlace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKOrderPlace.h; sourceTree = "<group>"; };
+		303572D624CB588100280AC2 /* VSDKOrderPlace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKOrderPlace.m; sourceTree = "<group>"; };
+		303572D924CB5B2900280AC2 /* VSDKLineItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKLineItem.h; sourceTree = "<group>"; };
+		303572DA24CB5B2900280AC2 /* VSDKLineItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKLineItem.m; sourceTree = "<group>"; };
+		303572DD24CB5B7E00280AC2 /* VSDKOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKOrder.h; sourceTree = "<group>"; };
+		303572DE24CB5B7E00280AC2 /* VSDKOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKOrder.m; sourceTree = "<group>"; };
 		304FEFA02254B8AB00ECF86E /* VSDKVelocidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKVelocidi.h; sourceTree = "<group>"; };
 		304FEFA12254B8AB00ECF86E /* VSDKVelodici.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKVelodici.m; sourceTree = "<group>"; };
 		305580607D1CC583F1DCC4B3 /* Pods-VelocidiSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,6 +260,8 @@
 				30C566DF225B9465006CE923 /* VSDKProductFeedback.h */,
 				30C566E0225B9465006CE923 /* VSDKProductFeedback.m */,
 				305D1AAC225646600016EF25 /* VSDKProductImpression.h */,
+				303572D524CB588100280AC2 /* VSDKOrderPlace.h */,
+				303572D624CB588100280AC2 /* VSDKOrderPlace.m */,
 				305D1AAD225646600016EF25 /* VSDKProductImpression.m */,
 				305D1AA9225645C70016EF25 /* VSDKSearch.m */,
 				305D1AB0225646F30016EF25 /* VSDKProduct.h */,
@@ -256,6 +270,10 @@
 				305D1AB822564C950016EF25 /* VSDKProductView.h */,
 				305D1AC02256548F0016EF25 /* VSDKProductCustomization.h */,
 				305D1AC4225656110016EF25 /* VSDKAddToCart.h */,
+				303572DD24CB5B7E00280AC2 /* VSDKOrder.h */,
+				303572DE24CB5B7E00280AC2 /* VSDKOrder.m */,
+				303572D924CB5B2900280AC2 /* VSDKLineItem.h */,
+				303572DA24CB5B2900280AC2 /* VSDKLineItem.m */,
 				305D1AC8225657A70016EF25 /* VSDKRemoveFromCart.h */,
 				305D1AC9225657A70016EF25 /* VSDKRemoveFromCart.m */,
 				305D1AC5225656110016EF25 /* VSDKAddToCart.m */,
@@ -377,6 +395,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303572DF24CB5B7E00280AC2 /* VSDKOrder.h in Headers */,
 				305D1AB2225646F30016EF25 /* VSDKProduct.h in Headers */,
 				305D1ABA22564C950016EF25 /* VSDKProductView.h in Headers */,
 				305D1AC22256548F0016EF25 /* VSDKProductCustomization.h in Headers */,
@@ -391,6 +410,7 @@
 				305D1AD2225659A00016EF25 /* VSDKTransaction.h in Headers */,
 				304FEFA22254B8AB00ECF86E /* VSDKVelocidi.h in Headers */,
 				305D1ACA225657A70016EF25 /* VSDKRemoveFromCart.h in Headers */,
+				303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */,
 				305D1ABE22564DB10016EF25 /* VSDKProductViewDetails.h in Headers */,
 				305D1ACE225658930016EF25 /* VSDKSubscription.h in Headers */,
 				305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */,
@@ -399,6 +419,7 @@
 				1243B65F24C72E70007298CF /* VSDKAppView.h in Headers */,
 				B1432933F9A4DC1731F53178 /* VSDKVoucher.h in Headers */,
 				B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */,
+				303572DB24CB5B2900280AC2 /* VSDKLineItem.h in Headers */,
 				308A7369225E297D00E1ADA8 /* VSDKRequest.h in Headers */,
 				309FA3E6227319E500709155 /* VSDKTrackingRequest.h in Headers */,
 				309FA3E222730BAC00709155 /* VSDKUserId.h in Headers */,
@@ -611,6 +632,7 @@
 				305D1A9F225643AE0016EF25 /* VSDKPurchase.m in Sources */,
 				305D1ACF225658930016EF25 /* VSDKSubscription.m in Sources */,
 				305D1AD3225659A00016EF25 /* VSDKTransaction.m in Sources */,
+				303572E024CB5B7E00280AC2 /* VSDKOrder.m in Sources */,
 				309FA3E7227319E500709155 /* VSDKTrackingRequest.m in Sources */,
 				30FECB9823007C200094D4E2 /* VSDKTotalRefund.m in Sources */,
 				30FECB9423007B500094D4E2 /* VSDKPartialRefund.m in Sources */,
@@ -631,9 +653,11 @@
 				305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */,
 				307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */,
 				305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */,
+				303572DC24CB5B2900280AC2 /* VSDKLineItem.m in Sources */,
 				B143203FF63D78CE92E9CA43 /* VSDKVoucher.m in Sources */,
 				308A736A225E297D00E1ADA8 /* VSDKRequest.m in Sources */,
 				B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */,
+				303572D824CB588100280AC2 /* VSDKOrderPlace.m in Sources */,
 				B1432AE2322D92448290169D /* VSDKConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
