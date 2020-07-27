@@ -36,7 +36,7 @@
 /**
   Category for the product
  */
-@property (nullable) NSString *productType;
+@property (nullable) NSString *category;
 
 /**
   Whether or not the product is unsafe (e.g. adult content)
