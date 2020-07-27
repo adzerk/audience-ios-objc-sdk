@@ -1,6 +1,7 @@
 # Available tracking events model classes
 * `VSDKAddToCart`
 * `VSDKAppView`
+* `VSDKOrderPlace`
 * `VSDKPageView`
 * `VSDKProductClick`
 * `VSDKProductCustomization`
@@ -8,10 +9,5 @@
 * `VSDKProductImpression`
 * `VSDKProductView`
 * `VSDKProductViewDetails`
-* `VSDKPurchase`
-* `VSDKRefund`
-  * `VSDKTotalRefund`
-  * `VSDKPartialRefund`
 * `VSDKRemoveFromCart`
 * `VSDKSearch`
-* `VSDKSubscription`
