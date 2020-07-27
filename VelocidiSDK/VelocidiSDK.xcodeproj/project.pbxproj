@@ -23,14 +23,16 @@
 /* Begin PBXBuildFile section */
 		1243B65F24C72E70007298CF /* VSDKAppView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1243B65D24C72E6F007298CF /* VSDKAppView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1243B66024C72E70007298CF /* VSDKAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1243B65E24C72E6F007298CF /* VSDKAppView.m */; };
-		303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D524CB588100280AC2 /* VSDKOrderPlace.h */; };
+		303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D524CB588100280AC2 /* VSDKOrderPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		303572D824CB588100280AC2 /* VSDKOrderPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572D624CB588100280AC2 /* VSDKOrderPlace.m */; };
-		303572DB24CB5B2900280AC2 /* VSDKLineItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D924CB5B2900280AC2 /* VSDKLineItem.h */; };
+		303572DB24CB5B2900280AC2 /* VSDKLineItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D924CB5B2900280AC2 /* VSDKLineItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		303572DC24CB5B2900280AC2 /* VSDKLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572DA24CB5B2900280AC2 /* VSDKLineItem.m */; };
-		303572DF24CB5B7E00280AC2 /* VSDKOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572DD24CB5B7E00280AC2 /* VSDKOrder.h */; };
+		303572DF24CB5B7E00280AC2 /* VSDKOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572DD24CB5B7E00280AC2 /* VSDKOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		303572E024CB5B7E00280AC2 /* VSDKOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572DE24CB5B7E00280AC2 /* VSDKOrder.m */; };
 		304FEFA22254B8AB00ECF86E /* VSDKVelocidi.h in Headers */ = {isa = PBXBuildFile; fileRef = 304FEFA02254B8AB00ECF86E /* VSDKVelocidi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		304FEFA32254B8AB00ECF86E /* VSDKVelodici.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FEFA12254B8AB00ECF86E /* VSDKVelodici.m */; };
+		305A32AF24CF2CA80004F499 /* VSDKDiscount.h in Headers */ = {isa = PBXBuildFile; fileRef = 305A32AD24CF2CA80004F499 /* VSDKDiscount.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		305A32B024CF2CA80004F499 /* VSDKDiscount.m in Sources */ = {isa = PBXBuildFile; fileRef = 305A32AE24CF2CA80004F499 /* VSDKDiscount.m */; };
 		305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA42256452C0016EF25 /* VSDKPageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		305D1AA72256452C0016EF25 /* VSDKPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA52256452C0016EF25 /* VSDKPageView.m */; };
@@ -128,6 +130,8 @@
 		304FEFA02254B8AB00ECF86E /* VSDKVelocidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKVelocidi.h; sourceTree = "<group>"; };
 		304FEFA12254B8AB00ECF86E /* VSDKVelodici.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKVelodici.m; sourceTree = "<group>"; };
 		305580607D1CC583F1DCC4B3 /* Pods-VelocidiSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.release.xcconfig"; sourceTree = "<group>"; };
+		305A32AD24CF2CA80004F499 /* VSDKDiscount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKDiscount.h; sourceTree = "<group>"; };
+		305A32AE24CF2CA80004F499 /* VSDKDiscount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKDiscount.m; sourceTree = "<group>"; };
 		305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTrackingEvent.h; sourceTree = "<group>"; };
 		305D1AA42256452C0016EF25 /* VSDKPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPageView.h; sourceTree = "<group>"; };
 		305D1AA52256452C0016EF25 /* VSDKPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPageView.m; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 				305D1AB522564AE20016EF25 /* VSDKProductClick.m */,
 				B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */,
 				B14328D0589594344160CA2B /* VSDKCustomization.h */,
+				305A32AD24CF2CA80004F499 /* VSDKDiscount.h */,
+				305A32AE24CF2CA80004F499 /* VSDKDiscount.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,7 +359,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				303572DF24CB5B7E00280AC2 /* VSDKOrder.h in Headers */,
 				305D1AB2225646F30016EF25 /* VSDKProduct.h in Headers */,
 				305D1ABA22564C950016EF25 /* VSDKProductView.h in Headers */,
 				305D1AC22256548F0016EF25 /* VSDKProductCustomization.h in Headers */,
@@ -365,14 +370,16 @@
 				305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */,
 				304FEFA22254B8AB00ECF86E /* VSDKVelocidi.h in Headers */,
 				305D1ACA225657A70016EF25 /* VSDKRemoveFromCart.h in Headers */,
-				303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */,
 				305D1ABE22564DB10016EF25 /* VSDKProductViewDetails.h in Headers */,
 				305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */,
 				30B6142D2260D64E007774B4 /* VSDKUtil.h in Headers */,
 				305D1AB622564AE20016EF25 /* VSDKProductClick.h in Headers */,
 				1243B65F24C72E70007298CF /* VSDKAppView.h in Headers */,
-				B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */,
+				303572DF24CB5B7E00280AC2 /* VSDKOrder.h in Headers */,
+				303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */,
 				303572DB24CB5B2900280AC2 /* VSDKLineItem.h in Headers */,
+				305A32AF24CF2CA80004F499 /* VSDKDiscount.h in Headers */,
+				B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */,
 				308A7369225E297D00E1ADA8 /* VSDKRequest.h in Headers */,
 				309FA3E6227319E500709155 /* VSDKTrackingRequest.h in Headers */,
 				309FA3E222730BAC00709155 /* VSDKUserId.h in Headers */,
@@ -598,6 +605,7 @@
 				305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */,
 				307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */,
 				305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */,
+				305A32B024CF2CA80004F499 /* VSDKDiscount.m in Sources */,
 				303572DC24CB5B2900280AC2 /* VSDKLineItem.m in Sources */,
 				308A736A225E297D00E1ADA8 /* VSDKRequest.m in Sources */,
 				B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */,
