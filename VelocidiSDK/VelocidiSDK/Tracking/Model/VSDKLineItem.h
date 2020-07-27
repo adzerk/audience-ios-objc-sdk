@@ -1,4 +1,5 @@
 @import JSONModel;
+@class VSDKDiscount;
 
 @interface VSDKLineItem : JSONModel
 
@@ -76,7 +77,7 @@
 /**
   Applied discount
  */
-@property float discount;
+@property (nullable) VSDKDiscount *discount;
 
 /**
   Applied refund
