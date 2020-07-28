@@ -1,5 +1,5 @@
 framework module VelocidiSDK {
-    umbrella header "VelocidiSDK-umbrella.h"
+    umbrella header "VelocidiSDK.h"
     
     export *
     module * { export * }
