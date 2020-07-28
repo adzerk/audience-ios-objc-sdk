@@ -5,4 +5,6 @@
 
 @property float value;
 
+@property (nonnull) NSString *currency;
+
 @end

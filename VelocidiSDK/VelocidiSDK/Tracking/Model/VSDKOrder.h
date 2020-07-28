@@ -46,12 +46,21 @@
 /**
   Payment type (e.g. credit card, debit card, Paypal)
  */
-@property (nonnull) NSString *paymentMethod;
+@property (nullable) NSString *paymentMethod;
 
-@property (nonnull) NSString *shippingMethod;
+/**
+  The shipping method
+ */
+@property (nullable) NSString *shippingMethod;
 
-@property (nonnull) NSString *shippingCountry;
+/**
+  The destination country
+ */
+@property (nullable) NSString *shippingCountry;
 
-@property (nonnull) NSMutableArray<NSString *> *promotions;
+/**
+  Vouchers applied in the purchase
+ */
+@property (nullable) NSMutableArray<NSString *> *promotions;
 
 @end
