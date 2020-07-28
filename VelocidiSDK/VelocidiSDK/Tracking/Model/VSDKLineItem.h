@@ -21,7 +21,7 @@
 /**
   If the purchase relates to a subscription, this attribute captures the subscription duration, in days (Optional)
  */
-@property int subscritpionDuration;
+@property int subscriptionDuration;
 
 /**
   Product name
