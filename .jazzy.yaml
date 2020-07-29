@@ -2,9 +2,9 @@ objc: true
 author: Velocidi
 author_url: http://velocidi.com
 github_url: https://github.com/velocidi/velocidi-ios-objc-sdk
-github_file_prefix: https://github.com/velocidi/velocidi-ios-objc-sdk/tree/0.2.0
-module_version: 0.2.0
-umbrella_header: VelocidiSDK/VelocidiSDK/VelocidiSDK-umbrella.h
+github_file_prefix: https://github.com/velocidi/velocidi-ios-objc-sdk/tree/v0.3.0
+module_version: 0.3.0
+umbrella_header: VelocidiSDK/VelocidiSDK/VelocidiSDK.h
 framework_root: VelocidiSDK/
 module: VelocidiSDK
 output: ./docs/docs_page/

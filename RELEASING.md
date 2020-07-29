@@ -41,7 +41,7 @@ _This is still a draft of the process, it needs verification and a test run in a
 1. Update the version in `.jazzy.yaml`
 
     ```yaml
-    github_file_prefix: https://github.com/velocidi/velocidi-ios-objc-sdk/tree/0.1.0
+    github_file_prefix: https://github.com/velocidi/velocidi-ios-objc-sdk/tree/v0.1.0
     module_version: 0.1.0 
     ```
 
