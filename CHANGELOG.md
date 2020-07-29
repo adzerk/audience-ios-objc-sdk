@@ -21,6 +21,12 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 
 ### Infrastructural
 
+## [0.3.0] - 2020-07-28
+### Added
+ - Tracking events model classes `VSDKOrderPlace`, `VSDKOrder`, `VSDKLineItem`, and `VSDKDiscount` ([#26](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/26))
+### Removed
+ - Tracking events model classes `VSDKPurchase`, `VSDKRefund`, `VSDKPartialRefund`, `VSDKTotalRefund`,`VSDKSubscription`, `VSDKVoucher`, and `VSDKTransaction` ([#26](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/26))
+
 ## [0.2.0] - 2020-07-22
 ### Added
 - Specific classes for Partial and Total refunds ([#21](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/21)).
