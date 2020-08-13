@@ -9,4 +9,10 @@
     return self;
 }
 
++ (Class)classForCollectionProperty:(NSString *)propertyName {
+    if ([propertyName isEqualToString:@"parts"])
+        return [VSDKProduct class];
+    return nil;
+}
+
 @end
