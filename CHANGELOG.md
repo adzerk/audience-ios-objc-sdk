@@ -21,6 +21,10 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 
 ### Infrastructural
 
+## [0.3.1] - 2020-08-14
+### Fixed
+- Makes JSONModel usage compatible with Swift 3 ([#29](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/29)).
+
 ## [0.3.0] - 2020-07-28
 ### Added
  - Tracking events model classes `VSDKOrderPlace`, `VSDKOrder`, `VSDKLineItem`, and `VSDKDiscount` ([#26](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/26))
