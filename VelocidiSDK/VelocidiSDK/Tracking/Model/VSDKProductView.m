@@ -1,3 +1,4 @@
+#import "VSDKProduct.h"
 #import "VSDKProductView.h"
 
 @implementation VSDKProductView
@@ -7,6 +8,12 @@
         self.type = @"productView";
     }
     return self;
+}
+
++ (Class)classForCollectionProperty:(NSString *)propertyName {
+    if ([propertyName isEqualToString:@"products"])
+        return [VSDKProduct class];
+    return nil;
 }
 
 @end

@@ -1,3 +1,4 @@
+#import "VSDKLineItem.h"
 #import "VSDKOrderPlace.h"
 
 @implementation VSDKOrderPlace
@@ -7,6 +8,12 @@
         self.type = @"orderPlace";
     }
     return self;
+}
+
++ (Class)classForCollectionProperty:(NSString *)propertyName {
+    if ([propertyName isEqualToString:@"lineItems"])
+        return [VSDKLineItem class];
+    return nil;
 }
 
 @end
