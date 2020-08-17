@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		1243B65F24C72E70007298CF /* VSDKAppView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1243B65D24C72E6F007298CF /* VSDKAppView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1243B66024C72E70007298CF /* VSDKAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1243B65E24C72E6F007298CF /* VSDKAppView.m */; };
+		12FA833624E59C9A00C32D0F /* TrackingEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA833524E59C9A00C32D0F /* TrackingEventsTests.swift */; };
 		303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D524CB588100280AC2 /* VSDKOrderPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		303572D824CB588100280AC2 /* VSDKOrderPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572D624CB588100280AC2 /* VSDKOrderPlace.m */; };
 		303572DB24CB5B2900280AC2 /* VSDKLineItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D924CB5B2900280AC2 /* VSDKLineItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -121,6 +122,7 @@
 		0E2C4799C0C925EDCE50E8A1 /* Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1243B65D24C72E6F007298CF /* VSDKAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKAppView.h; sourceTree = "<group>"; };
 		1243B65E24C72E6F007298CF /* VSDKAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKAppView.m; sourceTree = "<group>"; };
+		12FA833524E59C9A00C32D0F /* TrackingEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEventsTests.swift; sourceTree = "<group>"; };
 		303572D524CB588100280AC2 /* VSDKOrderPlace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKOrderPlace.h; sourceTree = "<group>"; };
 		303572D624CB588100280AC2 /* VSDKOrderPlace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKOrderPlace.m; sourceTree = "<group>"; };
 		303572D924CB5B2900280AC2 /* VSDKLineItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKLineItem.h; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				30F3A0062264DE7000D9380B /* VelocidiTests.swift */,
 				30FA30712267731800BF442A /* RequestsTests.swift */,
 				30FA306F2267341A00BF442A /* UtilTests.swift */,
+				12FA833524E59C9A00C32D0F /* TrackingEventsTests.swift */,
 			);
 			path = VelocidiSDKTests;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30F3A0072264DE7000D9380B /* VelocidiTests.swift in Sources */,
+				12FA833624E59C9A00C32D0F /* TrackingEventsTests.swift in Sources */,
 				30FA30722267731800BF442A /* RequestsTests.swift in Sources */,
 				30FA30702267341A00BF442A /* UtilTests.swift in Sources */,
 				30F3A00C2264E13300D9380B /* SanityTests.m in Sources */,
