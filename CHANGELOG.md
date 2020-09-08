@@ -10,6 +10,7 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 ### Added
 
 ### Changed
+- Use version number instead of build number for the User-Agent ([#33](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/33)).
 
 ### Deprecated
 
