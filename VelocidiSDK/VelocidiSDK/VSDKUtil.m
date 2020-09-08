@@ -11,7 +11,7 @@
                                  [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleIdentifierKey],
                                  [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey],
                                  @"VelocidiSDK",
-                                 @(VelocidiSDKVersionNumber)];
+                                 [[NSBundle bundleWithIdentifier: @"com.velocidi.VelocidiSDK"] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle bundleWithIdentifier: @"com.velocidi.VelocidiSDK"] infoDictionary][(__bridge NSString *)kCFBundleVersionKey]];
     NSString *userAgent = nil;
 #if TARGET_OS_IOS
     userAgent = [userAgentPrefix stringByAppendingFormat:@" (%@; iOS %@; Scale/%0.2f)",
