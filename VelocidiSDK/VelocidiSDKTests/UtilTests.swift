@@ -11,8 +11,8 @@ class UtilTests: QuickSpec {
         describe("VSDKUtil") {
             it("should generate a valid User-Agent containing information about VelocidiSDK") {
                 let userAgent = VSDKUtil().getVersionedUserAgent()
-                let regexStr = String(format:".*/.* VelocidiSDK\\/%0.0f \\(%@; %@ %@; Scale\\/%0.2f\\)",
-                    VelocidiSDKVersionNumber,
+                let regexStr = String(format:".*/.* VelocidiSDK\\/%@ \\(%@; %@ %@; Scale\\/%0.2f\\)",
+                    Bundle(identifier: "com.velocidi.VelocidiSDK")?.infoDictionary!["CFBundleShortVersionString"] as! String,
                     UIDevice.current.model,
                     UIDevice.current.systemName,
                     UIDevice.current.systemVersion,
