@@ -10,7 +10,6 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 ### Added
 
 ### Changed
-- Use version number instead of build number for the User-Agent ([#33](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/33)).
 
 ### Deprecated
 
@@ -21,6 +20,10 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 ### Security
 
 ### Infrastructural
+
+## [0.3.2] - 2020-09-10
+### Changed
+- Use version number instead of build number for the User-Agent ([#33](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/33)).
 
 ## [0.3.1] - 2020-08-14
 ### Fixed
