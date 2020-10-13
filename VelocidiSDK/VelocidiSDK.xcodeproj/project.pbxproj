@@ -75,6 +75,7 @@
 		30FA30722267731800BF442A /* RequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA30712267731800BF442A /* RequestsTests.swift */; };
 		A1B22C072535B00100EA675E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C052535B00100EA675E /* Podfile */; };
 		A1B22C082535B00100EA675E /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C062535B00100EA675E /* Podfile.lock */; };
+		A1B22C0A2535B1BA00EA675E /* VelocidiSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */; };
 		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327F8581E7874D34E17F5 /* VSDKConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432AE2322D92448290169D /* VSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */; };
@@ -184,6 +185,7 @@
 		9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B22C052535B00100EA675E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		A1B22C062535B00100EA675E /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile.lock; path = ../Podfile.lock; sourceTree = "<group>"; };
+		A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = VelocidiSDK.podspec; path = ../VelocidiSDK.podspec; sourceTree = "<group>"; };
 		B1432006E874289B32AE9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		B14320EE26FDC1F9439181D9 = {
 			isa = PBXGroup;
 			children = (
+				A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */,
 				A1B22C052535B00100EA675E /* Podfile */,
 				A1B22C062535B00100EA675E /* Podfile.lock */,
 				B143262865E4C53E8903062A /* Products */,
@@ -486,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1B22C0A2535B1BA00EA675E /* VelocidiSDK.podspec in Resources */,
 				A1B22C082535B00100EA675E /* Podfile.lock in Resources */,
 				A1B22C072535B00100EA675E /* Podfile in Resources */,
 			);
