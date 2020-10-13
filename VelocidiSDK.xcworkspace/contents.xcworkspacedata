@@ -27,6 +27,12 @@
       location = "container:"
       name = "Examples">
       <FileRef
+         location = "group:Examples/Podfile">
+      </FileRef>
+      <FileRef
+         location = "group:Examples/Podfile.lock">
+      </FileRef>
+      <FileRef
          location = "group:Examples/ObjcExample/ObjcExample.xcodeproj">
       </FileRef>
       <FileRef
