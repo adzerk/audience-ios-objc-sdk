@@ -3,6 +3,13 @@
    version = "1.0">
    <Group
       location = "container:"
+      name = "CI">
+      <FileRef
+         location = "group:codecov.yml">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
       name = "Docs">
       <FileRef
          location = "group:CHANGELOG.md">
