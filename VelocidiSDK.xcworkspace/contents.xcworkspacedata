@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:Examples/ObjcExample/ObjcExample.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Examples/SwiftExample/SwiftExample.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Examples">
+      <FileRef
+         location = "group:Examples/ObjcExample/ObjcExample.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Examples/SwiftExample/SwiftExample.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:VelocidiSDK/VelocidiSDK.xcodeproj">
    </FileRef>
