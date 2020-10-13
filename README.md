@@ -9,7 +9,7 @@ VelocidiSDK is Velocidi's Objective-C SDK to integrate with iOS apps.
 
 # Installation
 ## Installation with CocoaPods
-To integrate VelocidiSDK into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate VelocidiSDK into your Xcode project using [CocoaPods](https://cocoapods.org/), specify it in your `Podfile`:
 
 ```yaml
 source 'https://github.com/CocoaPods/Specs.git'
