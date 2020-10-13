@@ -3,6 +3,28 @@
    version = "1.0">
    <Group
       location = "container:"
+      name = "Docs">
+      <FileRef
+         location = "group:CHANGELOG.md">
+      </FileRef>
+      <FileRef
+         location = "group:docs">
+      </FileRef>
+      <FileRef
+         location = "group:LICENSE">
+      </FileRef>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:RELEASING.md">
+      </FileRef>
+      <FileRef
+         location = "group:SECURITY.md">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
       name = "Examples">
       <FileRef
          location = "group:Examples/ObjcExample/ObjcExample.xcodeproj">
