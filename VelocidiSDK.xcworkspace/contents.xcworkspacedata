@@ -1,12 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileRef
-      location = "group:Examples/ObjcExample/ObjcExample.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Examples/SwiftExample/SwiftExample.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "CI">
+      <FileRef
+         location = "group:codecov.yml">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Docs">
+      <FileRef
+         location = "group:CHANGELOG.md">
+      </FileRef>
+      <FileRef
+         location = "group:docs">
+      </FileRef>
+      <FileRef
+         location = "group:LICENSE">
+      </FileRef>
+      <FileRef
+         location = "group:README.md">
+      </FileRef>
+      <FileRef
+         location = "group:RELEASING.md">
+      </FileRef>
+      <FileRef
+         location = "group:SECURITY.md">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "Examples">
+      <FileRef
+         location = "group:Examples/README.md">
+      </FileRef>
+      <FileRef
+         location = "group:Examples/Podfile">
+      </FileRef>
+      <FileRef
+         location = "group:Examples/Podfile.lock">
+      </FileRef>
+      <FileRef
+         location = "group:Examples/ObjcExample/ObjcExample.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Examples/SwiftExample/SwiftExample.xcodeproj">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:VelocidiSDK/VelocidiSDK.xcodeproj">
    </FileRef>
