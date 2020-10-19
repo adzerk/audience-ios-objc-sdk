@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 
 @class AFHTTPSessionManager;
-@class ASIdentifierManager;
 @class VSDKUtil;
+@class VSDKIdfaUtil;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,9 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
 @property (readonly, getter=getUtil, nonatomic) VSDKUtil *util;
-@property (readonly, getter=getIdentifierManager) ASIdentifierManager *identifierManager;
-@property (class, readonly, getter=getTrackingNotAllowedErrorDomain) NSString *trackingNotAllowedErrorDomain;
-@property (class, readonly, getter=getTrackingNotAllowedError) NSError *trackingNotAllowedError;
+@property (readonly, getter=getIDFAUtil) VSDKIdfaUtil *IdfaUtil;
 
 /**
   Initialize an instance of VSDKRequest with a custom AFHTTPSessionManager.
@@ -30,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
   @param onSuccessBlock block executed if the request is successful
   @param onFailureBlock block executed if the request fails
  */
-- (void) performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+- (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
         :(void (^)(NSError *error))onFailureBlock;
 
 /**

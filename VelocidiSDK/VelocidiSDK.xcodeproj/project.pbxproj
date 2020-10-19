@@ -73,6 +73,8 @@
 		30F3A00C2264E13300D9380B /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A00B2264E13300D9380B /* SanityTests.m */; };
 		30FA30702267341A00BF442A /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA306F2267341A00BF442A /* UtilTests.swift */; };
 		30FA30722267731800BF442A /* RequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA30712267731800BF442A /* RequestsTests.swift */; };
+		A1A09C4C2539A1F3003E0BD9 /* VSDKIdfaUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A09C4B2539A1F3003E0BD9 /* VSDKIdfaUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1A09C502539ADBE003E0BD9 /* VSDKIdfaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A09C4F2539ADBE003E0BD9 /* VSDKIdfaUtil.m */; };
 		A1B22C072535B00100EA675E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C052535B00100EA675E /* Podfile */; };
 		A1B22C082535B00100EA675E /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C062535B00100EA675E /* Podfile.lock */; };
 		A1B22C0A2535B1BA00EA675E /* VelocidiSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */; };
@@ -183,6 +185,8 @@
 		743E4499A5E999AC13B3E5A2 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK_VelocidiSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8760DEC6DFA8A5D3AB955203 /* Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1A09C4B2539A1F3003E0BD9 /* VSDKIdfaUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKIdfaUtil.h; sourceTree = "<group>"; };
+		A1A09C4F2539ADBE003E0BD9 /* VSDKIdfaUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKIdfaUtil.m; sourceTree = "<group>"; };
 		A1B22C052535B00100EA675E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		A1B22C062535B00100EA675E /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile.lock; path = ../Podfile.lock; sourceTree = "<group>"; };
 		A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = VelocidiSDK.podspec; path = ../VelocidiSDK.podspec; sourceTree = "<group>"; };
@@ -336,6 +340,8 @@
 				30B6142C2260D64E007774B4 /* VSDKUtil.h */,
 				309FA3E022730BAC00709155 /* VSDKUserId.h */,
 				309FA3E122730BAC00709155 /* VSDKUserId.m */,
+				A1A09C4B2539A1F3003E0BD9 /* VSDKIdfaUtil.h */,
+				A1A09C4F2539ADBE003E0BD9 /* VSDKIdfaUtil.m */,
 			);
 			path = VelocidiSDK;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				305D1AC6225656110016EF25 /* VSDKAddToCart.h in Headers */,
 				305D1AAE225646600016EF25 /* VSDKProductImpression.h in Headers */,
 				B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */,
+				A1A09C4C2539A1F3003E0BD9 /* VSDKIdfaUtil.h in Headers */,
 				30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */,
 				305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */,
 				305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */,
@@ -604,6 +611,7 @@
 				305D1AB3225646F30016EF25 /* VSDKProduct.m in Sources */,
 				303572E024CB5B7E00280AC2 /* VSDKOrder.m in Sources */,
 				309FA3E7227319E500709155 /* VSDKTrackingRequest.m in Sources */,
+				A1A09C502539ADBE003E0BD9 /* VSDKIdfaUtil.m in Sources */,
 				305D1AC32256548F0016EF25 /* VSDKProductCustomization.m in Sources */,
 				305D1ACB225657A70016EF25 /* VSDKRemoveFromCart.m in Sources */,
 				309FA3EC2273248E00709155 /* VSDKMatchRequest.m in Sources */,
