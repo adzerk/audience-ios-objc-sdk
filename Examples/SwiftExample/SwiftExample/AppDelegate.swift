@@ -1,5 +1,6 @@
 import UIKit
 import VelocidiSDK
+import AppTrackingTransparency
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -10,8 +11,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let config = VSDKConfig(trackingBaseUrl: "http://localhost:8080", "http://localhost:8080")!
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
+        }
+        
+        let config = VSDKConfig(trackingBaseUrl: "https://74105491331c.ngrok.io", "https://74105491331c.ngrok.io")!
         VSDKVelocidi.start(config)
+        
         return true
     }
 

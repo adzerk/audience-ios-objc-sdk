@@ -73,6 +73,8 @@
 		30F3A00C2264E13300D9380B /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A00B2264E13300D9380B /* SanityTests.m */; };
 		30FA30702267341A00BF442A /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA306F2267341A00BF442A /* UtilTests.swift */; };
 		30FA30722267731800BF442A /* RequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA30712267731800BF442A /* RequestsTests.swift */; };
+		A150BFEF253DE3DA00756507 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A150BFEE253DE3DA00756507 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A17410EE253DF536007D2D35 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A150BFEE253DE3DA00756507 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A1A09C4C2539A1F3003E0BD9 /* VSDKIdfaUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = A1A09C4B2539A1F3003E0BD9 /* VSDKIdfaUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1A09C502539ADBE003E0BD9 /* VSDKIdfaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A09C4F2539ADBE003E0BD9 /* VSDKIdfaUtil.m */; };
 		A1B22C072535B00100EA675E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C052535B00100EA675E /* Podfile */; };
@@ -185,11 +187,12 @@
 		743E4499A5E999AC13B3E5A2 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK_VelocidiSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8760DEC6DFA8A5D3AB955203 /* Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A150BFEE253DE3DA00756507 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		A1A09C4B2539A1F3003E0BD9 /* VSDKIdfaUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKIdfaUtil.h; sourceTree = "<group>"; };
 		A1A09C4F2539ADBE003E0BD9 /* VSDKIdfaUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKIdfaUtil.m; sourceTree = "<group>"; };
 		A1B22C052535B00100EA675E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; };
 		A1B22C062535B00100EA675E /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile.lock; path = ../Podfile.lock; sourceTree = "<group>"; };
-		A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = VelocidiSDK.podspec; path = ../VelocidiSDK.podspec; sourceTree = "<group>"; };
+		A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = VelocidiSDK.podspec; path = ../VelocidiSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B1432006E874289B32AE9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A150BFEF253DE3DA00756507 /* AppTrackingTransparency.framework in Frameworks */,
 				DCE7262915C324595AEDB1E1 /* Pods_VelocidiSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17410EE253DF536007D2D35 /* AppTrackingTransparency.framework in Frameworks */,
 				B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */,
 				F3D90ABFE9AB8C599525C1FC /* Pods_VelocidiSDK_VelocidiSDKTests.framework in Frameworks */,
 			);
@@ -361,6 +366,7 @@
 		DE4214C4052230CAC368C858 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A150BFEE253DE3DA00756507 /* AppTrackingTransparency.framework */,
 				30B6418B225DEC8A00B585BD /* JSONModel.framework */,
 				30FC624C225D160E004F3A61 /* libAFNetworking.a */,
 				30FC624E225D160E004F3A61 /* libJSONModel.a */,
@@ -760,6 +766,21 @@
 				INFOPLIST_FILE = VelocidiSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"JSONModel\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.velocidi.VelocidiSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -864,6 +885,21 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				"MODULEMAP_FILE[sdk=*]" = VelocidiSDK/VelocidiSDK.modulemap;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"AFNetworking\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"JSONModel\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.velocidi.VelocidiSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

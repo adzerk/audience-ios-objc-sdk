@@ -67,6 +67,7 @@ class RequestsTests: QuickSpec {
                
                 class MockRequest: VSDKTrackingRequest{
                     override var util: VSDKUtil { return MockUtil() }
+                    override var idfaUtil: VSDKIdfaUtil { return MockIdfaUtil() }
                 }
                 
                 let url = "http://testdomain.com"
