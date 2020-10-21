@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in })
         }
         
-        let config = VSDKConfig(trackingBaseUrl: "https://74105491331c.ngrok.io", "https://74105491331c.ngrok.io")!
+        let config = VSDKConfig(trackingBaseUrl: "http://localhost:8080", "http://localhost:8080")!
         VSDKVelocidi.start(config)
         
         return true
