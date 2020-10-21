@@ -13,8 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
-@property (readonly, getter=getUtil, nonatomic) VSDKUtil *util;
-@property (readonly, getter=getIDFAUtil) VSDKIdfaUtil *IdfaUtil;
+
+
+- (NSString *) getVersionedUserAgent;
+
+- (nullable NSString *) tryGetIDFA :(NSError **)errorPtr;
 
 /**
   Initialize an instance of VSDKRequest with a custom AFHTTPSessionManager.

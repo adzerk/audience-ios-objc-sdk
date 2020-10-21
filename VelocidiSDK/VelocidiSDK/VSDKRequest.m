@@ -1,12 +1,11 @@
 #import <AFNetworking/AFNetworking.h>
 #import "VSDKRequest.h"
 #import "VSDKUtil.h"
-#import "VSDKIdfaUtil.h"
 
 @implementation VSDKRequest
 
-- (VSDKUtil *) getUtil{ return [[VSDKUtil alloc] init]; }
-- (VSDKIdfaUtil *) getIDFAUtil{ return [VSDKIdfaUtil sharedInstance]; }
+- (NSString *) getVersionedUserAgent {return [VSDKUtil getVersionedUserAgent]; }
+- (nullable NSString *) tryGetIDFA :(NSError **)errorPtr { return [VSDKUtil tryGetIDFA: errorPtr]; }
 
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
     if (self = [self init]) {
@@ -27,13 +26,13 @@
                       : (void (^)(NSError *error))onFailureBlock {
     
     NSError *error = nil;
-    NSString *advertisingIdentifier = [self.IdfaUtil tryGetIDFA: &error];
+    NSString *advertisingIdentifier = [self tryGetIDFA: &error];
     
     if (error) {
         return onFailureBlock(error);
     } else {
         NSMutableURLRequest * request = [self buildRequest:advertisingIdentifier];
-        [request setValue:[self.util getVersionedUserAgent] forHTTPHeaderField:@"User-Agent"];
+        [request setValue:[self getVersionedUserAgent] forHTTPHeaderField:@"User-Agent"];
         NSURLSessionDataTask *dataTask = [self.manager
                 dataTaskWithRequest:request
                 uploadProgress:nil

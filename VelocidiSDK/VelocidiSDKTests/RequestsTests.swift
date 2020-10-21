@@ -1,28 +1,9 @@
-import UIKit
 import Quick
 import Nimble
 import Mockingjay
 import VelocidiSDK
 import AdSupport
-
-class MockASIdentifierManager: ASIdentifierManager {
-    override var advertisingIdentifier: UUID {
-        return UUID(uuidString: "00000000-0000-0000-0000-000000000000")!
-    }
-    override var isAdvertisingTrackingEnabled: Bool {
-        return false
-    }
-}
-
-class MockIdfaUtil: VSDKIdfaUtil {
-    override var identifierManager: ASIdentifierManager { return MockASIdentifierManager() }
-}
-
-class MockUtil: VSDKUtil {
-    override func getVersionedUserAgent() -> String {
-        return "fooUserAgent"
-    }
-}
+import Foundation
 
 class RequestsTests: QuickSpec {
     override func spec() {
@@ -31,7 +12,9 @@ class RequestsTests: QuickSpec {
             it("should not make a tracking request if tracking is not allowed") {
                 
                 class MockRequest: VSDKTrackingRequest{
-                    override var idfaUtil: VSDKIdfaUtil { return MockIdfaUtil() }
+                    override func tryGetIDFA() throws -> String {
+                        throw NSError(domain: "com.velocidi.VSDKTrackingNotAllowedError", code: 1, userInfo: nil)
+                    }
                 }
 
                 let url = "http://testdomain.com"
@@ -66,8 +49,12 @@ class RequestsTests: QuickSpec {
             it("should use the provided User-Agent") {
                
                 class MockRequest: VSDKTrackingRequest{
-                    override var util: VSDKUtil { return MockUtil() }
-                    override var idfaUtil: VSDKIdfaUtil { return MockIdfaUtil() }
+                    override func tryGetIDFA() throws -> String {
+                        return "00000000-0000-0000-0000-000000000000"
+                    }
+                    override func getVersionedUserAgent() -> String {
+                        return "fooUserAgent"
+                    }
                 }
                 
                 let url = "http://testdomain.com"
@@ -80,7 +67,7 @@ class RequestsTests: QuickSpec {
                 self.stub({(request: URLRequest) in
                     return request.url!.absoluteString.starts(with: url)
                 }, { (request: URLRequest) in
-                    if(request.allHTTPHeaderFields?["User-Agent"] == MockUtil().getVersionedUserAgent()) {
+                    if(request.allHTTPHeaderFields?["User-Agent"] == "fooUserAgent") {
                         let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
                         return .success(response, .noContent)
                     }

@@ -15,12 +15,19 @@ NS_ASSUME_NONNULL_BEGIN
   Example: `AppName/AppVersion VelocidiSDK/0.3.2 (iPhone; iOS 11.0.1; Scale/3.00)`.
   @returns User-Agent string
  */
-- (NSString *)getVersionedUserAgent;
++ (NSString *) getVersionedUserAgent;
 
 /**
   Modify an AFHTTPSessionManager to accept all types of responses.
  */
 + (void) setAcceptAllResponses: (AFHTTPSessionManager *) sessionManager;
+
+
+/**
+Tries to retrieve the device IDFA. If the user is not opted in, it returns an error.
+ */
++ (nullable NSString *) tryGetIDFA :(NSError **)error;
+
 @end
 
 NS_ASSUME_NONNULL_END

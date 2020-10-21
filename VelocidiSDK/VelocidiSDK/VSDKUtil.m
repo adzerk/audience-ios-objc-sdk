@@ -1,12 +1,16 @@
 #import <AdSupport/ASIdentifierManager.h>
 #import <AFNetworking/AFNetworking.h>
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
 
 #import "VSDKGlobalVariables.h"
 #import "VSDKUtil.h"
 
 @implementation VSDKUtil
 
-- (NSString *)getVersionedUserAgent {
+NSString * const trackingNotAllowedErrordomain = @"com.velocidi.VSDKTrackingNotAllowedError";
+NSString * const trackingNotAllowedDescKey = @"Operation cannot be completed. Tracking is not allowed";
+
++ (NSString *)getVersionedUserAgent {
     NSString *userAgentPrefix = [NSString stringWithFormat:@"%@/%@ %@/%@",
                                  [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleIdentifierKey],
                                  [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleVersionKey],
@@ -43,4 +47,38 @@
     sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     sessionManager.responseSerializer.acceptableContentTypes = nil;
 }
+
++ (nullable NSString *) tryGetIDFA :(NSError **)error {
+    
+    bool trackingIsAllowed = false;
+    if (@available(iOS 14, *)) {
+        trackingIsAllowed = [ATTrackingManager trackingAuthorizationStatus] == ATTrackingManagerAuthorizationStatusAuthorized;
+    } else {
+        trackingIsAllowed = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
+    }
+    
+    if (trackingIsAllowed) {
+        return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+        
+    } else if (error) {
+        
+        
+        NSString *trackingNotAllowedReasonKey = nil;
+        if (@available(iOS 14, *)) {
+            trackingNotAllowedReasonKey = NSLocalizedString(@"The user has not opted-in to tracking or it has not yet been prompted.", nil);
+        } else {
+            trackingNotAllowedReasonKey = NSLocalizedString(@"The user has opted-out of tracking (Limited Ad Tracking is enabled in the user's device)", nil);
+        }
+        
+        *error = [NSError errorWithDomain: trackingNotAllowedErrordomain
+                                        code: 1
+                                    userInfo: @{
+                                                NSLocalizedDescriptionKey: NSLocalizedString(trackingNotAllowedDescKey, nil),
+                                                NSLocalizedFailureReasonErrorKey: trackingNotAllowedReasonKey}];
+        return nil;
+    } else {
+        return nil;
+    }
+}
+
 @end

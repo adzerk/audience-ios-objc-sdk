@@ -4,7 +4,6 @@
 #import "VSDKCustomization.h"
 #import "VSDKDiscount.h"
 #import "VSDKGlobalVariables.h"
-#import "VSDKIdfaUtil.h"
 #import "VSDKLineItem.h"
 #import "VSDKMatchRequest.h"
 #import "VSDKOrder.h"
