@@ -3,8 +3,12 @@
 #import "VSDKGlobalVariables.h"
 #import "VSDKUtil.h"
 
-// only import/link framework when we are in a supported environment
 #if defined(__IPHONE_14_0) || defined(__MAC_10_16) || defined(__TVOS_14_0) || defined(__WATCHOS_7_0)
+// Are we in a build tool that has access to the iOS 14 SDK?
+#define CAN_BUILD_FOR_IOS14 1;
+#endif
+
+#if defined(CAN_BUILD_FOR_IOS14)
 @import AppTrackingTransparency; // NOTICE: linking happens automatically when using Modules or "semantic import".
 #endif
 
@@ -54,23 +58,16 @@ NSString * const trackingNotAllowedDescKey = @"Operation cannot be completed. Tr
 + (nullable NSString *) tryGetIDFA :(NSError **)error {
     
     bool trackingIsAllowed = false;
+    
+    // This guard avoids compiler warnings. Should not be possible to enter this guard without the macro inside being defined...
     if (@available(iOS 14, *)) {
-        // this rather convoluted way to call `ATTrackingManager.trackingAuthorizationStatus` is required while keeping support for older build platforms (xcode < 12.0)
-        if (NSClassFromString(@"ATTrackingManager")){
-            Class manager = NSClassFromString(@"ATTrackingManager");
-            NSString *keyAuthorization = @"trackingAuthorizationStatus";
-            SEL selAuthorization = NSSelectorFromString(keyAuthorization);
-            if ([manager respondsToSelector:selAuthorization]) {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-                trackingIsAllowed = ((int)[manager performSelector:selAuthorization] == 3);
-#pragma clang diagnostic pop
-            }
-        }
-        
+#if defined(CAN_BUILD_FOR_IOS14)
+        trackingIsAllowed = [ATTrackingManager trackingAuthorizationStatus] == ATTrackingManagerAuthorizationStatusAuthorized;
+#endif
     } else {
         trackingIsAllowed = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
     }
+
     
     if (trackingIsAllowed) {
         return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
