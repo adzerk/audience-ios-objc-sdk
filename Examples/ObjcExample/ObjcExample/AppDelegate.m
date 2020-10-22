@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-#import <AppTrackingTransparency/AppTrackingTransparency.h>
+@import AppTrackingTransparency;
 @import VelocidiSDK;
 
 @interface AppDelegate ()

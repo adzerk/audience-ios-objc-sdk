@@ -15,7 +15,6 @@
 		30BCF74622709C1F00E462A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30BCF74522709C1F00E462A8 /* Assets.xcassets */; };
 		30BCF74922709C1F00E462A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30BCF74722709C1F00E462A8 /* LaunchScreen.storyboard */; };
 		30BCF74C22709C1F00E462A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BCF74B22709C1F00E462A8 /* main.m */; };
-		A1C65DD62540ABBB00246575 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C65DD52540ABBB00246575 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		30BCF74822709C1F00E462A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30BCF74A22709C1F00E462A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30BCF74B22709C1F00E462A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A1C65DD52540ABBB00246575 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		E520D427B2D41DF45C7F6EC4 /* Pods-ObjcExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ObjcExample.debug.xcconfig"; path = "Target Support Files/Pods-ObjcExample/Pods-ObjcExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,7 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1C65DD62540ABBB00246575 /* AppTrackingTransparency.framework in Frameworks */,
 				088A3CD51A469748F5D4852A /* Pods_ObjcExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +60,6 @@
 		1F363CDECB3532C2B5C3E582 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1C65DD52540ABBB00246575 /* AppTrackingTransparency.framework */,
 				0CD0CBA401709172FEAAF7A2 /* Pods_ObjcExample.framework */,
 			);
 			name = Frameworks;
@@ -366,7 +362,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NU9527RS3P;
 				INFOPLIST_FILE = ObjcExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -384,7 +379,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NU9527RS3P;
 				INFOPLIST_FILE = ObjcExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

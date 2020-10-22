@@ -2,7 +2,6 @@
 
 @class AFHTTPSessionManager;
 @class VSDKUtil;
-@class VSDKIdfaUtil;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -13,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) AFHTTPSessionManager *manager;
 @property NSURL *url;
-
 
 - (NSString *) getVersionedUserAgent;
 

@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
-Tries to retrieve the device IDFA. If the user is not opted in, it returns an error.
+  Tries to retrieve the device IDFA. If the user is not opted in, it returns an error.
  */
 + (nullable NSString *) tryGetIDFA :(NSError **)error;
 
