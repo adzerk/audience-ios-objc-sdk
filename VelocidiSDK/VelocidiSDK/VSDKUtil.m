@@ -1,9 +1,9 @@
 #import <AdSupport/ASIdentifierManager.h>
 #import <AFNetworking/AFNetworking.h>
-#import <AppTrackingTransparency/AppTrackingTransparency.h>
-
 #import "VSDKGlobalVariables.h"
 #import "VSDKUtil.h"
+
+@import AppTrackingTransparency;
 
 @implementation VSDKUtil
 
