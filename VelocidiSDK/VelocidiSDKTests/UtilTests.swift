@@ -4,7 +4,6 @@ import Quick
 import Nimble
 import VelocidiSDK
 
-
 class UtilTests: QuickSpec {
     override func spec() {
         super.spec()
@@ -30,7 +29,11 @@ class UtilTests: QuickSpec {
                 }
             } else { // previous ios version are opt-out
                 it("should successfuly provide the IDFA") {
-                    expect(try? VSDKUtil.tryGetIDFA()).to(contain("00000000-0000-0000-0000-000000000000"))
+                    if #available(iOS 13, *) {
+                        expect(try? VSDKUtil.tryGetIDFA()).to(contain("00000000-0000-0000-0000-000000000000"))
+                    } else {
+                        expect(try? VSDKUtil.tryGetIDFA()).to(match("[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}"))
+                    }
                 }
             }
             
