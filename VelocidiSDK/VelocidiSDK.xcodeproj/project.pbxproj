@@ -73,8 +73,6 @@
 		30F3A00C2264E13300D9380B /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A00B2264E13300D9380B /* SanityTests.m */; };
 		30FA30702267341A00BF442A /* UtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA306F2267341A00BF442A /* UtilTests.swift */; };
 		30FA30722267731800BF442A /* RequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA30712267731800BF442A /* RequestsTests.swift */; };
-		A150BFEF253DE3DA00756507 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A150BFEE253DE3DA00756507 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		A17410EE253DF536007D2D35 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A150BFEE253DE3DA00756507 /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A1B22C072535B00100EA675E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C052535B00100EA675E /* Podfile */; };
 		A1B22C082535B00100EA675E /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C062535B00100EA675E /* Podfile.lock */; };
 		A1B22C0A2535B1BA00EA675E /* VelocidiSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */; };
@@ -206,7 +204,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A150BFEF253DE3DA00756507 /* AppTrackingTransparency.framework in Frameworks */,
 				DCE7262915C324595AEDB1E1 /* Pods_VelocidiSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,7 +212,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A17410EE253DF536007D2D35 /* AppTrackingTransparency.framework in Frameworks */,
 				B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */,
 				F3D90ABFE9AB8C599525C1FC /* Pods_VelocidiSDK_VelocidiSDKTests.framework in Frameworks */,
 			);
