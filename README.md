@@ -84,6 +84,16 @@ __Objective-C__
 }
 ```
 
+__iOS 14 IDFA access__
+
+In iOS 14 Apple introduces changes to the way the Advertising Identifier (IDFA) can be accessed. In particular, developers are forced to ask the user permission to access the IDFA:
+- https://developer.apple.com/app-store/user-privacy-and-data-use/
+- https://developer.apple.com/documentation/apptrackingtransparency?language=objc
+
+The [Examples](Examples) folder contains two example applications ready for iOS 14, which ask for user permission before using the IDFA to execute any requests.
+
+The Velocidi iOS SDK itself will **not** execute any request if the user did not allow tracking to proceed.
+
 # Send a track event
 
 A tracking event will log a user action in Velocidi's CDP.
