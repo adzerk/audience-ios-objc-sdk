@@ -74,7 +74,9 @@ class NetworkTests: QuickSpec {
                     })
                 }
                 
-                if #available(iOS 14, *) { // ios14 is opt-in
+                // iOS 14 is opt-in and so these requests fail.
+                // We cannot configure the environment to act in a different way.
+                if #available(iOS 14, *) {
                     it("should fail to execute tracking requests when the user is not opted-in in iOS 14") {
                         var success: Bool? = nil
                         var error: Error? = nil
@@ -145,7 +147,10 @@ class NetworkTests: QuickSpec {
                     })
                 }
                 
-                if #available(iOS 14, *) { // ios14 is opt-in
+                
+                // iOS 14 is opt-in and so these requests fail.
+                // We cannot configure the environment to act in a different way.
+                if #available(iOS 14, *) {
                     it("should fail to execute match requests when the user is not opted-in in iOS 14") {
                         var success: Bool? = nil
                         var error: Error? = nil
