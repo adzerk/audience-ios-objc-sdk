@@ -34,7 +34,7 @@ DEPENDENCIES:
   - Quick (~> 2.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AFNetworking
     - JSONModel
     - Mockingjay
@@ -50,6 +50,6 @@ SPEC CHECKSUMS:
   Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: e6b3919c43abb734daf1467bbb35a3e7762f5bb6
+PODFILE CHECKSUM: 759c43fe3a245c2dcdd468bc53007da8cb4b64f2
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.10.0
