@@ -1,6 +1,7 @@
 # Examples
 
 These two examples projects illustrate how VelocidiSDK can be used in a project. ObjcExample is written in Objective-C and SwiftExample is written in Swift.
+Xcode 12 is required to build these examples.
 
 ## Instructions
 

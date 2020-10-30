@@ -33,9 +33,10 @@ class NetworkTests: QuickSpec {
         describe("VelocidiSDK") {
             let trackURL = "http://tr.testdomain.com"
             let matchURL = "http://match.testdomain.com"
+            
             context("test track request"){
 
-                func  responseBuilder(url: String, expectedData: Data) -> (URLRequest) -> (Response) {
+                func responseBuilder(url: String, expectedData: Data) -> (URLRequest) -> (Response) {
                     return { (request: URLRequest) in
                         if(request.url!.absoluteString.starts(with: url)
                             && request.allHTTPHeaderFields?["Content-Type"] == "application/json"
@@ -51,8 +52,8 @@ class NetworkTests: QuickSpec {
                         return .failure(NSError(domain: trackURL, code: 400))
                     }
                 }
-    
-                it("should make successful track requests") {
+                
+                func test(success: UnsafeMutablePointer<Bool?>, error: UnsafeMutablePointer<Error?>) {
                     let trackingEvent = VSDKPageView()
                     trackingEvent.siteId = "0"
                     trackingEvent.clientId = "0"
@@ -61,20 +62,39 @@ class NetworkTests: QuickSpec {
                         return request.url!.absoluteString.starts(with: trackURL)
                     }, responseBuilder(url:trackURL, expectedData:trackingEvent.toJSONData()))
 
-                    var success: Bool? = nil
 
                     let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
                     VSDKVelocidi.start(config!)
 
                     VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
-                        success = true
-                    }, onFailure:{(error: Error) in
-                        NSLog("Error \(error.localizedDescription)")
-                        success = false
+                        success.pointee = true
+                    }, onFailure:{(err: Error) in
+                        success.pointee = false
+                        error.pointee = err
                     })
-
-                    expect(success).toEventuallyNot(beNil(), timeout: 4)
-                    expect(success).toEventuallyNot(beFalse())
+                }
+                
+                // iOS 14 is opt-in and so these requests fail.
+                // We cannot configure the environment to act in a different way.
+                if #available(iOS 14, *) {
+                    it("should fail to execute tracking requests when the user is not opted-in in iOS 14") {
+                        var success: Bool? = nil
+                        var error: Error? = nil
+                        test(success: &success, error: &error)
+                        
+                        expect(success).toEventually(beFalse(), timeout: 4)
+                        expect(error).toEventually(beAnInstanceOf(NSError.self), timeout: 4)
+                        expect(error!._domain).to(equal("com.velocidi.VSDKTrackingNotAllowedError"))
+                    }
+                } else {
+                    it("should successfuly execute tracking requests") {
+                        var success: Bool? = nil
+                        var error: Error? = nil
+                        test(success: &success, error: &error)
+                        
+                        expect(success).toEventually(beTrue(), timeout: 4)
+                        expect(error).to(beNil())
+                    }
                 }
             }
 
@@ -99,8 +119,8 @@ class NetworkTests: QuickSpec {
                         return .failure(NSError(domain: trackURL, code: 400))
                     }
                 }
-
-                it("should make successful match requests"){
+                
+                func test(success: UnsafeMutablePointer<Bool?>, error: UnsafeMutablePointer<Error?>) {
                     let userId1 = VSDKUserId(userId: "bar", "foo")
                     let userId2 = VSDKUserId(userId: "y", "x")
 
@@ -116,20 +136,40 @@ class NetworkTests: QuickSpec {
                         return request.url!.absoluteString.starts(with: matchURL)
                     }, responseBuilder(url:matchURL, expectedParams: expectedParams))
                     
-                    var success: Bool? = nil
-                    
                     let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
                     VSDKVelocidi.start(config!)
                     
                     VSDKVelocidi.sharedInstance().match("baz", userIds: arrUserIds, onSuccess:{ (response: URLResponse, responseObject: Any) in
-                        success = true
-                    }, onFailure:{(error: Error) in
-                        NSLog("Error \(error.localizedDescription)")
-                        success = false
+                        success.pointee = true
+                    }, onFailure:{(err: Error) in
+                        success.pointee = false
+                        error.pointee = err
                     })
-                    
-                    expect(success).toEventuallyNot(beNil(), timeout: 4)
-                    expect(success).toEventuallyNot(beFalse())
+                }
+                
+                
+                // iOS 14 is opt-in and so these requests fail.
+                // We cannot configure the environment to act in a different way.
+                if #available(iOS 14, *) {
+                    it("should fail to execute match requests when the user is not opted-in in iOS 14") {
+                        var success: Bool? = nil
+                        var error: Error? = nil
+                        test(success: &success, error: &error)
+                        
+                        
+                        expect(success).toEventually(beFalse(), timeout: 4)
+                        expect(error).toEventually(beAnInstanceOf(NSError.self), timeout: 4)
+                        expect(error!._domain).to(equal("com.velocidi.VSDKTrackingNotAllowedError"))
+                    }
+                } else {
+                    it("should successfuly execute match requests") {
+                        var success: Bool? = nil
+                        var error: Error? = nil
+                        test(success: &success, error: &error)
+                        
+                        expect(success).toEventually(beTrue(), timeout: 4)
+                        expect(error).to(beNil())
+                    }
                 }
             }
         }

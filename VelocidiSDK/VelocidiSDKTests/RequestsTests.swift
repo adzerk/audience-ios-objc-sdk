@@ -1,34 +1,20 @@
-import UIKit
 import Quick
 import Nimble
 import Mockingjay
 import VelocidiSDK
 import AdSupport
-
-class MockASIdentifierManager: ASIdentifierManager {
-    override var advertisingIdentifier: UUID {
-        return UUID(uuidString: "00000000-0000-0000-0000-000000000000")!
-    }
-    override var isAdvertisingTrackingEnabled: Bool {
-        print("Is mocking")
-        return false
-    }
-}
-
-class MockUtil: VSDKUtil {
-    override func getVersionedUserAgent() -> String {
-        return "fooUserAgent"
-    }
-}
+import Foundation
 
 class RequestsTests: QuickSpec {
     override func spec() {
         super.spec()
         describe("VSDKRequests") {
-            it("should not make a track requests if tracking is not allowed") {
+            it("should not make a tracking request if tracking is not allowed") {
                 
                 class MockRequest: VSDKTrackingRequest{
-                    override var identifierManager: ASIdentifierManager { return MockASIdentifierManager() }
+                    override func tryGetIDFA() throws -> String {
+                        throw NSError(domain: "com.velocidi.VSDKTrackingNotAllowedError", code: 1, userInfo: nil)
+                    }
                 }
 
                 let url = "http://testdomain.com"
@@ -49,7 +35,7 @@ class RequestsTests: QuickSpec {
                 request.perform({_,_ in
                     requestExecuted = true
                 }, {(error: Error) in
-                    if ((error as NSError).domain == VSDKRequest.trackingNotAllowedErrorDomain) {
+                    if ((error as NSError).domain == "com.velocidi.VSDKTrackingNotAllowedError") {
                         requestExecuted = false
                     } else {
                         requestExecuted = true
@@ -57,13 +43,18 @@ class RequestsTests: QuickSpec {
                 })
 
                 expect(requestExecuted).toEventuallyNot(beNil())
-                expect(requestExecuted).toNot(beTrue())
+                expect(requestExecuted).to(beFalse())
             }
             
             it("should use the provided User-Agent") {
                
                 class MockRequest: VSDKTrackingRequest{
-                    override var util: VSDKUtil { return MockUtil() }
+                    override func tryGetIDFA() throws -> String {
+                        return "00000000-0000-0000-0000-000000000000"
+                    }
+                    override func getVersionedUserAgent() -> String {
+                        return "fooUserAgent"
+                    }
                 }
                 
                 let url = "http://testdomain.com"
@@ -76,12 +67,10 @@ class RequestsTests: QuickSpec {
                 self.stub({(request: URLRequest) in
                     return request.url!.absoluteString.starts(with: url)
                 }, { (request: URLRequest) in
-                    if(request.allHTTPHeaderFields?["User-Agent"] == MockUtil().getVersionedUserAgent()) {
-                        print("Is correct")
+                    if(request.allHTTPHeaderFields?["User-Agent"] == "fooUserAgent") {
                         let response = HTTPURLResponse(url: request.url!, statusCode: 200, httpVersion: nil, headerFields: nil)!
                         return .success(response, .noContent)
                     }
-                    print("Is incorrect")
                     return .failure(NSError(domain: url, code: 400))
                 })
                 
@@ -90,11 +79,8 @@ class RequestsTests: QuickSpec {
                 request.data = trackingEvent
                 
                 request.perform({_,_ in
-                    print("success")
                     requestExecuted = true
                 }, {(error: Error) in
-                    print("failure")
-                    print(error.localizedDescription)
                     requestExecuted = false
                 })
                 

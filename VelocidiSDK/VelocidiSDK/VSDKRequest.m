@@ -1,22 +1,11 @@
 #import <AFNetworking/AFNetworking.h>
 #import "VSDKRequest.h"
 #import "VSDKUtil.h"
-#import <AdSupport/ASIdentifierManager.h>
 
 @implementation VSDKRequest
 
-static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError";
-
-+ (NSString *) getTrackingNotAllowedErrorDomain{ return _trackingNotAllowedErrorDomain; }
-+ (NSError *) getTrackingNotAllowedError {
-  return [NSError errorWithDomain: self.getTrackingNotAllowedErrorDomain
-                             code: 1 
-                         userInfo: @{
-                                     NSLocalizedDescriptionKey: NSLocalizedString(@"Operation cannot be completed. Tracking is not allowed", nil),
-                                     NSLocalizedFailureReasonErrorKey: NSLocalizedString(@"The user has opted-out of ad tracking (Limited Ad Tracking is enabled in the user's device)", nil)}];
-}
-- (VSDKUtil *) getUtil{ return [[VSDKUtil alloc] init]; }
-- (ASIdentifierManager *) getIdentifierManager{ return [ASIdentifierManager sharedManager]; }
+- (NSString *) getVersionedUserAgent {return [VSDKUtil getVersionedUserAgent]; }
+- (nullable NSString *) tryGetIDFA :(NSError **)errorPtr { return [VSDKUtil tryGetIDFA: errorPtr]; }
 
 - (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager{
     if (self = [self init]) {
@@ -35,26 +24,28 @@ static NSString *_trackingNotAllowedErrorDomain = @"VSDKTrackingNotAllowedError"
 
 - (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
                       : (void (^)(NSError *error))onFailureBlock {
-    if (![self.identifierManager isAdvertisingTrackingEnabled]) {
-        return onFailureBlock(VSDKRequest.trackingNotAllowedError);
+    
+    NSError *error = nil;
+    NSString *advertisingIdentifier = [self tryGetIDFA: &error];
+    
+    if (error) {
+        return onFailureBlock(error);
+    } else {
+        NSMutableURLRequest * request = [self buildRequest:advertisingIdentifier];
+        [request setValue:[self getVersionedUserAgent] forHTTPHeaderField:@"User-Agent"];
+        NSURLSessionDataTask *dataTask = [self.manager
+                dataTaskWithRequest:request
+                uploadProgress:nil
+                downloadProgress:nil
+                completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+                    if (error) {
+                        onFailureBlock(error);
+                    } else {
+                        onSuccessBlock(response, responseObject);
+                    }
+                }];
+        [dataTask resume];
     }
-
-    NSUUID * advertisingIdentifier = [self.identifierManager advertisingIdentifier];
-
-    NSMutableURLRequest * request = [self buildRequest:[advertisingIdentifier UUIDString]];
-    [request setValue:[self.util getVersionedUserAgent] forHTTPHeaderField:@"User-Agent"];
-    NSURLSessionDataTask *dataTask = [self.manager
-            dataTaskWithRequest:request
-            uploadProgress:nil
-            downloadProgress:nil
-            completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-                if (error) {
-                    onFailureBlock(error);
-                } else {
-                    onSuccessBlock(response, responseObject);
-                }
-            }];
-    [dataTask resume];
 }
 
 - (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier {
