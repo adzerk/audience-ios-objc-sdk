@@ -55,3 +55,8 @@ header {
 #breadcrumbs {
   background-color: $custom_bg_color;
 }
+
+.external-link svg {
+  position: relative;
+  bottom: -0.1rem;
+}
