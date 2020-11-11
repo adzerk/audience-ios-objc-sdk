@@ -11,8 +11,8 @@ if ! [ -x "$(command -v jazzy)" ]; then
   exit 1
 fi
 
-if ! jazzy -v | grep -q '0.10.0'; then
-  echo "\033[0;33mWarning\033[0m: Not using recommended jazzy version. Recommended jazzy version is 0.10.0."
+if ! jazzy -v | grep -q '0.13.6'; then
+  echo "\033[0;33mWarning\033[0m: Not using recommended jazzy version. Recommended jazzy version is 0.13.6."
 fi
 
 jazzy
