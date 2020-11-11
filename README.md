@@ -147,7 +147,7 @@ __Objective-C__
 }];
 ```
 
-There is a big list of [tracking event classes](https://ios.developers.velocidi.com/tracking-model-classes-list.html) to choose from. If none of them fits the desired action, you can also create your own [custom tracking event](https://ios.developers.velocidi.com/custom-tracking-events.html)
+There is a big list of [tracking event classes](https://developers.velocidi.com/ios-sdk/tracking-model-classes-list.html) to choose from. If none of them fits the desired action, you can also create your own [custom tracking event](https://developers.velocidi.com/ios-sdk/custom-tracking-events.html)
 
 # Make a match
 
