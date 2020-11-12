@@ -90,7 +90,7 @@ In iOS 14 Apple introduces changes to the way the Advertising Identifier (IDFA) 
 - https://developer.apple.com/app-store/user-privacy-and-data-use/
 - https://developer.apple.com/documentation/apptrackingtransparency?language=objc
 
-The [Examples](Examples) folder contains two example applications ready for iOS 14, which ask for user permission before using the IDFA to execute any requests.
+The [Examples](https://github.com/velocidi/velocidi-ios-objc-sdk/tree/master/Examples) folder contains two example applications ready for iOS 14, which ask for user permission before using the IDFA to execute any requests.
 
 The Velocidi iOS SDK itself will **not** execute any request if the user did not allow tracking to proceed.
 
@@ -147,7 +147,7 @@ __Objective-C__
 }];
 ```
 
-There is a big list of [tracking event classes](https://ios.developers.velocidi.com/tracking-model-classes-list.html) to choose from. If none of them fits the desired action, you can also create your own [custom tracking event](https://ios.developers.velocidi.com/custom-tracking-events.html)
+There is a big list of [tracking event classes](https://developers.velocidi.com/ios-sdk/tracking-model-classes-list.html) to choose from. If none of them fits the desired action, you can also create your own [custom tracking event](https://developers.velocidi.com/ios-sdk/custom-tracking-events.html)
 
 # Make a match
 
