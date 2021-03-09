@@ -22,7 +22,7 @@ PODS:
     - URITemplate (~> 2.0)
   - Mockingjay/XCTest (2.0.1):
     - Mockingjay/Core
-  - Nimble (9.0.0)
+  - Nimble (8.1.2)
   - Quick (3.1.2)
   - URITemplate (2.0.3)
 
@@ -30,7 +30,7 @@ DEPENDENCIES:
   - AFNetworking (~> 4.0.0)
   - JSONModel (~> 1.8.0)
   - Mockingjay
-  - Nimble (~> 9.0.0)
+  - Nimble (~> 8.0)
   - Quick (~> 3.1.0)
 
 SPEC REPOS:
@@ -46,10 +46,10 @@ SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
-  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Nimble: 3864815b4703c7ebffba875973c70e854489fbae
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: 425e2d7c0c4c57f039678ff5a1ac1a23cdf1425c
+PODFILE CHECKSUM: 51c317bc154b90594356c618e10f7bd60cffc35e
 
 COCOAPODS: 1.10.1

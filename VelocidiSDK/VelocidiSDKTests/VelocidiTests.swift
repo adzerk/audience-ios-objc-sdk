@@ -82,8 +82,8 @@ class NetworkTests: QuickSpec {
                         var error: Error? = nil
                         test(success: &success, error: &error)
                         
-                        expect(success).toEventually(beFalse(), timeout: .seconds(4))
-                        expect(error).toEventually(beAnInstanceOf(NSError.self), timeout: .seconds(4))
+                        expect(success).toEventually(beFalse(), timeout: 4)
+                        expect(error).toEventually(beAnInstanceOf(NSError.self), timeout: 4)
                         expect(error!._domain).to(equal("com.velocidi.VSDKTrackingNotAllowedError"))
                     }
                 } else {
@@ -92,7 +92,7 @@ class NetworkTests: QuickSpec {
                         var error: Error? = nil
                         test(success: &success, error: &error)
                         
-                        expect(success).toEventually(beTrue(), timeout: .seconds(4))
+                        expect(success).toEventually(beTrue(), timeout: 4)
                         expect(error).to(beNil())
                     }
                 }
@@ -157,8 +157,8 @@ class NetworkTests: QuickSpec {
                         test(success: &success, error: &error)
                         
                         
-                        expect(success).toEventually(beFalse(), timeout: .seconds(4))
-                        expect(error).toEventually(beAnInstanceOf(NSError.self), timeout: .seconds(4))
+                        expect(success).toEventually(beFalse(), timeout: 4)
+                        expect(error).toEventually(beAnInstanceOf(NSError.self), timeout: 4)
                         expect(error!._domain).to(equal("com.velocidi.VSDKTrackingNotAllowedError"))
                     }
                 } else {
@@ -167,7 +167,7 @@ class NetworkTests: QuickSpec {
                         var error: Error? = nil
                         test(success: &success, error: &error)
                         
-                        expect(success).toEventually(beTrue(), timeout: .seconds(4))
+                        expect(success).toEventually(beTrue(), timeout: 4)
                         expect(error).to(beNil())
                     }
                 }
