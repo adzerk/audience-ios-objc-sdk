@@ -23,7 +23,7 @@ PODS:
   - Mockingjay/XCTest (2.0.1):
     - Mockingjay/Core
   - Nimble (8.1.2)
-  - Quick (3.1.2)
+  - Quick (2.2.1)
   - URITemplate (2.0.3)
 
 DEPENDENCIES:
@@ -31,7 +31,7 @@ DEPENDENCIES:
   - JSONModel (~> 1.8.0)
   - Mockingjay
   - Nimble (~> 8.0)
-  - Quick (~> 3.1.0)
+  - Quick (~> 2.0)
 
 SPEC REPOS:
   trunk:
@@ -47,9 +47,9 @@ SPEC CHECKSUMS:
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
   Nimble: 3864815b4703c7ebffba875973c70e854489fbae
-  Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: 51c317bc154b90594356c618e10f7bd60cffc35e
+PODFILE CHECKSUM: a722df4bb498e02b0c6fcd61319d07f158e19964
 
 COCOAPODS: 1.10.1

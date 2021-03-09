@@ -13,7 +13,7 @@ target "VelocidiSDK" do
     # inherit! :search_paths # Can't figure out how to use this setting, enabled in settings in other examples
     # target "VelocidiSDKTests"
 
-    pod 'Quick', '~> 3.1.0'
+    pod 'Quick', '~> 2.0' # Quick 3 raises the xcode version requirement to v11
     pod 'Nimble', '~> 8.0' # Nimble 9 raises the xcode version requirement to v11
     pod 'Mockingjay'
   end
