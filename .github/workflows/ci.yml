@@ -1,0 +1,93 @@
+name: iOS CI
+
+on: [push]
+
+jobs:
+  test:
+    name: "Build and test Velocidi SDK using [${{ matrix.os }}, xcode${{ matrix.xcode }}, sdk${{ matrix.sdk }}, ${{ matrix.device }}]"
+    env:
+      WORKSPACE: "VelocidiSDK.xcworkspace"
+      SCHEME: "VelocidiSDK"
+    strategy:
+      matrix:
+        include:
+         - os: "macos-10.15"
+           xcode: "10.3"
+           sdk: "12.4"
+           device: "iPhone X"
+         - os: "macos-10.15"
+           xcode: "11.7.0"
+           sdk: "13.7"
+           device: "iPhone 11"
+         - os: "macos-10.15"
+           xcode: "12.4"
+           sdk: "14.4"
+           device: "iPhone 11 Pro Max"
+# NOTICE: Not available for now: https://github.com/actions/virtual-environments/issues/2486
+#         - os: "macos-11.0"
+#           xcode: "12.2"
+#           sdk: "14.0"
+#           device: "iPhone 11 Pro Max"
+    runs-on: "${{ matrix.os }}"
+    steps:
+      - uses: actions/checkout@v1
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "${{ matrix.xcode }}"
+      - name: "Install Dependencies"
+        run: pod install
+      - name: "Compile and Test Velocidi SDK"
+        env:
+          TEST_SDK: "${{ matrix.sdk }}"
+          TEST_DEVICE: "${{ matrix.device }}"
+        run: ./.github/workflows/xcodebuild.sh clean build test
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          xcode_package: "VelocidiSDK"
+
+  build-example-applications:
+    name: "Build example applications"
+    needs: test
+    runs-on: "macos-latest"
+    env:
+      WORKSPACE: "VelocidiSDK.xcworkspace"
+      TEST_SDK: "14.4"
+      TEST_DEVICE: "iPhone 11 Pro Max"
+    steps:
+      - uses: actions/checkout@v1
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "latest-stable"
+      - name: "Install Dependencies"
+        run: pod install
+      - name: "Compile Velocidi SDK"
+        env:
+          SCHEME: "VelocidiSDK"
+        run: ./.github/workflows/xcodebuild.sh clean build
+      - name: "Update Velocidi SDK Pod for example applications"
+        run: pod install --project-directory=Examples/
+      - name: "Build example Objective-C application"
+        env:
+          SCHEME: "ObjcExample"
+        run: ./.github/workflows/xcodebuild.sh clean build
+      - name: "Build example Swift application"
+        env:
+          SCHEME: "SwiftExample"
+        run: ./.github/workflows/xcodebuild.sh clean build
+
+  pods-lint:
+    name: "Cocoapods Lint"
+    needs: test
+    runs-on: "macos-latest"
+    steps:
+      - uses: actions/checkout@v1
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "latest-stable"
+      - name: "Lint"
+        run: |
+          pod repo update
+          pod install
+          pod lib lint --verbose
+          pod spec lint --verbose
