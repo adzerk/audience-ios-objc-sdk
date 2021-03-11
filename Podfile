@@ -6,15 +6,15 @@ use_frameworks!
 
 target "VelocidiSDK" do
   project 'VelocidiSDK/VelocidiSDK.xcodeproj'
-  pod 'AFNetworking', '~> 3.2.1'
-  pod 'JSONModel', '~> 1.8'
+  pod 'AFNetworking', '~> 4.0.0'
+  pod 'JSONModel', '~> 1.8.0'
 
   target "VelocidiSDKTests" do
     # inherit! :search_paths # Can't figure out how to use this setting, enabled in settings in other examples
     # target "VelocidiSDKTests"
 
-    pod 'Quick', '~> 2.0'
-    pod 'Nimble', '~> 8.0.1'
+    pod 'Quick', '~> 2.0' # Quick 3 raises the xcode version requirement to v11
+    pod 'Nimble', '~> 8.0' # Nimble 9 raises the xcode version requirement to v11
     pod 'Mockingjay'
   end
 end
