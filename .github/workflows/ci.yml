@@ -23,11 +23,6 @@ jobs:
            xcode: "12.4"
            sdk: "14.4"
            device: "iPhone 11 Pro Max"
-# NOTICE: Not available for now: https://github.com/actions/virtual-environments/issues/2486
-#         - os: "macos-11.0"
-#           xcode: "12.2"
-#           sdk: "14.0"
-#           device: "iPhone 11 Pro Max"
     runs-on: "${{ matrix.os }}"
     steps:
       - uses: actions/checkout@v1
