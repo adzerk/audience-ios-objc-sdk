@@ -22,8 +22,6 @@ class ViewController: UIViewController {
         }
 
         if (trackingIsAllowed) {
-            print("andre")
-            print(self.trackingIsAllowed)
             self.idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
         }
     }
