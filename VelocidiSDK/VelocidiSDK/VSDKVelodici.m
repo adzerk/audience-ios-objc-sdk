@@ -4,6 +4,7 @@
 #import "VSDKTrackingRequest.h"
 #import "VSDKMatchRequest.h"
 #import "VSDKUtil.h"
+#import "VSDKUserId.h"
 
 @implementation VSDKVelocidi
 
@@ -38,7 +39,7 @@ static VSDKConfig *_config = nil;
     return sharedVelocidiManager;
 }
 
-- (id) init{
+- (id) init {
     if(self = [super init]) {
         _sessionManager = [AFHTTPSessionManager manager];
         [VSDKUtil setAcceptAllResponses:_sessionManager];
@@ -46,16 +47,24 @@ static VSDKConfig *_config = nil;
     return self;
 }
 
-- (void)track: (VSDKTrackingEvent *)trackingEvent {
-    [self track:trackingEvent onSuccess: (void (^)(NSURLResponse *, id)) ^{} onFailure: (void (^)(NSError * error)) ^{}];
+- (void)track: (VSDKTrackingEvent *)trackingEvent
+       userId: (VSDKUserId *) userId {
+    [self
+     track:trackingEvent
+     userId: userId
+     onSuccess: (void (^)(NSURLResponse *, id)) ^{}
+     onFailure: (void (^)(NSError * error)) ^{}
+     ];
 }
 
 - (void)track: (VSDKTrackingEvent *)trackingEvent
+       userId: (VSDKUserId *) userId
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError *error))onFailureBlock {
 
     VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
 
+    request.userId = userId;
     request.data = trackingEvent;
     request.url = VSDKVelocidi.config.trackingUrl.URL;
 
@@ -64,6 +73,7 @@ static VSDKConfig *_config = nil;
 
 - (void)match: (NSString *)providerId
       userIds: (NSMutableArray<VSDKUserId *> *)userIds {
+    
     [self match: providerId
         userIds: userIds
       onSuccess: (void (^)(NSURLResponse *, id)) ^{}
@@ -75,6 +85,22 @@ static VSDKConfig *_config = nil;
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError * error))onFailureBlock {
     
+    if ([providerId length] <= 0){
+        NSException* ex = [NSException
+                exceptionWithName:@"InvalidArgument"
+                reason:@"Provider must not be empty!"
+                userInfo:nil];
+        @throw ex;
+    }
+    
+    if ([userIds count] < 2){
+        NSException* ex = [NSException
+                exceptionWithName:@"InvalidArgument"
+                reason:@"At least 2 user ids must be provided!"
+                userInfo:nil];
+        @throw ex;
+    }
+    
     VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
     
     request.userIds = userIds;
@@ -83,4 +109,5 @@ static VSDKConfig *_config = nil;
     
     [request performRequest:onSuccessBlock :onFailureBlock];
 }
+
 @end

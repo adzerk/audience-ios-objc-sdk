@@ -3,15 +3,6 @@
 #import "VSDKGlobalVariables.h"
 #import "VSDKUtil.h"
 
-#if defined(__IPHONE_14_0) || defined(__MAC_10_16) || defined(__TVOS_14_0) || defined(__WATCHOS_7_0)
-// Are we in a build tool that has access to the iOS 14 SDK?
-#define CAN_BUILD_FOR_IOS14 1;
-#endif
-
-#if defined(CAN_BUILD_FOR_IOS14)
-@import AppTrackingTransparency; // NOTICE: linking happens automatically when using Modules or "semantic import".
-#endif
-
 @implementation VSDKUtil
 
 NSString * const trackingNotAllowedErrordomain = @"com.velocidi.VSDKTrackingNotAllowedError";
@@ -53,43 +44,6 @@ NSString * const trackingNotAllowedDescKey = @"Operation cannot be completed. Tr
 + (void) setAcceptAllResponses: (AFHTTPSessionManager *)sessionManager {
     sessionManager.responseSerializer = [AFHTTPResponseSerializer serializer];
     sessionManager.responseSerializer.acceptableContentTypes = nil;
-}
-
-+ (nullable NSString *) tryGetIDFA :(NSError **)error {
-    
-    bool trackingIsAllowed = false;
-    
-    // This guard avoids compiler warnings. Should not be possible to enter this guard without the macro inside being defined...
-    if (@available(iOS 14, *)) {
-#if defined(CAN_BUILD_FOR_IOS14)
-        trackingIsAllowed = [ATTrackingManager trackingAuthorizationStatus] == ATTrackingManagerAuthorizationStatusAuthorized;
-#endif
-    } else {
-        trackingIsAllowed = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
-    }
-
-    
-    if (trackingIsAllowed) {
-        return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
-        
-    } else if (error) {
-        
-        NSString *trackingNotAllowedReasonKey = nil;
-        if (@available(iOS 14, *)) {
-            trackingNotAllowedReasonKey = NSLocalizedString(@"The user has not opted-in to tracking or it has not yet been prompted.", nil);
-        } else {
-            trackingNotAllowedReasonKey = NSLocalizedString(@"The user has opted-out of tracking (Limited Ad Tracking is enabled in the user's device)", nil);
-        }
-        
-        *error = [NSError errorWithDomain: trackingNotAllowedErrordomain
-                                        code: 1
-                                    userInfo: @{
-                                                NSLocalizedDescriptionKey: NSLocalizedString(trackingNotAllowedDescKey, nil),
-                                                NSLocalizedFailureReasonErrorKey: trackingNotAllowedReasonKey}];
-        return nil;
-    } else {
-        return nil;
-    }
 }
 
 @end

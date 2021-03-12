@@ -3,7 +3,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
-  A User identifier, composed by and id and a type.
+  A User identifier, composed by an id and a type.
   More info: https://docs.velocidi.com/collection/user-identifiers/
  */
 @interface VSDKUserId : NSObject

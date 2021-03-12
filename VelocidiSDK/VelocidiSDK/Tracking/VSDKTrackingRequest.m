@@ -5,8 +5,11 @@
 
 @implementation VSDKTrackingRequest
 
-- (NSMutableURLRequest *) buildRequest: (NSString*) advertisingIdentifier {
-    NSURLComponents * url = [self buildURLWithQueryParameters: advertisingIdentifier];
+- (NSMutableURLRequest *) buildRequest {
+    NSMutableArray *userIds = [NSMutableArray arrayWithCapacity:1];
+    [userIds addObject: self.userId];
+    
+    NSURLComponents * url = [self buildURLWithCommonParamsAndUserIds: userIds];
 
     return [[AFJSONRequestSerializer serializer] requestWithMethod: @"POST"
                                                          URLString: url.string
