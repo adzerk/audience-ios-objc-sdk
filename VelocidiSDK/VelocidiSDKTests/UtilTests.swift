@@ -18,21 +18,7 @@ class UtilTests: QuickSpec {
                     UIScreen.main.scale)
 
                 expect(userAgent).to(match(regexStr))
-            }
-            
-            if #available(iOS 14, *) { // ios14 is opt-in
-                it("should throw an error when trying to get the IDFA on iOS 14+") {
-                    // this style is necessary because of https://github.com/Quick/Nimble/issues/809
-                    expect(expression: { try VSDKUtil.tryGetIDFA() }).to(throwError { (error: Error) in
-                        expect(error._domain).to(equal("com.velocidi.VSDKTrackingNotAllowedError"))
-                    })
-                }
-            } else { // previous ios version are opt-out
-                it("should successfuly provide the IDFA") {
-                    expect(try? VSDKUtil.tryGetIDFA()).to(match("[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}"))
-                }
-            }
-            
+            }            
         }
     }
 }

@@ -1,5 +1,7 @@
 #import <XCTest/XCTest.h>
 @import VelocidiSDK;
+#import "VSDKUserId.h"
+
 
 @interface SanityTests : XCTestCase
 @end
@@ -58,6 +60,14 @@
 
     XCTAssert([@"https://tr.domain.com/v1/events" isEqualToString: config.trackingUrl.string]);
     XCTAssert([@"https://match.domain.com/v1/match" isEqualToString: config.matchUrl.string]);
+}
+
+- (void)testEmptyUserIds {
+    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"123" type: @""]);
+    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"" type: @"123"]);
+    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"" type: @""]);
+    
+    XCTAssertNoThrow([[VSDKUserId alloc] initWithId: @"123" type: @"123"]);
 }
 
 @end

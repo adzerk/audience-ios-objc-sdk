@@ -66,7 +66,8 @@ class NetworkTests: QuickSpec {
                     let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
                     VSDKVelocidi.start(config!)
 
-                    VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
+                    let userId = VSDKUserId(id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3", type: "email_sha256")
+                    VSDKVelocidi.sharedInstance().track(trackingEvent, userId: userId, onSuccess:{ (response: URLResponse, responseObject: Any) in
                         success.pointee = true
                     }, onFailure:{(err: Error) in
                         success.pointee = false
@@ -74,27 +75,13 @@ class NetworkTests: QuickSpec {
                     })
                 }
                 
-                // iOS 14 is opt-in and so these requests fail.
-                // We cannot configure the environment to act in a different way.
-                if #available(iOS 14, *) {
-                    it("should fail to execute tracking requests when the user is not opted-in in iOS 14") {
-                        var success: Bool? = nil
-                        var error: Error? = nil
-                        test(success: &success, error: &error)
-                        
-                        expect(success).toEventually(beFalse(), timeout: 4)
-                        expect(error).toEventually(beAnInstanceOf(NSError.self), timeout: 4)
-                        expect(error!._domain).to(equal("com.velocidi.VSDKTrackingNotAllowedError"))
-                    }
-                } else {
-                    it("should successfuly execute tracking requests") {
-                        var success: Bool? = nil
-                        var error: Error? = nil
-                        test(success: &success, error: &error)
-                        
-                        expect(success).toEventually(beTrue(), timeout: 4)
-                        expect(error).to(beNil())
-                    }
+                it("should successfuly execute tracking requests") {
+                    var success: Bool? = nil
+                    var error: Error? = nil
+                    test(success: &success, error: &error)
+                    
+                    expect(success).toEventually(beTrue(), timeout: 4)
+                    expect(error).to(beNil())
                 }
             }
 
@@ -121,11 +108,11 @@ class NetworkTests: QuickSpec {
                 }
                 
                 func test(success: UnsafeMutablePointer<Bool?>, error: UnsafeMutablePointer<Error?>) {
-                    let userId1 = VSDKUserId(userId: "bar", "foo")
-                    let userId2 = VSDKUserId(userId: "y", "x")
+                    let userId1 = VSDKUserId(id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3", type: "email_sha256")
+                    let userId2 = VSDKUserId(id: "2c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3", type: "email_sha256")
 
                     let arrUserIds = NSMutableArray(array: [userId1,userId2])
-                    
+
                     var expectedParams = Dictionary<String, String>()
                     expectedParams["cookies"] = "false"
                     for case let userId as VSDKUserId in arrUserIds {
@@ -146,30 +133,24 @@ class NetworkTests: QuickSpec {
                         error.pointee = err
                     })
                 }
+
+                it("should throw when there are not enough user ids") {
+                    let userId1 = VSDKUserId(id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3", type: "email_sha256")
+                    let arrUserIds = NSMutableArray(array: [userId1])
+
+                    expect(VSDKVelocidi.sharedInstance().match("baz", userIds: arrUserIds))
+                        .to(raiseException(named: "InvalidArgument",
+                                           reason: "At least 2 user ids must be provided!",
+                                           userInfo: nil))
+                }
                 
-                
-                // iOS 14 is opt-in and so these requests fail.
-                // We cannot configure the environment to act in a different way.
-                if #available(iOS 14, *) {
-                    it("should fail to execute match requests when the user is not opted-in in iOS 14") {
-                        var success: Bool? = nil
-                        var error: Error? = nil
-                        test(success: &success, error: &error)
-                        
-                        
-                        expect(success).toEventually(beFalse(), timeout: 4)
-                        expect(error).toEventually(beAnInstanceOf(NSError.self), timeout: 4)
-                        expect(error!._domain).to(equal("com.velocidi.VSDKTrackingNotAllowedError"))
-                    }
-                } else {
-                    it("should successfuly execute match requests") {
-                        var success: Bool? = nil
-                        var error: Error? = nil
-                        test(success: &success, error: &error)
-                        
-                        expect(success).toEventually(beTrue(), timeout: 4)
-                        expect(error).to(beNil())
-                    }
+                it("should successfuly execute match requests") {
+                    var success: Bool? = nil
+                    var error: Error? = nil
+                    test(success: &success, error: &error)
+                    
+                    expect(success).toEventually(beTrue(), timeout: 4)
+                    expect(error).to(beNil())
                 }
             }
         }
