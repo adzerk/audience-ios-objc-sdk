@@ -6,13 +6,13 @@ use_frameworks!
 
 target "VelocidiSDK" do
   project 'VelocidiSDK/VelocidiSDK.xcodeproj'
-  pod 'AFNetworking', '~> 4.0.0'
-  pod 'JSONModel', '~> 1.8.0'
+  pod 'AFNetworking', '~> 4.0.0', :inhibit_warnings => true
+  pod 'JSONModel', '~> 1.8.0', :inhibit_warnings => true
 
   target "VelocidiSDKTests" do
     inherit! :complete
 
-    pod 'Quick', '~> 2.0' # Quick 3 raises the xcode version requirement to v11
+    pod 'Quick', '~> 2.0', :inhibit_warnings => true # Quick 3 raises the xcode version requirement to v11
     pod 'Nimble', '~> 8.0' # Nimble 9 raises the xcode version requirement to v11
     pod 'Mockingjay'
   end
