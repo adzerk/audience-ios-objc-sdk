@@ -437,6 +437,7 @@
 				B1432D1A6E4A3AC683544056 /* Frameworks */,
 				B1432D2375A47DCBB54B7EE6 /* Resources */,
 				78D6C2DDFFEDAF50A771284C /* [CP] Embed Pods Frameworks */,
+				A16A45AD25FD577800B6A451 /* ShellScript */,
 			);
 			buildRules = (
 				3060595D2264DA2E00306E32 /* PBXBuildRule */,
@@ -553,6 +554,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A16A45AD25FD577800B6A451 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\" --strict\n";
 		};
 		B61CE0967F3E6E8420CE0F5E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
