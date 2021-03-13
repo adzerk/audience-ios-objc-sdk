@@ -4,11 +4,12 @@ import Nimble
 import Mockingjay
 import VelocidiSDK
 
-class TrackingEventsTests : QuickSpec {
+class TrackingEventsTests: QuickSpec {
+    // swiftlint:disable function_body_length
     override func spec() {
         super.spec()
         func serializesCorrectly(event: VSDKTrackingEvent) -> Bool? {
-            var success: Bool? = nil
+            var success: Bool?
             do {
                 _ = try JSONModel.init(data: event.toJSONData())
                 success = true
@@ -17,37 +18,37 @@ class TrackingEventsTests : QuickSpec {
             }
             return success
         }
-        
+
         let product = VSDKProduct()
         product.productId = "1"
         product.name = "1"
         product.brand = "brand1"
         product.category = "cat1"
         product.price = 1.0
-        
-        describe("VSDKAddToCart"){
+
+        describe("VSDKAddToCart") {
             let event = VSDKAddToCart()
             event.siteId = "0"
             event.clientId = "0"
             event.products = NSMutableArray(array: [product])
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKAppView"){
+
+        describe("VSDKAppView") {
             let event = VSDKAppView()
             event.siteId = "0"
             event.clientId = "0"
             event.title = "a"
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKOrderPlace"){
+
+        describe("VSDKOrderPlace") {
             let event = VSDKOrderPlace()
             event.siteId = "0"
             event.clientId = "0"
@@ -67,36 +68,36 @@ class TrackingEventsTests : QuickSpec {
             order.shipping = 1.0
             event.order = order
             event.lineItems = NSMutableArray(array: [lineItem])
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKPageView"){
+
+        describe("VSDKPageView") {
             let event = VSDKPageView()
             event.siteId = "0"
             event.clientId = "0"
             event.location = "a"
             event.title = "b"
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKProductClick"){
+
+        describe("VSDKProductClick") {
             let event = VSDKProductClick()
             event.siteId = "0"
             event.clientId = "0"
             event.products = NSMutableArray(array: [product])
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKProductCustomization"){
+
+        describe("VSDKProductCustomization") {
             let event = VSDKProductCustomization()
             event.siteId = "0"
             event.clientId = "0"
@@ -105,78 +106,78 @@ class TrackingEventsTests : QuickSpec {
             cust.name = "a"
             cust.price = 1.0
             event.productCustomization = cust
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKProductFeedback"){
+
+        describe("VSDKProductFeedback") {
             let event = VSDKProductFeedback()
             event.siteId = "0"
             event.clientId = "0"
             event.products = NSMutableArray(array: [product])
             event.rating = 2.5
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKProductImpression"){
+
+        describe("VSDKProductImpression") {
             let event = VSDKProductImpression()
             event.siteId = "0"
             event.clientId = "0"
             event.products = NSMutableArray(array: [product])
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKProductView"){
+
+        describe("VSDKProductView") {
             let event = VSDKProductView()
             event.siteId = "0"
             event.clientId = "0"
             event.products = NSMutableArray(array: [product])
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKProductViewDetails"){
+
+        describe("VSDKProductViewDetails") {
             let event = VSDKProductViewDetails()
             event.siteId = "0"
             event.clientId = "0"
             event.products = NSMutableArray(array: [product])
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKRemoveFromCart"){
+
+        describe("VSDKRemoveFromCart") {
             let event = VSDKRemoveFromCart()
             event.siteId = "0"
             event.clientId = "0"
             event.products = NSMutableArray(array: [product])
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
-        
-        describe("VSDKSearch"){
+
+        describe("VSDKSearch") {
             let event = VSDKSearch()
             event.siteId = "0"
             event.clientId = "0"
             event.query = "a"
-            
+
             it("should serialize correctly") {
                 expect(serializesCorrectly(event: event)).to(beTrue())
             }
         }
     }
-    
+
 }
