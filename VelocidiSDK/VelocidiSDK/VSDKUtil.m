@@ -46,4 +46,9 @@ NSString * const trackingNotAllowedDescKey = @"Operation cannot be completed. Tr
     sessionManager.responseSerializer.acceptableContentTypes = nil;
 }
 
++ (nullable NSDictionary *) tryParseJsonEventString :(NSString* )jsonStr :(NSError **)error {
+    NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:error];
+}
+
 @end

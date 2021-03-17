@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
   @param trackingEvent tracking event to be sent.
   @param userId the user id to associate with the event.
  */
-- (void)track: (VSDKTrackingEvent *)trackingEvent
+- (void)track: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId;
 
 /**
@@ -53,7 +53,7 @@ NS_ASSUME_NONNULL_BEGIN
   @param onSuccessBlock Block to be called if the request is successful
   @param onFailureBlock Block to be called if the request is unsuccessful
  */
-- (void)track: (VSDKTrackingEvent *)trackingEvent
+- (void)track: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError * error))onFailureBlock;

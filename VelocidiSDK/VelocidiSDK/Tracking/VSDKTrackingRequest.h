@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property VSDKUserId * userId;
 
-@property VSDKTrackingEvent * data;
+@property NSDictionary * data;
 
 @end
 

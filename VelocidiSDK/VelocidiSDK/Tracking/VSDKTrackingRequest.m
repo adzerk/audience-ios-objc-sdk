@@ -1,5 +1,4 @@
 #import <AFNetworking/AFNetworking.h>
-#import "VSDKTRackingEvent.h"
 #import "VSDKTrackingRequest.h"
 #import "VSDKRequest.h"
 
@@ -13,7 +12,7 @@
 
     return [[AFJSONRequestSerializer serializer] requestWithMethod: @"POST"
                                                          URLString: url.string
-                                                        parameters: self.data.toDictionary
+                                                        parameters: self.data
                                                              error: nil];
 }
 @end
