@@ -21,41 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1243B65F24C72E70007298CF /* VSDKAppView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1243B65D24C72E6F007298CF /* VSDKAppView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1243B66024C72E70007298CF /* VSDKAppView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1243B65E24C72E6F007298CF /* VSDKAppView.m */; };
-		12FA833624E59C9A00C32D0F /* TrackingEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FA833524E59C9A00C32D0F /* TrackingEventsTests.swift */; };
-		303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D524CB588100280AC2 /* VSDKOrderPlace.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		303572D824CB588100280AC2 /* VSDKOrderPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572D624CB588100280AC2 /* VSDKOrderPlace.m */; };
-		303572DB24CB5B2900280AC2 /* VSDKLineItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572D924CB5B2900280AC2 /* VSDKLineItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		303572DC24CB5B2900280AC2 /* VSDKLineItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572DA24CB5B2900280AC2 /* VSDKLineItem.m */; };
-		303572DF24CB5B7E00280AC2 /* VSDKOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 303572DD24CB5B7E00280AC2 /* VSDKOrder.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		303572E024CB5B7E00280AC2 /* VSDKOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 303572DE24CB5B7E00280AC2 /* VSDKOrder.m */; };
 		304FEFA22254B8AB00ECF86E /* VSDKVelocidi.h in Headers */ = {isa = PBXBuildFile; fileRef = 304FEFA02254B8AB00ECF86E /* VSDKVelocidi.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		304FEFA32254B8AB00ECF86E /* VSDKVelodici.m in Sources */ = {isa = PBXBuildFile; fileRef = 304FEFA12254B8AB00ECF86E /* VSDKVelodici.m */; };
-		305A32AF24CF2CA80004F499 /* VSDKDiscount.h in Headers */ = {isa = PBXBuildFile; fileRef = 305A32AD24CF2CA80004F499 /* VSDKDiscount.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305A32B024CF2CA80004F499 /* VSDKDiscount.m in Sources */ = {isa = PBXBuildFile; fileRef = 305A32AE24CF2CA80004F499 /* VSDKDiscount.m */; };
-		305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA42256452C0016EF25 /* VSDKPageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1AA72256452C0016EF25 /* VSDKPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA52256452C0016EF25 /* VSDKPageView.m */; };
-		305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AA8225645C70016EF25 /* VSDKSearch.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1AAB225645C70016EF25 /* VSDKSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AA9225645C70016EF25 /* VSDKSearch.m */; };
-		305D1AAE225646600016EF25 /* VSDKProductImpression.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AAC225646600016EF25 /* VSDKProductImpression.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AAD225646600016EF25 /* VSDKProductImpression.m */; };
-		305D1AB2225646F30016EF25 /* VSDKProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB0225646F30016EF25 /* VSDKProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1AB3225646F30016EF25 /* VSDKProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB1225646F30016EF25 /* VSDKProduct.m */; };
-		305D1AB622564AE20016EF25 /* VSDKProductClick.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB422564AE20016EF25 /* VSDKProductClick.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1AB722564AE20016EF25 /* VSDKProductClick.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB522564AE20016EF25 /* VSDKProductClick.m */; };
-		305D1ABA22564C950016EF25 /* VSDKProductView.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AB822564C950016EF25 /* VSDKProductView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AB922564C950016EF25 /* VSDKProductView.m */; };
-		305D1ABE22564DB10016EF25 /* VSDKProductViewDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1ABC22564DB10016EF25 /* VSDKProductViewDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1ABF22564DB10016EF25 /* VSDKProductViewDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1ABD22564DB10016EF25 /* VSDKProductViewDetails.m */; };
-		305D1AC22256548F0016EF25 /* VSDKProductCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC02256548F0016EF25 /* VSDKProductCustomization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1AC32256548F0016EF25 /* VSDKProductCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC12256548F0016EF25 /* VSDKProductCustomization.m */; };
-		305D1AC6225656110016EF25 /* VSDKAddToCart.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC4225656110016EF25 /* VSDKAddToCart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1AC7225656110016EF25 /* VSDKAddToCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC5225656110016EF25 /* VSDKAddToCart.m */; };
-		305D1ACA225657A70016EF25 /* VSDKRemoveFromCart.h in Headers */ = {isa = PBXBuildFile; fileRef = 305D1AC8225657A70016EF25 /* VSDKRemoveFromCart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		305D1ACB225657A70016EF25 /* VSDKRemoveFromCart.m in Sources */ = {isa = PBXBuildFile; fileRef = 305D1AC9225657A70016EF25 /* VSDKRemoveFromCart.m */; };
-		307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */; };
 		308A7369225E297D00E1ADA8 /* VSDKRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 308A7367225E297D00E1ADA8 /* VSDKRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		308A736A225E297D00E1ADA8 /* VSDKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 308A7368225E297D00E1ADA8 /* VSDKRequest.m */; };
 		309FA3E222730BAC00709155 /* VSDKUserId.h in Headers */ = {isa = PBXBuildFile; fileRef = 309FA3E022730BAC00709155 /* VSDKUserId.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,8 +33,6 @@
 		309FA3EC2273248E00709155 /* VSDKMatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 309FA3EA2273248E00709155 /* VSDKMatchRequest.m */; };
 		30B6142D2260D64E007774B4 /* VSDKUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 30B6142C2260D64E007774B4 /* VSDKUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30B68A082260D40800226C76 /* VSDKUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B68A062260D40800226C76 /* VSDKUtil.m */; };
-		30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */ = {isa = PBXBuildFile; fileRef = 30C566DF225B9465006CE923 /* VSDKProductFeedback.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30C566E2225B9465006CE923 /* VSDKProductFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C566E0225B9465006CE923 /* VSDKProductFeedback.m */; };
 		30F0CC7F22773DBE0063BAB9 /* VSDKGlobalVariables.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F0CC7E22773DBE0063BAB9 /* VSDKGlobalVariables.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		30F3A0072264DE7000D9380B /* VelocidiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A0062264DE7000D9380B /* VelocidiTests.swift */; };
 		30F3A00C2264E13300D9380B /* SanityTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F3A00B2264E13300D9380B /* SanityTests.m */; };
@@ -76,11 +41,10 @@
 		A1B22C072535B00100EA675E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C052535B00100EA675E /* Podfile */; };
 		A1B22C082535B00100EA675E /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C062535B00100EA675E /* Podfile.lock */; };
 		A1B22C0A2535B1BA00EA675E /* VelocidiSDK.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */; };
+		A1DE768A25FFC79F00AB0451 /* ExampleEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE768925FFC79F00AB0451 /* ExampleEvents.swift */; };
 		B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B143269D9047D62CF45FC4FA /* VelocidiSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B14323273B9913A8741D9373 /* VSDKConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = B14327F8581E7874D34E17F5 /* VSDKConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432AE2322D92448290169D /* VSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */; };
-		B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = B14328D0589594344160CA2B /* VSDKCustomization.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */; };
 		B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14322053369E2F8B07BD704 /* VelocidiSDK.framework */; };
 		B4C4BCD9D7BDBF2CA5CA3D7B /* Pods_VelocidiSDK_VelocidiSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA36A471CE8281D71058A618 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */; };
 		DCE7262915C324595AEDB1E1 /* Pods_VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */; };
@@ -124,42 +88,9 @@
 /* Begin PBXFileReference section */
 		06C09A6E7001A447828404D5 /* Pods-VelocidiSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDKTests/Pods-VelocidiSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E2C4799C0C925EDCE50E8A1 /* Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1243B65D24C72E6F007298CF /* VSDKAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKAppView.h; sourceTree = "<group>"; };
-		1243B65E24C72E6F007298CF /* VSDKAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKAppView.m; sourceTree = "<group>"; };
-		12FA833524E59C9A00C32D0F /* TrackingEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingEventsTests.swift; sourceTree = "<group>"; };
-		303572D524CB588100280AC2 /* VSDKOrderPlace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKOrderPlace.h; sourceTree = "<group>"; };
-		303572D624CB588100280AC2 /* VSDKOrderPlace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKOrderPlace.m; sourceTree = "<group>"; };
-		303572D924CB5B2900280AC2 /* VSDKLineItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKLineItem.h; sourceTree = "<group>"; };
-		303572DA24CB5B2900280AC2 /* VSDKLineItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKLineItem.m; sourceTree = "<group>"; };
-		303572DD24CB5B7E00280AC2 /* VSDKOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKOrder.h; sourceTree = "<group>"; };
-		303572DE24CB5B7E00280AC2 /* VSDKOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKOrder.m; sourceTree = "<group>"; };
 		304FEFA02254B8AB00ECF86E /* VSDKVelocidi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKVelocidi.h; sourceTree = "<group>"; };
 		304FEFA12254B8AB00ECF86E /* VSDKVelodici.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKVelodici.m; sourceTree = "<group>"; };
 		305580607D1CC583F1DCC4B3 /* Pods-VelocidiSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.release.xcconfig"; sourceTree = "<group>"; };
-		305A32AD24CF2CA80004F499 /* VSDKDiscount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKDiscount.h; sourceTree = "<group>"; };
-		305A32AE24CF2CA80004F499 /* VSDKDiscount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKDiscount.m; sourceTree = "<group>"; };
-		305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKTrackingEvent.h; sourceTree = "<group>"; };
-		305D1AA42256452C0016EF25 /* VSDKPageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKPageView.h; sourceTree = "<group>"; };
-		305D1AA52256452C0016EF25 /* VSDKPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKPageView.m; sourceTree = "<group>"; };
-		305D1AA8225645C70016EF25 /* VSDKSearch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKSearch.h; sourceTree = "<group>"; };
-		305D1AA9225645C70016EF25 /* VSDKSearch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKSearch.m; sourceTree = "<group>"; };
-		305D1AAC225646600016EF25 /* VSDKProductImpression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductImpression.h; sourceTree = "<group>"; };
-		305D1AAD225646600016EF25 /* VSDKProductImpression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductImpression.m; sourceTree = "<group>"; };
-		305D1AB0225646F30016EF25 /* VSDKProduct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProduct.h; sourceTree = "<group>"; };
-		305D1AB1225646F30016EF25 /* VSDKProduct.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProduct.m; sourceTree = "<group>"; };
-		305D1AB422564AE20016EF25 /* VSDKProductClick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductClick.h; sourceTree = "<group>"; };
-		305D1AB522564AE20016EF25 /* VSDKProductClick.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductClick.m; sourceTree = "<group>"; };
-		305D1AB822564C950016EF25 /* VSDKProductView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductView.h; sourceTree = "<group>"; };
-		305D1AB922564C950016EF25 /* VSDKProductView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductView.m; sourceTree = "<group>"; };
-		305D1ABC22564DB10016EF25 /* VSDKProductViewDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductViewDetails.h; sourceTree = "<group>"; };
-		305D1ABD22564DB10016EF25 /* VSDKProductViewDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductViewDetails.m; sourceTree = "<group>"; };
-		305D1AC02256548F0016EF25 /* VSDKProductCustomization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductCustomization.h; sourceTree = "<group>"; };
-		305D1AC12256548F0016EF25 /* VSDKProductCustomization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductCustomization.m; sourceTree = "<group>"; };
-		305D1AC4225656110016EF25 /* VSDKAddToCart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKAddToCart.h; sourceTree = "<group>"; };
-		305D1AC5225656110016EF25 /* VSDKAddToCart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKAddToCart.m; sourceTree = "<group>"; };
-		305D1AC8225657A70016EF25 /* VSDKRemoveFromCart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKRemoveFromCart.h; sourceTree = "<group>"; };
-		305D1AC9225657A70016EF25 /* VSDKRemoveFromCart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKRemoveFromCart.m; sourceTree = "<group>"; };
-		307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKTrackingEvent.m; sourceTree = "<group>"; };
 		307325D2225BB525005CEB7D /* VelocidiSDK.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = VelocidiSDK.modulemap; sourceTree = "<group>"; };
 		308A7367225E297D00E1ADA8 /* VSDKRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKRequest.h; sourceTree = "<group>"; };
 		308A7368225E297D00E1ADA8 /* VSDKRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKRequest.m; sourceTree = "<group>"; };
@@ -172,8 +103,6 @@
 		30B6142C2260D64E007774B4 /* VSDKUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKUtil.h; sourceTree = "<group>"; };
 		30B6418B225DEC8A00B585BD /* JSONModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JSONModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B68A062260D40800226C76 /* VSDKUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKUtil.m; sourceTree = "<group>"; };
-		30C566DF225B9465006CE923 /* VSDKProductFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKProductFeedback.h; sourceTree = "<group>"; };
-		30C566E0225B9465006CE923 /* VSDKProductFeedback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VSDKProductFeedback.m; sourceTree = "<group>"; };
 		30F0CC7E22773DBE0063BAB9 /* VSDKGlobalVariables.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VSDKGlobalVariables.h; sourceTree = "<group>"; };
 		30F3A0062264DE7000D9380B /* VelocidiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocidiTests.swift; sourceTree = "<group>"; };
 		30F3A00B2264E13300D9380B /* SanityTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SanityTests.m; sourceTree = "<group>"; };
@@ -187,13 +116,12 @@
 		A1B22C052535B00100EA675E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1B22C062535B00100EA675E /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile.lock; path = ../Podfile.lock; sourceTree = "<group>"; };
 		A1B22C092535B1BA00EA675E /* VelocidiSDK.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = VelocidiSDK.podspec; path = ../VelocidiSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A1DE768925FFC79F00AB0451 /* ExampleEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleEvents.swift; sourceTree = "<group>"; };
 		B1432006E874289B32AE9435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		B14322053369E2F8B07BD704 /* VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B14323D6AF36722BBA0B00FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKCustomization.m; sourceTree = "<group>"; };
 		B143269D9047D62CF45FC4FA /* VelocidiSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VelocidiSDK.h; sourceTree = "<group>"; };
 		B14327F8581E7874D34E17F5 /* VSDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKConfig.h; sourceTree = "<group>"; };
-		B14328D0589594344160CA2B /* VSDKCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKCustomization.h; sourceTree = "<group>"; };
 		B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKConfig.m; sourceTree = "<group>"; };
 		B1432DC5BB2B2B22F95EF53B /* VelocidiSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelocidiSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA36A471CE8281D71058A618 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK_VelocidiSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,54 +152,10 @@
 		305D1A9A225643460016EF25 /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				305D1A9B225643870016EF25 /* Model */,
 				309FA3E4227319E500709155 /* VSDKTrackingRequest.h */,
 				309FA3E5227319E500709155 /* VSDKTrackingRequest.m */,
 			);
 			path = Tracking;
-			sourceTree = "<group>";
-		};
-		305D1A9B225643870016EF25 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1243B65D24C72E6F007298CF /* VSDKAppView.h */,
-				1243B65E24C72E6F007298CF /* VSDKAppView.m */,
-				305D1AA0225643F70016EF25 /* VSDKTrackingEvent.h */,
-				307325D0225BAAC0005CEB7D /* VSDKTrackingEvent.m */,
-				305D1AA42256452C0016EF25 /* VSDKPageView.h */,
-				305D1AA52256452C0016EF25 /* VSDKPageView.m */,
-				305D1AA8225645C70016EF25 /* VSDKSearch.h */,
-				30C566DF225B9465006CE923 /* VSDKProductFeedback.h */,
-				30C566E0225B9465006CE923 /* VSDKProductFeedback.m */,
-				305D1AAC225646600016EF25 /* VSDKProductImpression.h */,
-				303572D524CB588100280AC2 /* VSDKOrderPlace.h */,
-				303572D624CB588100280AC2 /* VSDKOrderPlace.m */,
-				305D1AAD225646600016EF25 /* VSDKProductImpression.m */,
-				305D1AA9225645C70016EF25 /* VSDKSearch.m */,
-				305D1AB0225646F30016EF25 /* VSDKProduct.h */,
-				305D1AB1225646F30016EF25 /* VSDKProduct.m */,
-				305D1AB422564AE20016EF25 /* VSDKProductClick.h */,
-				305D1AB822564C950016EF25 /* VSDKProductView.h */,
-				305D1AC02256548F0016EF25 /* VSDKProductCustomization.h */,
-				305D1AC4225656110016EF25 /* VSDKAddToCart.h */,
-				303572DD24CB5B7E00280AC2 /* VSDKOrder.h */,
-				303572DE24CB5B7E00280AC2 /* VSDKOrder.m */,
-				303572D924CB5B2900280AC2 /* VSDKLineItem.h */,
-				303572DA24CB5B2900280AC2 /* VSDKLineItem.m */,
-				305D1AC8225657A70016EF25 /* VSDKRemoveFromCart.h */,
-				305D1AC9225657A70016EF25 /* VSDKRemoveFromCart.m */,
-				305D1AC5225656110016EF25 /* VSDKAddToCart.m */,
-				305D1AC12256548F0016EF25 /* VSDKProductCustomization.m */,
-				305D1ABC22564DB10016EF25 /* VSDKProductViewDetails.h */,
-				305D1ABD22564DB10016EF25 /* VSDKProductViewDetails.m */,
-				305D1AB922564C950016EF25 /* VSDKProductView.m */,
-				305D1AB522564AE20016EF25 /* VSDKProductClick.m */,
-				B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */,
-				B14328D0589594344160CA2B /* VSDKCustomization.h */,
-				305A32AD24CF2CA80004F499 /* VSDKDiscount.h */,
-				305A32AE24CF2CA80004F499 /* VSDKDiscount.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		309FA3E82273247100709155 /* Match */ = {
@@ -314,7 +198,7 @@
 				30F3A0062264DE7000D9380B /* VelocidiTests.swift */,
 				30FA30712267731800BF442A /* RequestsTests.swift */,
 				30FA306F2267341A00BF442A /* UtilTests.swift */,
-				12FA833524E59C9A00C32D0F /* TrackingEventsTests.swift */,
+				A1DE768925FFC79F00AB0451 /* ExampleEvents.swift */,
 			);
 			path = VelocidiSDKTests;
 			sourceTree = "<group>";
@@ -375,27 +259,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				305D1AB2225646F30016EF25 /* VSDKProduct.h in Headers */,
-				305D1ABA22564C950016EF25 /* VSDKProductView.h in Headers */,
-				305D1AC22256548F0016EF25 /* VSDKProductCustomization.h in Headers */,
-				305D1AC6225656110016EF25 /* VSDKAddToCart.h in Headers */,
-				305D1AAE225646600016EF25 /* VSDKProductImpression.h in Headers */,
 				B1432122A6977BF83A62AC30 /* VelocidiSDK.h in Headers */,
-				30C566E1225B9465006CE923 /* VSDKProductFeedback.h in Headers */,
-				305D1AAA225645C70016EF25 /* VSDKSearch.h in Headers */,
-				305D1AA2225643F70016EF25 /* VSDKTrackingEvent.h in Headers */,
 				304FEFA22254B8AB00ECF86E /* VSDKVelocidi.h in Headers */,
-				305D1ACA225657A70016EF25 /* VSDKRemoveFromCart.h in Headers */,
-				305D1ABE22564DB10016EF25 /* VSDKProductViewDetails.h in Headers */,
-				305D1AA62256452C0016EF25 /* VSDKPageView.h in Headers */,
 				30B6142D2260D64E007774B4 /* VSDKUtil.h in Headers */,
-				305D1AB622564AE20016EF25 /* VSDKProductClick.h in Headers */,
-				1243B65F24C72E70007298CF /* VSDKAppView.h in Headers */,
-				303572DF24CB5B7E00280AC2 /* VSDKOrder.h in Headers */,
-				303572D724CB588100280AC2 /* VSDKOrderPlace.h in Headers */,
-				303572DB24CB5B2900280AC2 /* VSDKLineItem.h in Headers */,
-				305A32AF24CF2CA80004F499 /* VSDKDiscount.h in Headers */,
-				B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */,
 				308A7369225E297D00E1ADA8 /* VSDKRequest.h in Headers */,
 				309FA3E6227319E500709155 /* VSDKTrackingRequest.h in Headers */,
 				309FA3E222730BAC00709155 /* VSDKUserId.h in Headers */,
@@ -570,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\" --strict\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" lint --config \"${PODS_ROOT}/../.swiftlint.yml\" --fix && \"${PODS_ROOT}/SwiftLint/swiftlint\" lint --config \"${PODS_ROOT}/../.swiftlint.yml\" --strict\n";
 		};
 		B61CE0967F3E6E8420CE0F5E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -623,30 +489,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				305D1AB3225646F30016EF25 /* VSDKProduct.m in Sources */,
-				303572E024CB5B7E00280AC2 /* VSDKOrder.m in Sources */,
 				309FA3E7227319E500709155 /* VSDKTrackingRequest.m in Sources */,
-				305D1AC32256548F0016EF25 /* VSDKProductCustomization.m in Sources */,
-				305D1ACB225657A70016EF25 /* VSDKRemoveFromCart.m in Sources */,
 				309FA3EC2273248E00709155 /* VSDKMatchRequest.m in Sources */,
 				309FA3E322730BAC00709155 /* VSDKUserId.m in Sources */,
-				305D1AA72256452C0016EF25 /* VSDKPageView.m in Sources */,
-				1243B66024C72E70007298CF /* VSDKAppView.m in Sources */,
-				305D1AC7225656110016EF25 /* VSDKAddToCart.m in Sources */,
 				30B68A082260D40800226C76 /* VSDKUtil.m in Sources */,
-				305D1AAB225645C70016EF25 /* VSDKSearch.m in Sources */,
-				305D1AB722564AE20016EF25 /* VSDKProductClick.m in Sources */,
-				305D1ABF22564DB10016EF25 /* VSDKProductViewDetails.m in Sources */,
 				304FEFA32254B8AB00ECF86E /* VSDKVelodici.m in Sources */,
-				30C566E2225B9465006CE923 /* VSDKProductFeedback.m in Sources */,
-				305D1AAF225646600016EF25 /* VSDKProductImpression.m in Sources */,
-				307325D1225BAAC0005CEB7D /* VSDKTrackingEvent.m in Sources */,
-				305D1ABB22564C950016EF25 /* VSDKProductView.m in Sources */,
-				305A32B024CF2CA80004F499 /* VSDKDiscount.m in Sources */,
-				303572DC24CB5B2900280AC2 /* VSDKLineItem.m in Sources */,
 				308A736A225E297D00E1ADA8 /* VSDKRequest.m in Sources */,
-				B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */,
-				303572D824CB588100280AC2 /* VSDKOrderPlace.m in Sources */,
 				B1432AE2322D92448290169D /* VSDKConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,9 +504,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				30F3A0072264DE7000D9380B /* VelocidiTests.swift in Sources */,
-				12FA833624E59C9A00C32D0F /* TrackingEventsTests.swift in Sources */,
 				30FA30722267731800BF442A /* RequestsTests.swift in Sources */,
 				30FA30702267341A00BF442A /* UtilTests.swift in Sources */,
+				A1DE768A25FFC79F00AB0451 /* ExampleEvents.swift in Sources */,
 				30F3A00C2264E13300D9380B /* SanityTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
