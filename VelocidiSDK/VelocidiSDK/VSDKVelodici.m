@@ -47,7 +47,17 @@ static VSDKConfig *_config = nil;
     return self;
 }
 
-- (void)track: (NSString *)trackingEvent
+- (void)trackJson: (NSString *)trackingEvent
+       userId: (VSDKUserId *) userId {
+    [self
+     trackJson:trackingEvent
+     userId: userId
+     onSuccess: (void (^)(NSURLResponse *, id)) ^{}
+     onFailure: (void (^)(NSError * error)) ^{}
+     ];
+}
+
+- (void)track: (NSDictionary *)trackingEvent
        userId: (VSDKUserId *) userId {
     [self
      track:trackingEvent
@@ -57,25 +67,38 @@ static VSDKConfig *_config = nil;
      ];
 }
 
-- (void)track: (NSString *)trackingEvent
+- (void)trackJson: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError *error))onFailureBlock {
 
     NSError *jsonParsingError = nil;
-    NSDictionary *json = [VSDKUtil tryParseJsonEventString :trackingEvent :&jsonParsingError];
+    NSDictionary *jsonData = [VSDKUtil tryParseJsonEventString :trackingEvent :&jsonParsingError];
 
     if ( jsonParsingError ) {
         onFailureBlock(jsonParsingError);
     } else {
+        [self
+         track:jsonData
+         userId: userId
+         onSuccess: onSuccessBlock
+         onFailure: onFailureBlock
+         ];
+    }
+}
+
+- (void)track: (NSDictionary *)trackingEvent
+       userId: (VSDKUserId *) userId
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError *error))onFailureBlock {
+
         VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
 
         request.userId = userId;
-        request.data = json;
+        request.data = trackingEvent;
         request.url = VSDKVelocidi.config.trackingUrl.URL;
 
         [request performRequest:onSuccessBlock :onFailureBlock];
-    }
 }
 
 - (void)match: (NSString *)providerId

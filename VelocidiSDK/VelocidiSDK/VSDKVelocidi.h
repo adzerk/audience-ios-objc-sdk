@@ -40,11 +40,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
   Send a request to Velocidi's CDP with a tracking event
-  @param trackingEvent tracking event to be sent.
+  @param trackingEvent the JSON string representing the event
   @param userId the user id to associate with the event.
  */
-- (void)track: (NSString *)trackingEvent
+- (void)trackJson: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId;
+
+/**
+  Send a request to Velocidi's CDP with a tracking event
+  @param trackingEvent a generic dictionary representation of the event
+  @param userId the user id to associate with the event.
+ */
+- (void)track: (NSDictionary *)trackingEvent
+         userId: (VSDKUserId *) userId;
 
 /**
   Send a request to Velocidi's CDP with a tracking event
@@ -53,7 +61,19 @@ NS_ASSUME_NONNULL_BEGIN
   @param onSuccessBlock Block to be called if the request is successful
   @param onFailureBlock Block to be called if the request is unsuccessful
  */
-- (void)track: (NSString *)trackingEvent
+- (void)trackJson: (NSString *)trackingEvent
+       userId: (VSDKUserId *) userId
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError * error))onFailureBlock;
+
+/**
+  Send a request to Velocidi's CDP with a tracking event
+  @param trackingEvent tracking event to be sent.
+  @param userId the user id to associate with the event.
+  @param onSuccessBlock Block to be called if the request is successful
+  @param onFailureBlock Block to be called if the request is unsuccessful
+ */
+- (void)track: (NSDictionary *)trackingEvent
        userId: (VSDKUserId *) userId
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError * error))onFailureBlock;
