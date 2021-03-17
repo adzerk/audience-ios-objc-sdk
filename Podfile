@@ -12,6 +12,7 @@ target "VelocidiSDK" do
   target "VelocidiSDKTests" do
     inherit! :complete
 
+    pod 'SwiftLint'
     pod 'Quick', '~> 2.0', :inhibit_warnings => true # Quick 3 raises the xcode version requirement to v11
     pod 'Nimble', '~> 8.0' # Nimble 9 raises the xcode version requirement to v11
     pod 'Mockingjay'
