@@ -33,14 +33,22 @@ class ViewController: UIViewController {
     @IBAction func sendTrackingEvent(_ sender: UIButton) {
 
         if self.trackingIsAllowed {
-            let trackingEvent = VSDKPageView()
-            trackingEvent.siteId = "foo"
-            trackingEvent.clientId = "bar"
+            var trackingEvent = [String: Any]()
+            trackingEvent["type"] = "appView"
+            trackingEvent["siteId"] = "foo"
+            trackingEvent["clientId"] = "bar"
+
+            var customFields = [String: Any]()
+            customFields["debug"] = "true"
+            customFields["role"] = "superuser"
+
+            trackingEvent["customFields"] = customFields
+            trackingEvent["title"] = "Welcome Screen"
 
             trackingNumber += 1
             let currentTrNumber = trackingNumber
 
-            let userId = VSDKUserId(id: self.idfa, type: "idfa")
+            let userId = VSDKUserId(id: self.idfa, type: "idfab")
             VSDKVelocidi.sharedInstance().track(trackingEvent, userId: userId, onSuccess: { (_: URLResponse, _: Any) in
                 self.mainLabel.text = "Tracking request #\(currentTrNumber) successful!"
             }, onFailure: {(error: Error) in
@@ -56,16 +64,26 @@ class ViewController: UIViewController {
 
     @IBAction func sendCustomTrackingEvent(_ sender: Any) {
         if self.trackingIsAllowed {
-            let trackingEvent = CustomEvent()
-            trackingEvent.siteId = "foo"
-            trackingEvent.clientId = "bar"
-            trackingEvent.customField = "baz"
+            let trackingEvent =
+            """
+            {
+              "clientId": "bar",
+              "siteId": "foo",
+              "type": "custom",
+              "customFields": {
+                "key": "value"
+              },
+              "customType": "custom-type"
+            }
+            """
 
             customTrackingNumber += 1
             let currentCustomTrNumber = customTrackingNumber
 
             let userId = VSDKUserId(id: self.idfa, type: "idfa")
-            VSDKVelocidi.sharedInstance().track(trackingEvent, userId: userId, onSuccess: { (_: URLResponse, _: Any) in
+            VSDKVelocidi
+                .sharedInstance()
+                .trackJson(trackingEvent, userId: userId, onSuccess: { (_: URLResponse, _: Any) in
                 self.mainLabel.text = "Custom Tracking request #\(currentCustomTrNumber) successful!"
             }, onFailure: {(error: Error) in
                 self.mainLabel.text =

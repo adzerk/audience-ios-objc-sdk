@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		27EA183D284173636769DBD4 /* Pods_SwiftExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40FF600E0FAB50101B28B15D /* Pods_SwiftExample.framework */; };
-		30AE20F3229C28C0006F0CD5 /* CustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AE20F2229C28C0006F0CD5 /* CustomEvent.m */; };
 		30B0DE33226E022F00A0919B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0DE32226E022F00A0919B /* AppDelegate.swift */; };
 		30B0DE35226E022F00A0919B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0DE34226E022F00A0919B /* ViewController.swift */; };
 		30B0DE38226E022F00A0919B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30B0DE36226E022F00A0919B /* Main.storyboard */; };
@@ -17,9 +16,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30AE20F0229C28C0006F0CD5 /* SwiftExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftExample-Bridging-Header.h"; sourceTree = "<group>"; };
-		30AE20F1229C28C0006F0CD5 /* CustomEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomEvent.h; sourceTree = "<group>"; };
-		30AE20F2229C28C0006F0CD5 /* CustomEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomEvent.m; sourceTree = "<group>"; };
 		30B0DE2F226E022F00A0919B /* SwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B0DE32226E022F00A0919B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30B0DE34226E022F00A0919B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,9 +77,6 @@
 				30B0DE39226E023100A0919B /* Assets.xcassets */,
 				30B0DE3B226E023100A0919B /* LaunchScreen.storyboard */,
 				30B0DE3E226E023100A0919B /* Info.plist */,
-				30AE20F1229C28C0006F0CD5 /* CustomEvent.h */,
-				30AE20F2229C28C0006F0CD5 /* CustomEvent.m */,
-				30AE20F0229C28C0006F0CD5 /* SwiftExample-Bridging-Header.h */,
 			);
 			path = SwiftExample;
 			sourceTree = "<group>";
@@ -233,7 +226,6 @@
 			files = (
 				30B0DE35226E022F00A0919B /* ViewController.swift in Sources */,
 				30B0DE33226E022F00A0919B /* AppDelegate.swift in Sources */,
-				30AE20F3229C28C0006F0CD5 /* CustomEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +374,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NU9527RS3P;
 				INFOPLIST_FILE = SwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -389,7 +382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.velocidi.SwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftExample/SwiftExample-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -403,6 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NU9527RS3P;
 				INFOPLIST_FILE = SwiftExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,7 +404,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.velocidi.SwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SwiftExample/SwiftExample-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -117,9 +117,26 @@ struct ExampleEvents {
 
     static let productViewJsonFoundationObject = (try? VSDKUtil.tryParseJsonEventString(productViewJsonStr))!
 
+    static let customJsonStr =
+"""
+{
+  "clientId": "velocidi",
+  "siteId": "velocidi.com",
+  "type": "custom",
+  "customFields": {
+    "debug": "true",
+    "role": "superuser"
+  },
+  "customType": "setReminder"
+}
+"""
+
+    static let customJsonFoundationObject = (try? VSDKUtil.tryParseJsonEventString(customJsonStr))!
+
     static let allEvents = [
         (appViewJsonStr, appViewJsonFoundationObject),
         (orderPlaceJsonStr, orderPlaceJsonFoundationObject),
-        (productViewJsonStr, productViewJsonFoundationObject)
+        (productViewJsonStr, productViewJsonFoundationObject),
+        (customJsonStr, customJsonFoundationObject)
     ]
 }

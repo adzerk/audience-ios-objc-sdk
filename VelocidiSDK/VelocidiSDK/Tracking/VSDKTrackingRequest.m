@@ -10,9 +10,10 @@
     
     NSURLComponents * url = [self buildURLWithCommonParamsAndUserIds: userIds];
 
-    return [[AFJSONRequestSerializer serializer] requestWithMethod: @"POST"
+    NSMutableURLRequest* req = [[AFJSONRequestSerializer serializer] requestWithMethod: @"POST"
                                                          URLString: url.string
                                                         parameters: self.data
                                                              error: nil];
+    return req;
 }
 @end
