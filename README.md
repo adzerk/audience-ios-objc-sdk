@@ -145,7 +145,7 @@ There is a big list of [tracking event classes](https://developers.velocidi.com/
 
 Match requests are used to link multiple identifiers in Velocidi's CDP. This way, any action made with any of the identifiers, across multiple channels (Browser, Mobile App, ...), can be associated to the same user.
 
-In VelocidiSDK, a match request will link the user's Advertising Identifier with other provided identifiers (like an internal ID). A typical use case for this is, for instance, during the login action, to associate the user's ID with Apple's Advertising Identifier (identifier used in all the tracking event requests).
+In VelocidiSDK, a match request will link together all the provided user ids:
 
 __Swift__
 ```swift
@@ -177,6 +177,8 @@ __Objective-C__
         NSLog(@"Failed! Error: %@", [error localizedDescription]);
     }];
 ```
+
+If you are using the IDFA to track your user, please beware that since iOS 14 Apple is more strict on the IDFA use cases. Please check Apple [documentation on which conditions](https://developer.apple.com/app-store/user-privacy-and-data-use/) and [how to retrieve the user's IDFA](https://developer.apple.com/documentation/apptrackingtransparency?language=objc).
 
 # Need Help?
 
