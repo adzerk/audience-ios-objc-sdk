@@ -63,11 +63,11 @@
 }
 
 - (void)testEmptyUserIds {
-    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"123" type: @""]);
-    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"" type: @"123"]);
-    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"" type: @""]);
+    XCTAssertThrows([[[VSDKUserId alloc] initWithId: @"123" type: @""] validate]);
+    XCTAssertThrows([[[VSDKUserId alloc] initWithId: @"" type: @"123"] validate]);
+    XCTAssertThrows([[[VSDKUserId alloc] initWithId: @"" type: @""] validate]);
     
-    XCTAssertNoThrow([[VSDKUserId alloc] initWithId: @"123" type: @"123"]);
+    XCTAssertNoThrow([[[VSDKUserId alloc] initWithId: @"123" type: @"123"] validate]);
 }
 
 @end

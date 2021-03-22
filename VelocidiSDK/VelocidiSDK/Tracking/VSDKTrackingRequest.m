@@ -5,6 +5,21 @@
 
 @implementation VSDKTrackingRequest
 
+- (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *) manager
+                                   withUrl: (NSURL *) url
+                                   withEvent: (VSDKTrackingEvent *) event
+                                 andUserId: (VSDKUserId *) userId {
+    [userId validate];
+
+    if (self = [self initWithHTTPSessionManager:manager]) {
+        self.url = url;
+        self.data = event;
+        self.userId = userId;
+    }
+
+    return self;
+}
+
 - (NSMutableURLRequest *) buildRequest {
     NSMutableArray *userIds = [NSMutableArray arrayWithCapacity:1];
     [userIds addObject: self.userId];

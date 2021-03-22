@@ -62,13 +62,21 @@ static VSDKConfig *_config = nil;
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError *error))onFailureBlock {
 
-    VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
 
-    request.userId = userId;
-    request.data = trackingEvent;
-    request.url = VSDKVelocidi.config.trackingUrl.URL;
-
-    [request performRequest:onSuccessBlock :onFailureBlock];
+    @try {
+        VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager
+                                                                                        withUrl: VSDKVelocidi.config.trackingUrl.URL
+                                                                                      withEvent:trackingEvent
+                                                                                      andUserId:userId];
+        [request performRequest:onSuccessBlock :onFailureBlock];
+    } @catch (NSException *exception) {
+        NSError *error = [NSError errorWithDomain: @"com.velocidi.VSDKTrackingRequest"
+                                             code: 1
+                                         userInfo: @{
+                                             NSLocalizedDescriptionKey: NSLocalizedString(exception.name, nil),
+                                             NSLocalizedFailureReasonErrorKey: NSLocalizedString(exception.description, nil)}];
+        onFailureBlock(error);
+    }
 }
 
 - (void)match: (NSString *)providerId
@@ -84,30 +92,22 @@ static VSDKConfig *_config = nil;
       userIds: (NSMutableArray<VSDKUserId *> *)userIds
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError * error))onFailureBlock {
-    
-    if ([providerId length] <= 0){
-        NSException* ex = [NSException
-                exceptionWithName:@"InvalidArgument"
-                reason:@"Provider must not be empty!"
-                userInfo:nil];
-        @throw ex;
+
+    @try {
+        VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager
+                                      withUrl: VSDKVelocidi.config.matchUrl.URL
+                                                                              withUserIds:userIds
+                                                                            andProviderId:providerId];
+        [request performRequest:onSuccessBlock :onFailureBlock];
+    } @catch (NSException *exception) {
+        NSError *error = [NSError errorWithDomain: @"com.velocidi.VSDKMatchRequest"
+                                             code: 1
+                                         userInfo: @{
+                                             NSLocalizedDescriptionKey: NSLocalizedString(exception.name, nil),
+                                             NSLocalizedFailureReasonErrorKey: NSLocalizedString(exception.description, nil)}];
+        onFailureBlock(error);
     }
-    
-    if ([userIds count] < 2){
-        NSException* ex = [NSException
-                exceptionWithName:@"InvalidArgument"
-                reason:@"At least 2 user ids must be provided!"
-                userInfo:nil];
-        @throw ex;
-    }
-    
-    VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
-    
-    request.userIds = userIds;
-    request.providerId = providerId;
-    request.url = VSDKVelocidi.config.matchUrl.URL;
-    
-    [request performRequest:onSuccessBlock :onFailureBlock];
+
 }
 
 @end

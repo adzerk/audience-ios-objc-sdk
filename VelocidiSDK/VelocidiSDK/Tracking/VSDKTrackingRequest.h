@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property VSDKTrackingEvent * data;
 
+- (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager
+                                   withUrl: (NSURL *) url
+                                   withEvent: (VSDKTrackingEvent *) event
+                                 andUserId: (VSDKUserId *) userId;
+
 @end
 
 NS_ASSUME_NONNULL_END

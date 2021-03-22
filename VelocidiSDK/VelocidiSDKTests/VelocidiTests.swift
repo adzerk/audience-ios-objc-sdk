@@ -119,7 +119,7 @@ class NetworkTests: QuickSpec {
             }
 
             context("test match requests") {
-                it("should throw when provider is empty") {
+                it("should fail when provider is empty") {
                     let userId1 = VSDKUserId(
                         id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
                         type: "email_sha256")
@@ -128,22 +128,40 @@ class NetworkTests: QuickSpec {
                         type: "email_sha256")
                     let arrUserIds = NSMutableArray(array: [userId1, userId2])
 
-                    expect(VSDKVelocidi.sharedInstance().match("", userIds: arrUserIds))
-                        .to(raiseException(named: "InvalidArgument",
-                                           reason: "Provider must not be empty!",
-                                           userInfo: nil))
+                    var error: Error?
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    VSDKVelocidi.start(config!)
+                    VSDKVelocidi
+                        .sharedInstance()
+                        .match("", userIds: arrUserIds,
+                               onSuccess: { (_: URLResponse, _: Any) in },
+                               onFailure: {(err: Error) in
+                                error = err
+                        })
+
+                    expect(error).notTo(beNil())
+                    expect(error?.localizedDescription).to(match("InvalidArgument"))
                 }
 
-                it("should throw when there are not enough user ids") {
+                it("should fail when there are not enough user ids") {
                     let userId1 = VSDKUserId(
                         id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
                         type: "email_sha256")
                     let arrUserIds = NSMutableArray(array: [userId1])
 
-                    expect(VSDKVelocidi.sharedInstance().match("baz", userIds: arrUserIds))
-                        .to(raiseException(named: "InvalidArgument",
-                                           reason: "At least 2 user ids must be provided!",
-                                           userInfo: nil))
+                    var error: Error?
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    VSDKVelocidi.start(config!)
+                    VSDKVelocidi
+                        .sharedInstance()
+                        .match("baz", userIds: arrUserIds,
+                               onSuccess: { (_: URLResponse, _: Any) in },
+                               onFailure: {(err: Error) in
+                                error = err
+                        })
+
+                    expect(error).notTo(beNil())
+                    expect(error?.localizedDescription).to(match("InvalidArgument"))
                 }
 
                 it("should successfuly execute match requests") {
