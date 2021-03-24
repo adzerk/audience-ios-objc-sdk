@@ -5,9 +5,6 @@
 
 @implementation VSDKUtil
 
-NSString * const trackingNotAllowedErrordomain = @"com.velocidi.VSDKTrackingNotAllowedError";
-NSString * const trackingNotAllowedDescKey = @"Operation cannot be completed. Tracking is not allowed";
-
 + (NSString *)getVersionedUserAgent {
     NSString *userAgentPrefix = [NSString stringWithFormat:@"%@/%@ %@/%@",
                                  [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleExecutableKey] ?: [[NSBundle mainBundle] infoDictionary][(__bridge NSString *)kCFBundleIdentifierKey],
