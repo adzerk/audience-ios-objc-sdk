@@ -22,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithId: (NSString *)userId
                       type: (NSString *)userIdType NS_DESIGNATED_INITIALIZER;
 
-- (void) validate;
 @end
 
 NS_ASSUME_NONNULL_END

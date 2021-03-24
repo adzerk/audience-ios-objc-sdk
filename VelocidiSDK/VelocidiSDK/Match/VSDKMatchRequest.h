@@ -12,11 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSMutableArray<VSDKUserId *>* userIds;
 @property NSString * providerId;
 
-- (instancetype)initWithHTTPSessionManager:(AFHTTPSessionManager *)manager
-                                   withUrl: (NSURL *) url
-                                   withUserIds: (NSMutableArray<VSDKUserId *> *)userIds
-                                   andProviderId: (NSString *) providerId;
-
 @end
 
 NS_ASSUME_NONNULL_END
