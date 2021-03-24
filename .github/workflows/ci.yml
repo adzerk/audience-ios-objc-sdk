@@ -78,5 +78,4 @@ jobs:
         run: |
           pod repo update
           pod install
-          pod lib lint --verbose
-          pod spec lint --verbose
+          make podlint

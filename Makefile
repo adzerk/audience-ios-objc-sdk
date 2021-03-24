@@ -32,11 +32,13 @@ prerequisites:
 	.scripts/prerequisites.sh
 
 oclint:
-	source ~/.bash_profile
 	set -o pipefail && \
 	xcodebuild -scheme VelocidiSDK -sdk iphoneos -workspace VelocidiSDK.xcworkspace clean && \
 	xcodebuild -scheme VelocidiSDK -sdk iphoneos -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO | xcpretty -r json-compilation-database --output compile_commands.json && \
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode -max-priority-3=15000
 
 swiftlint:
-	Pods/SwiftLint/swiftlint lint --fix && Pods/SwiftLint/swiftlint lint --strict
+	set -o pipefail && Pods/SwiftLint/swiftlint lint --fix && Pods/SwiftLint/swiftlint lint --strict
+
+podlint:
+	set -o pipefail && pod lib lint --verbose
