@@ -1,18 +1,29 @@
 XCARGS := -workspace VelocidiSDK.xcworkspace \
-    -scheme VelocidiSDK \
-    -destination "platform=iOS Simulator,OS=13.7,name=iPhone 11 Pro Max" \
+		-sdk "iphonesimulator14.4" \
+    -destination "platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro Max" \
     GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
 all: clean build test
 
 clean:
-	set -o pipefail && xcodebuild $(XCARGS) clean | xcpretty
+	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK  clean | xcpretty
 
 build:
-	set -o pipefail && xcodebuild $(XCARGS) build | xcpretty
+	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK build | xcpretty
 
 test:
-	set -o pipefail && xcodebuild $(XCARGS) test | xcpretty
+	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK test | xcpretty
+
+examples: install-examples build-objc-example build-swift-example
+
+install-examples:
+	set -o pipefail && pod install --project-directory=Examples/
+
+build-objc-example:
+	set -o pipefail && xcodebuild $(XCARGS) -scheme ObjcExample clean build | xcpretty
+
+build-swift-example:
+	set -o pipefail && xcodebuild $(XCARGS) -scheme SwiftExample clean build | xcpretty
 
 install:
 	pod install
