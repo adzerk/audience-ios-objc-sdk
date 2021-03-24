@@ -62,12 +62,4 @@
     XCTAssert([@"https://match.domain.com/v1/match" isEqualToString: config.matchUrl.string]);
 }
 
-- (void)testEmptyUserIds {
-    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"123" type: @""]);
-    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"" type: @"123"]);
-    XCTAssertThrows([[VSDKUserId alloc] initWithId: @"" type: @""]);
-    
-    XCTAssertNoThrow([[VSDKUserId alloc] initWithId: @"123" type: @"123"]);
-}
-
 @end

@@ -64,6 +64,18 @@ static VSDKConfig *_config = nil;
 
     VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
 
+    if ([userId.type length] <= 0 || [userId.userId length] <= 0) {
+        NSError * error = [NSError errorWithDomain: @"com.velocidi.VSDKTrackingRequest"
+                                              code: 1
+                                          userInfo: @{
+                                              NSLocalizedDescriptionKey : NSLocalizedString(@"InvalidArgument", nil),
+                                              NSLocalizedFailureReasonErrorKey : NSLocalizedString(@"One or more arguments are not valid!", nil),
+                                              @"ArgumentFailures": @[NSLocalizedString(@"User ids must have non-empty ids and types!", nil)]}];
+
+        onFailureBlock(error);
+        return;
+    }
+
     request.userId = userId;
     request.data = trackingEvent;
     request.url = VSDKVelocidi.config.trackingUrl.URL;
@@ -84,30 +96,42 @@ static VSDKConfig *_config = nil;
       userIds: (NSMutableArray<VSDKUserId *> *)userIds
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError * error))onFailureBlock {
-    
+
+    NSMutableArray * reasons = [NSMutableArray arrayWithCapacity: 1];
     if ([providerId length] <= 0){
-        NSException* ex = [NSException
-                exceptionWithName:@"InvalidArgument"
-                reason:@"Provider must not be empty!"
-                userInfo:nil];
-        @throw ex;
+        [reasons addObject:NSLocalizedString(@"Provider id must not be empty!", nil)];
     }
     
-    if ([userIds count] < 2){
-        NSException* ex = [NSException
-                exceptionWithName:@"InvalidArgument"
-                reason:@"At least 2 user ids must be provided!"
-                userInfo:nil];
-        @throw ex;
+    if ([userIds count] < 2) {
+        [reasons addObject:NSLocalizedString(@"At least 2 user ids must be provided!", nil)];
     }
-    
-    VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
-    
-    request.userIds = userIds;
-    request.providerId = providerId;
-    request.url = VSDKVelocidi.config.matchUrl.URL;
-    
-    [request performRequest:onSuccessBlock :onFailureBlock];
+
+    for (VSDKUserId* userId in userIds) {
+        if ([userId.type length] <= 0 || [userId.userId length] <= 0) {
+            [reasons addObject: NSLocalizedString(@"User ids must have non-empty ids and types!", nil)];
+            break;
+        }
+    }
+
+    if ([reasons count] > 0) {
+        NSError * error = [NSError errorWithDomain: @"com.velocidi.VSDKMatchRequest"
+                                              code: 1
+                                          userInfo: @{
+                                              NSLocalizedDescriptionKey : NSLocalizedString(@"InvalidArgument", nil),
+                                              NSLocalizedFailureReasonErrorKey : NSLocalizedString(@"One or more arguments are not valid!", nil),
+                                              @"ArgumentFailures": reasons}];
+
+        onFailureBlock(error);
+        return;
+    } else {
+        VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
+
+        request.userIds = userIds;
+        request.providerId = providerId;
+        request.url = VSDKVelocidi.config.matchUrl.URL;
+
+        [request performRequest:onSuccessBlock :onFailureBlock];
+    }
 }
 
 @end
