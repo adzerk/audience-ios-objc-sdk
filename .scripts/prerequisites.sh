@@ -25,3 +25,5 @@ if ! which oclint >/dev/null; then
   echo "oclint does not seem to be installed. You may need to run 'brew tap oclint/formulae && brew install oclint'."
   exit 1
 fi
+
+echo "All required dependencies are installed!"
