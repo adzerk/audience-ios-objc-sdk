@@ -3,7 +3,7 @@ XCARGS := -workspace VelocidiSDK.xcworkspace \
     -destination "platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro Max" \
     GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
-all: clean build test
+all: clean build
 
 clean:
 	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK  clean | xcpretty

@@ -47,10 +47,6 @@ jobs:
     name: "Build example applications"
     needs: test
     runs-on: "macos-latest"
-    env:
-      WORKSPACE: "VelocidiSDK.xcworkspace"
-      TEST_SDK: "14.4"
-      TEST_DEVICE: "iPhone 11 Pro Max"
     steps:
       - uses: actions/checkout@v1
       - uses: maxim-lobanov/setup-xcode@v1
@@ -59,19 +55,13 @@ jobs:
       - name: "Install Dependencies"
         run: pod install
       - name: "Compile Velocidi SDK"
-        env:
-          SCHEME: "VelocidiSDK"
-        run: ./.github/workflows/xcodebuild.sh clean build
+        run: make
       - name: "Update Velocidi SDK Pod for example applications"
-        run: pod install --project-directory=Examples/
+        run: make install-examples
       - name: "Build example Objective-C application"
-        env:
-          SCHEME: "ObjcExample"
-        run: ./.github/workflows/xcodebuild.sh clean build
+        run: make build-objc-example
       - name: "Build example Swift application"
-        env:
-          SCHEME: "SwiftExample"
-        run: ./.github/workflows/xcodebuild.sh clean build
+        run: make build-swift-example
       - name: "Verify code linting generated no changes"
         run: git diff --exit-code
 
