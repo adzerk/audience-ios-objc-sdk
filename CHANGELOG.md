@@ -10,6 +10,9 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 ### Added
 
 ### Changed
+- Change iOS Deployment target version to 10.0 ([#45](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/45)).
+- Prevent warnings thrown from Pods ([#45](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/45)).
+- Require all user ids explicitly in the API ([#44](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/44)).
 
 ### Deprecated
 

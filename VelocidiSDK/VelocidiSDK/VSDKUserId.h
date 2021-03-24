@@ -3,7 +3,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
-  User identifier used to match the user to an external identifier.
+  A User identifier, composed by an id and a type.
   More info: https://docs.velocidi.com/collection/user-identifiers/
  */
 @interface VSDKUserId : NSObject
@@ -18,8 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property NSString * userId;
 
-- (instancetype)initUserId: (NSString *)userId
-                          : (NSString *)type;
+- (instancetype)init NS_UNAVAILABLE;
+- (instancetype)initWithId: (NSString *)userId
+                      type: (NSString *)userIdType NS_DESIGNATED_INITIALIZER;
 
 @end
 

@@ -82,8 +82,8 @@
 		B1432B96384334E26B758963 /* VSDKCustomization.h in Headers */ = {isa = PBXBuildFile; fileRef = B14328D0589594344160CA2B /* VSDKCustomization.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1432DB1072F282A77DE0A43 /* VSDKCustomization.m in Sources */ = {isa = PBXBuildFile; fileRef = B1432638FA1DE1C69342CB97 /* VSDKCustomization.m */; };
 		B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B14322053369E2F8B07BD704 /* VelocidiSDK.framework */; };
+		B4C4BCD9D7BDBF2CA5CA3D7B /* Pods_VelocidiSDK_VelocidiSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA36A471CE8281D71058A618 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */; };
 		DCE7262915C324595AEDB1E1 /* Pods_VelocidiSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */; };
-		F3D90ABFE9AB8C599525C1FC /* Pods_VelocidiSDK_VelocidiSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 743E4499A5E999AC13B3E5A2 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -122,6 +122,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06C09A6E7001A447828404D5 /* Pods-VelocidiSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDKTests/Pods-VelocidiSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		0E2C4799C0C925EDCE50E8A1 /* Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1243B65D24C72E6F007298CF /* VSDKAppView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKAppView.h; sourceTree = "<group>"; };
 		1243B65E24C72E6F007298CF /* VSDKAppView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKAppView.m; sourceTree = "<group>"; };
@@ -180,7 +181,7 @@
 		30FA30712267731800BF442A /* RequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsTests.swift; sourceTree = "<group>"; };
 		30FC624C225D160E004F3A61 /* libAFNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libAFNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		30FC624E225D160E004F3A61 /* libJSONModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJSONModel.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		743E4499A5E999AC13B3E5A2 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK_VelocidiSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		404BF169A581B24C98185F43 /* Pods-VelocidiSDKTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDKTests.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDKTests/Pods-VelocidiSDKTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8760DEC6DFA8A5D3AB955203 /* Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig"; sourceTree = "<group>"; };
 		9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B22C052535B00100EA675E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -195,6 +196,7 @@
 		B14328D0589594344160CA2B /* VSDKCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSDKCustomization.h; sourceTree = "<group>"; };
 		B1432D25BEDD0A937B6E5215 /* VSDKConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSDKConfig.m; sourceTree = "<group>"; };
 		B1432DC5BB2B2B22F95EF53B /* VelocidiSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelocidiSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA36A471CE8281D71058A618 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VelocidiSDK_VelocidiSDKTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB29D361245AB553014CD66 /* Pods-VelocidiSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VelocidiSDK.debug.xcconfig"; path = "Target Support Files/Pods-VelocidiSDK/Pods-VelocidiSDK.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1432EE9A95A6808C0F4ECA2 /* VelocidiSDK.framework in Frameworks */,
-				F3D90ABFE9AB8C599525C1FC /* Pods_VelocidiSDK_VelocidiSDKTests.framework in Frameworks */,
+				B4C4BCD9D7BDBF2CA5CA3D7B /* Pods_VelocidiSDK_VelocidiSDKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +349,8 @@
 				305580607D1CC583F1DCC4B3 /* Pods-VelocidiSDK.release.xcconfig */,
 				0E2C4799C0C925EDCE50E8A1 /* Pods-VelocidiSDK-VelocidiSDKTests.debug.xcconfig */,
 				8760DEC6DFA8A5D3AB955203 /* Pods-VelocidiSDK-VelocidiSDKTests.release.xcconfig */,
+				404BF169A581B24C98185F43 /* Pods-VelocidiSDKTests.debug.xcconfig */,
+				06C09A6E7001A447828404D5 /* Pods-VelocidiSDKTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = ../Pods;
@@ -359,7 +363,7 @@
 				30FC624C225D160E004F3A61 /* libAFNetworking.a */,
 				30FC624E225D160E004F3A61 /* libJSONModel.a */,
 				9C2E910D22B0038EE2561939 /* Pods_VelocidiSDK.framework */,
-				743E4499A5E999AC13B3E5A2 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */,
+				CA36A471CE8281D71058A618 /* Pods_VelocidiSDK_VelocidiSDKTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -433,6 +437,7 @@
 				B1432D1A6E4A3AC683544056 /* Frameworks */,
 				B1432D2375A47DCBB54B7EE6 /* Resources */,
 				78D6C2DDFFEDAF50A771284C /* [CP] Embed Pods Frameworks */,
+				A16A45AD25FD577800B6A451 /* ShellScript */,
 			);
 			buildRules = (
 				3060595D2264DA2E00306E32 /* PBXBuildRule */,
@@ -549,6 +554,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VelocidiSDK-VelocidiSDKTests/Pods-VelocidiSDK-VelocidiSDKTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		A16A45AD25FD577800B6A451 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\" --strict\n";
 		};
 		B61CE0967F3E6E8420CE0F5E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -722,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -807,7 +829,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

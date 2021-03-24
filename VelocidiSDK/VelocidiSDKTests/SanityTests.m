@@ -1,5 +1,7 @@
 #import <XCTest/XCTest.h>
 @import VelocidiSDK;
+#import "VSDKUserId.h"
+
 
 @interface SanityTests : XCTestCase
 @end

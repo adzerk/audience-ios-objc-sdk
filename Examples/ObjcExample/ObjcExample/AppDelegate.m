@@ -12,10 +12,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    if (@available(iOS 14, *)) {
-        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) { }];
-    }
-    
     VSDKConfig * config = [[VSDKConfig alloc] initWithTrackingBaseUrl:@"http://localhost:8080": @"http://localhost:8080"];
     [VSDKVelocidi start: config];
     return YES;

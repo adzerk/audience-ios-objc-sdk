@@ -84,16 +84,6 @@ __Objective-C__
 }
 ```
 
-__iOS 14 IDFA access__
-
-In iOS 14 Apple introduces changes to the way the Advertising Identifier (IDFA) can be accessed. In particular, developers are forced to ask the user permission to access the IDFA:
-- https://developer.apple.com/app-store/user-privacy-and-data-use/
-- https://developer.apple.com/documentation/apptrackingtransparency?language=objc
-
-The [Examples](https://github.com/velocidi/velocidi-ios-objc-sdk/tree/master/Examples) folder contains two example applications ready for iOS 14, which ask for user permission before using the IDFA to execute any requests.
-
-The Velocidi iOS SDK itself will **not** execute any request if the user did not allow tracking to proceed.
-
 # Send a track event
 
 A tracking event will log a user action in Velocidi's CDP.
@@ -110,7 +100,8 @@ let trackingEvent = VSDKPageView()
 trackingEvent.siteId = "RandomSiteId"
 trackingEvent.clientId = "RandomClientId"
 
-VSDKVelocidi.sharedInstance().track(trackingEvent)
+let userId = VSDKUserId(id: "user-idfa", type: "idfa")
+VSDKVelocidi.sharedInstance().track(trackingEvent, userId: userId)
 ```
 
 __Objective-C__
@@ -123,7 +114,8 @@ VSDKTrackingEvent * trackingEvent =  [[VSDKPageView alloc] init];
 trackingEvent.clientId = @"RandomSiteId";
 trackingEvent.siteId = @"RandomClientId";
 
-[VSDKVelocidi.sharedInstance track: trackingEvent] 
+VSDKUserId * userId = [[VSDKUserId alloc] initWithId:@"user-idfa" type: @"idfa"];
+[VSDKVelocidi.sharedInstance track: trackingEvent userId: userId] 
 ```
 
 
@@ -131,7 +123,7 @@ You can also pass callback blocks that will be called when the request either su
 
 __Swift__
 ```swift
-VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLResponse, responseObject: Any) in
+VSDKVelocidi.sharedInstance().track(trackingEvent, userId: userId, onSuccess:{ (response: URLResponse, responseObject: Any) in
   print("Success! Response: \(response)")
 }, onFailure:{(error: Error) in
   print("Failed! Error: \(error.localizedDescription)")
@@ -140,7 +132,7 @@ VSDKVelocidi.sharedInstance().track(trackingEvent, onSuccess:{ (response: URLRes
 
 __Objective-C__
 ```objectivec
-[VSDKVelocidi.sharedInstance track: trackingEvent onSuccess: ^(NSURLResponse * response, id responseObject){
+[VSDKVelocidi.sharedInstance track: trackingEvent userId: userId onSuccess: ^(NSURLResponse * response, id responseObject){
     NSLog(@"Success! Response: %@", trackingNumber);
 } onFailure: ^(NSError * error){
     NSLog(@"Failed! Error: %@", [error localizedDescription]);
@@ -153,7 +145,7 @@ There is a big list of [tracking event classes](https://developers.velocidi.com/
 
 Match requests are used to link multiple identifiers in Velocidi's CDP. This way, any action made with any of the identifiers, across multiple channels (Browser, Mobile App, ...), can be associated to the same user.
 
-In VelocidiSDK, a match request will link the user's Advertising Identifier with other provided identifiers (like an internal ID). A typical use case for this is, for instance, during the login action, to associate the user's ID with Apple's Advertising Identifier (identifier used in all the tracking event requests).
+In VelocidiSDK, a match request will link together all the provided user ids:
 
 __Swift__
 ```swift
@@ -185,6 +177,8 @@ __Objective-C__
         NSLog(@"Failed! Error: %@", [error localizedDescription]);
     }];
 ```
+
+If you are using the IDFA to track your user, please beware that since iOS 14 Apple is more strict on the IDFA use cases. Please check Apple [documentation on which conditions](https://developer.apple.com/app-store/user-privacy-and-data-use/) and [how to retrieve the user's IDFA](https://developer.apple.com/documentation/apptrackingtransparency?language=objc).
 
 # Need Help?
 

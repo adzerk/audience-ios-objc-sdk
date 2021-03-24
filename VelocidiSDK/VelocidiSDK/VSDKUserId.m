@@ -2,10 +2,14 @@
 
 @implementation VSDKUserId
 
-- (instancetype)initUserId: (NSString *)userId
-                          : (NSString *)type  {
-    if(self = [super init]){
-        self.type = type;
+- (instancetype)init {
+    @throw nil;
+}
+
+- (instancetype)initWithId: (NSString *)userId
+                      type: (NSString *)userIdType {
+    if (self = [super init]) {
+        self.type = userIdType;
         self.userId = userId;
     }
     return self;

@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "VSDKUserId.h"
 
 @class AFHTTPSessionManager;
 @class VSDKUtil;
@@ -14,8 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSURL *url;
 
 - (NSString *) getVersionedUserAgent;
-
-- (nullable NSString *) tryGetIDFA :(NSError **)errorPtr;
 
 /**
   Initialize an instance of VSDKRequest with a custom AFHTTPSessionManager.
@@ -34,20 +33,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
   Build the parameters portion of the request URL.
-  The built string contains the `cookies` parameter set to false, and the `id_idfa` parameter with the
-  advertisingIdentifier of the user.
-  @param advertisingIdentifier advertisingIdentifier of the user
+  The built string contains the `cookies` parameter set to false and the list of UserIds.
   @returns URL parameters string
  */
-- (NSURLComponents *)buildURLWithQueryParameters:(NSString *) advertisingIdentifier;
+- (NSURLComponents *)buildURLWithCommonParamsAndUserIds: (NSMutableArray<VSDKUserId *> *) userIds;
 
 /**
   Build a NSMutableURLRequest that can be executed.
   Has to be implemented by classes inheriting this class.
-  @param advertisingIdentifier advertisingIdentifier of the user
   @returns request to be executed
  */
-- (NSMutableURLRequest *)buildRequest: (NSString *)advertisingIdentifier;
+- (NSMutableURLRequest *)buildRequest;
 
 @end
 

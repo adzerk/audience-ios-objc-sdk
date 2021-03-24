@@ -36,6 +36,8 @@ jobs:
           TEST_SDK: "${{ matrix.sdk }}"
           TEST_DEVICE: "${{ matrix.device }}"
         run: ./.github/workflows/xcodebuild.sh clean build test
+      - name: "Verify code linting generated no changes"
+        run: git diff --exit-code
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
         with:
@@ -70,6 +72,8 @@ jobs:
         env:
           SCHEME: "SwiftExample"
         run: ./.github/workflows/xcodebuild.sh clean build
+      - name: "Verify code linting generated no changes"
+        run: git diff --exit-code
 
   pods-lint:
     name: "Cocoapods Lint"
