@@ -4,23 +4,8 @@
 
 @implementation VSDKMatchRequest
 
-- (NSURLComponents *) buildMatchURLParameters:(NSString *)advertisingIdentifier{
-
-    NSURLComponents * url = [self buildURLWithQueryParameters:advertisingIdentifier];
-    NSMutableArray<NSURLQueryItem *> * queryItems = [[NSMutableArray alloc] initWithArray: url.queryItems];
-    
-    for(VSDKUserId* userId in self.userIds) {
-        [queryItems addObject: [[NSURLQueryItem alloc] initWithName: [[NSString alloc] initWithFormat:@"id_%@", userId.type]
-                                                              value: userId.userId]];
-    }
-    [queryItems addObject: [[NSURLQueryItem alloc] initWithName: @"providerId" value: self.providerId]];
-    
-    url.queryItems = queryItems;
-    return url;
-}
-
-- (NSMutableURLRequest *) buildRequest: (NSString *) advertisingIdentifier{
-    NSURLComponents * url = [self buildMatchURLParameters: advertisingIdentifier];
+- (NSMutableURLRequest *) buildRequest {
+    NSURLComponents * url = [self buildURLWithCommonParamsAndUserIds: self.userIds];
 
     return [[AFHTTPRequestSerializer serializer] requestWithMethod: @"GET"
                                                          URLString: url.string
