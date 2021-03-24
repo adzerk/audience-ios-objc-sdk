@@ -17,6 +17,9 @@ test:
 install:
 	pod install
 
+prerequisites:
+	.scripts/prerequisites.sh
+
 oclint:
 	source ~/.bash_profile
 	set -o pipefail && \
@@ -25,4 +28,4 @@ oclint:
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode -max-priority-3=15000
 
 swiftlint:
-	.scripts/swiftlint.sh
+	Pods/SwiftLint/swiftlint lint --fix && Pods/SwiftLint/swiftlint lint --strict
