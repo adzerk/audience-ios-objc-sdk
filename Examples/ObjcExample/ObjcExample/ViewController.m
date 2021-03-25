@@ -47,7 +47,7 @@ static int matchNumber = 0;
         int currentTrNumber = ++trackingNumber;
 
         VSDKUserId * userId = [[VSDKUserId alloc] initWithId:self.idfa type: @"idfa"];
-        [VSDKVelocidi.sharedInstance track: trackingEvent userId: userId onSuccess: ^(NSURLResponse * response, id responseObject) {
+        [VSDKVelocidi.sharedInstance track: trackingEvent user: userId onSuccess: ^(NSURLResponse * response, id responseObject) {
             self.mainLabel.text = [NSString stringWithFormat: @"Tracking request #%i successful!", currentTrNumber];
         } onFailure: ^(NSError * error){
             self.mainLabel.text = [NSString stringWithFormat: @"Error with tracking request #%i.\n Error: %@", currentTrNumber, [error localizedDescription]];
@@ -76,7 +76,7 @@ static int customTrackingNumber = 0;
         int currentCustomTrNumber = ++customTrackingNumber;
 
         VSDKUserId * userId = [[VSDKUserId alloc] initWithId:self.idfa type: @"idfa"];
-        [VSDKVelocidi.sharedInstance trackJson: trackingEvent userId: userId onSuccess: ^(NSURLResponse * response, id responseObject) {
+        [VSDKVelocidi.sharedInstance track: trackingEvent userId: userId onSuccess: ^(NSURLResponse * response, id responseObject) {
             self.mainLabel.text = [NSString stringWithFormat: @"Custom tracking request #%i successful!", currentCustomTrNumber];
         } onFailure: ^(NSError * error){
             self.mainLabel.text = [NSString stringWithFormat: @"Error with custom tracking request #%i.\n Error: %@", currentCustomTrNumber, [error localizedDescription]];

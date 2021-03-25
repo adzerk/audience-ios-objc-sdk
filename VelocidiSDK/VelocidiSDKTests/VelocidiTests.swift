@@ -78,7 +78,7 @@ class NetworkTests: QuickSpec {
                     VSDKVelocidi.start(config!)
 
                     var error: Error?
-                    VSDKVelocidi.sharedInstance().trackJson(
+                    VSDKVelocidi.sharedInstance().track(
                         ExampleEvents.appViewJsonStr,
                         userId: userId,
                         onSuccess: { (_: URLResponse, _: Any) in },
@@ -91,7 +91,7 @@ class NetworkTests: QuickSpec {
                     error = nil
                     VSDKVelocidi.sharedInstance().track(
                         ExampleEvents.appViewJsonFoundationObject,
-                        userId: userId,
+                        user: userId,
                         onSuccess: { (_: URLResponse, _: Any) in },
                         onFailure: {(err: Error) in
                             error = err
@@ -117,12 +117,12 @@ class NetworkTests: QuickSpec {
                         let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
 
                         VSDKVelocidi.start(config!)
-                            VSDKVelocidi.sharedInstance().trackJson(event.0, userId: exampleUser1)
+                            VSDKVelocidi.sharedInstance().track(event.0, userId: exampleUser1)
                         expect(responded).toEventually(beTrue(), timeout: 4)
 
                         responded = false
                         VSDKVelocidi.start(config!)
-                            VSDKVelocidi.sharedInstance().track(event.1, userId: exampleUser1)
+                            VSDKVelocidi.sharedInstance().track(event.1, user: exampleUser1)
                         expect(responded).toEventually(beTrue(), timeout: 4)
                     }
                 }
@@ -143,7 +143,7 @@ class NetworkTests: QuickSpec {
                         var success = false
                         var error: Error?
                         VSDKVelocidi.sharedInstance()
-                            .trackJson(
+                            .track(
                                 event.0,
                                 userId: exampleUser1,
                                 onSuccess: { (_: URLResponse, _: Any) in
@@ -160,7 +160,7 @@ class NetworkTests: QuickSpec {
                         VSDKVelocidi.sharedInstance()
                             .track(
                                 event.1,
-                                userId: exampleUser1,
+                                user: exampleUser1,
                                 onSuccess: { (_: URLResponse, _: Any) in
                             success = true
                         }, onFailure: {(err: Error) in

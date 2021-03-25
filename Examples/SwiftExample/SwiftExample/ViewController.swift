@@ -49,7 +49,7 @@ class ViewController: UIViewController {
             let currentTrNumber = trackingNumber
 
             let userId = VSDKUserId(id: self.idfa, type: "idfab")
-            VSDKVelocidi.sharedInstance().track(trackingEvent, userId: userId, onSuccess: { (_: URLResponse, _: Any) in
+            VSDKVelocidi.sharedInstance().track(trackingEvent, user: userId, onSuccess: { (_: URLResponse, _: Any) in
                 self.mainLabel.text = "Tracking request #\(currentTrNumber) successful!"
             }, onFailure: {(error: Error) in
                 self.mainLabel.text =
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
             let userId = VSDKUserId(id: self.idfa, type: "idfa")
             VSDKVelocidi
                 .sharedInstance()
-                .trackJson(trackingEvent, userId: userId, onSuccess: { (_: URLResponse, _: Any) in
+                .track(trackingEvent, userId: userId, onSuccess: { (_: URLResponse, _: Any) in
                 self.mainLabel.text = "Custom Tracking request #\(currentCustomTrNumber) successful!"
             }, onFailure: {(error: Error) in
                 self.mainLabel.text =

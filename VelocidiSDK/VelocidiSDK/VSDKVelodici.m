@@ -47,17 +47,7 @@ static VSDKConfig *_config = nil;
     return self;
 }
 
-- (void)trackJson: (NSString *)trackingEvent
-       userId: (VSDKUserId *) userId {
-    [self
-     trackJson:trackingEvent
-     userId: userId
-     onSuccess: (void (^)(NSURLResponse *, id)) ^{}
-     onFailure: (void (^)(NSError * error)) ^{}
-     ];
-}
-
-- (void)track: (NSDictionary *)trackingEvent
+- (void)track: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId {
     [self
      track:trackingEvent
@@ -67,7 +57,17 @@ static VSDKConfig *_config = nil;
      ];
 }
 
-- (void)trackJson: (NSString *)trackingEvent
+- (void)track: (NSDictionary *)trackingEvent
+         user: (VSDKUserId *) userId {
+    [self
+     track:trackingEvent
+     user: userId
+     onSuccess: (void (^)(NSURLResponse *, id)) ^{}
+     onFailure: (void (^)(NSError * error)) ^{}
+     ];
+}
+
+- (void)track: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError *error))onFailureBlock {
@@ -80,7 +80,7 @@ static VSDKConfig *_config = nil;
     } else {
         [self
          track:jsonData
-         userId: userId
+         user: userId
          onSuccess: onSuccessBlock
          onFailure: onFailureBlock
          ];
@@ -88,7 +88,7 @@ static VSDKConfig *_config = nil;
 }
 
 - (void)track: (NSDictionary *)trackingEvent
-       userId: (VSDKUserId *) userId
+         user: (VSDKUserId *) userId
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError *error))onFailureBlock {
 
