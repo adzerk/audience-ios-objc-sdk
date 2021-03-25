@@ -1,5 +1,4 @@
 #import "ViewController.h"
-#import "CustomEvent.h"
 #import <AdSupport/ASIdentifierManager.h>
 @import VelocidiSDK;
 @import AppTrackingTransparency;
@@ -33,9 +32,17 @@ static int matchNumber = 0;
 
 - (IBAction)sendTrackingEvent:(id)sender {
     if (self.trackingIsAllowed) {
-        VSDKTrackingEvent * trackingEvent =  [[VSDKPageView alloc] init];
-        trackingEvent.clientId = @"foo";
-        trackingEvent.siteId = @"bar";
+        NSMutableDictionary *trackingEvent =  [NSMutableDictionary dictionaryWithCapacity:1];
+        trackingEvent[@"type"] = @"appView";
+        trackingEvent[@"siteId"] = @"foo";
+        trackingEvent[@"clientId"] = @"bar";
+
+        NSMutableDictionary *customFields =  [NSMutableDictionary dictionaryWithCapacity:1];
+        customFields[@"debug"] = @"true";
+        customFields[@"role"] = @"superuser";
+
+        trackingEvent[@"customFields"] = customFields;
+        trackingEvent[@"title"] = @"Welcome Screen";
 
         int currentTrNumber = ++trackingNumber;
 
@@ -54,15 +61,22 @@ static int customTrackingNumber = 0;
 
 - (IBAction)sendCustomTrackingEvent:(id)sender {
     if (self.trackingIsAllowed) {
-        CustomEvent * trackingEvent =  [[CustomEvent alloc] init];
-        trackingEvent.clientId = @"foo";
-        trackingEvent.siteId = @"bar";
-        trackingEvent.customField = @"baz";
+        NSString * trackingEvent =  @"\
+        {\
+          \"clientId\": \"bar\",\
+          \"siteId\": \"foo\",\
+          \"type\": \"custom\",\
+          \"customFields\": {\
+            \"key\": \"value\"\
+          },\
+          \"customType\": \"custom-type\"\
+        }\
+        ";
 
         int currentCustomTrNumber = ++customTrackingNumber;
 
         VSDKUserId * userId = [[VSDKUserId alloc] initWithId:self.idfa type: @"idfa"];
-        [VSDKVelocidi.sharedInstance track: trackingEvent userId: userId onSuccess: ^(NSURLResponse * response, id responseObject) {
+        [VSDKVelocidi.sharedInstance trackJson: trackingEvent userId: userId onSuccess: ^(NSURLResponse * response, id responseObject) {
             self.mainLabel.text = [NSString stringWithFormat: @"Custom tracking request #%i successful!", currentCustomTrNumber];
         } onFailure: ^(NSError * error){
             self.mainLabel.text = [NSString stringWithFormat: @"Error with custom tracking request #%i.\n Error: %@", currentCustomTrNumber, [error localizedDescription]];
