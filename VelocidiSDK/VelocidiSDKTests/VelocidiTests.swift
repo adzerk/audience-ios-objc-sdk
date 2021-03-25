@@ -30,7 +30,9 @@ extension Data {
 class NetworkTests: QuickSpec {
     override func spec() { // swiftlint:disable:this function_body_length
         super.spec()
+
         describe("VelocidiSDK") {
+
             let trackURL = "http://tr.testdomain.com"
             let matchURL = "http://match.testdomain.com"
             let exampleUser1 = VSDKUserId(
@@ -40,7 +42,7 @@ class NetworkTests: QuickSpec {
                 id: "2c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
                 type: "email_sha256")
 
-            context("test track request") {
+            context("test tracking requests") {
                 func httpResponseBuilder(
                     url: String,
                     expectedData: [String: AnyHashable]) -> (URLRequest) -> (Response) {
@@ -66,6 +68,36 @@ class NetworkTests: QuickSpec {
                         }
                         return .failure(NSError(domain: trackURL, code: 400))
                     }
+                }
+
+                it("should fail when the userId is not valid") {
+                    let userId = VSDKUserId(
+                        id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
+                        type: "")
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    VSDKVelocidi.start(config!)
+
+                    var error: Error?
+                    VSDKVelocidi.sharedInstance().trackJson(
+                        ExampleEvents.appViewJsonStr,
+                        userId: userId,
+                        onSuccess: { (_: URLResponse, _: Any) in },
+                        onFailure: {(err: Error) in
+                            error = err
+                        })
+                    expect(error).notTo(beNil())
+                    expect(error?.localizedDescription).to(match("InvalidArgument"))
+
+                    error = nil
+                    VSDKVelocidi.sharedInstance().track(
+                        ExampleEvents.appViewJsonFoundationObject,
+                        userId: userId,
+                        onSuccess: { (_: URLResponse, _: Any) in },
+                        onFailure: {(err: Error) in
+                            error = err
+                        })
+                    expect(error).notTo(beNil())
+                    expect(error?.localizedDescription).to(match("InvalidArgument"))
                 }
 
                 it("should successfuly execute tracking requests") {
@@ -142,6 +174,7 @@ class NetworkTests: QuickSpec {
             }
 
             context("test match requests") {
+
                 func httpResponseBuilder(url: String, expectedParams: [String: String]) -> (URLRequest) -> (Response) {
                     return { (request: URLRequest) in
                         let requestUrl = request.url!.absoluteString
@@ -166,22 +199,49 @@ class NetworkTests: QuickSpec {
                     }
                 }
 
-                it("should throw when provider is empty") {
-                    let arrUserIds = NSMutableArray(array: [exampleUser1, exampleUser2])
+                it("should fail when provider is empty") {
+                    let userId1 = VSDKUserId(
+                        id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
+                        type: "email_sha256")
+                    let userId2 = VSDKUserId(
+                        id: "2c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
+                        type: "email_sha256")
+                    let arrUserIds = NSMutableArray(array: [userId1, userId2])
 
-                    expect(VSDKVelocidi.sharedInstance().match("", userIds: arrUserIds))
-                        .to(raiseException(named: "InvalidArgument",
-                                           reason: "Provider must not be empty!",
-                                           userInfo: nil))
+                    var error: Error?
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    VSDKVelocidi.start(config!)
+                    VSDKVelocidi
+                        .sharedInstance()
+                        .match("", userIds: arrUserIds,
+                               onSuccess: { (_: URLResponse, _: Any) in },
+                               onFailure: {(err: Error) in
+                                error = err
+                        })
+
+                    expect(error).notTo(beNil())
+                    expect(error?.localizedDescription).to(match("InvalidArgument"))
                 }
 
-                it("should throw when there are not enough user ids") {
-                    let arrUserIds = NSMutableArray(array: [exampleUser1])
+                it("should fail when there are not enough user ids") {
+                    let userId1 = VSDKUserId(
+                        id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
+                        type: "email_sha256")
+                    let arrUserIds = NSMutableArray(array: [userId1])
 
-                    expect(VSDKVelocidi.sharedInstance().match("baz", userIds: arrUserIds))
-                        .to(raiseException(named: "InvalidArgument",
-                                           reason: "At least 2 user ids must be provided!",
-                                           userInfo: nil))
+                    var error: Error?
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    VSDKVelocidi.start(config!)
+                    VSDKVelocidi
+                        .sharedInstance()
+                        .match("baz", userIds: arrUserIds,
+                               onSuccess: { (_: URLResponse, _: Any) in },
+                               onFailure: {(err: Error) in
+                                error = err
+                        })
+
+                    expect(error).notTo(beNil())
+                    expect(error?.localizedDescription).to(match("InvalidArgument"))
                 }
 
                 it("should successfuly execute match requests") {
