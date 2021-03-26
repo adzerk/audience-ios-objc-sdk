@@ -1,12 +1,12 @@
 XCARGS := -workspace VelocidiSDK.xcworkspace \
-		-sdk "iphonesimulator" \
-    -destination "platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro Max" \
-    GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+					-sdk "iphonesimulator" \
+					-destination "platform=iOS Simulator,OS=14.4,name=iPhone 11 Pro Max" \
+					GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
 all: clean build
 
 clean:
-	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK  clean | xcpretty
+	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK clean | xcpretty
 
 build:
 	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK build | xcpretty
@@ -33,8 +33,7 @@ prerequisites:
 
 oclint:
 	set -o pipefail && \
-	xcodebuild -scheme VelocidiSDK -sdk iphoneos -workspace VelocidiSDK.xcworkspace clean && \
-	xcodebuild -scheme VelocidiSDK -sdk iphoneos -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO | xcpretty -r json-compilation-database --output compile_commands.json && \
+	xcodebuild -scheme VelocidiSDK -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode -max-priority-3=15000
 
 swiftlint:
