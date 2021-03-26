@@ -38,7 +38,7 @@ oclint:
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode -max-priority-3=15000
 
 swiftlint:
-	set -o pipefail && Pods/SwiftLint/swiftlint lint --fix && Pods/SwiftLint/swiftlint lint --strict
+	Pods/SwiftLint/swiftlint lint --fix && Pods/SwiftLint/swiftlint lint --strict
 
 podlint:
 	set -o pipefail && pod lib lint --verbose
