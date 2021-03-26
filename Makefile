@@ -41,4 +41,4 @@ swiftlint:
 	Pods/SwiftLint/swiftlint lint --fix && Pods/SwiftLint/swiftlint lint --strict
 
 podlint:
-	set -o pipefail && pod lib lint --verbose
+	pod lib lint --verbose
