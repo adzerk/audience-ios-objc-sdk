@@ -17,7 +17,7 @@ test:
 examples: install-examples build-objc-example build-swift-example
 
 install-examples:
-	set -o pipefail && pod install --project-directory=Examples/
+	pod install --project-directory=Examples/
 
 build-objc-example:
 	set -o pipefail && xcodebuild $(XCARGS) -scheme ObjcExample clean build | xcpretty
