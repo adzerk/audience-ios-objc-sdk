@@ -5,8 +5,12 @@ XCARGS := -workspace VelocidiSDK.xcworkspace \
 
 all: clean build
 
+# we have to clean schemas independently because xcode does not allow to clean all schemes in a workspace
 clean:
-	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK clean | xcpretty
+	set -o pipefail && \
+	xcodebuild $(XCARGS) -scheme VelocidiSDK clean | xcpretty && \
+	xcodebuild $(XCARGS) -scheme ObjcExample clean | xcpretty && \
+	xcodebuild $(XCARGS) -scheme SwiftExample clean | xcpretty
 
 build:
 	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK build | xcpretty
