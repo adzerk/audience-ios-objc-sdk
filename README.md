@@ -88,7 +88,7 @@ __Objective-C__
 
 A tracking event will log a user action in Velocidi's CDP.
 
-In order to send a tracking event, create an instance of `VSDKTrackingEvent`. Then, call the singleton instance of `VSDKVelocidi` and use the `track` method.
+In order to send a tracking event, create a JSON string representation of the event type you wish to send (or a equivalent `NSDictionary` representation) and call the `track` method.
 
 __Swift__
 ```swift
@@ -96,9 +96,33 @@ import VelocidiSDK
 
 ...
 
-let trackingEvent = VSDKPageView()
-trackingEvent.siteId = "RandomSiteId"
-trackingEvent.clientId = "RandomClientId"
+let trackingEvent =
+"""
+{
+  "clientId": "bar",
+  "siteId": "foo",
+  "type": "appView",
+  "customFields": {
+    "debug": "true",
+    "role": "superuser"
+  },
+  "title": "Welcome Screen"
+}
+"""
+
+// OR
+
+var trackingEvent = [String: Any]()
+trackingEvent["type"] = "appView"
+trackingEvent["siteId"] = "foo"
+trackingEvent["clientId"] = "bar"
+
+var customFields = [String: Any]()
+customFields["debug"] = "true"
+customFields["role"] = "superuser"
+
+trackingEvent["customFields"] = customFields
+trackingEvent["title"] = "Welcome Screen"
 
 let userId = VSDKUserId(id: "user-idfa", type: "idfa")
 VSDKVelocidi.sharedInstance().track(trackingEvent, userId: userId)
@@ -110,14 +134,38 @@ __Objective-C__
 
 ...
 
-VSDKTrackingEvent * trackingEvent =  [[VSDKPageView alloc] init];
-trackingEvent.clientId = @"RandomSiteId";
-trackingEvent.siteId = @"RandomClientId";
+NSString * trackingEvent =  @"\
+{\
+  \"clientId\": \"bar\",\
+  \"siteId\": \"foo\",\
+  \"type\": \"appView\",\
+  \"customFields\": {\
+    \"debug\": \"true\",\
+    \"role\": \"superuser\"\
+  },\
+  \"title\": \"Welcome Screen\"\
+}\
+";
+
+// OR
+
+NSMutableDictionary *trackingEvent =  [NSMutableDictionary dictionaryWithCapacity:1];
+trackingEvent[@"type"] = @"appView";
+trackingEvent[@"siteId"] = @"foo";
+trackingEvent[@"clientId"] = @"bar";
+
+NSMutableDictionary *customFields =  [NSMutableDictionary dictionaryWithCapacity:1];
+customFields[@"debug"] = @"true";
+customFields[@"role"] = @"superuser";
+
+trackingEvent[@"customFields"] = customFields;
+trackingEvent[@"title"] = @"Welcome Screen";
 
 VSDKUserId * userId = [[VSDKUserId alloc] initWithId:@"user-idfa" type: @"idfa"];
 [VSDKVelocidi.sharedInstance track: trackingEvent userId: userId] 
 ```
 
+Please refer to https://docs.velocidi.com/collect/events to discover which event types and schemas are supported.
 
 You can also pass callback blocks that will be called when the request either succeeds or fails.
 
