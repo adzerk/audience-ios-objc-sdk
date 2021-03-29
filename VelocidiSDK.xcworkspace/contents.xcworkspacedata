@@ -24,9 +24,6 @@
       location = "container:"
       name = "CI">
       <FileRef
-         location = "group:.github/workflows/xcodebuild.sh">
-      </FileRef>
-      <FileRef
          location = "group:.github/workflows/ci.yml">
       </FileRef>
       <FileRef

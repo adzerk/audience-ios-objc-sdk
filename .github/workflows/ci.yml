@@ -35,7 +35,9 @@ jobs:
         env:
           TEST_SDK: "${{ matrix.sdk }}"
           TEST_DEVICE: "${{ matrix.device }}"
-        run: ./.github/workflows/xcodebuild.sh clean build test
+        run: |
+          make
+          make test
       - name: "Verify code linting generated no changes"
         run: git diff --exit-code
       - name: Upload coverage to Codecov
