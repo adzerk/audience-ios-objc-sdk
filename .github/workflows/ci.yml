@@ -30,7 +30,7 @@ jobs:
         with:
           xcode-version: "${{ matrix.xcode }}"
       - name: "Install Dependencies"
-        run: pod install
+        run: make install
       - name: "Compile and Test Velocidi SDK"
         env:
           TEST_SDK: "${{ matrix.sdk }}"
@@ -53,9 +53,7 @@ jobs:
         with:
           xcode-version: "latest-stable"
       - name: "Install Dependencies"
-        run: pod install
-      - name: "Compile Velocidi SDK"
-        run: make
+        run: make install
       - name: "Update Velocidi SDK Pod for example applications"
         run: make install-examples
       - name: "Build example Objective-C application"
@@ -77,5 +75,5 @@ jobs:
       - name: "Lint"
         run: |
           pod repo update
-          pod install
+          make install
           make podlint
