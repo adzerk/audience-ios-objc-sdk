@@ -47,7 +47,7 @@ static VSDKConfig *_config = nil;
     return self;
 }
 
-- (void)track: (VSDKTrackingEvent *)trackingEvent
+- (void)track: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId {
     [self
      track:trackingEvent
@@ -57,12 +57,40 @@ static VSDKConfig *_config = nil;
      ];
 }
 
-- (void)track: (VSDKTrackingEvent *)trackingEvent
+- (void)track: (NSDictionary *)trackingEvent
+         user: (VSDKUserId *) userId {
+    [self
+     track:trackingEvent
+     user: userId
+     onSuccess: (void (^)(NSURLResponse *, id)) ^{}
+     onFailure: (void (^)(NSError * error)) ^{}
+     ];
+}
+
+- (void)track: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId
     onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
     onFailure: (void (^)(NSError *error))onFailureBlock {
 
-    VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
+    NSError *jsonParsingError = nil;
+    NSDictionary *jsonData = [VSDKUtil tryParseJsonEventString :trackingEvent :&jsonParsingError];
+
+    if ( jsonParsingError ) {
+        onFailureBlock(jsonParsingError);
+    } else {
+        [self
+         track:jsonData
+         user: userId
+         onSuccess: onSuccessBlock
+         onFailure: onFailureBlock
+         ];
+    }
+}
+
+- (void)track: (NSDictionary *)trackingEvent
+         user: (VSDKUserId *) userId
+    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
+    onFailure: (void (^)(NSError *error))onFailureBlock {
 
     if ([userId.type length] <= 0 || [userId.userId length] <= 0) {
         NSError * error = [NSError errorWithDomain: @"com.velocidi.VSDKTrackingRequest"
@@ -76,6 +104,7 @@ static VSDKConfig *_config = nil;
         return;
     }
 
+    VSDKTrackingRequest * request = [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
     request.userId = userId;
     request.data = trackingEvent;
     request.url = VSDKVelocidi.config.trackingUrl.URL;

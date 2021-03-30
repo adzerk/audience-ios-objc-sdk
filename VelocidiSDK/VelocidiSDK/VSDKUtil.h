@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void) setAcceptAllResponses: (AFHTTPSessionManager *) sessionManager;
 
++ (nullable NSDictionary *) tryParseJsonEventString :(NSString* )json :(NSError **)error;
+
 @end
 
 NS_ASSUME_NONNULL_END

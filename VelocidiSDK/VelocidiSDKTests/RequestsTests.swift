@@ -17,10 +17,7 @@ class RequestsTests: QuickSpec {
                 }
 
                 let url = "http://testdomain.com"
-                let trackingEvent = VSDKPageView()
-                trackingEvent.siteId = "0"
-                trackingEvent.clientId = "0"
-
+                let trackingEventJson = (try? VSDKUtil.tryParseJsonEventString(ExampleEvents.appViewJsonStr))!
                 var requestExecuted: Bool = false
 
                 self.stub({(request: URLRequest) in
@@ -42,7 +39,7 @@ class RequestsTests: QuickSpec {
                     id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
                     type: "email_sha256")
                 request.url = URL(string: url)!
-                request.data = trackingEvent
+                request.data = trackingEventJson
 
                 request.perform({_, _ in
                     requestExecuted = true
