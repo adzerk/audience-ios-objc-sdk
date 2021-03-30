@@ -56,8 +56,6 @@ jobs:
           xcode-version: "latest-stable"
       - name: "Install Dependencies"
         run: make install
-      - name: "Update Velocidi SDK Pod for example applications"
-        run: make install-examples
       - name: "Build example Objective-C application"
         run: make build-objc-example
       - name: "Build example Swift application"

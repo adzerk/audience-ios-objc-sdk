@@ -7,7 +7,8 @@ XCARGS := -workspace $(WORKSPACE) \
 					-destination "platform=iOS Simulator,OS=$(TEST_SDK),name=$(TEST_DEVICE)" \
 					GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
 
-all: clean build
+build:
+	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK build | xcpretty
 
 # we have to clean schemas independently because xcode does not allow to clean all schemes in a workspace
 clean:
@@ -15,21 +16,18 @@ clean:
 	xcodebuild $(XCARGS) -scheme ObjcExample clean | xcpretty && \
 	xcodebuild $(XCARGS) -scheme SwiftExample clean | xcpretty
 
-build:
-	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK build | xcpretty
-
-test:
+test: build
 	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK test | xcpretty
 
 examples: install-examples build-objc-example build-swift-example
 
-install-examples: all
+install-examples: build
 	pod install --project-directory=Examples/
 
-build-objc-example:
+build-objc-example: install-examples
 	set -o pipefail && xcodebuild $(XCARGS) -scheme ObjcExample clean build | xcpretty
 
-build-swift-example:
+build-swift-example: install-examples
 	set -o pipefail && xcodebuild $(XCARGS) -scheme SwiftExample clean build | xcpretty
 
 install:
