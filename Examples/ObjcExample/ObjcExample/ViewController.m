@@ -17,13 +17,15 @@
     if (@available(iOS 14, *)) {
         [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
             self.trackingIsAllowed = status == ATTrackingManagerAuthorizationStatusAuthorized;
+            if (self.trackingIsAllowed) {
+                self.idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+            }
         }];
     } else {
         self.trackingIsAllowed = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
-    }
-    
-    if (self.trackingIsAllowed) {
-        self.idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+        if (self.trackingIsAllowed) {
+            self.idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+        }
     }
 }
 
