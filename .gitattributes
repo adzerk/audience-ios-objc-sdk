@@ -1,1 +1,2 @@
-*.pbxproj binary merge=union # combine both sides of the conflict for these files; it kinda is the recommended way to deal with these files.
+# combine both sides of the conflict for these files; it kinda is the recommended way to deal with these files.
+*.pbxproj binary merge=union
