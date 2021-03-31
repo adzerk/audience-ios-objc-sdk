@@ -26,9 +26,6 @@
       <FileRef
          location = "group:.github/workflows/ci.yml">
       </FileRef>
-      <FileRef
-         location = "group:codecov.yml">
-      </FileRef>
    </Group>
    <Group
       location = "container:"
