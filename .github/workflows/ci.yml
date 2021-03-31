@@ -40,10 +40,6 @@ jobs:
           make test
       - name: "Verify code linting generated no changes"
         run: git diff --exit-code
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          xcode_package: "VelocidiSDK"
 
   build-example-applications:
     name: "Build example applications"

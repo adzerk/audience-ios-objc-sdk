@@ -1,4 +1,0 @@
-ignore:
-  - "Examples"
-  - "Pods"
-  - "VelocidiSDK/VelocidiSDKTests/**/*"
