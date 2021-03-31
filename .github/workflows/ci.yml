@@ -30,12 +30,14 @@ jobs:
         with:
           xcode-version: "${{ matrix.xcode }}"
       - name: "Install Dependencies"
-        run: pod install
+        run: make install
       - name: "Compile and Test Velocidi SDK"
         env:
           TEST_SDK: "${{ matrix.sdk }}"
           TEST_DEVICE: "${{ matrix.device }}"
-        run: ./.github/workflows/xcodebuild.sh clean build test
+        run: |
+          make
+          make test
       - name: "Verify code linting generated no changes"
         run: git diff --exit-code
       - name: Upload coverage to Codecov
@@ -47,31 +49,17 @@ jobs:
     name: "Build example applications"
     needs: test
     runs-on: "macos-latest"
-    env:
-      WORKSPACE: "VelocidiSDK.xcworkspace"
-      TEST_SDK: "14.4"
-      TEST_DEVICE: "iPhone 11 Pro Max"
     steps:
       - uses: actions/checkout@v1
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: "latest-stable"
       - name: "Install Dependencies"
-        run: pod install
-      - name: "Compile Velocidi SDK"
-        env:
-          SCHEME: "VelocidiSDK"
-        run: ./.github/workflows/xcodebuild.sh clean build
-      - name: "Update Velocidi SDK Pod for example applications"
-        run: pod install --project-directory=Examples/
+        run: make install
       - name: "Build example Objective-C application"
-        env:
-          SCHEME: "ObjcExample"
-        run: ./.github/workflows/xcodebuild.sh clean build
+        run: make build-objc-example
       - name: "Build example Swift application"
-        env:
-          SCHEME: "SwiftExample"
-        run: ./.github/workflows/xcodebuild.sh clean build
+        run: make build-swift-example
       - name: "Verify code linting generated no changes"
         run: git diff --exit-code
 
@@ -87,6 +75,5 @@ jobs:
       - name: "Lint"
         run: |
           pod repo update
-          pod install
-          pod lib lint --verbose
-          pod spec lint --verbose
+          make install
+          make podlint

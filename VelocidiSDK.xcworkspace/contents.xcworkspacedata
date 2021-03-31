@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <FileRef
+      location = "group:Pods/../Makefile">
+   </FileRef>
    <Group
       location = "container:"
       name = "Scripts">
+      <FileRef
+         location = "group:.scripts/prerequisites.sh">
+      </FileRef>
       <FileRef
          location = "group:.scripts/build_docs.sh">
       </FileRef>
@@ -13,16 +19,10 @@
       <FileRef
          location = "group:.scripts/split_readme.sh">
       </FileRef>
-      <FileRef
-         location = "group:.scripts/swiftlint.sh">
-      </FileRef>
    </Group>
    <Group
       location = "container:"
       name = "CI">
-      <FileRef
-         location = "group:.github/workflows/xcodebuild.sh">
-      </FileRef>
       <FileRef
          location = "group:.github/workflows/ci.yml">
       </FileRef>
