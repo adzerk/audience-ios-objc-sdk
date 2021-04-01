@@ -16,13 +16,15 @@ class ViewController: UIViewController {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { status in
                 self.trackingIsAllowed = status == .authorized
+                if self.trackingIsAllowed {
+                    self.idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+                }
             }
         } else {
             self.trackingIsAllowed = ASIdentifierManager.shared().isAdvertisingTrackingEnabled
-        }
-
-        if trackingIsAllowed {
-            self.idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+            if self.trackingIsAllowed {
+                self.idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+            }
         }
     }
 
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
             trackingNumber += 1
             let currentTrNumber = trackingNumber
 
-            let userId = VSDKUserId(id: self.idfa, type: "idfab")
+            let userId = VSDKUserId(id: self.idfa, type: "idfa")
             VSDKVelocidi.sharedInstance().track(trackingEvent, user: userId, onSuccess: { (_: URLResponse, _: Any) in
                 self.mainLabel.text = "Tracking request #\(currentTrNumber) successful!"
             }, onFailure: {(error: Error) in
