@@ -11,16 +11,16 @@ NS_ASSUME_NONNULL_BEGIN
 /**
   Type of user identifier.
  */
-@property NSString * type;
+@property NSString *type;
 
 /**
   User identifier.
  */
-@property NSString * userId;
+@property NSString *userId;
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithId: (NSString *)userId
-                      type: (NSString *)userIdType NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithId:(NSString *)userId
+                      type:(NSString *)userIdType NS_DESIGNATED_INITIALIZER;
 
 @end
 

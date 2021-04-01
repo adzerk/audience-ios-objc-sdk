@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let config = VSDKConfig(trackingBaseUrl: "http://localhost:8080", "http://localhost:8080")!
+        let config = VSDKConfig(trackingBaseUrl: "http://localhost:8080", matchBaseUrl: "http://localhost:8080")!
         VSDKVelocidi.start(config)
 
         return true

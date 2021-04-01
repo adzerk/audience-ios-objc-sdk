@@ -43,7 +43,7 @@ class RequestsTests: QuickSpec {
 
                 request.perform({_, _ in
                     requestExecuted = true
-                }, {(_: Error) in
+                }, onFailure: {(_: Error) in
                     requestExecuted = false
                 })
 
