@@ -29,6 +29,8 @@ jobs:
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: "${{ matrix.xcode }}"
+      - name: "Install clang-format"
+        run: brew install clang-format
       - name: "Install Dependencies"
         run: make install
       - name: "Compile and Test Velocidi SDK"
@@ -50,6 +52,8 @@ jobs:
       - uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: "latest-stable"
+      - name: "Install clang-format"
+        run: brew install clang-format
       - name: "Install Dependencies"
         run: make install
       - name: "Build example Objective-C application"
