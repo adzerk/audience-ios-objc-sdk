@@ -53,7 +53,7 @@ static VSDKConfig *_config = nil;
      track:trackingEvent
      userId: userId
      onSuccess: (void (^)(NSURLResponse *, id)) ^{}
-     onFailure: (void (^)(NSError * error)) ^{}
+     onFailure: (void (^)(NSError *)) ^{}
      ];
 }
 
@@ -63,14 +63,14 @@ static VSDKConfig *_config = nil;
      track:trackingEvent
      user: userId
      onSuccess: (void (^)(NSURLResponse *, id)) ^{}
-     onFailure: (void (^)(NSError * error)) ^{}
+     onFailure: (void (^)(NSError *)) ^{}
      ];
 }
 
 - (void)track: (NSString *)trackingEvent
        userId: (VSDKUserId *) userId
-    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-    onFailure: (void (^)(NSError *error))onFailureBlock {
+    onSuccess: (void (^)(NSURLResponse *, id))onSuccessBlock
+    onFailure: (void (^)(NSError *))onFailureBlock {
 
     NSError *jsonParsingError = nil;
     NSDictionary *jsonData = [VSDKUtil tryParseJsonEventString :trackingEvent :&jsonParsingError];
@@ -89,8 +89,8 @@ static VSDKConfig *_config = nil;
 
 - (void)track: (NSDictionary *)trackingEvent
          user: (VSDKUserId *) userId
-    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-    onFailure: (void (^)(NSError *error))onFailureBlock {
+    onSuccess: (void (^)(NSURLResponse *, id))onSuccessBlock
+    onFailure: (void (^)(NSError *))onFailureBlock {
 
     if ([userId.type length] <= 0 || [userId.userId length] <= 0) {
         NSError * error = [NSError errorWithDomain: @"com.velocidi.VSDKTrackingRequest"
@@ -114,23 +114,23 @@ static VSDKConfig *_config = nil;
 
 - (void)match: (NSString *)providerId
       userIds: (NSMutableArray<VSDKUserId *> *)userIds {
-    
+
     [self match: providerId
         userIds: userIds
       onSuccess: (void (^)(NSURLResponse *, id)) ^{}
-      onFailure: (void (^)(NSError * error)) ^{} ];
+      onFailure: (void (^)(NSError *)) ^{} ];
 }
 
 - (void)match: (NSString *)providerId
       userIds: (NSMutableArray<VSDKUserId *> *)userIds
-    onSuccess: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-    onFailure: (void (^)(NSError * error))onFailureBlock {
+    onSuccess: (void (^)(NSURLResponse *, id))onSuccessBlock
+    onFailure: (void (^)(NSError *))onFailureBlock {
 
     NSMutableArray * reasons = [NSMutableArray arrayWithCapacity: 1];
     if ([providerId length] <= 0){
         [reasons addObject:NSLocalizedString(@"Provider id must not be empty!", nil)];
     }
-    
+
     if ([userIds count] < 2) {
         [reasons addObject:NSLocalizedString(@"At least 2 user ids must be provided!", nil)];
     }
@@ -152,15 +152,14 @@ static VSDKConfig *_config = nil;
 
         onFailureBlock(error);
         return;
-    } else {
-        VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
-
-        request.userIds = userIds;
-        request.providerId = providerId;
-        request.url = VSDKVelocidi.config.matchUrl.URL;
-
-        [request performRequest:onSuccessBlock :onFailureBlock];
     }
+    VSDKMatchRequest * request = [[VSDKMatchRequest alloc] initWithHTTPSessionManager:self.sessionManager];
+
+    request.userIds = userIds;
+    request.providerId = providerId;
+    request.url = VSDKVelocidi.config.matchUrl.URL;
+
+    [request performRequest:onSuccessBlock :onFailureBlock];
 }
 
 @end

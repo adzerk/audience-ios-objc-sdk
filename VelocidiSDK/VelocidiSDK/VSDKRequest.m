@@ -22,9 +22,9 @@
     return self;
 }
 
-- (void)performRequest: (void (^)(NSURLResponse *response, id responseObject))onSuccessBlock
-                      : (void (^)(NSError *error))onFailureBlock {
-    
+- (void)performRequest: (void (^)(NSURLResponse *, id))onSuccessBlock
+                      : (void (^)(NSError *))onFailureBlock {
+
     NSMutableURLRequest * request = [self buildRequest];
     [request setValue:[self getVersionedUserAgent] forHTTPHeaderField:@"User-Agent"];
     NSURLSessionDataTask *dataTask = [self.manager
@@ -44,7 +44,7 @@
 - (NSURLComponents *)buildURLWithCommonParamsAndUserIds: (NSMutableArray<VSDKUserId *> *) userIds {
     NSURLComponents * urlComponents = [[NSURLComponents alloc] initWithURL: self.url resolvingAgainstBaseURL: true];
     NSMutableArray<NSURLQueryItem *> * queryParams = [[NSMutableArray alloc] init];
-    
+
     for(VSDKUserId* userId in userIds) {
         [queryParams addObject: [[NSURLQueryItem alloc] initWithName: [[NSString alloc] initWithFormat:@"id_%@", userId.type]
                                                               value: userId.userId]];
