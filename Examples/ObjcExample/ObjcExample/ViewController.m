@@ -84,20 +84,19 @@ static int customTrackingNumber = 0;
     ";
     // clang-format on
 
-    __attribute__((annotate("oclint:suppress[long variable name]"))) int currentCustomTrNumber =
-        ++customTrackingNumber;
+    int currCustomTrNumber = ++customTrackingNumber;
 
     VSDKUserId *userId = [[VSDKUserId alloc] initWithId:self.idfa type:@"idfa"];
     [VSDKVelocidi.sharedInstance track:trackingEvent
         userId:userId
         onSuccess:^(NSURLResponse *response, id responseObject) {
           self.mainLabel.text = [NSString
-              stringWithFormat:@"Custom tracking request #%i successful!", currentCustomTrNumber];
+              stringWithFormat:@"Custom tracking request #%i successful!", currCustomTrNumber];
         }
         onFailure:^(NSError *error) {
           self.mainLabel.text =
               [NSString stringWithFormat:@"Error with custom tracking request #%i.\n Error: %@",
-                                         currentCustomTrNumber, [error localizedDescription]];
+                                         currCustomTrNumber, [error localizedDescription]];
         }];
   } else {
     self.mainLabel.text = @"Could not retrieve IDFA identifier to send as User ID!";
