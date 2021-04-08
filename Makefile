@@ -11,8 +11,8 @@ build:
 	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK build | xcpretty
 
 format:
-	clang-format -i VelocidiSDK/**/*.m VelocidiSDK/**/*.h && \
-	clang-format -i Examples/ObjcExample/**/*.m Examples/ObjcExample/**/*.h
+	clang-format -style=file -i VelocidiSDK/**/*.m VelocidiSDK/**/*.h && \
+	clang-format -style=file -i Examples/ObjcExample/**/*.m Examples/ObjcExample/**/*.h
 
 # we have to clean schemas independently because xcode does not allow to clean all schemes in a workspace
 clean:
