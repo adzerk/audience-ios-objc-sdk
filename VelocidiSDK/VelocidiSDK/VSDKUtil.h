@@ -23,8 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (void)setAcceptAllResponses:(AFHTTPSessionManager *)sessionManager;
 
-+ (nullable NSDictionary *)tryParseJsonEventString:(NSString *)jsonStr
-                                             error:(NSError **)error;
++ (nullable NSDictionary *)tryParseJsonEventString:(NSString *)jsonStr error:(NSError **)error;
 
 @end
 

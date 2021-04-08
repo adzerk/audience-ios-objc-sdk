@@ -17,19 +17,15 @@
   if (@available(iOS 14, *)) {
     [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(
                            ATTrackingManagerAuthorizationStatus status) {
-      self.trackingIsAllowed =
-          status == ATTrackingManagerAuthorizationStatusAuthorized;
+      self.trackingIsAllowed = status == ATTrackingManagerAuthorizationStatusAuthorized;
       if (self.trackingIsAllowed) {
-        self.idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier]
-            UUIDString];
+        self.idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
       }
     }];
   } else {
-    self.trackingIsAllowed =
-        [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
+    self.trackingIsAllowed = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
     if (self.trackingIsAllowed) {
-      self.idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier]
-          UUIDString];
+      self.idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     }
   }
 }
@@ -39,14 +35,12 @@ static int matchNumber = 0;
 
 - (IBAction)sendTrackingEvent:(id)sender {
   if (self.trackingIsAllowed) {
-    NSMutableDictionary *trackingEvent =
-        [NSMutableDictionary dictionaryWithCapacity:1];
+    NSMutableDictionary *trackingEvent = [NSMutableDictionary dictionaryWithCapacity:1];
     trackingEvent[@"type"] = @"appView";
     trackingEvent[@"siteId"] = @"foo";
     trackingEvent[@"clientId"] = @"bar";
 
-    NSMutableDictionary *customFields =
-        [NSMutableDictionary dictionaryWithCapacity:1];
+    NSMutableDictionary *customFields = [NSMutableDictionary dictionaryWithCapacity:1];
     customFields[@"debug"] = @"true";
     customFields[@"role"] = @"superuser";
 
@@ -60,17 +54,15 @@ static int matchNumber = 0;
         user:userId
         onSuccess:^(NSURLResponse *response, id responseObject) {
           self.mainLabel.text =
-              [NSString stringWithFormat:@"Tracking request #%i successful!",
-                                         currentTrNumber];
+              [NSString stringWithFormat:@"Tracking request #%i successful!", currentTrNumber];
         }
         onFailure:^(NSError *error) {
-          self.mainLabel.text = [NSString
-              stringWithFormat:@"Error with tracking request #%i.\n Error: %@",
-                               currentTrNumber, [error localizedDescription]];
+          self.mainLabel.text =
+              [NSString stringWithFormat:@"Error with tracking request #%i.\n Error: %@",
+                                         currentTrNumber, [error localizedDescription]];
         }];
   } else {
-    self.mainLabel.text =
-        @"Could not retrieve IDFA identifier to send as User ID!";
+    self.mainLabel.text = @"Could not retrieve IDFA identifier to send as User ID!";
   }
 }
 
@@ -92,8 +84,7 @@ static int customTrackingNumber = 0;
     ";
     // clang-format on
 
-    __attribute__((annotate(
-        "oclint:suppress[long variable name]"))) int currentCustomTrNumber =
+    __attribute__((annotate("oclint:suppress[long variable name]"))) int currentCustomTrNumber =
         ++customTrackingNumber;
 
     VSDKUserId *userId = [[VSDKUserId alloc] initWithId:self.idfa type:@"idfa"];
@@ -101,44 +92,38 @@ static int customTrackingNumber = 0;
         userId:userId
         onSuccess:^(NSURLResponse *response, id responseObject) {
           self.mainLabel.text = [NSString
-              stringWithFormat:@"Custom tracking request #%i successful!",
-                               currentCustomTrNumber];
+              stringWithFormat:@"Custom tracking request #%i successful!", currentCustomTrNumber];
         }
         onFailure:^(NSError *error) {
-          self.mainLabel.text = [NSString
-              stringWithFormat:
-                  @"Error with custom tracking request #%i.\n Error: %@",
-                  currentCustomTrNumber, [error localizedDescription]];
+          self.mainLabel.text =
+              [NSString stringWithFormat:@"Error with custom tracking request #%i.\n Error: %@",
+                                         currentCustomTrNumber, [error localizedDescription]];
         }];
   } else {
-    self.mainLabel.text =
-        @"Could not retrieve IDFA identifier to send as User ID!";
+    self.mainLabel.text = @"Could not retrieve IDFA identifier to send as User ID!";
   }
 }
 - (IBAction)sendMatch:(id)sender {
   if (self.trackingIsAllowed) {
-    VSDKUserId *userId1 = [[VSDKUserId alloc] initWithId:self.idfa
-                                                    type:@"idfa"];
+    VSDKUserId *userId1 = [[VSDKUserId alloc] initWithId:self.idfa type:@"idfa"];
     VSDKUserId *userId2 = [[VSDKUserId alloc] initWithId:@"baz" type:@"foo"];
-    NSMutableArray *idsArray =
-        [[NSMutableArray alloc] initWithObjects:userId1, userId2, nil];
+    NSMutableArray *idsArray = [[NSMutableArray alloc] initWithObjects:userId1, userId2, nil];
 
     matchNumber++;
 
     [VSDKVelocidi.sharedInstance match:@"1234-providerId-56789"
         userIds:idsArray
         onSuccess:^(NSURLResponse *response, id responseObject) {
-          self.mainLabel.text = [NSString
-              stringWithFormat:@"Match request #%i successful!", matchNumber];
+          self.mainLabel.text =
+              [NSString stringWithFormat:@"Match request #%i successful!", matchNumber];
         }
         onFailure:^(NSError *error) {
-          self.mainLabel.text = [NSString
-              stringWithFormat:@"Error with match request #%i.\n Error: %@",
-                               matchNumber, [error localizedDescription]];
+          self.mainLabel.text =
+              [NSString stringWithFormat:@"Error with match request #%i.\n Error: %@", matchNumber,
+                                         [error localizedDescription]];
         }];
   } else {
-    self.mainLabel.text =
-        @"Could not retrieve IDFA identifier to send as User ID!";
+    self.mainLabel.text = @"Could not retrieve IDFA identifier to send as User ID!";
   }
 }
 @end

@@ -181,7 +181,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\ncd ..\nclang-format -i ObjcExample/**/*.m ObjcExample/**/*.h\n";
+			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\ncd ..\nclang-format -style=file -i ObjcExample/**/*.m ObjcExample/**/*.h\n";
 		};
 		4E82CBF95466188B0C93253D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

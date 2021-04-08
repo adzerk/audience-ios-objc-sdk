@@ -7,46 +7,41 @@
 
 + (NSString *)getVersionedUserAgent {
   NSString *userAgentPrefix = [NSString
-      stringWithFormat:
-          @"%@/%@ %@/%@",
-          [[NSBundle mainBundle]
-              infoDictionary][(__bridge NSString *)kCFBundleExecutableKey]
-              ?: [[NSBundle mainBundle] infoDictionary]
-                     [(__bridge NSString *)kCFBundleIdentifierKey],
-          [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"]
-              ?: [[NSBundle mainBundle]
-                     infoDictionary][(__bridge NSString *)kCFBundleVersionKey],
-          @"VelocidiSDK",
-          [[NSBundle bundleWithIdentifier:@"com.velocidi.VelocidiSDK"]
-              infoDictionary][@"CFBundleShortVersionString"]
-              ?: [[NSBundle bundleWithIdentifier:@"com.velocidi.VelocidiSDK"]
-                     infoDictionary][(__bridge NSString *)kCFBundleVersionKey]];
+      stringWithFormat:@"%@/%@ %@/%@",
+                       [[NSBundle mainBundle]
+                           infoDictionary][(__bridge NSString *)kCFBundleExecutableKey]
+                           ?: [[NSBundle mainBundle]
+                                  infoDictionary][(__bridge NSString *)kCFBundleIdentifierKey],
+                       [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"]
+                           ?: [[NSBundle mainBundle]
+                                  infoDictionary][(__bridge NSString *)kCFBundleVersionKey],
+                       @"VelocidiSDK",
+                       [[NSBundle bundleWithIdentifier:@"com.velocidi.VelocidiSDK"]
+                           infoDictionary][@"CFBundleShortVersionString"]
+                           ?: [[NSBundle bundleWithIdentifier:@"com.velocidi.VelocidiSDK"]
+                                  infoDictionary][(__bridge NSString *)kCFBundleVersionKey]];
   NSString *userAgent = nil;
 #if TARGET_OS_IOS
-  userAgent = [userAgentPrefix
-      stringByAppendingFormat:@" (%@; iOS %@; Scale/%0.2f)",
-                              [[UIDevice currentDevice] model],
-                              [[UIDevice currentDevice] systemVersion],
-                              [[UIScreen mainScreen] scale]];
+  userAgent = [userAgentPrefix stringByAppendingFormat:@" (%@; iOS %@; Scale/%0.2f)",
+                                                       [[UIDevice currentDevice] model],
+                                                       [[UIDevice currentDevice] systemVersion],
+                                                       [[UIScreen mainScreen] scale]];
 #elif TARGET_OS_WATCH
-  userAgent = [userAgentPrefix
-      stringByAppendingFormat:@" (%@; watchOS %@; Scale/%0.2f)",
-                              [[WKInterfaceDevice currentDevice] model],
-                              [[WKInterfaceDevice currentDevice] systemVersion],
-                              [[WKInterfaceDevice currentDevice] screenScale]];
+  userAgent =
+      [userAgentPrefix stringByAppendingFormat:@" (%@; watchOS %@; Scale/%0.2f)",
+                                               [[WKInterfaceDevice currentDevice] model],
+                                               [[WKInterfaceDevice currentDevice] systemVersion],
+                                               [[WKInterfaceDevice currentDevice] screenScale]];
 #elif defined(__MAC_OS_X_VERSION_MIN_REQUIRED)
   userAgent = [userAgentPrefix
       stringByAppendingFormat:@" (Mac OS X %@)",
-                              [[NSProcessInfo processInfo]
-                                  operatingSystemVersionString]];
+                              [[NSProcessInfo processInfo] operatingSystemVersionString]];
 #endif
-  if (userAgent &&
-      ![userAgent canBeConvertedToEncoding:NSASCIIStringEncoding]) {
+  if (userAgent && ![userAgent canBeConvertedToEncoding:NSASCIIStringEncoding]) {
     NSMutableString *mutableUserAgent = [userAgent mutableCopy];
-    if (CFStringTransform(
-            (__bridge CFMutableStringRef)(mutableUserAgent), NULL,
-            (__bridge CFStringRef) @"Any-Latin; Latin-ASCII; [:^ASCII:] Remove",
-            false)) {
+    if (CFStringTransform((__bridge CFMutableStringRef)(mutableUserAgent), NULL,
+                          (__bridge CFStringRef) @"Any-Latin; Latin-ASCII; [:^ASCII:] Remove",
+                          false)) {
       userAgent = mutableUserAgent;
     }
   }
@@ -58,12 +53,9 @@
   sessionManager.responseSerializer.acceptableContentTypes = nil;
 }
 
-+ (nullable NSDictionary *)tryParseJsonEventString:(NSString *)jsonStr
-                                             error:(NSError **)error {
++ (nullable NSDictionary *)tryParseJsonEventString:(NSString *)jsonStr error:(NSError **)error {
   NSData *data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
-  return [NSJSONSerialization JSONObjectWithData:data
-                                         options:kNilOptions
-                                           error:error];
+  return [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:error];
 }
 
 @end

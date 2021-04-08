@@ -392,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\ncd ..\nclang-format -i VelocidiSDK/**/*.m VelocidiSDK/**/*.h\n";
+			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\ncd ..\nclang-format -style=file -i VelocidiSDK/**/*.m VelocidiSDK/**/*.h\n";
 		};
 		30F984AA22771933006DF6C4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;

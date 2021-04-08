@@ -21,17 +21,16 @@ static VSDKConfig *_config = nil;
 }
 
 + (instancetype)sharedInstance {
-  __attribute__((
-      annotate("oclint:suppress[long variable name]"))) static VSDKVelocidi
-      *sharedVelocidiManager = nil;
+  __attribute__((annotate(
+      "oclint:suppress[long variable name]"))) static VSDKVelocidi *sharedVelocidiManager = nil;
   static dispatch_once_t onceToken;
 
   if (VSDKVelocidi.config == nil) {
-    NSException *exception = [NSException
-        exceptionWithName:NSInternalInconsistencyException
-                   reason:@"VelocidiManager not initialized before. Make sure "
-                          @"to call `.start` first."
-                 userInfo:nil];
+    NSException *exception =
+        [NSException exceptionWithName:NSInternalInconsistencyException
+                                reason:@"VelocidiManager not initialized before. Make sure "
+                                       @"to call `.start` first."
+                              userInfo:nil];
     @throw exception;
   }
 
@@ -70,16 +69,12 @@ static VSDKConfig *_config = nil;
     onFailure:(void (^)(NSError *))onFailureBlock {
 
   NSError *jsonParsingError = nil;
-  NSDictionary *jsonData = [VSDKUtil tryParseJsonEventString:trackingEvent
-                                                       error:&jsonParsingError];
+  NSDictionary *jsonData = [VSDKUtil tryParseJsonEventString:trackingEvent error:&jsonParsingError];
 
   if (jsonParsingError) {
     onFailureBlock(jsonParsingError);
   } else {
-    [self track:jsonData
-             user:userId
-        onSuccess:onSuccessBlock
-        onFailure:onFailureBlock];
+    [self track:jsonData user:userId onSuccess:onSuccessBlock onFailure:onFailureBlock];
   }
 }
 
@@ -93,20 +88,19 @@ static VSDKConfig *_config = nil;
         errorWithDomain:@"com.velocidi.VSDKTrackingRequest"
                    code:1
                userInfo:@{
-                 NSLocalizedDescriptionKey :
-                     NSLocalizedString(@"InvalidArgument", nil),
-                 NSLocalizedFailureReasonErrorKey : NSLocalizedString(
-                     @"One or more arguments are not valid!", nil),
-                 @"ArgumentFailures" : @[ NSLocalizedString(
-                     @"User ids must have non-empty ids and types!", nil) ]
+                 NSLocalizedDescriptionKey : NSLocalizedString(@"InvalidArgument", nil),
+                 NSLocalizedFailureReasonErrorKey :
+                     NSLocalizedString(@"One or more arguments are not valid!", nil),
+                 @"ArgumentFailures" :
+                     @[ NSLocalizedString(@"User ids must have non-empty ids and types!", nil) ]
                }];
 
     onFailureBlock(error);
     return;
   }
 
-  VSDKTrackingRequest *request = [[VSDKTrackingRequest alloc]
-      initWithHTTPSessionManager:self.sessionManager];
+  VSDKTrackingRequest *request =
+      [[VSDKTrackingRequest alloc] initWithHTTPSessionManager:self.sessionManager];
   request.userId = userId;
   request.data = trackingEvent;
   request.url = VSDKVelocidi.config.trackingUrl.URL;
@@ -114,8 +108,7 @@ static VSDKConfig *_config = nil;
   [request performRequest:onSuccessBlock onFailure:onFailureBlock];
 }
 
-- (void)match:(NSString *)providerId
-      userIds:(NSMutableArray<VSDKUserId *> *)userIds {
+- (void)match:(NSString *)providerId userIds:(NSMutableArray<VSDKUserId *> *)userIds {
 
   [self match:providerId
         userIds:userIds
@@ -130,20 +123,16 @@ static VSDKConfig *_config = nil;
 
   NSMutableArray *reasons = [NSMutableArray arrayWithCapacity:1];
   if ([providerId length] <= 0) {
-    [reasons
-        addObject:NSLocalizedString(@"Provider id must not be empty!", nil)];
+    [reasons addObject:NSLocalizedString(@"Provider id must not be empty!", nil)];
   }
 
   if ([userIds count] < 2) {
-    [reasons addObject:NSLocalizedString(
-                           @"At least 2 user ids must be provided!", nil)];
+    [reasons addObject:NSLocalizedString(@"At least 2 user ids must be provided!", nil)];
   }
 
   for (VSDKUserId *userId in userIds) {
     if ([userId.type length] <= 0 || [userId.userId length] <= 0) {
-      [reasons
-          addObject:NSLocalizedString(
-                        @"User ids must have non-empty ids and types!", nil)];
+      [reasons addObject:NSLocalizedString(@"User ids must have non-empty ids and types!", nil)];
       break;
     }
   }
@@ -153,10 +142,9 @@ static VSDKConfig *_config = nil;
         [NSError errorWithDomain:@"com.velocidi.VSDKMatchRequest"
                             code:1
                         userInfo:@{
-                          NSLocalizedDescriptionKey :
-                              NSLocalizedString(@"InvalidArgument", nil),
-                          NSLocalizedFailureReasonErrorKey : NSLocalizedString(
-                              @"One or more arguments are not valid!", nil),
+                          NSLocalizedDescriptionKey : NSLocalizedString(@"InvalidArgument", nil),
+                          NSLocalizedFailureReasonErrorKey :
+                              NSLocalizedString(@"One or more arguments are not valid!", nil),
                           @"ArgumentFailures" : reasons
                         }];
 

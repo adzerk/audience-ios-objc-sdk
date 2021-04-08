@@ -38,8 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
   UserIds.
   @returns URL parameters string
  */
-- (NSURLComponents *)buildURLWithCommonParamsAndUserIds:
-    (NSMutableArray<VSDKUserId *> *)userIds;
+- (NSURLComponents *)buildURLWithCommonParamsAndUserIds:(NSMutableArray<VSDKUserId *> *)userIds;
 
 /**
   Build a NSMutableURLRequest that can be executed.

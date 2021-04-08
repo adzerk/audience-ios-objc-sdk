@@ -19,8 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *userId;
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithId:(NSString *)userId
-                      type:(NSString *)userIdType NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithId:(NSString *)userId type:(NSString *)userIdType NS_DESIGNATED_INITIALIZER;
 
 @end
 

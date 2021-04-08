@@ -93,8 +93,7 @@ NS_ASSUME_NONNULL_BEGIN
   @param providerId Id of the match provider
   @param userIds List of user ids to be linked along with Advertising Id
  */
-- (void)match:(NSString *)providerId
-      userIds:(NSMutableArray<VSDKUserId *> *)userIds;
+- (void)match:(NSString *)providerId userIds:(NSMutableArray<VSDKUserId *> *)userIds;
 @end
 
 NS_ASSUME_NONNULL_END
