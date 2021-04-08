@@ -11,7 +11,6 @@ build:
 	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK build | xcpretty
 
 format:
-	set -o pipefail && \
 	clang-format -i VelocidiSDK/**/*.m VelocidiSDK/**/*.h && \
 	clang-format -i Examples/ObjcExample/**/*.m Examples/ObjcExample/**/*.h
 
