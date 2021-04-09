@@ -108,6 +108,7 @@
 				30BCF73622709C1E00E462A8 /* Frameworks */,
 				30BCF73722709C1E00E462A8 /* Resources */,
 				4E82CBF95466188B0C93253D /* [CP] Embed Pods Frameworks */,
+				30F36CAC261627560025FCBF /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -164,6 +165,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30F36CAC261627560025FCBF /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\ncd ..\nclang-format -style=file -i ObjcExample/**/*.m ObjcExample/**/*.h\n";
+		};
 		4E82CBF95466188B0C93253D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

@@ -17,6 +17,11 @@ if ! which xcpretty >/dev/null; then
   FAILED=true
 fi
 
+if ! which clang-format >/dev/null; then
+  echo "clang-format does not seem to be installed. You may need to run 'brew install clang-format'."
+  FAILED=true
+fi
+
 if ! command -v Pods/SwiftLint/swiftlint &> /dev/null; then
   echo "Swiftlint does not seem to be installed. You may need to run 'pod install'."
   FAILED=true

@@ -283,6 +283,7 @@
 				B1432B1E465F64F759A7EEA9 /* Sources */,
 				B143262E1BA5BB8F611C5D21 /* Frameworks */,
 				B1432A026CD0DD8A26AC3B74 /* Resources */,
+				30F36CAB261626CD0025FCBF /* ShellScript */,
 			);
 			buildRules = (
 				3060595C2264DA2100306E32 /* PBXBuildRule */,
@@ -376,6 +377,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30F36CAB261626CD0025FCBF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\ncd ..\nclang-format -style=file -i VelocidiSDK/**/*.m VelocidiSDK/**/*.h\n";
+		};
 		30F984AA22771933006DF6C4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -391,7 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\ncd ..\nxcodebuild -scheme VelocidiSDK -sdk iphoneos -workspace VelocidiSDK.xcworkspace clean\nxcodebuild -scheme VelocidiSDK -sdk iphoneos -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO | xcpretty -r json-compilation-database --output compile_commands.json \n\noclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode -max-priority-3=15000\n";
+			shellScript = "source ~/.bash_profile\ncd ${SRCROOT}\ncd ..\nxcodebuild -scheme VelocidiSDK -sdk iphoneos -workspace VelocidiSDK.xcworkspace clean\nxcodebuild -scheme VelocidiSDK -sdk iphoneos -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO | xcpretty -r json-compilation-database --output compile_commands.json \n\noclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode\n";
 		};
 		78D6C2DDFFEDAF50A771284C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

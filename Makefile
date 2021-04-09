@@ -10,6 +10,10 @@ XCARGS := -workspace $(WORKSPACE) \
 build:
 	set -o pipefail && xcodebuild $(XCARGS) -scheme VelocidiSDK build | xcpretty
 
+format:
+	clang-format -style=file -i VelocidiSDK/**/*.m VelocidiSDK/**/*.h && \
+	clang-format -style=file -i Examples/ObjcExample/**/*.m Examples/ObjcExample/**/*.h
+
 # we have to clean schemas independently because xcode does not allow to clean all schemes in a workspace
 clean:
 	xcodebuild $(XCARGS) -scheme VelocidiSDK clean | xcpretty && \
@@ -38,16 +42,19 @@ prerequisites:
 
 oclint-examples:
 	set -o pipefail && \
+	xcodebuild -scheme VelocidiSDK -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build && \
 	xcodebuild -scheme ObjcExample -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
-	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode -max-priority-3=15000
+	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode
 
 oclint:
 	set -o pipefail && \
 	xcodebuild -scheme VelocidiSDK -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
-	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode -max-priority-3=15000
+	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode
 
 swiftlint:
 	Pods/SwiftLint/swiftlint lint --fix && Pods/SwiftLint/swiftlint lint --strict
 
 podlint:
 	pod lib lint --verbose
+
+test-all: test examples oclint oclint-examples podlint

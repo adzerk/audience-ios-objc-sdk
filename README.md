@@ -1,4 +1,4 @@
-# Velocidi iOS SDK in Objective-C 
+# Velocidi iOS SDK in Objective-C
 ![Cocoapods platforms](https://img.shields.io/cocoapods/p/VelocidiSDK.svg)
 ![Cocoapods](https://img.shields.io/cocoapods/v/VelocidiSDK.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
-        let config = VSDKConfig(trackingBaseUrl: "https://tr.yourdomain.com", "https://match.yourdomain.com")!
+        let config = VSDKConfig(trackingBaseUrl: "https://tr.yourdomain.com", matchBaseUrl:"https://match.yourdomain.com")!
         VSDKVelocidi.start(config)
         return true
     }
@@ -75,8 +75,8 @@ __Objective-C__
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    VSDKConfig * config = [[VSDKConfig alloc] initWithTrackingBaseUrl:@"https://tr.yourdomain.com": @"https://match.yourdomain.com"];
+
+    VSDKConfig * config = [[VSDKConfig alloc] initWithTrackingBaseUrl:@"https://tr.yourdomain.com" matchBaseUrl: @"https://match.yourdomain.com"];
     [VSDKVelocidi start: config];
     return YES;
 }
@@ -160,7 +160,7 @@ trackingEvent[@"customFields"] = customFields;
 trackingEvent[@"title"] = @"Welcome Screen";
 
 VSDKUserId * userId = [[VSDKUserId alloc] initWithId:@"user-idfa" type: @"idfa"];
-[VSDKVelocidi.sharedInstance track: trackingEvent userId: userId] 
+[VSDKVelocidi.sharedInstance track: trackingEvent userId: userId]
 ```
 
 Please refer to https://docs.velocidi.com/collect/events to discover which event types and schemas are supported.
@@ -199,7 +199,7 @@ __Swift__
     let userId1 = VSDKUserId(userId: "bar", "fooType")
     let userId2 = VSDKUserId(userId: "baz", "fooType")
     let idsArray = NSMutableArray(array: [userId1, userId2])
-      
+
     VSDKVelocidi.sharedInstance().match("1234-providerId-56789", userIds: idsArray, onSuccess:{ (response: URLResponse, responseObject: Any) in
         print("Success! Response: \(response)")
     }, onFailure:{(error: Error) in
@@ -214,7 +214,7 @@ __Objective-C__
     VSDKUserId * userId1 =  [[VSDKUserId alloc] initUserId:@"bar":@"fooType"];
     VSDKUserId * userId2 =  [[VSDKUserId alloc] initUserId:@"baz":@"fooType"];
     NSMutableArray * idsArray = [[NSMutableArray alloc] initWithObjects: userId1, userId2, nil];
-    
+
     [VSDKVelocidi.sharedInstance match: @"1234-providerId-56789"
                                userIds: idsArray
                              onSuccess: ^(NSURLResponse * response, id responseObject){

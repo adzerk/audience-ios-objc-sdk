@@ -74,7 +74,7 @@ class NetworkTests: QuickSpec {
                     let userId = VSDKUserId(
                         id: "1c3eae0a556ed83200d7962f72f19961a609e9e59a3551701690f43a13263dc3",
                         type: "")
-                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchBaseUrl: matchURL)
                     VSDKVelocidi.start(config!)
 
                     var error: Error?
@@ -114,7 +114,7 @@ class NetworkTests: QuickSpec {
                             return httpResponseBuilder(url: trackURL, expectedData: expectedData)(request)
                         })
 
-                        let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                        let config = VSDKConfig(trackingBaseUrl: trackURL, matchBaseUrl: matchURL)
 
                         VSDKVelocidi.start(config!)
                             VSDKVelocidi.sharedInstance().track(event.0, userId: exampleUser1)
@@ -137,7 +137,7 @@ class NetworkTests: QuickSpec {
                             return request.url!.absoluteString.starts(with: trackURL)
                         }, httpResponseBuilder(url: trackURL, expectedData: expectedData))
 
-                        let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                        let config = VSDKConfig(trackingBaseUrl: trackURL, matchBaseUrl: matchURL)
                         VSDKVelocidi.start(config!)
 
                         var success = false
@@ -209,7 +209,7 @@ class NetworkTests: QuickSpec {
                     let arrUserIds = NSMutableArray(array: [userId1, userId2])
 
                     var error: Error?
-                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchBaseUrl: matchURL)
                     VSDKVelocidi.start(config!)
                     VSDKVelocidi
                         .sharedInstance()
@@ -230,7 +230,7 @@ class NetworkTests: QuickSpec {
                     let arrUserIds = NSMutableArray(array: [userId1])
 
                     var error: Error?
-                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchBaseUrl: matchURL)
                     VSDKVelocidi.start(config!)
                     VSDKVelocidi
                         .sharedInstance()
@@ -259,7 +259,7 @@ class NetworkTests: QuickSpec {
                         return httpResponseBuilder(url: matchURL, expectedParams: expectedParams)(request)
                     })
 
-                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                    let config = VSDKConfig(trackingBaseUrl: trackURL, matchBaseUrl: matchURL)
                     VSDKVelocidi.start(config!)
                     VSDKVelocidi.sharedInstance().match("baz", userIds: arrUserIds)
                     expect(responded).toEventually(beTrue(), timeout: 4)
@@ -279,7 +279,7 @@ class NetworkTests: QuickSpec {
                             return request.url!.absoluteString.starts(with: matchURL)
                         }, httpResponseBuilder(url: matchURL, expectedParams: expectedParams))
 
-                        let config = VSDKConfig(trackingBaseUrl: trackURL, matchURL)
+                        let config = VSDKConfig(trackingBaseUrl: trackURL, matchBaseUrl: matchURL)
                         VSDKVelocidi.start(config!)
 
                         VSDKVelocidi
