@@ -42,13 +42,12 @@ prerequisites:
 
 oclint-examples:
 	set -o pipefail && \
-	xcodebuild -scheme VelocidiSDK -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build && \
-	xcodebuild -scheme ObjcExample -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
+	xcodebuild -scheme ObjcExample $(XCARGS) COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode
 
 oclint:
 	set -o pipefail && \
-	xcodebuild -scheme VelocidiSDK -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
+	xcodebuild -scheme VelocidiSDK $(XCARGS) COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode
 
 swiftlint:
