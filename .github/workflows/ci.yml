@@ -12,10 +12,6 @@ jobs:
       matrix:
         include:
          - os: "macos-10.15"
-           xcode: "10.3"
-           sdk: "12.4"
-           device: "iPhone X"
-         - os: "macos-10.15"
            xcode: "11.7.0"
            sdk: "13.7"
            device: "iPhone 11"
