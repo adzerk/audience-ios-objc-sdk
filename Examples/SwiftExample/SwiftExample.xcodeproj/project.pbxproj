@@ -215,7 +215,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\" --strict\n";
+			shellScript = "\nsource ~/.bash_profile\ncd ${SRCROOT}\ncd ../..\nmake install-examples\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\" --strict\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

@@ -40,7 +40,7 @@ install:
 prerequisites:
 	.scripts/prerequisites.sh
 
-oclint-examples:
+oclint-examples: install-examples
 	set -o pipefail && \
 	xcodebuild -scheme ObjcExample $(XCARGS) COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode
