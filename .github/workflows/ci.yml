@@ -32,7 +32,7 @@ jobs:
       - name: "Install clang-format"
         run: brew install clang-format
       - name: "Install Dependencies"
-        run: make install
+        run: pod install
       - name: "Compile and Test Velocidi SDK"
         env:
           TEST_SDK: "${{ matrix.sdk }}"
