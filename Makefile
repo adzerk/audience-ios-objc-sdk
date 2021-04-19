@@ -25,7 +25,7 @@ test: build
 
 examples: install-examples build-objc-example build-swift-example
 
-install-examples: build
+install-examples: install build
 	pod install --project-directory=Examples/
 
 build-objc-example: install-examples
