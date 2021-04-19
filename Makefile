@@ -25,7 +25,7 @@ test: build
 
 examples: install-examples build-objc-example build-swift-example
 
-install-examples: build
+install-examples: install build
 	pod install --project-directory=Examples/
 
 build-objc-example: install-examples
@@ -40,15 +40,14 @@ install:
 prerequisites:
 	.scripts/prerequisites.sh
 
-oclint-examples:
+oclint-examples: install-examples
 	set -o pipefail && \
-	xcodebuild -scheme VelocidiSDK -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build && \
-	xcodebuild -scheme ObjcExample -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
+	xcodebuild -scheme ObjcExample $(XCARGS) COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode
 
 oclint:
 	set -o pipefail && \
-	xcodebuild -scheme VelocidiSDK -sdk iphonesimulator -workspace VelocidiSDK.xcworkspace COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
+	xcodebuild -scheme VelocidiSDK $(XCARGS) COMPILER_INDEX_STORE_ENABLE=NO clean build | xcpretty -r json-compilation-database --output compile_commands.json && \
 	oclint-json-compilation-database -exclude Pods -exclude build -- -report-type xcode
 
 swiftlint:
