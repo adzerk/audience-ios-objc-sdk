@@ -101,7 +101,7 @@
 				30B0DE2C226E022F00A0919B /* Frameworks */,
 				30B0DE2D226E022F00A0919B /* Resources */,
 				9D5B93C6D2E989AE2C83E635 /* [CP] Embed Pods Frameworks */,
-				A16A45AE25FD866900B6A451 /* ShellScript */,
+				A16A45AE25FD866900B6A451 /* Run swiftlint */,
 			);
 			buildRules = (
 			);
@@ -200,7 +200,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftExample/Pods-SwiftExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A16A45AE25FD866900B6A451 /* ShellScript */ = {
+		A16A45AE25FD866900B6A451 /* Run swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -209,13 +209,14 @@
 			);
 			inputPaths = (
 			);
+			name = "Run swiftlint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\nsource ~/.bash_profile\ncd ${SRCROOT}\ncd ../..\nmake install-examples\n\n\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\" --strict\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" autocorrect && \"${PODS_ROOT}/SwiftLint/swiftlint\" --strict\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
