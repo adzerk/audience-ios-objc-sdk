@@ -14,24 +14,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    func useIDFA(completionHandler: @escaping (Bool, String) -> Void) {
+    func useIDFA(completionHandler: @escaping (String?) -> Void) {
         if #available(iOS 14, *) {
             ATTrackingManager.requestTrackingAuthorization { status in
                 let isTrackingEnabled = status == .authorized
-                var idfa: String = ""
+                var idfa: String?
                 if isTrackingEnabled {
                     idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
                 }
-                completionHandler(isTrackingEnabled, idfa)
+                completionHandler(idfa)
             }
         } else {
             let isTrackingEnabled = ASIdentifierManager.shared().isAdvertisingTrackingEnabled
-            var idfa: String = ""
-
-            if trackingIsAllowed {
+            var idfa: String?
+            if isTrackingEnabled {
                 idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
             }
-            completionHandler(isTrackingEnabled, idfa)
+            completionHandler(idfa)
         }
     }
 
@@ -41,8 +40,8 @@ class ViewController: UIViewController {
     // MARK: Actions
     @IBAction func sendTrackingEvent(_ sender: UIButton) {
 
-        useIDFA(completionHandler: { (isTrackingEnabled, idfa) in
-            if isTrackingEnabled {
+        useIDFA(completionHandler: { idfaOpt in
+            if let idfa = idfaOpt {
                 var trackingEvent = [String: Any]()
                 trackingEvent["type"] = "appView"
                 trackingEvent["siteId"] = "foo"
@@ -80,8 +79,8 @@ class ViewController: UIViewController {
     var customTrackingNumber = 0
 
     @IBAction func sendCustomTrackingEvent(_ sender: Any) {
-        useIDFA(completionHandler: { (isTrackingEnabled, idfa) in
-            if isTrackingEnabled {
+        useIDFA(completionHandler: { (idfaOpt) in
+            if let idfa = idfaOpt {
                 let trackingEvent =
                 """
                 {
@@ -115,8 +114,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sendMatchEvent(_ sender: Any) {
-        useIDFA(completionHandler: { (isTrackingEnabled, idfa) in
-            if isTrackingEnabled {
+        useIDFA(completionHandler: { (idfaOpt) in
+            if let idfa = idfaOpt {
                 let userId1 = VSDKUserId(id: idfa, type: "idfa")
                 let userId2 = VSDKUserId(id: "baz", type: "fooType")
                 let idsArray = NSMutableArray(array: [userId1, userId2])

@@ -265,24 +265,24 @@ __Swift__
 import AppTrackingTransparency
 import AdSupport
 
-func useIDFA(completionHandler: @escaping (Bool, String) -> Void) {
+func useIDFA(completionHandler: (Bool, String) -> Void) {
   if #available(iOS 14, *) { // After iOS 14, we request the IDFA to the AppTrackingTransparency framework
     ATTrackingManager.requestTrackingAuthorization { status in
       let isTrackingEnabled = status == .authorized
-      var idfa: String = ""
+      var idfa: String? = nil
       if isTrackingEnabled {
         idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
       }
-      completionHandler(isTrackingEnabled, idfa)
+      completionHandler(idfa)
     }
   } else { // On older devices, we can access the IDFA directly
     let isTrackingEnabled = ASIdentifierManager.shared().isAdvertisingTrackingEnabled
-    var idfa: String = ""
+    var idfa: String? = nil
 
-    if trackingIsAllowed {
+    if isTrackingEnabled {
       idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
     }
-    completionHandler(isTrackingEnabled, idfa)
+    completionHandler(idfa)
   }
 }
 ```
@@ -292,7 +292,7 @@ __Objective-C__
 #import <AdSupport/ASIdentifierManager.h>
 @import AppTrackingTransparency;
 
-- (void)useIDFA:(void (^)(bool, NSString *))completionHandler {
+- (void)useIDFA:(void (^)(NSString *))completionHandler {
   if (@available(iOS 14, *)) { // After iOS 14, we request the IDFA to the AppTrackingTransparency framework
     [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(
                            ATTrackingManagerAuthorizationStatus status) {
@@ -301,7 +301,7 @@ __Objective-C__
       if (isTrackingEnabled) {
         idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
       }
-      completionHandler(isTrackingEnabled, idfa);
+      completionHandler(idfa);
     }];
   } else { // On older devices, we can access the IDFA directly
     bool isTrackingEnabled = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
@@ -309,7 +309,7 @@ __Objective-C__
     if (isTrackingEnabled) {
       idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     }
-    completionHandler(isTrackingEnabled, idfa);
+    completionHandler(idfa);
   }
 }
 ```
@@ -318,8 +318,8 @@ Once we established a method of requesting permission for using the IDFA, we jus
 
 __Swift__
 ```swift
-useIDFA(completionHandler: { (isTrackingEnabled, idfa) in
-  if isTrackingEnabled {
+useIDFA(completionHandler: { (idfaOpt) in
+  if let idfa = idfaOpt {
     let userId = VSDKUserId(id: idfa, type: "idfa")
     // ...
   }
@@ -328,8 +328,8 @@ useIDFA(completionHandler: { (isTrackingEnabled, idfa) in
 
 __Objective-C__
 ```objectivec
-[self useIDFA:^(bool isTrackingEnabled, NSString *idfa) {
-  if (isTrackingEnabled) {
+[self useIDFA:^(NSString *idfa) {
+  if (idfa != nil) {
     VSDKUserId *userId = [[VSDKUserId alloc] initWithId:idfa type:@"idfa"];
     // ...
   }
