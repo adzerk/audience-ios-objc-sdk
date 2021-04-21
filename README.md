@@ -226,8 +226,12 @@ __Objective-C__
 
 # iOS 14 and collecting IDs
 
-Due to changes introduced in iOS 14, VelocidiSDK no longer uses the IDFA by default and requires the developer to explicit an ID to identify the user. It is up to the developer to choose which user IDs to use. As a rule of thumb, we recommend reading Apple's
+In iOS 14, Apple changed their privacy guidelines and APIs. We recommend reading Apple's
 instructions on [User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/).
+
+Due to those changes the VelocidiSDK no longer uses the IDFA by default and instead requires the developer to explicitly define an ID to 
+identify the user. It is up to the developer to choose which user IDs to use, taking in consideration that the ID type should be supported by 
+the CDP system. Refer to https://docs.velocidi.com/collect/user-ids/#default-id-types for currently supported IDs.
 
 ## Using your own first-party ID
 You can use any first-party ID with [VSDKUserId](https://ios.developers.velocidi.com/Classes/VSDKUtil.html), as exemplified in
