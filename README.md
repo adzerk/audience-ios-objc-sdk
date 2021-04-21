@@ -229,17 +229,20 @@ __Objective-C__
 In iOS 14, Apple changed their privacy guidelines and APIs. We recommend reading Apple's
 instructions on [User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/).
 
-Due to those changes the VelocidiSDK no longer uses the IDFA by default and instead requires the developer to explicitly define an ID to 
-identify the user. It is up to the developer to choose which user IDs to use, taking in consideration that the ID type should be supported by 
-the CDP system. Refer to https://docs.velocidi.com/collect/user-ids/#default-id-types for currently supported IDs.
+Due to those changes, VelocidiSDK no longer uses the IDFA by default and instead requires the developer to explicitly define an ID to
+ identify the user. It is up to the developer to choose which user IDs to use, taking in consideration that the ID type should be supported by
+the CDP system. Refer to our list of [supported IDs](https://docs.velocidi.com/collect/user-ids/#default-id-types).
 
 ## Using your own first-party ID
-You can use any first-party ID with [VSDKUserId](https://ios.developers.velocidi.com/Classes/VSDKUtil.html), as exemplified in
-[Make a Match](#Make-a-match) and [Send a tracking event](#Send-a-tracking-event).
+
+You can use any ID in our list of [supported IDs](https://docs.velocidi.com/collect/user-ids/#default-id-types) with
+[VSDKUserId](https://ios.developers.velocidi.com/Classes/VSDKUtil.html), as exemplified in [Make a Match](#Make-a-match) and [Send a tracking event](#Send-a-tracking-event).
+If you would like to use an ID not present in our list of supported IDs, please contact our support so that we can add it.
 
 ## Using the IDFV
 The [Identifier for Vendor (IDFV)](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor) is an ID that is shared amongst apps from
 the same vendor in the same device. It allows a vendor to uniquely identify a user's device, without relying on the device-wide IDFA, and its respective limitations.
+Per Apple's guidelines _"The IDFV may not be combined with other data to track a user across apps and websites owned by other companies unless you have been granted permission to track by the user"_.
 
 __Swift__
 ```swift
