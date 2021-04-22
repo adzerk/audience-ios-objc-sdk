@@ -224,10 +224,129 @@ __Objective-C__
     }];
 ```
 
-If you are using the IDFA to track your user, please beware that since iOS 14 Apple is more strict on the IDFA use cases. Please check Apple [documentation on which conditions](https://developer.apple.com/app-store/user-privacy-and-data-use/) and [how to retrieve the user's IDFA](https://developer.apple.com/documentation/apptrackingtransparency?language=objc).
+# iOS 14 and collecting IDs
+
+In iOS 14, Apple changed their privacy guidelines and APIs. We recommend reading Apple's
+instructions on [User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/).
+
+Due to those changes, VelocidiSDK no longer uses the IDFA by default and instead requires the developer to explicitly define an ID to
+ identify the user. It is up to the developer to choose which user IDs to use, taking in consideration that the ID type should be supported by
+the CDP system. Refer to our list of [supported IDs](https://docs.velocidi.com/collect/user-ids/#default-id-types).
+
+## Using your own first-party ID
+
+You can use any ID in our list of [supported IDs](https://docs.velocidi.com/collect/user-ids/#default-id-types) with
+[VSDKUserId](https://ios.developers.velocidi.com/Classes/VSDKUtil.html), as exemplified in [Make a Match](#Make-a-match) and [Send a tracking event](#Send-a-tracking-event).
+If you would like to use an ID not present in our list of supported IDs, please contact our support so that we can add it.
+
+## Using the IDFV
+The [Identifier for Vendor (IDFV)](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor) is an ID that is shared amongst apps from
+the same vendor in the same device. It allows a vendor to uniquely identify a user's device, without relying on the device-wide IDFA, and its respective limitations.
+Per Apple's guidelines _"The IDFV may not be combined with other data to track a user across apps and websites owned by other companies unless you have been granted permission to track by the user"_.
+
+__Swift__
+```swift
+let idfv = UIDevice.current.identifierForVendor!.uuidString
+let userId = VSDKUserId(id: idfv, type: "idfv")
+```
+
+__Objective-C__
+```objectivec
+NSString *idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+VSDKUserId *userId = [[VSDKUserId alloc] initWithId:idfv type:@"idfv"];
+```
+
+## Using the IDFA
+If you are using the Identifier for Advertisers (IDFA) to identify the user, please make sure to read Apple's instructions on
+[User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/) and be sure that your use case is compliant with Apple's guidelines.
+
+The following examples should provide a general approach on retrieving the IDFA, but we recommend reading Apple's documentation on how to use the [App Tracking Transparency framework](https://developer.apple.com/documentation/apptrackingtransparency?language=objc).
+
+Using the IDFA requires explicit authorization from the user for each application. To do so, start by establishing the message that will be presented to the user in the permission dialog. This can be done by adding the __NSUserTrackingUsageDescription__ key to the Info.plist file of the application. The value of this key will be the message presented.
+
+![tracking usage description entry](./docs/ios14_prompt_message.png)
+
+Before starting to send events, we have to request access to the IDFA, and only if that permission is granted, can we send events with
+the IDFA. If the user has not given permission yet, this might show the permission dialog box with the message previously set.
+
+__Swift__
+```swift
+import AppTrackingTransparency
+import AdSupport
+
+func useIDFA(completionHandler: (Bool, String) -> Void) {
+  if #available(iOS 14, *) { // After iOS 14, we request the IDFA to the AppTrackingTransparency framework
+    ATTrackingManager.requestTrackingAuthorization { status in
+      let isTrackingEnabled = status == .authorized
+      var idfa: String? = nil
+      if isTrackingEnabled {
+        idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+      }
+      completionHandler(idfa)
+    }
+  } else { // On older devices, we can access the IDFA directly
+    let isTrackingEnabled = ASIdentifierManager.shared().isAdvertisingTrackingEnabled
+    var idfa: String? = nil
+
+    if isTrackingEnabled {
+      idfa = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+    }
+    completionHandler(idfa)
+  }
+}
+```
+
+__Objective-C__
+```objectivec
+#import <AdSupport/ASIdentifierManager.h>
+@import AppTrackingTransparency;
+
+- (void)useIDFA:(void (^)(NSString *))completionHandler {
+  if (@available(iOS 14, *)) { // After iOS 14, we request the IDFA to the AppTrackingTransparency framework
+    [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(
+                           ATTrackingManagerAuthorizationStatus status) {
+      bool isTrackingEnabled = status == ATTrackingManagerAuthorizationStatusAuthorized;
+      NSString *idfa = nil;
+      if (isTrackingEnabled) {
+        idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+      }
+      completionHandler(idfa);
+    }];
+  } else { // On older devices, we can access the IDFA directly
+    bool isTrackingEnabled = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
+    NSString *idfa = nil;
+    if (isTrackingEnabled) {
+      idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    }
+    completionHandler(idfa);
+  }
+}
+```
+
+Once we established a method of requesting permission for using the IDFA, we just have to call it and provide a completion handler where we are creating the event.
+
+__Swift__
+```swift
+useIDFA(completionHandler: { (idfaOpt) in
+  if let idfa = idfaOpt {
+    let userId = VSDKUserId(id: idfa, type: "idfa")
+    // ...
+  }
+})
+```
+
+__Objective-C__
+```objectivec
+[self useIDFA:^(NSString *idfa) {
+  if (idfa != nil) {
+    VSDKUserId *userId = [[VSDKUserId alloc] initWithId:idfa type:@"idfa"];
+    // ...
+  }
+}];
+```
 
 # Need Help?
 
-You can find more information about Velocidi's Private CDP at https://docs.velocidi.com/ and at https://developers.velocidi.com.
+You can find more information about Velocidi's Private CDP at https://docs.velocidi.com.
 
 Please report bugs or issues to https://github.com/velocidi/velocidi-ios-objc-sdk/issues or send us an email to engineering@velocidi.com.

@@ -14,7 +14,7 @@
   // Do any additional setup after loading the view, typically from a nib.
 }
 
-+ (void)useIDFA:(void (^)(bool, NSString *))completionHandler {
++ (void)useIDFA:(void (^)(NSString *))completionHandler {
   if (@available(iOS 14, *)) {
     [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(
                            ATTrackingManagerAuthorizationStatus status) {
@@ -23,7 +23,7 @@
       if (isTrackingEnabled) {
         idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
       }
-      completionHandler(isTrackingEnabled, idfa);
+      completionHandler(idfa);
     }];
   } else {
     bool isTrackingEnabled = [[ASIdentifierManager sharedManager] isAdvertisingTrackingEnabled];
@@ -31,7 +31,7 @@
     if (isTrackingEnabled) {
       idfa = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
     }
-    completionHandler(isTrackingEnabled, idfa);
+    completionHandler(idfa);
   }
 }
 
@@ -52,8 +52,8 @@ static int matchNumber = 0;
   trackingEvent[@"title"] = @"Welcome Screen";
 
   int currentTrNumber = ++trackingNumber;
-  [ViewController useIDFA:^(bool isTrackingEnabled, NSString *idfa) {
-    if (isTrackingEnabled) {
+  [ViewController useIDFA:^(NSString *idfa) {
+    if (idfa != nil) {
       VSDKUserId *userId = [[VSDKUserId alloc] initWithId:idfa type:@"idfa"];
       [VSDKVelocidi.sharedInstance track:trackingEvent
           user:userId
@@ -91,8 +91,8 @@ static int customTrackingNumber = 0;
 
   int currCustomTrNumber = ++customTrackingNumber;
 
-  [ViewController useIDFA:^(bool isTrackingEnabled, NSString *idfa) {
-    if (isTrackingEnabled) {
+  [ViewController useIDFA:^(NSString *idfa) {
+    if (idfa != nil) {
       VSDKUserId *userId = [[VSDKUserId alloc] initWithId:idfa type:@"idfa"];
       [VSDKVelocidi.sharedInstance track:trackingEvent
           userId:userId
@@ -112,8 +112,8 @@ static int customTrackingNumber = 0;
 }
 
 - (IBAction)sendMatch:(id)sender {
-  [ViewController useIDFA:^(bool isTrackingEnabled, NSString *idfa) {
-    if (isTrackingEnabled) {
+  [ViewController useIDFA:^(NSString *idfa) {
+    if (idfa != nil) {
       VSDKUserId *userId1 = [[VSDKUserId alloc] initWithId:idfa type:@"idfa"];
       VSDKUserId *userId2 = [[VSDKUserId alloc] initWithId:@"baz" type:@"foo"];
       NSMutableArray *idsArray = [[NSMutableArray alloc] initWithObjects:userId1, userId2, nil];
