@@ -110,17 +110,16 @@ let trackingEvent =
 
 // OR
 
-var trackingEvent = [String: Any]()
-trackingEvent["type"] = "appView"
-trackingEvent["siteId"] = "foo"
-trackingEvent["clientId"] = "bar"
-
-var customFields = [String: Any]()
-customFields["debug"] = "true"
-customFields["role"] = "superuser"
-
-trackingEvent["customFields"] = customFields
-trackingEvent["title"] = "Welcome Screen"
+let trackingEvent = [
+  "type": "appView",
+  "siteId": "foo",
+  "clientId": "bar",
+  "title": "Welcome Screen",
+  "customFields": [
+    "debug": "true",
+    "role": "superuser"
+  ]
+] as [String: Any]
 
 let userId = VSDKUserId(id: "user-idfa", type: "idfa")
 VSDKVelocidi.sharedInstance().track(trackingEvent, userId: userId)
@@ -147,17 +146,16 @@ NSString * trackingEvent =  @"\
 
 // OR
 
-NSMutableDictionary *trackingEvent =  [NSMutableDictionary dictionaryWithCapacity:1];
-trackingEvent[@"type"] = @"appView";
-trackingEvent[@"siteId"] = @"foo";
-trackingEvent[@"clientId"] = @"bar";
-
-NSMutableDictionary *customFields =  [NSMutableDictionary dictionaryWithCapacity:1];
-customFields[@"debug"] = @"true";
-customFields[@"role"] = @"superuser";
-
-trackingEvent[@"customFields"] = customFields;
-trackingEvent[@"title"] = @"Welcome Screen";
+NSDictionary *trackingEvent = @{
+  @"clientId" : @"foo",
+  @"siteId" : @"bar",
+  @"type" : @"appView",
+  @"customFields" : @{
+    @"debug" : @"true",
+    @"role" : @"superuser"
+  },
+  @"title" : @"Welcome Screen"
+};
 
 VSDKUserId * userId = [[VSDKUserId alloc] initWithId:@"user-idfa" type: @"idfa"];
 [VSDKVelocidi.sharedInstance track: trackingEvent userId: userId]

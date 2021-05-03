@@ -42,17 +42,16 @@ class ViewController: UIViewController {
 
         useIDFA(completionHandler: { idfaOpt in
             if let idfa = idfaOpt {
-                var trackingEvent = [String: Any]()
-                trackingEvent["type"] = "appView"
-                trackingEvent["siteId"] = "foo"
-                trackingEvent["clientId"] = "bar"
-
-                var customFields = [String: Any]()
-                customFields["debug"] = "true"
-                customFields["role"] = "superuser"
-
-                trackingEvent["customFields"] = customFields
-                trackingEvent["title"] = "Welcome Screen"
+                let trackingEvent = [
+                  "type": "appView",
+                  "siteId": "foo",
+                  "clientId": "bar",
+                  "title": "Welcome Screen",
+                  "customFields": [
+                    "debug": "true",
+                    "role": "superuser"
+                  ]
+                ] as [String: Any]
 
                 self.trackingNumber += 1
                 let currentTrNumber = self.trackingNumber
