@@ -39,17 +39,13 @@ static int trackingNumber = 0;
 static int matchNumber = 0;
 
 - (IBAction)sendTrackingEvent:(id)sender {
-  NSMutableDictionary *trackingEvent = [NSMutableDictionary dictionaryWithCapacity:1];
-  trackingEvent[@"type"] = @"appView";
-  trackingEvent[@"siteId"] = @"foo";
-  trackingEvent[@"clientId"] = @"bar";
-
-  NSMutableDictionary *customFields = [NSMutableDictionary dictionaryWithCapacity:1];
-  customFields[@"debug"] = @"true";
-  customFields[@"role"] = @"superuser";
-
-  trackingEvent[@"customFields"] = customFields;
-  trackingEvent[@"title"] = @"Welcome Screen";
+  NSDictionary *trackingEvent = @{
+    @"clientId" : @"foo",
+    @"siteId" : @"bar",
+    @"type" : @"appView",
+    @"customFields" : @{@"debug" : @"true", @"role" : @"superuser"},
+    @"title" : @"Welcome Screen"
+  };
 
   int currentTrNumber = ++trackingNumber;
   [ViewController useIDFA:^(NSString *idfa) {
