@@ -262,7 +262,7 @@ The following examples should provide a general approach on retrieving the IDFA,
 
 Using the IDFA requires explicit authorization from the user for each application. To do so, start by establishing the message that will be presented to the user in the permission dialog. This can be done by adding the __NSUserTrackingUsageDescription__ key to the Info.plist file of the application. The value of this key will be the message presented.
 
-![tracking usage description entry](./docs/ios14_prompt_message.png)
+![tracking usage description entry](./docs/img/ios14_prompt_message.png)
 
 Before starting to send events, we have to request access to the IDFA, and only if that permission is granted, can we send events with
 the IDFA. If the user has not given permission yet, this might show the permission dialog box with the message previously set.
