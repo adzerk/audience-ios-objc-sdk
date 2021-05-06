@@ -15,7 +15,7 @@ platform :ios, '12.1'
 project 'MyProject.xcodeproj'
 
 target "MyProject" do
-  pod 'VelocidiSDK', '~> 0.3.2'
+  pod 'VelocidiSDK', '~> 0.4.0'
 end
 ```
 
@@ -30,14 +30,14 @@ $ pod install
 To integrate VelocidiSDK into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```
-github "velocidi/velocidi-ios-objc-sdk" ~> 0.3.2
+github "velocidi/velocidi-ios-objc-sdk" ~> 0.4.0
 ```
 
 Then, run `carthage` to build the framework and drag the built VelocidiSDK.framework into your Xcode project.
 
 ## Requirements
 
-VelocidiSDK should work with any version of iOS equal or bigger than 11.0.
+VelocidiSDK should work with any version of iOS equal or bigger than 10.0.
 
 # Setup
 

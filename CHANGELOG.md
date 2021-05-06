@@ -3,17 +3,13 @@
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
 ### Added
 
 ### Changed
-- Change iOS Deployment target version to 10.0 ([#45](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/45)).
-- Prevent warnings thrown from Pods ([#45](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/45)).
-- Require all user ids explicitly in the API ([#44](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/44)).
-- Remove tracking events domain models and provide JSON API instead ([48](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/48)).
 
 ### Deprecated
 
@@ -24,6 +20,14 @@ nd this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.
 ### Security
 
 ### Infrastructural
+
+## [0.4.0] - 2021-05-06
+
+### Changed
+- Change iOS Deployment target version to 10.0 ([#45](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/45)).
+- Prevent warnings thrown from Pods ([#45](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/45)).
+- Require all user ids explicitly in the API ([#44](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/44)).
+- Remove tracking events domain models and provide JSON API instead ([48](https://github.com/velocidi/velocidi-ios-objc-sdk/pull/48)).
 
 ## [0.3.2] - 2020-09-10
 ### Changed
