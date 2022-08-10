@@ -37,7 +37,7 @@ jobs:
           make
           make test
       - name: "Verify code linting generated no changes"
-        run: git diff --exit-code
+        run: git diff --exit-code -- . ':(exclude)Podfile.lock'
 
   build-example-applications:
     name: "Build example applications"
