@@ -57,7 +57,7 @@ jobs:
       - name: "Build example Swift application"
         run: make build-swift-example
       - name: "Verify code linting generated no changes"
-        run: git diff --exit-code
+        run: git diff --exit-code -- . ':(exclude)Examples/Podfile.lock'  ':(exclude)Podfile.lock'
 
   run-oclint:
     name: "OClint"
@@ -87,7 +87,6 @@ jobs:
     name: "Cocoapods Lint"
     needs: test
     runs-on: "macos-latest"
-
     steps:
       - uses: actions/checkout@v1
       - uses: maxim-lobanov/setup-xcode@v1
