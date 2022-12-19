@@ -3,7 +3,7 @@
 ![Cocoapods](https://img.shields.io/cocoapods/v/VelocidiSDK.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-VelocidiSDK is Velocidi's Objective-C SDK to integrate with iOS apps.
+VelocidiSDK is Kevel Audience Objective-C SDK to integrate with iOS apps.
 
 # Installation
 ## Installation with CocoaPods
@@ -232,7 +232,7 @@ __Objective-C__
 In iOS 14, Apple changed their privacy guidelines and APIs. We recommend reading Apple's instructions on
 [User Privacy and Data Use](https://developer.apple.com/app-store/user-privacy-and-data-use/).
 
-Due to those changes, VelocidiSDK no longer uses the IDFA by default and instead requires the developer to explicitly
+Due to those changes, the SDK no longer uses the IDFA by default and instead requires the developer to explicitly
 define an ID to identify the user. It is up to the developer to choose which user IDs to use, taking in consideration
 that the ID type should be supported by the CDP system. Refer to our list of
 [supported IDs](https://docs.velocidi.com/collect/user-ids/#default-id-types).
@@ -362,7 +362,7 @@ __Objective-C__
 
 # Need Help?
 
-You can find more information about Velocidi's Private CDP at https://docs.velocidi.com.
+You can find more information about Kevel Audience at https://docs.audience.kevel.com.
 
 Please report bugs or issues to https://github.com/adzerk/velocidi-ios-objc-sdk/issues or send us an email to
 kdp-engineering@kevel.co.
