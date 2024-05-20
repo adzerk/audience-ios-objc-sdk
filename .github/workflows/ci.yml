@@ -4,22 +4,20 @@ on: [push]
 
 jobs:
   test:
-    name: "Build and test Velocidi SDK using [${{ matrix.os }}, xcode${{ matrix.xcode }}, sdk${{ matrix.sdk }}, ${{ matrix.device }}]"
+    name: "Build and test Velocidi SDK using [xcode${{ matrix.xcode }}, sdk${{ matrix.sdk }}, ${{ matrix.device }}]"
     env:
       WORKSPACE: "VelocidiSDK.xcworkspace"
       SCHEME: "VelocidiSDK"
     strategy:
       matrix:
         include:
-         - os: "macos-latest"
-           xcode: "11.7.0"
+         - xcode: "11.7.0"
            sdk: "13.7"
            device: "iPhone 11"
-         - os: "macos-latest"
-           xcode: "12.4"
+         - xcode: "12.4"
            sdk: "14.4"
            device: "iPhone 11 Pro Max"
-    runs-on: "${{ matrix.os }}"
+    runs-on: "macos-latest"
     steps:
       - uses: actions/checkout@v4
       - uses: maxim-lobanov/setup-xcode@v1
