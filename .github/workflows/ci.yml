@@ -11,10 +11,10 @@ jobs:
     strategy:
       matrix:
         include:
-         - xcode: "14.3.1"
+         - xcode: "11.7.0"
            sdk: "13.7"
            device: "iPhone 11"
-         - xcode: "14.3.1"
+         - xcode: "12.4"
            sdk: "14.4"
            device: "iPhone 11 Pro Max"
     runs-on: "macos-latest"
