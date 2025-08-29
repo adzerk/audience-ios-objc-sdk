@@ -1,6 +1,5 @@
 # DEPRECATED iOS SDK in Objective-C
 
-
 This **SDK has been deprecated** and is no longer maintained. We suggest using our [iOS platform guide](https://docs.audience.kevel.com/platform-guides/ios) instead.
 
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
