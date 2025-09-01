@@ -1,4 +1,8 @@
-# Velocidi iOS SDK in Objective-C
+# DEPRECATED iOS SDK in Objective-C
+
+This **SDK has been deprecated** and is no longer maintained. We suggest using our [iOS platform guide](https://docs.audience.kevel.com/platform-guides/ios) instead.
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 ![Cocoapods platforms](https://img.shields.io/cocoapods/p/VelocidiSDK.svg)
 ![Cocoapods](https://img.shields.io/cocoapods/v/VelocidiSDK.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
